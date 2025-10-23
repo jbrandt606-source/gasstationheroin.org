@@ -1,0 +1,11 @@
+<!-- robots.txt -->
+User-agent: *
+Allow: /
+Sitemap: https://gasstationheroin.org/sitemap.xml
+
+# Optional crawl-delay to prevent overload
+Crawl-delay: 5
+
+# Disallow sensitive or internal paths if added later
+Disallow: /drafts/
+Disallow: /temp/
