@@ -1,21 +1,13 @@
-<!-- [FULL HTML] -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Email Ohio Senators • Gas Station Heroin</title>
-  <meta name="description" content="Send a personalized email to any Ohio State Senator asking them to support a ban on kratom.">
-  <meta name="keywords" content="email ohio senators, ban kratom, maha, gas station heroin, ohio kratom contact, legislature, outreach" />
+  <title>Email Ohio Lawmakers • Gas Station Heroin</title>
+  <meta name="description" content="Send a personalized email to any Ohio State Senator or Representative asking them to support a ban on kratom." />
+  <meta name="keywords" content="email ohio lawmakers, ban kratom, maha, gas station heroin, ohio senate, ohio house, kratom outreach" />
   <meta name="theme-color" content="#0b1020" />
   <link rel="stylesheet" href="style.css?v=3" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P31PD1SSTD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-P31PD1SSTD');
-  </script>
 </head>
 <body>
   <header>
@@ -32,13 +24,11 @@
 
   <main>
     <section class="wrap" id="email-ohio">
-      <h1>Email an Ohio State Senator</h1>
-      <p>Select one or more senators and write your message. A pre-filled email will open in your email app when you click send.</p>
-
-      <div class="card" style="margin-top:20px">
+      <h1>Email an Ohio Senator</h1>
+      <p>Select one or more senators and write your message. A pre-filled email will open in your email app.</p>
+      <div class="card">
         <label for="senator">Choose Senators:</label>
         <select id="senator" multiple size="12" style="width:100%; margin-bottom:10px">
-          <!-- PASTE full senator list here from previous message -->
           <option value="antonio@ohiosenate.gov|Senator Nickie Antonio">Senator Nickie Antonio</option>
           <option value="antani@ohiosenate.gov|Senator Niraj Antani">Senator Niraj Antani</option>
           <option value="blessing@ohiosenate.gov|Senator Louis Blessing">Senator Louis Blessing</option>
@@ -73,16 +63,130 @@
           <option value="wilkin@ohiosenate.gov|Senator Shane Wilkin">Senator Shane Wilkin</option>
           <option value="wilson@ohiosenate.gov|Senator Steve Wilson">Senator Steve Wilson</option>
         </select>
-
         <label for="story">Your Message:</label>
-        <textarea id="story" rows="6" style="width:100%; margin-bottom:10px;" placeholder="Write your message here..."></textarea>
-
-        <button class="btn" onclick="generateEmail()">Generate Email</button>
-
+        <textarea id="story" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+        <button class="btn" onclick="generateEmail('senator')">Generate Email</button>
         <div id="emailPreview" style="margin-top:20px; display:none">
           <h3>Your Draft Email:</h3>
           <p id="emailBody" style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; background:#121832;"></p>
           <a id="mailtoLink" class="btn" style="margin-top:10px; display:inline-block" href="#">Open Email App →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="email-house" style="margin-top:60px">
+      <h1>Email an Ohio House Representative</h1>
+      <p>Select one or more representatives and write your message. A pre-filled email will open in your email app.</p>
+      <div class="card">
+        <label for="house">Choose House Members:</label>
+        <select id="house" multiple size="12" style="width:100%; margin-bottom:10px">
+<option value="abird@ohiohouse.gov|Representative Adam Bird">Representative Adam Bird</option>
+<option value="amiller@ohiohouse.gov|Representative Adam C. Miller">Representative Adam C. Miller</option>
+<option value="aholmes@ohiohouse.gov|Representative Adam Holmes">Representative Adam Holmes</option>
+<option value="acutrona@ohiohouse.gov|Representative Al Cutrona">Representative Al Cutrona</option>
+<option value="arusso@ohiohouse.gov|Representative Allison Russo">Representative Allison Russo</option>
+<option value="awhite@ohiohouse.gov|Representative Andrea White">Representative Andrea White</option>
+<option value="blear@ohiohouse.gov|Representative Beth Lear">Representative Beth Lear</option>
+<option value="bdean@ohiohouse.gov|Representative Bill Dean">Representative Bill Dean</option>
+<option value="broemer@ohiohouse.gov|Representative Bill Roemer">Representative Bill Roemer</option>
+<option value="bseitz@ohiohouse.gov|Representative Bill Seitz">Representative Bill Seitz</option>
+<option value="byoung@ohiohouse.gov|Representative Bob Young">Representative Bob Young</option>
+<option value="bhillyer@ohiohouse.gov|Representative Brett Hillyer">Representative Brett Hillyer</option>
+<option value="bbaldridge@ohiohouse.gov|Representative Brian Baldridge">Representative Brian Baldridge</option>
+<option value="blampton@ohiohouse.gov|Representative Brian Lampton">Representative Brian Lampton</option>
+<option value="bstewart@ohiohouse.gov|Representative Brian Stewart">Representative Brian Stewart</option>
+<option value="bzellers@ohiohouse.gov|Representative Brian Zellers">Representative Brian Zellers</option>
+<option value="bsweeney@ohiohouse.gov|Representative Bride Rose Sweeney">Representative Bride Rose Sweeney</option>
+<option value="cweinstein@ohiohouse.gov|Representative Casey Weinstein">Representative Casey Weinstein</option>
+<option value="cingram@ohiohouse.gov|Representative Catherine Ingram">Representative Catherine Ingram</option>
+<option value="cabrams@ohiohouse.gov|Representative Cindy Abrams">Representative Cindy Abrams</option>
+<option value="criedel@ohiohouse.gov|Representative Craig Riedel">Representative Craig Riedel</option>
+<option value="dtroy@ohiohouse.gov|Representative Dan Troy">Representative Dan Troy</option>
+<option value="dkick@ohiohouse.gov|Representative Darrell Kick">Representative Darrell Kick</option>
+<option value="dleland@ohiohouse.gov|Representative David Leland">Representative David Leland</option>
+<option value="dmerrin@ohiohouse.gov|Representative Derek Merrin">Representative Derek Merrin</option>
+<option value="dstein@ohiohouse.gov|Representative Dick Stein">Representative Dick Stein</option>
+<option value="djones@ohiohouse.gov|Representative Don Jones">Representative Don Jones</option>
+<option value="djarrells@ohiohouse.gov|Representative Dontavius L. Jarrells">Representative Dontavius L. Jarrells</option>
+<option value="dswearingen@ohiohouse.gov|Representative Doug Swearingen">Representative Doug Swearingen</option>
+<option value="gpavliga@ohiohouse.gov|Representative Gail K. Pavliga">Representative Gail K. Pavliga</option>
+<option value="gclick@ohiohouse.gov|Representative Gary Click">Representative Gary Click</option>
+<option value="gmanning@ohiohouse.gov|Representative Gayle Manning">Representative Gayle Manning</option>
+<option value="gturner@ohiohouse.gov|Representative Gayle Turner">Representative Gayle Turner</option>
+<option value="hghanbari@ohiohouse.gov|Representative Haraz N. Ghanbari">Representative Haraz N. Ghanbari</option>
+<option value="jhoops@ohiohouse.gov|Representative James M. Hoops">Representative James M. Hoops</option>
+<option value="jcallender@ohiohouse.gov|Representative Jamie Callender">Representative Jamie Callender</option>
+<option value="jstephens@ohiohouse.gov|Representative Jason C. Stephens">Representative Jason C. Stephens</option>
+<option value="jedwards@ohiohouse.gov|Representative Jay Edwards">Representative Jay Edwards</option>
+<option value="jrusso@ohiohouse.gov|Representative Jean Russo">Representative Jean Russo</option>
+<option value="jschmidt@ohiohouse.gov|Representative Jean Schmidt">Representative Jean Schmidt</option>
+<option value="jlare@ohiohouse.gov|Representative Jeff LaRe">Representative Jeff LaRe</option>
+<option value="jcrossman@ohiohouse.gov|Representative Jeffrey Crossman">Representative Jeffrey Crossman</option>
+<option value="jpowell@ohiohouse.gov|Representative Jena Powell">Representative Jena Powell</option>
+<option value="jgross@ohiohouse.gov|Representative Jennifer Gross">Representative Jennifer Gross</option>
+<option value="jmiranda@ohiohouse.gov|Representative Jessica E. Miranda">Representative Jessica E. Miranda</option>
+<option value="jmiller@ohiohouse.gov|Representative Joe Miller">Representative Joe Miller</option>
+<option value="jcross@ohiohouse.gov|Representative Jon Cross">Representative Jon Cross</option>
+<option value="jkern@ohiohouse.gov|Representative Jonah Kern">Representative Jonah Kern</option>
+<option value="kmcdaniel@ohiohouse.gov|Representative Katrina McDaniel">Representative Katrina McDaniel</option>
+<option value="ksmith@ohiohouse.gov|Representative Kent Smith">Representative Kent Smith</option>
+<option value="kmiller@ohiohouse.gov|Representative Kevin D. Miller">Representative Kevin D. Miller</option>
+<option value="lhumphrey@ohiohouse.gov|Representative Latyna M. Humphrey">Representative Latyna M. Humphrey</option>
+<option value="llanese@ohiohouse.gov|Representative Laura Lanese">Representative Laura Lanese</option>
+<option value="lsobecki@ohiohouse.gov|Representative Lisa A. Sobecki">Representative Lisa A. Sobecki</option>
+<option value="mjohn@ohiohouse.gov|Representative Marilyn S. John">Representative Marilyn S. John</option>
+<option value="mfraizer@ohiohouse.gov|Representative Mark Fraizer">Representative Mark Fraizer</option>
+<option value="mjohnson@ohiohouse.gov|Representative Mark Johnson">Representative Mark Johnson</option>
+<option value="mlinehan@ohiohouse.gov|Representative Mary Beth Linehan">Representative Mary Beth Linehan</option>
+<option value="mlightbody@ohiohouse.gov|Representative Mary Lightbody">Representative Mary Lightbody</option>
+<option value="mskindell@ohiohouse.gov|Representative Michael J. Skindell">Representative Michael J. Skindell</option>
+<option value="msheehy@ohiohouse.gov|Representative Michael Sheehy">Representative Michael Sheehy</option>
+<option value="mlepore-hagan@ohiohouse.gov|Representative Michele Lepore-Hagan">Representative Michele Lepore-Hagan</option>
+<option value="mloychik@ohiohouse.gov|Representative Mike Loychik">Representative Mike Loychik</option>
+<option value="msmith@ohiohouse.gov|Representative Monique Smith">Representative Monique Smith</option>
+<option value="nsprague@ohiohouse.gov|Representative Nathan Sprague">Representative Nathan Sprague</option>
+<option value="nvitale@ohiohouse.gov|Representative Nino Vitale">Representative Nino Vitale</option>
+<option value="phicks-hudson@ohiohouse.gov|Representative Paula Hicks-Hudson">Representative Paula Hicks-Hudson</option>
+<option value="pryan@ohiohouse.gov|Representative Paula Ryan">Representative Paula Ryan</option>
+<option value="pplummer@ohiohouse.gov|Representative Phil Plummer">Representative Phil Plummer</option>
+<option value="pjr.@ohiohouse.gov|Representative Phil Robinson Jr.">Representative Phil Robinson Jr.</option>
+<option value="rstoltzfus@ohiohouse.gov|Representative Reggie Stoltzfus">Representative Reggie Stoltzfus</option>
+<option value="rbrown@ohiohouse.gov|Representative Richard D. Brown">Representative Richard D. Brown</option>
+<option value="rcarfagna@ohiohouse.gov|Representative Rick Carfagna">Representative Rick Carfagna</option>
+<option value="rmcclain@ohiohouse.gov|Representative Riordan T. McClain">Representative Riordan T. McClain</option>
+<option value="rlee@ohiohouse.gov|Representative Robert Lee">Representative Robert Lee</option>
+<option value="rcreech@ohiohouse.gov|Representative Rodney Creech">Representative Rodney Creech</option>
+<option value="rferguson@ohiohouse.gov|Representative Ron Ferguson">Representative Ron Ferguson</option>
+<option value="sabrams@ohiohouse.gov|Representative Sara Abrams">Representative Sara Abrams</option>
+<option value="scarruthers@ohiohouse.gov|Representative Sara Carruthers">Representative Sara Carruthers</option>
+<option value="sarthur@ohiohouse.gov|Representative Sarah Fowler Arthur">Representative Sarah Fowler Arthur</option>
+<option value="slipps@ohiohouse.gov|Representative Scott Lipps">Representative Scott Lipps</option>
+<option value="swiggam@ohiohouse.gov|Representative Scott Wiggam">Representative Scott Wiggam</option>
+<option value="sbrennan@ohiohouse.gov|Representative Sean P. Brennan">Representative Sean P. Brennan</option>
+<option value="slogan@ohiohouse.gov|Representative Shane Logan">Representative Shane Logan</option>
+<option value="swilkin@ohiohouse.gov|Representative Shane Wilkin">Representative Shane Wilkin</option>
+<option value="sray@ohiohouse.gov|Representative Sharon A. Ray">Representative Sharon A. Ray</option>
+<option value="showse@ohiohouse.gov|Representative Stephanie Howse">Representative Stephanie Howse</option>
+<option value="smanchester@ohiohouse.gov|Representative Susan Manchester">Representative Susan Manchester</option>
+<option value="tgalonski@ohiohouse.gov|Representative Tavia Galonski">Representative Tavia Galonski</option>
+<option value="tupchurch@ohiohouse.gov|Representative Terrence Upchurch">Representative Terrence Upchurch</option>
+<option value="tpatton@ohiohouse.gov|Representative Thomas E. Patton">Representative Thomas E. Patton</option>
+<option value="thall@ohiohouse.gov|Representative Thomas Hall">Representative Thomas Hall</option>
+<option value="tstoner@ohiohouse.gov|Representative Thomas Stoner">Representative Thomas Stoner</option>
+<option value="twest@ohiohouse.gov|Representative Thomas West">Representative Thomas West</option>
+<option value="thagan@ohiohouse.gov|Representative Tim Hagan">Representative Tim Hagan</option>
+<option value="tginter@ohiohouse.gov|Representative Timothy E. Ginter">Representative Timothy E. Ginter</option>
+<option value="tyoung@ohiohouse.gov|Representative Tom Young">Representative Tom Young</option>
+<option value="trichardson@ohiohouse.gov|Representative Tracy Richardson">Representative Tracy Richardson</option>
+<option value="wjr.@ohiohouse.gov|Representative Willis Blackshear Jr.">Representative Willis Blackshear Jr.</option>
+</select>
+        <label for="story-house">Your Message:</label>
+        <textarea id="story-house" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+        <button class="btn" onclick="generateEmail('house')">Generate Email</button>
+        <div id="emailPreview-house" style="margin-top:20px; display:none">
+          <h3>Your Draft Email:</h3>
+          <p id="emailBody-house" style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; background:#121832;"></p>
+          <a id="mailtoLink-house" class="btn" style="margin-top:10px; display:inline-block" href="#">Open Email App →</a>
         </div>
       </div>
     </section>
@@ -91,29 +195,30 @@
   <footer>
     <p>GasStationHeroin.org is a public-health awareness project by <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">Mothers Against Herbal Abuse (MAHA)</a>. Visit the full site at <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">mothersagainstherbalabuse.org</a> • © <span id="y">2025</span></p>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-
   <script>
-    function generateEmail() {
-      const selected = Array.from(document.getElementById('senator').selectedOptions);
-      const story = document.getElementById('story').value.trim();
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function generateEmail(chamber) {
+      const id = chamber === 'house' ? 'house' : 'senator';
+      const textarea = document.getElementById(chamber === 'house' ? 'story-house' : 'story');
+      const preview = document.getElementById(chamber === 'house' ? 'emailPreview-house' : 'emailPreview');
+      const output = document.getElementById(chamber === 'house' ? 'emailBody-house' : 'emailBody');
+      const link = document.getElementById(chamber === 'house' ? 'mailtoLink-house' : 'mailtoLink');
+
+      const selected = Array.from(document.getElementById(id).selectedOptions);
+      const story = textarea.value.trim();
 
       if (!selected.length) {
-        alert(\"Please select at least one senator.\");
+        alert("Please select at least one " + chamber + ".");
         return;
       }
 
       const recipients = selected.map(opt => opt.value.split('|')[0]).join(',');
       const names = selected.map(opt => opt.value.split('|')[1]).join(', ');
+      const message = `Dear ${names},\n\n${story}\n\nSincerely,\n[Your Name]`;
 
-      const message = `Dear ${names},\\n\\n${story}\\n\\nSincerely,\\n[Your Name]`;
-
-      document.getElementById('emailBody').textContent = message;
-      document.getElementById('emailPreview').style.display = 'block';
-
-      const subject = encodeURIComponent(\"Support a Kratom Ban in Ohio\");
-      const body = encodeURIComponent(message);
-      document.getElementById('mailtoLink').href = `mailto:${recipients}?subject=${subject}&body=${body}`;
+      output.textContent = message;
+      preview.style.display = 'block';
+      link.href = `mailto:${recipients}?subject=Support a Kratom Ban in Ohio&body=${encodeURIComponent(message)}`;
     }
   </script>
 </body>
