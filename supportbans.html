@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Kratom Bans | MAHA</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 880px; margin: 40px auto; padding: 24px; line-height: 1.6; background: #fefefe; color: #222; }
+    h1 { font-size: 2rem; color: #0b63d6; margin-bottom: 12px; }
+    h2 { font-size: 1.4rem; margin-top: 32px; color: #444; }
+    .policy-note { background: #f3f6ff; border-left: 4px solid #0b63d6; padding: 16px; border-radius: 8px; margin-top: 20px; }
+    .stats-list { padding-left: 20px; }
+    .stats-list li { margin-bottom: 8px; }
+    .story-box, .letter-box { background: #fff9e6; border-left: 4px solid #ffc107; padding: 16px; border-radius: 8px; margin-top: 20px; }
+    .cta { margin-top: 24px; }
+    a.button { display: inline-block; background: #0b63d6; color: white; padding: 12px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+    a.button:hover { background: #084cad; }
+    textarea, select { width: 100%; padding: 10px; font-size: 1rem; margin-top: 10px; margin-bottom: 16px; }
+    textarea { height: 200px; }
+    button { padding: 10px 16px; font-size: 1rem; background: #1a73e8; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #155ab6; }
+    label { font-weight: 600; display: block; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Support Kratom Bans</h1>
+
+  <p>Kratom and its active alkaloids are associated with increasing rates of poisonings, hospitalizations, and deaths — yet these products remain unregulated in many states. MAHA supports efforts to restrict the sale and marketing of kratom through statewide bans, scheduling, or emergency actions. Here's why:</p>
+
+  <h2>Key Harm Statistics</h2>
+  <ul class="stats-list">
+    <li>CDC SUDORS reported <strong>1,151 kratom-related deaths</strong> in 2023 alone.</li>
+    <li>Florida Medical Examiner Commission listed <strong>516 kratom-caused deaths</strong> from 2020–2023.</li>
+    <li>NPDS poison centers logged <strong>10,272 kratom exposures</strong> from 2014–2023 — <strong>45% required hospitalization</strong>.</li>
+    <li>FDA FAERS includes <strong>1,437 adverse events</strong> linked to kratom — <strong>707 involved death</strong>.</li>
+    <li>FDA CAERS confirms <strong>189 hospitalizations</strong> and <strong>188 cases of dependence</strong> from kratom products.</li>
+  </ul>
+
+  <div class="policy-note">
+    <strong>Important Policy Note:</strong><br>
+    Targeting only <em>7-hydroxymitragynine (7-OH)</em> in regulation is insufficient. The overwhelming majority of kratom-related poisonings, hospitalizations, and deaths are caused by the full kratom plant and its primary alkaloid, <strong>mitragynine</strong> — not isolated 7-OH. A partial ban would leave the core public health threat untouched.
+  </div>
+
+  <div class="story-box">
+    <strong>Want to share your story?</strong><br>
+    Personal impact statements are critical. Lawmakers respond to stories from families, first responders, and educators. Let your voice be heard.
+    <br><br>
+    <a class="button" href="/contact.html">Submit Your Story →</a>
+  </div>
+
+  <div class="letter-box">
+    <h2>Generate a Custom Letter to Lawmakers</h2>
+    <label for="factSelect">Choose up to 3 harm statistics to include:</label>
+    <select id="factSelect" multiple size="12">
+      <option value="CDC SUDORS recorded 1,151 kratom-related deaths in 2023 alone.">CDC SUDORS: 1,151 kratom-related deaths in 2023.</option>
+      <option value="CDC SUDORS documented 866 deaths in 2020, 1,016 in 2021, and 1,017 in 2022.">CDC SUDORS: 866 (2020), 1,016 (2021), 1,017 (2022).</option>
+      <option value="Florida MEC found 516 deaths where mitragynine was deemed causal (2020–2023).">Florida ME: 516 deaths linked to mitragynine (2020–2023).</option>
+      <option value="Florida toxicology labs reported 1,133 mitragynine detections from 2020–2023.">FL: 1,133 mitragynine detections (2020–2023).</option>
+      <option value="NPDS reported 10,272 kratom exposures (2014–2023); over 45% required hospitalization.">NPDS: Over 10,000 exposures; 45% hospitalized.</option>
+      <option value="54.2% of single-substance kratom exposures in NPDS had serious medical outcomes.">NPDS: 54.2% of single-agent cases were serious.</option>
+      <option value="FDA FAERS contains 1,437 kratom-related adverse event reports; nearly half involved death.">FDA FAERS: 1,437 reports, 707 deaths (~49%).</option>
+      <option value="FDA CAERS includes 725 kratom reports, with 189 hospitalizations and 188 dependence cases.">FDA CAERS: 189 hospitalizations + 188 dependence cases.</option>
+      <option value="FDA issued the first-ever mandatory food recall for contaminated kratom powder.">FDA issued first-ever food recall for kratom.</option>
+      <option value="Texas Poison Control logged 19 7-OH exposures; 11 needed healthcare intervention.">TX Poison Control: 7-OH exposures requiring care.</option>
+      <option value="Case reports describe patients needing buprenorphine tapers after high-dose kratom or 7-OH withdrawal.">Case reports: Buprenorphine used for kratom withdrawal.</option>
+      <option value="FDA warning letters have targeted 7-OH kratom shots, gummies, and enriched tablets marketed without approval.">FDA issued warning letters for 7-OH enriched products.</option>
+    </select>
+
+    <label for="story">Add your personal story (optional):</label>
+    <textarea id="story" placeholder="Describe how kratom has affected your family, your health, or your community..."></textarea>
+
+    <button onclick="generateLetter()">Generate Letter</button>
+
+    <label for="output">Your Draft Letter:</label>
+    <textarea id="output" readonly></textarea>
+  </div>
+
+  <div class="cta">
+    <a class="button" href="/letters.html">More Advocacy Tools →</a>
+  </div>
+
+  <script>
+    const intros = [
+      "As a concerned constituent, I am writing to bring urgent attention to the public health risks posed by kratom products sold across our state.",
+      "I'm reaching out as a parent and citizen deeply troubled by the unregulated sale of kratom in gas stations and vape shops.",
+      "Please consider this letter a formal request for your office to review the growing body of data documenting serious harms linked to kratom use.",
+      "I respectfully ask you to evaluate the mounting concerns related to kratom's availability and its impact on families and communities."
+    ];
+
+    const closings = [
+      "I urge you to review this data and consider legislation to restrict the sale of kratom, especially in unregulated retail environments accessible to minors.",
+      "Please support efforts to schedule kratom or limit its availability pending further toxicological review.",
+      "This is a public health issue that deserves proactive attention before more families are harmed.",
+      "Our state has the opportunity to lead on this issue and protect vulnerable populations from a poorly understood and unregulated drug."
+    ];
+
+    const policyNote = "\n\nImportant Policy Note:\nTargeting only 7-hydroxymitragynine (7-OH) in regulation is insufficient. The overwhelming majority of kratom-related poisonings, hospitalizations, and deaths are caused by the full kratom plant and its primary alkaloid, mitragynine — not isolated 7-OH. A partial ban would leave the core public health threat untouched."
+
+    function pickRandom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function generateLetter() {
+      const intro = pickRandom(intros);
+      const closing = pickRandom(closings);
+
+      const factOptions = document.getElementById('factSelect');
+      const selected = Array.from(factOptions.selectedOptions).map(o => o.value);
+      const story = document.getElementById('story').value.trim();
+
+      if (selected.length > 3) {
+        alert("Please select no more than 3 statistics.");
+        return;
+      }
+
+      const facts = selected.join("\n");
+      const personal = story ? `\n\nPersonal Story:\n${story}` : "";
+      const full = `${intro}\n\n${facts}${personal}${policyNote}\n\n${closing}\n\nSincerely,\n[Your Name]`;
+
+      document.getElementById('output').value = full;
+    }
+  </script>
+
+</body>
+</html>
