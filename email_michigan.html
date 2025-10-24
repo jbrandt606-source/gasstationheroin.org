@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Michigan Lawmakers • Gas Station Heroin</title>
+  <meta name="description" content="Send a personalized email to Michigan state lawmakers urging a ban on kratom and 7-OH. Pick legislators and draft your own message." />
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div class="brand"><span class="dot"></span>Gas Station Heroin<span style="font-weight:400"> • A MAHA Project</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap">
+      <h1>Email a Michigan State Senator</h1>
+      <p>Select one or more senators and write your message. A pre-filled email will open in your email app.</p>
+      <div class="card">
+        <label for="misenate">Choose Senators:</label>
+        <select id="misenate" multiple size="12" style="width:100%; margin-bottom:10px">
+          <option value="SenTAlbert@senate.michigan.gov|Senator Thomas Albert">Senator Thomas Albert</option>
+          <option value="SenSAnthony@senate.michigan.gov|Senator Sarah Anthony">Senator Sarah Anthony</option>
+          <option value="SenRBayer@senate.michigan.gov|Senator Rosemary Bayer">Senator Rosemary Bayer</option>
+          <option value="SenJBellino@senate.michigan.gov|Senator Joseph Bellino">Senator Joseph Bellino</option>
+          <option value="SenWBrinks@senate.michigan.gov|Senator Winnie Brinks">Senator Winnie Brinks</option>
+          <option value="SenJBumstead@senate.michigan.gov|Senator Jon Bumstead">Senator Jon Bumstead</option>
+          <option value="SenDCamilleri@senate.michigan.gov|Senator Darrin Camilleri">Senator Darrin Camilleri</option>
+          <option value="SenMCavanagh@senate.michigan.gov|Senator Mary Cavanagh">Senator Mary Cavanagh</option>
+          <option value="SenSChang@senate.michigan.gov|Senator Stephanie Chang">Senator Stephanie Chang</option>
+          <option value="SenJCherry@senate.michigan.gov|Senator John Cherry">Senator John Cherry</option>
+          <option value="SenKDaley@senate.michigan.gov|Senator Kevin Daley">Senator Kevin Daley</option>
+          <option value="SenJDamoose@senate.michigan.gov|Senator John Damoose">Senator John Damoose</option>
+          <option value="District35@senate.michigan.gov|Senator District 35">Senator District 35</option>
+          <option value="SenEGeiss@senate.michigan.gov|Senator Erika Geiss">Senator Erika Geiss</option>
+          <option value="SenRHauck@senate.michigan.gov|Senator Roger Hauck">Senator Roger Hauck</option>
+          <option value="SenKHertel@senate.michigan.gov|Senator Kevin Hertel">Senator Kevin Hertel</option>
+          <option value="SenMHoitenga@senate.michigan.gov|Senator Michele Hoitenga">Senator Michele Hoitenga</option>
+          <option value="SenMHuizenga@senate.michigan.gov|Senator Mark Huizenga">Senator Mark Huizenga</option>
+          <option value="SenJIrwin@senate.michigan.gov|Senator Jeff Irwin">Senator Jeff Irwin</option>
+          <option value="SenRJohnson@senate.michigan.gov|Senator Ruth Johnson">Senator Ruth Johnson</option>
+          <option value="SenVKlinefelt@senate.michigan.gov|Senator Veronica Klinefelt">Senator Veronica Klinefelt</option>
+          <option value="SenDLauwers@senate.michigan.gov|Senator Dan Lauwers">Senator Dan Lauwers</option>
+          <option value="SenJLindsey@senate.michigan.gov|Senator Jonathan Lindsey">Senator Jonathan Lindsey</option>
+          <option value="SenEMcBroom@senate.michigan.gov|Senator Ed McBroom">Senator Ed McBroom</option>
+          <option value="SenSMcCann@senate.michigan.gov|Senator Sean McCann">Senator Sean McCann</option>
+          <option value="SenMMcMorrow@senate.michigan.gov|Senator Mallory McMorrow">Senator Mallory McMorrow</option>
+          <option value="SenJMoss@senate.michigan.gov|Senator Jeremy Moss">Senator Jeremy Moss</option>
+          <option value="SenANesbitt@senate.michigan.gov|Senator Aric Nesbitt">Senator Aric Nesbitt</option>
+          <option value="SenROutman@senate.michigan.gov|Senator Rick Outman">Senator Rick Outman</option>
+          <option value="SenDPolehanki@senate.michigan.gov|Senator Dayna Polehanki">Senator Dayna Polehanki</option>
+          <option value="SenJRunestad@senate.michigan.gov|Senator Jim Runestad">Senator Jim Runestad</option>
+          <option value="SenSSantana@senate.michigan.gov|Senator Sylvia Santana">Senator Sylvia Santana</option>
+          <option value="SenSShink@senate.michigan.gov|Senator Sue Shink">Senator Sue Shink</option>
+          <option value="SenSSingh@senate.michigan.gov|Senator Sam Singh">Senator Sam Singh</option>
+          <option value="SenLTheis@senate.michigan.gov|Senator Lana Theis">Senator Lana Theis</option>
+          <option value="SenRVictory@senate.michigan.gov|Senator Roger Victory">Senator Roger Victory</option>
+          <option value="SenMWebber@senate.michigan.gov|Senator Michael Webber">Senator Michael Webber</option>
+          <option value="SenPWojno@senate.michigan.gov|Senator Paul Wojno">Senator Paul Wojno</option>
+        </select>
+
+        <label for="misenate-message">Your Message:</label>
+        <textarea id="misenate-message" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+
+        <button class="btn" onclick="generateEmail('misenate')">Generate Email</button>
+
+        <div id="preview-misenate" style="margin-top:20px; display:none">
+          <h3>Your Draft Email:</h3>
+          <p id="emailBody-misenate" style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; background:#121832;"></p>
+          <a id="mailtoLink-misenate" class="btn" style="margin-top:10px; display:inline-block" href="#">Open Email App →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" style="margin-top:60px">
+      <h1>Email a Michigan House Representative</h1>
+      <p>Select one or more representatives and write your message. A pre-filled email will open in your email app.</p>
+      <div class="card">
+        <label for="mihouse">Choose House Members:</label>
+        <select id="mihouse" multiple size="14" style="width:100%; margin-bottom:10px">
+<option value="GregAlexander@house.mi.gov|Representative Gregory Alexander">Representative Gregory Alexander</option>
+<option value="JoeyAndrews@house.mi.gov|Representative Joey Andrews">Representative Joey Andrews</option>
+<option value="JosephAragona@house.mi.gov|Representative Joseph Aragona">Representative Joseph Aragona</option>
+<option value="NoahArbit@house.mi.gov|Representative Noah Arbit">Representative Noah Arbit</option>
+<option value="BrianBeGole@house.mi.gov|Representative Brian BeGole">Representative Brian BeGole</option>
+<option value="TimothyBeson@house.mi.gov|Representative Timothy Beson">Representative Timothy Beson</option>
+<option value="MatthewBierlein@house.mi.gov|Representative Matthew Bierlein">Representative Matthew Bierlein</option>
+<option value="KarlBohnak@house.mi.gov|Representative Karl Bohnak">Representative Karl Bohnak</option>
+<option value="AnnBollin@house.mi.gov|Representative Ann Bollin">Representative Ann Bollin</option>
+<option value="KenBorton@house.mi.gov|Representative Ken Borton">Representative Ken Borton</option>
+<option value="KellyBreen@house.mi.gov|Representative Kelly Breen">Representative Kelly Breen</option>
+<option value="JulieBrixie@house.mi.gov|Representative Julie Brixie">Representative Julie Brixie</option>
+<option value="WilliamBruck@house.mi.gov|Representative William Bruck">Representative William Bruck</option>
+<option value="ErinByrnes@house.mi.gov|Representative Erin Byrnes">Representative Erin Byrnes</option>
+<option value="SteveCarra@house.mi.gov|Representative Steve Carra">Representative Steve Carra</option>
+<option value="BrendaCarter@house.mi.gov|Representative Brenda Carter">Representative Brenda Carter</option>
+<option value="TyroneCarter@house.mi.gov|Representative Tyrone Carter">Representative Tyrone Carter</option>
+<option value="CamCavitt@house.mi.gov|Representative Cam Cavitt">Representative Cam Cavitt</option>
+<option value="BetsyCoffia@house.mi.gov|Representative Betsy Coffia">Representative Betsy Coffia</option>
+<option value="JenniferConlin@house.mi.gov|Representative Jennifer Conlin">Representative Jennifer Conlin</option>
+<option value="NancyDeBoer@house.mi.gov|Representative Nancy DeBoer">Representative Nancy DeBoer</option>
+<option value="JayDeBoyer@house.mi.gov|Representative Jay DeBoyer">Representative Jay DeBoyer</option>
+<option value="JamesDeSana@house.mi.gov|Representative James DeSana">Representative James DeSana</option>
+<option value="EmilyDievendorf@house.mi.gov|Representative Emily Dievendorf">Representative Emily Dievendorf</option>
+<option value="KimberlyEdwards@house.mi.gov|Representative Kimberly Edwards">Representative Kimberly Edwards</option>
+<option value="ParkerFairbairn@house.mi.gov|Representative Parker Fairbairn">Representative Parker Fairbairn</option>
+<option value="AlabasFarhat@house.mi.gov|Representative Alabas Farhat">Representative Alabas Farhat</option>
+<option value="JohnFitzgerald@house.mi.gov|Representative John Fitzgerald">Representative John Fitzgerald</option>
+<option value="MorganForeman@house.mi.gov|Representative Morgan Foreman">Representative Morgan Foreman</option>
+<option value="JosephFox@house.mi.gov|Representative Joseph Fox">Representative Joseph Fox</option>
+<option value="SteveFrisbie@house.mi.gov|Representative Steve Frisbie">Representative Steve Frisbie</option>
+<option value="CAGlanville@house.mi.gov|Representative Carol Glanville">Representative Carol Glanville</option>
+<option value="KristianGrant@house.mi.gov|Representative Kristian Grant">Representative Kristian Grant</option>
+<option value="RepPhilGreen@house.mi.gov|Representative Phil Green">Representative Phil Green</option>
+<option value="JaimeGreene@house.mi.gov|Representative Jaime Greene">Representative Jaime Greene</option>
+<option value="MattHall@house.mi.gov|Representative Matt Hall">Representative Matt Hall</option>
+<option value="MikeHarris@house.mi.gov|Representative Mike Harris">Representative Mike Harris</option>
+<option value="PeterHerzberg@house.mi.gov|Representative Peter Herzberg">Representative Peter Herzberg</option>
+<option value="MikeHoadley@house.mi.gov|Representative Mike Hoadley">Representative Mike Hoadley</option>
+<option value="KaraHope@house.mi.gov|Representative Kara Hope">Representative Kara Hope</option>
+<option value="JasonHoskins@house.mi.gov|Representative Jason Hoskins">Representative Jason Hoskins</option>
+<option value="NancyJenkinsArno@house.mi.gov|Representative Nancy Jenkins-Arno">Representative Nancy Jenkins-Arno</option>
+<option value="GinaJohnsen@house.mi.gov|Representative Gina Johnsen">Representative Gina Johnsen</option>
+<option value="TimKelly@house.mi.gov|Representative Tim Kelly">Representative Tim Kelly</option>
+<option value="MattKoleszar@house.mi.gov|Representative Matt Koleszar">Representative Matt Koleszar</option>
+<option value="TomKuhn@house.mi.gov|Representative Tom Kuhn">Representative Tom Kuhn</option>
+<option value="TomKunse@house.mi.gov|Representative Tom Kunse">Representative Tom Kunse</option>
+<option value="TullioLiberati@house.mi.gov|Representative Tullio Liberati">Representative Tullio Liberati</option>
+<option value="SarahLightner@house.mi.gov|Representative Sarah Lightner">Representative Sarah Lightner</option>
+<option value="RyleeLinting@house.mi.gov|Representative Rylee Linting">Representative Rylee Linting</option>
+<option value="MattLongjohn@house.mi.gov|Representative Matt Longjohn">Representative Matt Longjohn</option>
+<option value="SharonMacDonell@house.mi.gov|Representative Sharon MacDonell">Representative Sharon MacDonell</option>
+<option value="MattMaddock@house.mi.gov|Representative Matt Maddock">Representative Matt Maddock</option>
+<option value="GregMarkkanen@house.mi.gov|Representative Greg Markkanen">Representative Greg Markkanen</option>
+<option value="DavidMartin@house.mi.gov|Representative David Martin">Representative David Martin</option>
+<option value="JasperMartus@house.mi.gov|Representative Jasper Martus">Representative Jasper Martus</option>
+<option value="MikeMcFall@house.mi.gov|Representative Mike McFall">Representative Mike McFall</option>
+<option value="DonavanMcKinney@house.mi.gov|Representative Donavan McKinney">Representative Donavan McKinney</option>
+<option value="LukeMeerman@house.mi.gov|Representative Luke Meerman">Representative Luke Meerman</option>
+<option value="DeniseMentzer@house.mi.gov|Representative Denise Mentzer">Representative Denise Mentzer</option>
+<option value="ReggieMiller@house.mi.gov|Representative Reggie Miller">Representative Reggie Miller</option>
+<option value="JasonMorgan@house.mi.gov|Representative Jason Morgan">Representative Jason Morgan</option>
+<option value="MikeMueller@house.mi.gov|Representative Mike Mueller">Representative Mike Mueller</option>
+<option value="TonyaMyersPhillips@house.mi.gov|Representative Tonya Myers-Phillips">Representative Tonya Myers-Phillips</option>
+<option value="CynthiaNeeley@house.mi.gov|Representative Cynthia Neeley">Representative Cynthia Neeley</option>
+<option value="JerryNeyer@house.mi.gov|Representative Jerry Neyer">Representative Jerry Neyer</option>
+<option value="AmosONeal@house.mi.gov|Representative Amos O'Neal">Representative Amos O'Neal</option>
+<option value="PatOutman@house.mi.gov|Representative Pat Outman">Representative Pat Outman</option>
+<option value="VeronicaPaiz@house.mi.gov|Representative Veronica Paiz">Representative Veronica Paiz</option>
+<option value="BradPaquette@house.mi.gov|Representative Brad Paquette">Representative Brad Paquette</option>
+<option value="JosephPavlov@house.mi.gov|Representative Joseph Pavlov">Representative Joseph Pavlov</option>
+<option value="LauriePohutsky@house.mi.gov|Representative Laurie Pohutsky">Representative Laurie Pohutsky</option>
+<option value="BryanPosthumus@house.mi.gov|Representative Bryan Posthumus">Representative Bryan Posthumus</option>
+<option value="DavePrestin@house.mi.gov|Representative Dave Prestin">Representative Dave Prestin</option>
+<option value="NataliePrice@house.mi.gov|Representative Natalie Price">Representative Natalie Price</option>
+<option value="RanjeevPuri@house.mi.gov|Representative Ranjeev Puri">Representative Ranjeev Puri</option>
+<option value="CarrieRheingans@house.mi.gov|Representative Carrie Rheingans">Representative Carrie Rheingans</option>
+<option value="AngelaRigas@house.mi.gov|Representative Angela Rigas">Representative Angela Rigas</option>
+<option value="RonRobinson@house.mi.gov|Representative Ron Robinson">Representative Ron Robinson</option>
+<option value="JulieRogers@house.mi.gov|Representative Julie Rogers">Representative Julie Rogers</option>
+<option value="JohnRoth@house.mi.gov|Representative John Roth">Representative John Roth</option>
+<option value="KathySchmaltz@house.mi.gov|Representative Kathy Schmaltz">Representative Kathy Schmaltz</option>
+<option value="JoshSchriver@house.mi.gov|Representative Josh Schriver">Representative Josh Schriver</option>
+<option value="BillSchuette@house.mi.gov|Representative Bill Schuette">Representative Bill Schuette</option>
+<option value="HelenaScott@house.mi.gov|Representative Helena Scott">Representative Helena Scott</option>
+<option value="PhilSkaggs@house.mi.gov|Representative Phil Skaggs">Representative Phil Skaggs</option>
+<option value="BradleySlagh@house.mi.gov|Representative Bradley Slagh">Representative Bradley Slagh</option>
+<option value="RachelleSmit@house.mi.gov|Representative Rachelle Smit">Representative Rachelle Smit</option>
+<option value="WillSnyder@house.mi.gov|Representative Will Snyder">Representative Will Snyder</option>
+<option value="AliciaStGermaine@house.mi.gov|Representative Alicia St. Germaine">Representative Alicia St. Germaine</option>
+<option value="SamanthaSteckloff@house.mi.gov|Representative Samantha Steckloff">Representative Samantha Steckloff</option>
+<option value="DonniSteele@house.mi.gov|Representative Donni Steele">Representative Donni Steele</option>
+<option value="JoeTate@house.mi.gov|Representative Joe Tate">Representative Joe Tate</option>
+<option value="JamieThompson@house.mi.gov|Representative Jamie Thompson">Representative Jamie Thompson</option>
+<option value="MarkTisdel@house.mi.gov|Representative Mark Tisdel">Representative Mark Tisdel</option>
+<option value="PenelopeTsernoglou@house.mi.gov|Representative Penelope Tsernoglou">Representative Penelope Tsernoglou</option>
+<option value="CurtisVanderWall@house.mi.gov|Representative Curtis VanderWall">Representative Curtis VanderWall</option>
+<option value="GregVanWoerkom@house.mi.gov|Representative Greg VanWoerkom">Representative Greg VanWoerkom</option>
+<option value="DylanWegela@house.mi.gov|Representative Dylan Wegela">Representative Dylan Wegela</option>
+<option value="ReginaWeiss@house.mi.gov|Representative Regina Weiss">Representative Regina Weiss</option>
+<option value="PaulineWendzel@house.mi.gov|Representative Pauline Wendzel">Representative Pauline Wendzel</option>
+<option value="KarenWhitsett@house.mi.gov|Representative Karen Whitsett">Representative Karen Whitsett</option>
+<option value="JimmieWilson@house.mi.gov|Representative Jimmie Wilson Jr.">Representative Jimmie Wilson Jr.</option>
+<option value="AngelaWitwer@house.mi.gov|Representative Angela Witwer">Representative Angela Witwer</option>
+<option value="StephenWooden@house.mi.gov|Representative Stephen Wooden">Representative Stephen Wooden</option>
+<option value="JasonWoolford@house.mi.gov|Representative Jason Woolford">Representative Jason Woolford</option>
+<option value="JenniferWortz@house.mi.gov|Representative Jennifer Wortz">Representative Jennifer Wortz</option>
+<option value="DouglasWozniak@house.mi.gov|Representative Douglas Wozniak">Representative Douglas Wozniak</option>
+<option value="MaiXiong@house.mi.gov|Representative Mai Xiong">Representative Mai Xiong</option>
+<option value="StephanieYoung@house.mi.gov|Representative Stephanie Young">Representative Stephanie Young</option>
+</select>
+
+        <label for="mihouse-message">Your Message:</label>
+        <textarea id="mihouse-message" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+
+        <button class="btn" onclick="generateEmail('mihouse')">Generate Email</button>
+
+        <div id="preview-mihouse" style="margin-top:20px; display:none">
+          <h3>Your Draft Email:</h3>
+          <p id="emailBody-mihouse" style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; background:#121832;"></p>
+          <a id="mailtoLink-mihouse" class="btn" style="margin-top:10px; display:inline-block" href="#">Open Email App →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>GasStationHeroin.org is a public-health awareness project by <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">Mothers Against Herbal Abuse (MAHA)</a>. © <span id="y">2025</span></p>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    function generateEmail(chamber) {
+      const dropdown = document.getElementById(chamber);
+      const messageField = document.getElementById(`${chamber}-message`);
+      const previewBox = document.getElementById(`preview-${chamber}`);
+      const output = document.getElementById(`emailBody-${chamber}`);
+      const link = document.getElementById(`mailtoLink-${chamber}`);
+
+      const selected = Array.from(dropdown.selectedOptions);
+      const message = messageField.value.trim();
+
+      if (!selected.length) {
+        alert("Please select at least one " + chamber + " member.");
+        return;
+      }
+
+      const recipients = selected.map(opt => opt.value.split('|')[0]).join(',');
+      const names = selected.map(opt => opt.value.split('|')[1]).join(', ');
+
+      const full = `Dear ${names},\n\n${message}\n\nSincerely,\n[Your Name]`;
+
+      output.textContent = full;
+      previewBox.style.display = 'block';
+      link.href = `mailto:${recipients}?subject=Support a Kratom Ban in Michigan&body=${encodeURIComponent(full)}`;
+    }
+  </script>
+</body>
+</html>
