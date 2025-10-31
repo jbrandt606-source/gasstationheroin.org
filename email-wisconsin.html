@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Wisconsin Lawmakers • Gas Station Heroin</title>
+  <meta name="description" content="Send a personalized email to any Wisconsin State Senator or Representative asking them to support a ban on kratom." />
+  <meta name="keywords" content="email wisconsin lawmakers, ban kratom, maha, gas station heroin, wisconsin senate, wisconsin assembly, kratom outreach" />
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div class="brand"><span class="dot"></span>Gas Station Heroin<span style="font-weight:400"> • A MAHA Project</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap" id="email-wi-senate">
+      <h1>Email a Wisconsin State Senator</h1>
+      <p>Select one or more senators and write your message. A pre-filled email will open in your email app.</p>
+      <div class="card">
+        <label for="wi-senator">Choose Senators:</label>
+        <select id="wi-senator" multiple size="12" style="width:100%; margin-bottom:10px">
+          <option value="Sen.Bradley@legis.wisconsin.gov|Senator Julian Bradley">Senator Julian Bradley</option>
+          <option value="Sen.Cabral-Guevara@legis.wisconsin.gov|Senator Rachael Cabral-Guevara">Senator Rachael Cabral-Guevara</option>
+          <option value="Sen.Carpenter@legis.wisconsin.gov|Senator Tim Carpenter">Senator Tim Carpenter</option>
+          <option value="Sen.Dassler-Alfheim@legis.wisconsin.gov|Senator Kristin Dassler-Alfheim">Senator Kristin Dassler-Alfheim</option>
+          <option value="Sen.Drake@legis.wisconsin.gov|Senator Dora Drake">Senator Dora Drake</option>
+          <option value="Sen.Felzkowski@legis.wisconsin.gov|Senator Mary Felzkowski">Senator Mary Felzkowski</option>
+          <option value="Sen.Feyen@legis.wi.gov|Senator Dan Feyen">Senator Dan Feyen</option>
+          <option value="Sen.HabushSinykin@legis.wisconsin.gov|Senator Jodi Habush Sinykin">Senator Jodi Habush Sinykin</option>
+          <option value="Sen.Hesselbein@legis.wisconsin.gov|Senator Dianne Hesselbein">Senator Dianne Hesselbein</option>
+          <option value="Sen.Hutton@legis.wisconsin.gov|Senator Rob Hutton">Senator Rob Hutton</option>
+          <option value="Sen.Jacque@legis.wisconsin.gov|Senator André Jacque">Senator André Jacque</option>
+          <option value="Sen.Jagler@legis.wisconsin.gov|Senator John Jagler">Senator John Jagler</option>
+          <option value="Sen.James@legis.wisconsin.gov|Senator Jesse James">Senator Jesse James</option>
+          <option value="Sen.Johnson@legis.wisconsin.gov|Senator LaTonya Johnson">Senator LaTonya Johnson</option>
+          <option value="Sen.Kapenga@legis.wisconsin.gov|Senator Chris Kapenga">Senator Chris Kapenga</option>
+          <option value="Sen.Keyeski@legis.wisconsin.gov|Senator Sarah Keyeski">Senator Sarah Keyeski</option>
+          <option value="Sen.Larson@legis.wisconsin.gov|Senator Chris Larson">Senator Chris Larson</option>
+          <option value="Sen.LeMahieu@legis.wisconsin.gov|Senator Devin LeMahieu">Senator Devin LeMahieu</option>
+          <option value="Sen.Marklein@legis.wi.gov|Senator Howard Marklein">Senator Howard Marklein</option>
+          <option value="Sen.Nass@legis.wisconsin.gov|Senator Steve Nass">Senator Steve Nass</option>
+          <option value="Sen.Pfaff@legis.wisconsin.gov|Senator Brad Pfaff">Senator Brad Pfaff</option>
+          <option value="Sen.Quinn@legis.wisconsin.gov|Senator Romaine Quinn">Senator Romaine Quinn</option>
+          <option value="Sen.Ratcliff@legis.wisconsin.gov|Senator Melissa Ratcliff">Senator Melissa Ratcliff</option>
+          <option value="Sen.Roys@legis.wisconsin.gov|Senator Kelda Roys">Senator Kelda Roys</option>
+          <option value="Sen.Smith@legis.wisconsin.gov|Senator Jeff Smith">Senator Jeff Smith</option>
+          <option value="Sen.Spreitzer@legis.wisconsin.gov|Senator Mark Spreitzer">Senator Mark Spreitzer</option>
+          <option value="Sen.Stafsholt@legis.wisconsin.gov|Senator Rob Stafsholt">Senator Rob Stafsholt</option>
+          <option value="Sen.Testin@legis.wisconsin.gov|Senator Patrick Testin">Senator Patrick Testin</option>
+          <option value="Sen.Tomczyk@legis.wisconsin.gov|Senator Cory Tomczyk">Senator Cory Tomczyk</option>
+          <option value="Sen.Wall@legis.wisconsin.gov|Senator Jamie Wall">Senator Jamie Wall</option>
+          <option value="Sen.Wanggaard@legis.wisconsin.gov|Senator Van Wanggaard">Senator Van Wanggaard</option>
+          <option value="Sen.Wimberger@legis.wisconsin.gov|Senator Eric Wimberger">Senator Eric Wimberger</option>
+          <option value="Sen.Wirch@legis.wisconsin.gov|Senator Robert Wirch">Senator Robert Wirch</option>
+        </select>
+        <label for="story-senate">Your Message:</label>
+        <textarea id="story-senate" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+        <button class="btn" onclick="generateEmail('wi-senator')">Generate Email</button>
+        <div id="emailPreview-senate" style="margin-top:20px; display:none">
+          <h3>Your Draft Email:</h3>
+          <p id="emailBody-senate" style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; background:#121832;"></p>
+          <a id="mailtoLink-senate" class="btn" style="margin-top:10px; display:inline-block" href="#">Open Email App →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="email-wi-house" style="margin-top:60px">
+      <h1>Email a Wisconsin State Representative</h1>
+      <p>Select one or more representatives and write your message. A pre-filled email will open in your email app.</p>
+      <div class="card">
+        <label for="wi-house">Choose Representatives:</label>
+        <select id="wi-house" multiple size="12" style="width:100%; margin-bottom:10px">
+          <option value="Rep.Allen@legis.wisconsin.gov|Representative Scott Allen">Representative Scott Allen</option>
+<option value="Rep.CAnderson@legis.wisconsin.gov|Representative Clinton Anderson">Representative Clinton Anderson</option>
+<option value="Rep.Andraca@legis.wisconsin.gov|Representative Deb Andraca">Representative Deb Andraca</option>
+<option value="Rep.Armstrong@legis.wisconsin.gov|Representative David Armstrong">Representative David Armstrong</option>
+<option value="Rep.Arney@legis.wisconsin.gov|Representative Margaret Arney">Representative Margaret Arney</option>
+<option value="Rep.August@legis.wisconsin.gov|Representative Tyler August">Representative Tyler August</option>
+<option value="Rep.Bare@legis.wisconsin.gov|Representative Mike Bare">Representative Mike Bare</option>
+<option value="Rep.Behnke@legis.wisconsin.gov|Representative Elijah Behnke">Representative Elijah Behnke</option>
+<option value="Rep.Billings@legis.wisconsin.gov|Representative Jill Billings">Representative Jill Billings</option>
+<option value="Rep.Born@legis.wisconsin.gov|Representative Mark Born">Representative Mark Born</option>
+<option value="Rep.Brill@legis.wisconsin.gov|Representative Lindee Brill">Representative Lindee Brill</option>
+<option value="Rep.Rob.Brooks@legis.wisconsin.gov|Representative Robert Brooks">Representative Robert Brooks</option>
+<option value="Rep.Brown@legis.wisconsin.gov|Representative Brienne Brown">Representative Brienne Brown</option>
+<option value="Rep.Callahan@legis.wisconsin.gov|Representative Calvin Callahan">Representative Calvin Callahan</option>
+<option value="Rep.Clancy@legis.wisconsin.gov|Representative Ryan Clancy">Representative Ryan Clancy</option>
+<option value="Rep.Cruz@legis.wisconsin.gov|Representative Angelina Cruz">Representative Angelina Cruz</option>
+<option value="Rep.Dallman@legis.wisconsin.gov|Representative Alex Dallman">Representative Alex Dallman</option>
+<option value="Rep.DeSanto@legis.wisconsin.gov|Representative Karen DeSanto">Representative Karen DeSanto</option>
+<option value="Rep.DeSmidt@legis.wisconsin.gov|Representative Ben DeSmidt">Representative Ben DeSmidt</option>
+<option value="Rep.Dittrich@legis.wisconsin.gov|Representative Barbara Dittrich">Representative Barbara Dittrich</option>
+<option value="Rep.Donovan@legis.wisconsin.gov|Representative Bob Donovan">Representative Bob Donovan</option>
+<option value="Rep.Doyle@legis.wisconsin.gov|Representative Steve Doyle">Representative Steve Doyle</option>
+<option value="Rep.Duchow@legis.wisconsin.gov|Representative Cindi Duchow">Representative Cindi Duchow</option>
+<option value="Rep.Emerson@legis.wisconsin.gov|Representative Jodi Emerson">Representative Jodi Emerson</option>
+<option value="Rep.Fitzgerald@legis.wisconsin.gov|Representative Joan Fitzgerald">Representative Joan Fitzgerald</option>
+<option value="Rep.Franklin@legis.wisconsin.gov|Representative Benjamin Franklin">Representative Benjamin Franklin</option>
+<option value="Rep.Goeben@legis.wisconsin.gov|Representative Joy Goeben">Representative Joy Goeben</option>
+<option value="Rep.Goodwin@legis.wisconsin.gov|Representative Russell Goodwin">Representative Russell Goodwin</option>
+<option value="Rep.Green@legis.wisconsin.gov|Representative Chanz Green">Representative Chanz Green</option>
+<option value="Rep.Gundrum@legis.wisconsin.gov|Representative Rick Gundrum">Representative Rick Gundrum</option>
+<option value="Rep.Gustafson@legis.wisconsin.gov|Representative Nate Gustafson">Representative Nate Gustafson</option>
+<option value="Rep.Haywood@legis.wisconsin.gov|Representative Kalan Haywood">Representative Kalan Haywood</option>
+<option value="Rep.Hong@legis.wisconsin.gov|Representative Francesca Hong">Representative Francesca Hong</option>
+<option value="Rep.Hurd@legis.wisconsin.gov|Representative Karen Hurd">Representative Karen Hurd</option>
+<option value="Rep.Hysell@legis.wisconsin.gov|Representative Andrew Hysell">Representative Andrew Hysell</option>
+<option value="Rep.Brent.Jacobson@legis.wisconsin.gov|Representative Brent Jacobson">Representative Brent Jacobson</option>
+<option value="Rep.Jacobson@legis.wisconsin.gov|Representative Jenna Jacobson">Representative Jenna Jacobson</option>
+<option value="Rep.Joers@legis.wisconsin.gov|Representative Alex Joers">Representative Alex Joers</option>
+<option value="Rep.Johnson@legis.wisconsin.gov|Representative Tara Johnson">Representative Tara Johnson</option>
+<option value="Rep.Kaufert@legis.wisconsin.gov|Representative Dean Kaufert">Representative Dean Kaufert</option>
+<option value="Rep.Kirsch@legis.wisconsin.gov|Representative Karen Kirsch">Representative Karen Kirsch</option>
+<option value="Rep.Kitchens@legis.wisconsin.gov|Representative Joel Kitchens">Representative Joel Kitchens</option>
+<option value="Rep.Knodl@legis.wisconsin.gov|Representative Daniel Knodl">Representative Daniel Knodl</option>
+<option value="Rep.Kreibich@legis.wisconsin.gov|Representative Rob Kreibich">Representative Rob Kreibich</option>
+<option value="Rep.Krug@legis.wisconsin.gov|Representative Scott Krug">Representative Scott Krug</option>
+<option value="Rep.Kurtz@legis.wisconsin.gov|Representative Tony Kurtz">Representative Tony Kurtz</option>
+<option value="Rep.Madison@legis.wisconsin.gov|Representative Darrin Madison">Representative Darrin Madison</option>
+<option value="Rep.Maxey@legis.wisconsin.gov|Representative Dave Maxey">Representative Dave Maxey</option>
+<option value="Rep.Mayadev@legis.wisconsin.gov|Representative Renuka Mayadev">Representative Renuka Mayadev</option>
+<option value="Rep.McCarville@legis.wisconsin.gov|Representative Maureen McCarville">Representative Maureen McCarville</option>
+<option value="Rep.McGuire@legis.wisconsin.gov|Representative Tip McGuire">Representative Tip McGuire</option>
+<option value="Rep.Melotik@legis.wisconsin.gov|Representative Paul Melotik">Representative Paul Melotik</option>
+<option value="Rep.Miresse@legis.wisconsin.gov|Representative Vincent Miresse">Representative Vincent Miresse</option>
+<option value="Rep.MooreOmokunde@legis.wisconsin.gov|Representative Supreme Moore Omokunde">Representative Supreme Moore Omokunde</option>
+<option value="Rep.Moses@legis.wisconsin.gov|Representative Clint Moses">Representative Clint Moses</option>
+<option value="Rep.Murphy@legis.wisconsin.gov|Representative David Murphy">Representative David Murphy</option>
+<option value="Rep.Mursau@legis.wisconsin.gov|Representative Jeffrey Mursau">Representative Jeffrey Mursau</option>
+<option value="Rep.Nedweski@legis.wisconsin.gov|Representative Amanda Nedweski">Representative Amanda Nedweski</option>
+<option value="Rep.Neubauer@legis.wisconsin.gov|Representative Greta Neubauer">Representative Greta Neubauer</option>
+<option value="Rep.Neylon@legis.wisconsin.gov|Representative Adam Neylon">Representative Adam Neylon</option>
+<option value="Rep.Novak@legis.wisconsin.gov|Representative Todd Novak">Representative Todd Novak</option>
+<option value="Rep.O'Connor@legis.wisconsin.gov|Representative Jerry O'Connor">Representative Jerry O'Connor</option>
+<option value="Rep.Ortiz-Velez@legis.wisconsin.gov|Representative Sylvia Ortiz-Velez">Representative Sylvia Ortiz-Velez</option>
+<option value="Rep.Palmeri@legis.wisconsin.gov|Representative Lori Palmeri">Representative Lori Palmeri</option>
+<option value="Rep.Penterman@legis.wisconsin.gov|Representative William Penterman">Representative William Penterman</option>
+<option value="Rep.Petersen@legis.wisconsin.gov|Representative Kevin Petersen">Representative Kevin Petersen</option>
+<option value="Rep.Phelps@legis.wisconsin.gov|Representative Christian Phelps">Representative Christian Phelps</option>
+<option value="Rep.Piwowarczyk@legis.wisconsin.gov|Representative Jim Piwowarczyk">Representative Jim Piwowarczyk</option>
+<option value="Rep.Prado@legis.wisconsin.gov|Representative Priscilla Prado">Representative Priscilla Prado</option>
+<option value="Rep.Pronschinske@legis.wisconsin.gov|Representative Treig Pronschinske">Representative Treig Pronschinske</option>
+<option value="Rep.Rivera-Wagner@legis.wisconsin.gov|Representative Amaad Rivera-Wagner">Representative Amaad Rivera-Wagner</option>
+<option value="Rep.Rodriguez@legis.wisconsin.gov|Representative Jessie Rodriguez">Representative Jessie Rodriguez</option>
+<option value="Rep.Roe@legis.wisconsin.gov|Representative Ann Roe">Representative Ann Roe</option>
+<option value="Rep.Sheehan@legis.wisconsin.gov|Representative Joe Sheehan">Representative Joe Sheehan</option>
+<option value="Rep.Sinicki@legis.wisconsin.gov|Representative Christine Sinicki">Representative Christine Sinicki</option>
+<option value="Rep.Snodgrass@legis.wisconsin.gov|Representative Lee Snodgrass">Representative Lee Snodgrass</option>
+<option value="Rep.Snyder@legis.wisconsin.gov|Representative Patrick Snyder">Representative Patrick Snyder</option>
+<option value="Rep.Sortwell@legis.wisconsin.gov|Representative Shae Sortwell">Representative Shae Sortwell</option>
+<option value="Rep.Spaude@legis.wisconsin.gov|Representative Ryan Spaude">Representative Ryan Spaude</option>
+<option value="Rep.Spiros@legis.wisconsin.gov|Representative John Spiros">Representative John Spiros</option>
+<option value="Rep.Steffen@legis.wisconsin.gov|Representative David Steffen">Representative David Steffen</option>
+<option value="Rep.Stroud@legis.wisconsin.gov|Representative Angela Stroud">Representative Angela Stroud</option>
+<option value="Rep.Stubbs@legis.wisconsin.gov|Representative Shelia Stubbs">Representative Shelia Stubbs</option>
+<option value="Rep.Subeck@legis.wisconsin.gov|Representative Lisa Subeck">Representative Lisa Subeck</option>
+<option value="Rep.Summerfield@legis.wisconsin.gov|Representative Rob Summerfield">Representative Rob Summerfield</option>
+<option value="Rep.Swearingen@legis.wisconsin.gov|Representative Rob Swearingen">Representative Rob Swearingen</option>
+<option value="Rep.Taylor@legis.wisconsin.gov|Representative Sequanna Taylor">Representative Sequanna Taylor</option>
+<option value="Rep.Tenorio@legis.wisconsin.gov|Representative Angelito Tenorio">Representative Angelito Tenorio</option>
+<option value="Rep.Tittl@legis.wisconsin.gov|Representative Paul Tittl">Representative Paul Tittl</option>
+<option value="Rep.Tranel@legis.wisconsin.gov|Representative Travis Tranel">Representative Travis Tranel</option>
+<option value="Rep.Tucker@legis.wisconsin.gov|Representative Duke Tucker">Representative Duke Tucker</option>
+<option value="Rep.Tusler@legis.wisconsin.gov|Representative Ron Tusler">Representative Ron Tusler</option>
+<option value="Rep.Udell@legis.wisconsin.gov|Representative Randy Udell">Representative Randy Udell</option>
+<option value="Rep.VanderMeer@legis.wisconsin.gov|Representative Nancy VanderMeer">Representative Nancy VanderMeer</option>
+<option value="Rep.Vining@legis.wisconsin.gov|Representative Robyn Vining">Representative Robyn Vining</option>
+          <option value="Rep.Vos@legis.wisconsin.gov|Representative Robin Vos">Representative Robin Vos</option>
+<option value="Rep.Wichgers@legis.wisconsin.gov|Representative Chuck Wichgers">Representative Chuck Wichgers</option>
+<option value="Rep.Wittke@legis.wisconsin.gov|Representative Robert Wittke">Representative Robert Wittke</option>
+<option value="Rep.Zimmerman@legis.wisconsin.gov|Representative Shannon Zimmerman">Representative Shannon Zimmerman</option>
+        </select>
+        <label for="story-house">Your Message:</label>
+        <textarea id="story-house" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+        <button class="btn" onclick="generateEmail('wi-house')">Generate Email</button>
+        <div id="emailPreview-house" style="margin-top:20px; display:none">
+          <h3>Your Draft Email:</h3>
+          <p id="emailBody-house" style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; background:#121832;"></p>
+          <a id="mailtoLink-house" class="btn" style="margin-top:10px; display:inline-block" href="#">Open Email App →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>GasStationHeroin.org is a public-health awareness project by <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">Mothers Against Herbal Abuse (MAHA)</a>. Visit the full site at <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">mothersagainstherbalabuse.org</a> • © <span id="y">2025</span></p>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    function generateEmail(chamber) {
+      const selectEl = document.getElementById(chamber);
+      const textarea = document.getElementById(chamber === 'wi-house' ? 'story-house' : 'story-senate');
+      const preview = document.getElementById(chamber === 'wi-house' ? 'emailPreview-house' : 'emailPreview-senate');
+      const output = document.getElementById(chamber === 'wi-house' ? 'emailBody-house' : 'emailBody-senate');
+      const link = document.getElementById(chamber === 'wi-house' ? 'mailtoLink-house' : 'mailtoLink-senate');
+
+      const selected = Array.from(selectEl.selectedOptions);
+      const story = textarea.value.trim();
+
+      if (!selected.length) {
+        alert("Please select at least one lawmaker.");
+        return;
+      }
+
+      const recipients = selected.map(opt => opt.value.split('|')[0]).join(',');
+      const names = selected.map(opt => opt.value.split('|')[1]).join(', ');
+      const message = `Dear ${names},\n\n${story}\n\nSincerely,\n[Your Name]`;
+
+      output.textContent = message;
+      preview.style.display = 'block';
+      link.href = `mailto:?bcc=${recipients}&subject=Support a Kratom Ban in Wisconsin&body=${encodeURIComponent(message)}`;
+    }
+  </script>
+</body>
+</html>
