@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Kratom Bans | MAHA</title>
 
- <!-- Google Analytics -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-P31PD1SSTD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,10 +13,7 @@
     gtag('js', new Date());
     gtag('config', 'G-P31PD1SSTD');
   </script>
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support Kratom Bans | MAHA</title>
+
   <style>
     :root {
       --bg: #0b1020;
@@ -25,92 +25,215 @@
       --warn: #ffcc66;
       --radius: 12px;
     }
-    body { background: var(--bg); color: var(--ink); font-family: system-ui, sans-serif; max-width: 880px; margin: 40px auto; padding: 24px; line-height: 1.6; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, sans-serif;
+      max-width: 880px;
+      margin: 40px auto;
+      padding: 24px;
+      line-height: 1.6;
+    }
+
     h1, h2 { color: var(--accent); }
-    .card { background: var(--card); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 20px; margin-bottom: 24px; }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
     ul { padding-left: 20px; }
     li { margin-bottom: 8px; }
-    .policy-note { background: #1a223d; border-left: 4px solid var(--accent); padding: 16px; border-radius: var(--radius); margin-top: 20px; }
-    .story-box, .letter-box { background: #1a223d; border-left: 4px solid var(--warn); padding: 16px; border-radius: var(--radius); margin-top: 24px; }
-    textarea, select { width: 100%; padding: 10px; font-size: 1rem; margin-top: 10px; border-radius: 6px; background: #0f1428; color: var(--ink); border: 1px solid #2c3248; }
-    textarea#output { background: #10182a; white-space: pre-wrap; height: 320px; font-size: 1rem; line-height: 1.5; padding: 12px; }
-    button { padding: 10px 16px; font-size: 1rem; background: var(--accent); color: white; border: none; border-radius: 6px; cursor: pointer; margin-top: 10px; }
+
+    .policy-note {
+      background: #1a223d;
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      border-radius: var(--radius);
+      margin-top: 20px;
+    }
+
+    .letter-box {
+      background: #1a223d;
+      border-left: 4px solid var(--warn);
+      padding: 16px;
+      border-radius: var(--radius);
+      margin-top: 24px;
+    }
+
+    textarea, select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 10px;
+      border-radius: 6px;
+      background: #0f1428;
+      color: var(--ink);
+      border: 1px solid #2c3248;
+    }
+
+    textarea#output {
+      background: #10182a;
+      white-space: pre-wrap;
+      height: 320px;
+      font-size: 1rem;
+      line-height: 1.5;
+      padding: 12px;
+    }
+
+    button {
+      padding: 10px 16px;
+      font-size: 1rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
     button:hover { background: #4e8efc; }
-    label { font-weight: 600; display: block; margin-top: 16px; color: var(--muted); }
-    .btn { background: var(--accent2); color: #fff; padding: 12px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 16px; }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 16px;
+      color: var(--muted);
+    }
+
+    .btn {
+      background: var(--accent2);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 16px;
+    }
     .btn:hover { background: #b91d1d; }
+
+    /* Password screen */
+    #password-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: var(--ink);
+      background: var(--bg);
+      text-align: center;
+    }
+
+    #password-input {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #333;
+      background: #0f1428;
+      color: var(--ink);
+      margin-top: 12px;
+    }
+
+    #main-content { display: none; }
   </style>
 </head>
 <body>
-  <h1>Support Kratom Bans</h1>
-  <div class="card">
-    <p>Kratom and its active alkaloids are associated with increasing rates of poisonings, hospitalizations, and deaths — yet these products remain unregulated in many states. MAHA supports efforts to restrict the sale and marketing of kratom through statewide bans, scheduling, or emergency actions. Here's why:</p>
+  <div id="password-screen">
+    <h1>Restricted Page</h1>
+    <p>Please enter the password to view this section.</p>
+    <input type="password" id="password-input" placeholder="Enter password" />
+    <button onclick="checkPassword()">Submit</button>
+    <p id="error" style="color: var(--accent2); margin-top: 10px;"></p>
+  </div>
 
-    <h2>Key Harm Statistics</h2>
-    <ul>
-      <li>CDC SUDORS reported <strong>1,151 kratom-related deaths</strong> in 2023 alone.</li>
-      <li>Florida ME listed <strong>516 kratom-caused deaths</strong> from 2020–2023.</li>
-      <li>NPDS logged <strong>10,272 kratom exposures</strong> — <strong>45% hospitalized</strong>.</li>
-      <li>FDA FAERS: <strong>1,437 adverse events</strong>, <strong>707 involved death</strong>.</li>
-      <li>FDA CAERS: <strong>189 hospitalizations</strong>, <strong>188 dependence cases</strong>.</li>
-    </ul>
+  <div id="main-content">
+    <h1>Support Kratom Bans</h1>
+    <div class="card">
+      <p>Kratom and its active alkaloids are associated with increasing rates of poisonings, hospitalizations, and deaths — yet these products remain unregulated in many states. MAHA supports efforts to restrict the sale and marketing of kratom through statewide bans, scheduling, or emergency actions. Here's why:</p>
 
-    <div class="policy-note">
-      <strong>Policy Note:</strong><br>
-      Targeting only <em>7-hydroxymitragynine (7-OH)</em> is not enough. Most poisonings and deaths are caused by full-plant kratom and its primary alkaloid, <strong>mitragynine</strong>. Partial bans leave the primary threat untouched.
+      <h2>Key Harm Statistics</h2>
+      <ul>
+        <li>CDC SUDORS reported <strong>1,151 kratom-related deaths</strong> in 2023 alone.</li>
+        <li>Florida ME listed <strong>516 kratom-caused deaths</strong> from 2020–2023.</li>
+        <li>NPDS logged <strong>10,272 kratom exposures</strong> — <strong>45% hospitalized</strong>.</li>
+        <li>FDA FAERS: <strong>1,437 adverse events</strong>, <strong>707 involved death</strong>.</li>
+        <li>FDA CAERS: <strong>189 hospitalizations</strong>, <strong>188 dependence cases</strong>.</li>
+      </ul>
+
+      <div class="policy-note">
+        <strong>Policy Note:</strong><br>
+        Targeting only <em>7-hydroxymitragynine (7-OH)</em> is not enough. Most poisonings and deaths are caused by full-plant kratom and its primary alkaloid, <strong>mitragynine</strong>. Partial bans leave the primary threat untouched.
+      </div>
+    </div>
+
+    <div class="letter-box">
+      <h2>Generate a Custom Letter to Lawmakers</h2>
+      <label for="factSelect">Choose up to 3 harm statistics:</label>
+      <select id="factSelect" multiple size="20">
+        <option value="• CDC SUDORS recorded 1,151 kratom-related deaths in 2023.">CDC SUDORS: 1,151 deaths (2023)</option>
+        <option value="• CDC SUDORS recorded 1,017 kratom-related deaths in 2022.">CDC SUDORS: 1,017 deaths (2022)</option>
+        <option value="• CDC SUDORS recorded 1,016 kratom-related deaths in 2021.">CDC SUDORS: 1,016 deaths (2021)</option>
+        <option value="• CDC SUDORS recorded 866 kratom-related deaths in 2020.">CDC SUDORS: 866 deaths (2020)</option>
+        <option value="• 152 kratom-positive deaths were recorded across 27 states in 2016–2017; ~60% listed kratom as cause.">CDC SUDORS: 152 deaths (2016–2017, 27 states)</option>
+        <option value="• Florida recorded 1,133 mitragynine detections from 2020–2023.">Florida MEC: 1,133 detections (2020–2023)</option>
+        <option value="• 516 of Florida’s mitragynine detections were deemed causal in deaths.">Florida MEC: 516 deaths (causal)</option>
+        <option value="• 274 mitragynine detections occurred in Florida in 2023 alone.">Florida MEC: 274 detections (2023)</option>
+        <option value="• 182 of those 274 Florida detections in 2023 were judged as cause of death.">Florida MEC: 182 deaths (causal, 2023)</option>
+        <option value="• NPDS reported 10,272 kratom exposures from 2014–2023.">NPDS: 10,272 exposures (2014–2023)</option>
+        <option value="• 54.2% of single-substance kratom poison center calls had serious outcomes.">NPDS: 54.2% serious outcomes (single-agent)</option>
+        <option value="• 45.3% of kratom exposures required hospital admission.">NPDS: 45.3% hospitalized</option>
+        <option value="• NPDS documented at least 11 kratom-related deaths, including 2 kratom-only.">NPDS: 11 deaths (2 kratom-only)</option>
+        <option value="• FDA FAERS contains 1,437 mitragynine-related adverse event reports.">FDA FAERS: 1,437 reports</option>
+        <option value="• 1,343 of those FAERS reports were classified as serious (93.5%).">FDA FAERS: 1,343 serious (93.5%)</option>
+        <option value="• 707 FAERS reports listed death as an outcome (~49%).">FDA FAERS: 707 deaths</option>
+        <option value="• FDA CAERS contains 725 kratom product adverse event reports.">FDA CAERS: 725 reports</option>
+        <option value="• CAERS reports include 189 hospitalizations and 188 dependence cases.">FDA CAERS: 189 hospitalizations, 188 dependence</option>
+        <option value="• 7-OH exposure led to 11 cases requiring healthcare intervention in Texas.">Texas: 11 treated 7-OH exposures</option>
+        <option value="• FDA issued first-ever mandatory food recall for kratom powder.">FDA: first-ever mandatory food recall = kratom</option>
+        <option value="• FDA issued multiple warning letters against 7-OH-enriched pills, shots, and gummies.">FDA: multiple 7-OH warning letters</option>
+        <option value="• Case reports link kratom use to seizures, coma, liver injury, and intubation.">Case reports: seizures, coma, liver injury</option>
+        <option value="• Naloxone-responsive respiratory depression has been documented after kratom ingestion.">Kratom: naloxone-responsive respiratory depression</option>
+        <option value="• Neonatal Abstinence Syndrome (NAS) reported in infants exposed to kratom in utero.">NAS: opioid-like withdrawal in kratom-exposed newborns</option>
+        <option value="• Kratom withdrawal symptoms include insomnia, GI upset, myalgia, and anxiety.">Kratom withdrawal: insomnia, GI upset, anxiety</option>
+        <option value="• Buprenorphine–naloxone is often used to treat kratom dependence.">Kratom dependence: treated with buprenorphine</option>
+        <option value="• Systematic reviews confirm kratom causes opioid-like withdrawal and dependence.">Systematic reviews: kratom causes opioid-like withdrawal</option>
+        <option value="• More than 10 kratom-related wrongful-death and consumer lawsuits have been filed.">10+ kratom-related lawsuits filed (2024–2025)</option>
+        <option value="• FDA and CDC warn kratom carries opioid-class risks including overdose and addiction.">FDA + CDC: kratom = opioid-class risks</option>
+        <option value="• FDA lab tests found kratom products contaminated with lead and nickel.">FDA: kratom contaminated with heavy metals</option>
+        <option value="• Kratom is 4.4–7.4× more common in poison center calls than other legal highs.">NPDS: kratom 4–7x more common than other highs</option>
+      </select>
+
+      <label for="story">Your Personal Story (optional):</label>
+      <textarea id="story" placeholder="Describe how kratom has impacted your family or community..."></textarea>
+
+      <button onclick="generateLetter()">Generate Letter</button>
+
+      <label for="output">Your Draft Letter:</label>
+      <textarea id="output" readonly></textarea>
+
+      <a href="email-ohio.html" class="btn">Help Ohio Ban Kratom →</a>
+      <a href="email-wisconsin.html" class="btn">Help Wisconsin Keep Ban →</a>
+      <a href="email_michigan.html" class="btn">Help Michigan Ban Kratom →</a>
     </div>
   </div>
 
-  <div class="letter-box">
-  <h2>Generate a Custom Letter to Lawmakers</h2>
-  <label for="factSelect">Choose up to 3 harm statistics:</label>
-<select id="factSelect" multiple size="20">
-  <option value="• CDC SUDORS recorded 1,151 kratom-related deaths in 2023.">CDC SUDORS: 1,151 deaths (2023)</option>
-  <option value="• CDC SUDORS recorded 1,017 kratom-related deaths in 2022.">CDC SUDORS: 1,017 deaths (2022)</option>
-  <option value="• CDC SUDORS recorded 1,016 kratom-related deaths in 2021.">CDC SUDORS: 1,016 deaths (2021)</option>
-  <option value="• CDC SUDORS recorded 866 kratom-related deaths in 2020.">CDC SUDORS: 866 deaths (2020)</option>
-  <option value="• 152 kratom-positive deaths were recorded across 27 states in 2016–2017; ~60% listed kratom as cause.">CDC SUDORS: 152 deaths (2016–2017, 27 states)</option>
-  <option value="• Florida recorded 1,133 mitragynine detections from 2020–2023.">Florida MEC: 1,133 detections (2020–2023)</option>
-  <option value="• 516 of Florida’s mitragynine detections were deemed causal in deaths.">Florida MEC: 516 deaths (causal)</option>
-  <option value="• 274 mitragynine detections occurred in Florida in 2023 alone.">Florida MEC: 274 detections (2023)</option>
-  <option value="• 182 of those 274 Florida detections in 2023 were judged as cause of death.">Florida MEC: 182 deaths (causal, 2023)</option>
-  <option value="• NPDS reported 10,272 kratom exposures from 2014–2023.">NPDS: 10,272 exposures (2014–2023)</option>
-  <option value="• 54.2% of single-substance kratom poison center calls had serious outcomes.">NPDS: 54.2% serious outcomes (single-agent)</option>
-  <option value="• 45.3% of kratom exposures required hospital admission.">NPDS: 45.3% hospitalized</option>
-  <option value="• NPDS documented at least 11 kratom-related deaths, including 2 kratom-only.">NPDS: 11 deaths (2 kratom-only)</option>
-  <option value="• FDA FAERS contains 1,437 mitragynine-related adverse event reports.">FDA FAERS: 1,437 reports</option>
-  <option value="• 1,343 of those FAERS reports were classified as serious (93.5%).">FDA FAERS: 1,343 serious (93.5%)</option>
-  <option value="• 707 FAERS reports listed death as an outcome (~49%).">FDA FAERS: 707 deaths</option>
-  <option value="• FDA CAERS contains 725 kratom product adverse event reports.">FDA CAERS: 725 reports</option>
-  <option value="• CAERS reports include 189 hospitalizations and 188 dependence cases.">FDA CAERS: 189 hospitalizations, 188 dependence</option>
-  <option value="• 7-OH exposure led to 11 cases requiring healthcare intervention in Texas.">Texas: 11 treated 7-OH exposures</option>
-  <option value="• FDA issued first-ever mandatory food recall for kratom powder.">FDA: first-ever mandatory food recall = kratom</option>
-  <option value="• FDA issued multiple warning letters against 7-OH-enriched pills, shots, and gummies.">FDA: multiple 7-OH warning letters</option>
-  <option value="• Case reports link kratom use to seizures, coma, liver injury, and intubation.">Case reports: seizures, coma, liver injury</option>
-  <option value="• Naloxone-responsive respiratory depression has been documented after kratom ingestion.">Kratom: naloxone-responsive respiratory depression</option>
-  <option value="• Neonatal Abstinence Syndrome (NAS) reported in infants exposed to kratom in utero.">NAS: opioid-like withdrawal in kratom-exposed newborns</option>
-  <option value="• Kratom withdrawal symptoms include insomnia, GI upset, myalgia, and anxiety.">Kratom withdrawal: insomnia, GI upset, anxiety</option>
-  <option value="• Buprenorphine–naloxone is often used to treat kratom dependence.">Kratom dependence: treated with buprenorphine</option>
-  <option value="• Systematic reviews confirm kratom causes opioid-like withdrawal and dependence.">Systematic reviews: kratom causes opioid-like withdrawal</option>
-  <option value="• More than 10 kratom-related wrongful-death and consumer lawsuits have been filed.">10+ kratom-related lawsuits filed (2024–2025)</option>
-  <option value="• FDA and CDC warn kratom carries opioid-class risks including overdose and addiction.">FDA + CDC: kratom = opioid-class risks</option>
-  <option value="• FDA lab tests found kratom products contaminated with lead and nickel.">FDA: kratom contaminated with heavy metals</option>
-  <option value="• Kratom is 4.4–7.4× more common in poison center calls than other legal highs.">NPDS: kratom 4–7x more common than other highs</option>
-</select>
-
-    <label for="story">Your Personal Story (optional):</label>
-    <textarea id="story" placeholder="Describe how kratom has impacted your family or community..."></textarea>
-
-    <button onclick="generateLetter()">Generate Letter</button>
-
-    <label for="output">Your Draft Letter:</label>
-    <textarea id="output" readonly></textarea>
-    <a href="email-ohio.html" class="btn">Help Ohio Ban Kratom →</a>
-    <a href="email-wisconsin.html" class="btn">Help Wisconsin to Keep Ban →</a>
-    <a href="email_michigan.html" class="btn">Help Michigan Ban Kratom →</a>
-  </div>
-
   <script>
+    // Password Protection
+    function checkPassword() {
+      const input = document.getElementById('password-input').value;
+      const error = document.getElementById('error');
+      if (input === 'fart2025!') {
+        document.getElementById('password-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        window.scrollTo(0,0);
+      } else {
+        error.textContent = 'Incorrect password. Please try again.';
+      }
+    }
+
+    // Letter Generator
     const intros = [
       "As a concerned citizen, I am writing to bring urgent attention to the public health risks posed by kratom products sold across the United States.",
       "I'm reaching out as a parent and citizen deeply troubled by the unregulated sale of kratom in gas stations and vape shops.",
@@ -124,11 +247,9 @@
       "This state has the opportunity to lead on this issue and protect vulnerable populations from a poorly understood and unregulated drug."
     ];
 
-    const policyNote = "\n\nPolicy Note:\nTargeting only 7-hydroxymitragynine (7-OH) in regulation is insufficient. The overwhelming majority of kratom-related poisonings, hospitalizations, and deaths are caused by the full kratom plant and its primary alkaloid, mitragynine — not isolated 7-OH. A partial ban would leave the core public health threat untouched."
+    const policyNote = "\n\nPolicy Note:\nTargeting only 7-hydroxymitragynine (7-OH) in regulation is insufficient. The overwhelming majority of kratom-related poisonings, hospitalizations, and deaths are caused by the full kratom plant and its primary alkaloid, mitragynine — not isolated 7-OH. A partial ban would leave the core public health threat untouched.";
 
-    function pickRandom(arr) {
-      return arr[Math.floor(Math.random() * arr.length)];
-    }
+    function pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
     function generateLetter() {
       const intro = pickRandom(intros);
