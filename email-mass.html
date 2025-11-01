@@ -2,22 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Email Massachusetts Lawmakers • Gas Station Heroin</title>
   <meta name="description" content="Send a personalized email to any Massachusetts State Senator or Representative asking them to protect families from kratom." />
   <meta name="keywords" content="email massachusetts lawmakers, ban kratom, MA legislature, Massachusetts Senate, Massachusetts House, MAHA, gas station heroin" />
   <meta name="theme-color" content="#0b1020" />
   <link rel="stylesheet" href="style.css?v=3" />
 </head>
+
 <body>
   <header>
     <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <div class="brand"><span class="dot"></span>Gas Station Heroin<span style="font-weight:400"> • A MAHA Project</span></div>
-      <nav><a href="index.html">Home</a></n>
+      <div class="brand">
+        <span class="dot"></span>Gas Station Heroin
+        <span style="font-weight:400"> • A MAHA Project</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+      </nav>
     </div>
   </header>
 
   <main>
+    <!-- ============ SENATE ============ -->
     <!-- ============ SENATE ============ -->
     <section class="wrap" id="email-ma-senate">
       <h1>Email a Massachusetts State Senator</h1>
@@ -255,15 +262,92 @@
 
 <label for="story-house">Your Message:</label>
 <textarea id="story-house" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+
 <button class="btn" onclick="generateEmail('ma-house')">Generate Email</button>
 
 <div id="emailPreview-house" style="margin-top:20px; display:none">
   <h3>Your Draft Email:</h3>
-  <p id="emailBody-house" style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; background:#121832;"></p>
-  <a id="mailtoLink-house" class="btn" style="margin-top:10px; display:inline-block" href="#">Open Email App →</a>
+  <p id="emailBody-house" 
+     style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); 
+            padding:12px; border-radius:8px; background:#121832;">
+  </p>
+  <a id="mailtoLink-house" 
+     class="btn" 
+     style="margin-top:10px; display:inline-block" 
+     href="#">
+     Open Email App →
+  </a>
 </div>
-</div>
-</section>
+
+</div> <!-- closes the .card div -->
+</section> <!-- closes the entire House section -->
+
+      </main>
+
+  <footer>
+    <p>
+      GasStationHeroin.org is a public-health awareness project by
+      <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">Mothers Against Herbal Abuse (MAHA)</a>.
+      Visit the full site at
+      <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">mothersagainstherbalabuse.org</a>
+      • © <span id="y">2025</span>
+    </p>
+  </footer>
+
+  <script>
+    // Auto-update footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Email generator function for both Senate and House
+    function generateEmail(chamber) {
+      const selectEl = document.getElementById(
+        chamber === 'ma-house' ? 'ma-house' : 'ma-senator'
+      );
+      const textarea = document.getElementById(
+        chamber === 'ma-house' ? 'story-house' : 'story-senate'
+      );
+      const preview = document.getElementById(
+        chamber === 'ma-house' ? 'emailPreview-house' : 'emailPreview-senate'
+      );
+      const output = document.getElementById(
+        chamber === 'ma-house' ? 'emailBody-house' : 'emailBody-senate'
+      );
+      const link = document.getElementById(
+        chamber === 'ma-house' ? 'mailtoLink-house' : 'mailtoLink-senate'
+      );
+
+      const selected = Array.from(selectEl.selectedOptions);
+      const story = textarea.value.trim();
+
+      if (!selected.length) {
+        alert(
+          'Please select at least one ' +
+            (chamber === 'ma-house' ? 'representative' : 'senator') +
+            '.'
+        );
+        return;
+      }
+
+      const recipients = selected.map(opt => opt.value.split('|')[0]).join(',');
+      const names = selected.map(opt => opt.value.split('|')[1]).join(', ');
+      const subject =
+        chamber === 'ma-house'
+          ? 'Protect Massachusetts Families from Kratom'
+          : 'Support a Kratom Ban in Massachusetts';
+
+      const message = `Dear ${names},\n\n${story}\n\nSincerely,\n[Your Name]\n[Your Town], MA`;
+
+      output.textContent = message;
+      preview.style.display = 'block';
+      link.href = `mailto:?bcc=${encodeURIComponent(
+        recipients
+      )}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+        message
+      )}`;
+    }
+  </script>
+</body>
+</html>
         
         
         
