@@ -23,10 +23,14 @@
       <h1>Email a Massachusetts State Senator</h1>
       <p>Select one or more senators and write your message. A pre-filled email will open in your mail app.</p>
 
-      <div class="card">
-        <label for="ma-senator">Choose Senators:</label>
-        <select id="ma-senator" multiple size="14" style="width:100%;margin-bottom:10px">
-          <option value="Mike.Barrett@masenate.gov|Senator Michael Barrett">Senator Michael Barrett</option> <!-- Third Middlesex  [oai_citation:0‡Mass Senate Members.pdf](sediment://file_0000000092a871f798d6cc633cf2acd8) -->
+<section class="wrap" id="email-ma-senate">
+  <h1>Email a Massachusetts State Senator</h1>
+  <p>Select one or more senators and write your message. A pre-filled email will open in your mail app.</p>
+
+  <div class="card">
+    <label for="ma-senator">Choose Senators:</label>
+    <select id="ma-senator" multiple size="12" style="width:100%;margin-bottom:10px">
+<option value="Mike.Barrett@masenate.gov|Senator Michael Barrett">Senator Michael Barrett</option> <!-- Third Middlesex  [oai_citation:0‡Mass Senate Members.pdf](sediment://file_0000000092a871f798d6cc633cf2acd8) -->
 <option value="Michael.Brady@masenate.gov|Senator Michael Brady">Senator Michael Brady</option> <!-- Second Plymouth & Norfolk  [oai_citation:1‡Mass Senate Members.pdf](sediment://file_0000000092a871f798d6cc633cf2acd8) -->
 <option value="William.Brownsberger@masenate.gov|Senator William Brownsberger">Senator William Brownsberger</option> <!-- Suffolk & Middlesex  [oai_citation:2‡Mass Senate Members.pdf](sediment://file_0000000092a871f798d6cc633cf2acd8) -->
 <option value="Nick.Collins@masenate.gov|Senator Nick Collins">Senator Nick Collins</option> <!-- First Suffolk  [oai_citation:3‡Mass Senate Members.pdf](sediment://file_0000000092a871f798d6cc633cf2acd8) -->
@@ -66,9 +70,17 @@
 <option value="Bruce.Tarr@masenate.gov|Senator Bruce E. Tarr">Senator Bruce E. Tarr</option> <!-- First Essex & Middlesex (R)  [oai_citation:36‡Mass Senate Members.pdf](sediment://file_0000000092a871f798d6cc633cf2acd8) -->
 <option value="john.velis@masenate.gov|Senator John C. (Jake) Velis">Senator John C. (Jake) Velis</option> <!-- Hampden & Hampshire  [oai_citation:37‡Mass Senate Members.pdf](sediment://file_0000000092a871f798d6cc633cf2acd8) -->
         </select>
-        <p style="font-size:.9rem;opacity:.8">Senate roster source: Massachusetts Senate Members list.  [oai_citation:33‡Mass Senate Members.pdf](sediment://file_00000000e8b871f79a1b0d0dd6aeb7c6)</p>
-      </div>
-    </section>
+    <label for="story-senate">Your Message:</label>
+    <textarea id="story-senate" rows="6" style="width:100%;margin-bottom:10px"></textarea>
+    <button class="btn" onclick="generateEmail('ma-senate')">Generate Email</button>
+
+    <div id="emailPreview-senate" style="margin-top:20px;display:none">
+      <h3>Your Draft Email:</h3>
+      <p id="emailBody-senate" style="white-space:pre-wrap;border:1px solid rgba(255,255,255,0.1);padding:12px;border-radius:8px;background:#121832"></p>
+      <a id="mailtoLink-senate" class="btn" style="margin-top:10px;display:inline-block" href="#">Open Email App →</a>
+    </div>
+  </div>
+</section>
 
     <!-- ============ HOUSE ============ -->
     <section class="wrap" id="email-ma-house" style="margin-top:40px">
