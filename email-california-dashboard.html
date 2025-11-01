@@ -1,1 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>California Senators — Fast Contact Dashboard</title>
+<meta name="description" content="Speed-run contact forms for California Senators: clipboard helpers, templating, batch open, and bookmarklet autofill.">
+<style>
+  :root { --bg:#0b0c10; --card:#121318; --ink:#e8ecf1; --muted:#a5b0bd; --accent:#62d3ff; --good:#44d16f; --warn:#ffcf5a; --bad:#ff6b6b; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial; background:var(--bg); color:var(--ink); }
+  header { position:sticky; top:0; background:rgba(11,12,16,.8); backdrop-filter:saturate(1.2) blur(8px); border-bottom:1px solid #1c1e26; z-index:50; }
+  .wrap{max-width:1100px;margin:0 auto;padding:14px 18px;}
+  h1{margin:0;font-size:20px;letter-spacing:.2px}
+  main{max-width:1100px;margin:18px auto;display:grid;grid-template-columns:380px 1fr;gap:16px;padding:0 18px}
+  .card{background:var(--card); border:1px solid #1c1e26; border-radius:14px; padding:14px}
+  .section-title{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin:4px 0 10px}
+  label{font-size:12px;color:var(--muted);display:block;margin:10px 0 6px}
+  input, textarea{width:100%; background:#0d0f14; color:var(--ink); border:1px solid #222532; border-radius:10px; padding:10px 12px; font:inherit}
+  textarea{min-height:120px; line-height:1.4; resize:vertical}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .row{display:flex;gap:8px;flex-wrap:wrap}
+  button, .btn{background:#191c25; color:var(--ink); border:1px solid #2a2e3b; border-radius:10px; padding:9px 12px; cursor:pointer; font-weight:600}
+  button:hover,.btn:hover{border-color:#3b4052}
+  .btn-accent{border-color:#2e4759;background:#10222c;color:#cfefff}
+  .btn-good{border-color:#214430;background:#0f1f17;color:#caffd7}
+  .btn-warn{border-color:#5a4821;background:#1f1a0f;color:#ffe9b8}
+  .btn-bad{border-color:#5a2221;background:#1f1110;color:#ffc8c8}
+  .muted{color:var(--muted);font-size:12px}
+  .list{display:flex;flex-direction:column;gap:10px;max-height:70vh;overflow:auto;padding-right:4px}
+  .senator{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px;border:1px solid #1f2230;border-radius:12px;background:#0d0f14}
+  .senator .name{font-weight:700}
+  .senator .meta{font-size:12px;color:var(--muted)}
+  .senator .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .badge{font-size:11px;border:1px solid #2b3042;padding:2px 8px;border-radius:20px;color:#c6cbe0}
+  .sent{border-color:#1f3a2a;background:#0e1a14}
+  .progress{height:8px;background:#14161c;border-radius:99px;overflow:hidden}
+  .progress > div{height:100%;background:linear-gradient(90deg,var(--good),#5be39b);width:0%}
+  .kbd{font-size:11px;padding:1px 6px;border:1px solid #2a2e3b;border-bottom-width:2px;border-radius:6px;background:#10131a;color:#c9cfdf}
+  .small{font-size:12px}
+  .pill { display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px dashed #334; border-radius:12px; }
+  .sticky-footer{position:sticky;bottom:0;background:#0b0c10;border-top:1px solid #1c1e26;padding:10px 18px}
+  .danger { color: #ffb9b9 }
+  a { color: var(--accent); text-decoration: none }
+  a:hover { text-decoration: underline }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>California Senators — Fast Contact Dashboard</h1>
+    <div class="muted small">Tip: Fill your info, craft your message once, then <span class="kbd">⌘/Ctrl</span> + click each “Open Form” to work down the line. Use the bookmarklet to auto-fill common fields.</div>
+  </div>
+</header>
 
+<main>
+  <!-- LEFT: Your Info & Tools -->
+  <section class="card">
+    <div class="section-title">Your Details</div>
+    <div class="grid-2">
+      <div>
+        <label>First name</label>
+        <input id="firstName" placeholder="Jane">
+      </div>
+      <div>
+        <label>Last name</label>
+        <input id="lastName" placeholder="Doe">
+      </div>
+    </div>
+    <div class="grid-2">
+      <div>
+        <label>Email</label>
+        <input id="email" placeholder="you@example.com">
+      </div>
+      <div>
+        <label>Phone</label>
+        <input id="phone" placeholder="555-555-5555">
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <label>Street address</label>
+        <input id="addr1" placeholder="123 Main St">
+      </div>
+      <div>
+        <label>City</label>
+        <input id="city" placeholder="Richmond">
+      </div>
+    </div>
+    <div class="grid-2">
+      <div>
+        <label>State</label>
+        <input id="state" value="CA">
+      </div>
+      <div>
+        <label>ZIP</label>
+        <input id="zip" placeholder="94109">
+      </div>
+    </div>
+
+    <label>Subject (will be copied / used by bookmarklet)</label>
+    <input id="subject" placeholder="Please keep California families safe from kratom">
+
+    <label>Message Template</label>
+    <textarea id="message" placeholder="Dear Senator {{SENATOR_LAST}},&#10;&#10;[Your message here...]&#10;&#10;Sincerely,&#10;{{YOUR_NAME}}"></textarea>
+
+    <div class="row" style="margin-top:8px">
+      <button class="btn-good" id="save">Save</button>
+      <button class="btn" id="copySubject">Copy Subject</button>
+      <button class="btn" id="copyMessage">Copy Message</button>
+      <button class="btn" id="copyAll">Copy All (stacked)</button>
+    </div>
+
+    <p class="muted" style="margin-top:10px">
+      Template variables: <code>{{SENATOR_NAME}}</code>, <code>{{SENATOR_LAST}}</code>, <code>{{YOUR_NAME}}</code>.  
+      Your data auto-saves; use “Copy” to fill forms fast when autofill/bookmarklet can’t.
+    </p>
+
+    <hr style="border-color:#1c1e26;opacity:.6;margin:14px 0">
+
+    <div class="section-title">Senator List</div>
+    <p class="muted small">Paste CSV (Name,ContactURL[,District,Party]). You can also <a id="downloadSample" href="#">download a sample CSV</a>.</p>
+    <textarea id="csvInput" placeholder="e.g. &#10;Aisha Wahab,https://sd10.senate.ca.gov/contact&#10;Shannon Grove,https://sr12.senate.ca.gov/contact"></textarea>
+    <div class="row" style="margin-top:8px">
+      <button class="btn-accent" id="loadCsv">Load CSV</button>
+      <button class="btn" id="exportProgress">Export Progress CSV</button>
+      <button class="btn-bad" id="clearProgress">Clear Progress</button>
+    </div>
+
+    <hr style="border-color:#1c1e26;opacity:.6;margin:14px 0">
+
+    <div class="section-title">Bookmarklet Autofill</div>
+    <p class="muted small">Drag this to your bookmarks bar: <a id="bookmarklet" class="pill" href="#">Auto-Fill Contact Form</a></p>
+    <p class="muted small">When you’re on a senator’s contact page, click the bookmarklet. It tries to fill fields named like <em>first, last, name, email, phone, address, city, state, zip, subject, message</em>. You still submit the form and solve any CAPTCHA.</p>
+    <div class="row">
+      <button class="btn" id="copyBookmarklet">Copy Bookmarklet Code</button>
+    </div>
+  </section>
+
+  <!-- RIGHT: Work Queue -->
+  <section class="card">
+    <div class="section-title">Queue</div>
+    <div class="row" style="align-items:center;justify-content:space-between;margin-bottom:8px">
+      <div class="muted small">
+        <span id="progressText">0 of 0 sent</span>
+      </div>
+      <div class="row">
+        <input id="batchCount" type="number" min="1" value="5" style="width:90px">
+        <button class="btn-warn" id="openBatch">Open Next N</button>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"><div id="bar"></div></div>
+    <div class="list" id="senatorList"></div>
+  </section>
+</main>
+
+<footer class="sticky-footer">
+  <div class="wrap muted small">
+    Heads-up: Different sites use different field names and often add bot protection. This page keeps you fast and organized, but you’ll still submit each form manually.
+  </div>
+</footer>
+
+<script>
+/* ---------- Storage Helpers ---------- */
+const SKEY = 'caSender_v1';
+const PKEY = 'caSender_progress_v1';
+const LKEY = 'caSender_list_v1';
+const getState = () => JSON.parse(localStorage.getItem(SKEY) || '{}');
+const setState = (obj) => localStorage.setItem(SKEY, JSON.stringify(obj));
+const getProgress = () => JSON.parse(localStorage.getItem(PKEY) || '{}');
+const setProgress = (obj) => localStorage.setItem(PKEY, JSON.stringify(obj));
+const getList = () => JSON.parse(localStorage.getItem(LKEY) || '[]');
+const setList = (arr) => localStorage.setItem(LKEY, JSON.stringify(arr));
+
+/* ---------- Elements ---------- */
+const els = {
+  first: document.getElementById('firstName'),
+  last: document.getElementById('lastName'),
+  email: document.getElementById('email'),
+  phone: document.getElementById('phone'),
+  addr1: document.getElementById('addr1'),
+  city: document.getElementById('city'),
+  state: document.getElementById('state'),
+  zip: document.getElementById('zip'),
+  subj: document.getElementById('subject'),
+  msg: document.getElementById('message'),
+  save: document.getElementById('save'),
+  copySubject: document.getElementById('copySubject'),
+  copyMessage: document.getElementById('copyMessage'),
+  copyAll: document.getElementById('copyAll'),
+  csvInput: document.getElementById('csvInput'),
+  loadCsv: document.getElementById('loadCsv'),
+  exportProgress: document.getElementById('exportProgress'),
+  clearProgress: document.getElementById('clearProgress'),
+  senatorList: document.getElementById('senatorList'),
+  progressText: document.getElementById('progressText'),
+  bar: document.getElementById('bar'),
+  openBatch: document.getElementById('openBatch'),
+  batchCount: document.getElementById('batchCount'),
+  bookmarklet: document.getElementById('bookmarklet'),
+  copyBookmarklet: document.getElementById('copyBookmarklet'),
+  downloadSample: document.getElementById('downloadSample'),
+};
+
+/* ---------- Init from storage ---------- */
+(function init(){
+  const s = getState();
+  els.first.value = s.first || '';
+  els.last.value = s.last || '';
+  els.email.value = s.email || '';
+  els.phone.value = s.phone || '';
+  els.addr1.value = s.addr1 || '';
+  els.city.value = s.city || '';
+  els.state.value = s.state || 'CA';
+  els.zip.value = s.zip || '';
+  els.subj.value = s.subj || '';
+  els.msg.value = s.msg || 'Dear Senator {{SENATOR_LAST}},\n\n[Your message here...]\n\nSincerely,\n{{YOUR_NAME}}';
+
+  const list = getList();
+  renderList(list);
+
+  // Provide a sample CSV
+  els.downloadSample.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const sample = "Name,ContactURL,District,Party\nShannon Grove,https://sr12.senate.ca.gov/contact,SD-12,R\nAisha Wahab,https://sd10.senate.ca.gov/contact,SD-10,D\n";
+    const blob = new Blob([sample], {type:'text/csv'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href=url; a.download='california-senators-sample.csv'; a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // Generate bookmarklet href live
+  updateBookmarkletHref();
+})();
+
+/* ---------- Save ---------- */
+els.save.addEventListener('click', ()=>{
+  setState({
+    first: els.first.value.trim(),
+    last: els.last.value.trim(),
+    email: els.email.value.trim(),
+    phone: els.phone.value.trim(),
+    addr1: els.addr1.value.trim(),
+    city: els.city.value.trim(),
+    state: els.state.value.trim(),
+    zip: els.zip.value.trim(),
+    subj: els.subj.value,
+    msg: els.msg.value
+  });
+  updateBookmarkletHref();
+});
+
+/* ---------- Copy helpers ---------- */
+async function copy(text){
+  try { await navigator.clipboard.writeText(text); }
+  catch(e){
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy'); ta.remove();
+  }
+}
+function personalizeMessage(base, senatorName){
+  const last = (senatorName||'').split(' ').slice(-1)[0] || '';
+  const yourName = `${els.first.value} ${els.last.value}`.trim();
+  return (base || '')
+    .replaceAll('{{SENATOR_NAME}}', senatorName || '')
+    .replaceAll('{{SENATOR_LAST}}', last)
+    .replaceAll('{{YOUR_NAME}}', yourName);
+}
+els.copySubject.addEventListener('click', ()=> copy(els.subj.value));
+els.copyMessage.addEventListener('click', ()=> copy(els.msg.value));
+els.copyAll.addEventListener('click', ()=>{
+  const stack =
+`Name: ${els.first.value} ${els.last.value}
+Email: ${els.email.value}
+Phone: ${els.phone.value}
+Address: ${els.addr1.value}, ${els.city.value}, ${els.state.value} ${els.zip.value}
+Subject: ${els.subj.value}
+
+${els.msg.value}`;
+  copy(stack);
+});
+
+/* ---------- CSV Load / Export ---------- */
+els.loadCsv.addEventListener('click', ()=>{
+  const rows = els.csvInput.value.trim().split(/\r?\n/).filter(Boolean);
+  const out = [];
+  for (let i=0;i<rows.length;i++){
+    const parts = splitCsvLine(rows[i]);
+    if (parts.length >= 2){
+      out.push({
+        name: parts[0].trim(),
+        url: parts[1].trim(),
+        district: parts[2]?.trim() || '',
+        party: parts[3]?.trim() || ''
+      });
+    }
+  }
+  setList(out);
+  renderList(out);
+});
+function splitCsvLine(line){
+  // simple CSV split (handles quoted commas)
+  const re = /("([^"]*)"|[^,]+)|(?<=,)(?=,)|(?<=^)(?=,)/g;
+  const arr = [];
+  let m;
+  while ((m = re.exec(line)) !== null) {
+    let v = m[0];
+    if (v.startsWith('"') && v.endsWith('"')) v = v.slice(1,-1);
+    if (v === undefined) v = '';
+    arr.push(v);
+  }
+  return arr;
+}
+els.exportProgress.addEventListener('click', ()=>{
+  const list = getList();
+  const prog = getProgress();
+  let csv = 'Name,ContactURL,Sent\n';
+  list.forEach(s=>{
+    csv += `"${s.name}","${s.url}",${prog[s.url] ? 'Yes':'No'}\n`;
+  });
+  const blob = new Blob([csv], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'progress-export.csv'; a.click();
+  URL.revokeObjectURL(url);
+});
+els.clearProgress.addEventListener('click', ()=>{
+  if (!confirm('Clear sent status for all senators?')) return;
+  setProgress({});
+  renderList(getList());
+});
+
+/* ---------- Render List & Progress ---------- */
+function renderList(list){
+  els.senatorList.innerHTML = '';
+  const prog = getProgress();
+  let sent = 0;
+  list.forEach((s, idx)=>{
+    const div = document.createElement('div');
+    div.className = 'senator' + (prog[s.url] ? ' sent' : '');
+    const name = document.createElement('div');
+    name.innerHTML = `<div class="name">${s.name}</div><div class="meta">${s.district||''} ${s.party? '• '+s.party : ''}</div>`;
+    const actions = document.createElement('div');
+    actions.className = 'actions';
+    const open = document.createElement('a');
+    open.className = 'btn-accent btn';
+    open.textContent = 'Open Form';
+    open.href = s.url; open.target = '_blank'; open.rel = 'noopener';
+    open.addEventListener('click', ()=> markCurrentSenator(s));
+    const copyMsg = document.createElement('button');
+    copyMsg.className = 'btn';
+    copyMsg.textContent = 'Copy Personalized';
+    copyMsg.addEventListener('click', ()=>{
+      copy(personalizeMessage(els.msg.value, s.name));
+    });
+    const mark = document.createElement('button');
+    mark.className = 'btn-good';
+    mark.textContent = prog[s.url] ? 'Sent ✓' : 'Mark Sent';
+    mark.addEventListener('click', ()=>{
+      const p = getProgress();
+      p[s.url] = !p[s.url];
+      setProgress(p);
+      renderList(getList());
+    });
+    actions.append(open, copyMsg, mark);
+    const left = document.createElement('div');
+    left.append(name);
+    div.append(left, actions);
+    els.senatorList.appendChild(div);
+    if (prog[s.url]) sent++;
+  });
+  const total = list.length;
+  els.progressText.textContent = `${sent} of ${total} sent`;
+  const pct = total ? Math.round((sent/total)*100) : 0;
+  els.bar.style.width = pct + '%';
+}
+function markCurrentSenator(s){
+  // optional hook if you want to auto-mark when opened
+}
+
+/* ---------- Batch open ---------- */
+els.openBatch.addEventListener('click', ()=>{
+  const list = getList();
+  const prog = getProgress();
+  const n = Math.max(1, parseInt(els.batchCount.value || '1', 10));
+  const remaining = list.filter(s => !prog[s.url]).slice(0, n);
+  if (!remaining.length){ alert('No remaining senators.'); return; }
+  remaining.forEach(s => window.open(s.url, '_blank', 'noopener'));
+});
+
+/* ---------- Bookmarklet ---------- */
+function updateBookmarkletHref(){
+  const s = getState();
+  const data = {
+    first: s.first || '',
+    last: s.last || '',
+    email: s.email || '',
+    phone: s.phone || '',
+    addr1: s.addr1 || '',
+    city: s.city || '',
+    state: s.state || 'CA',
+    zip: s.zip || '',
+    subj: s.subj || '',
+    msg: s.msg || ''
+  };
+  const code = generateBookmarkletCode(data);
+  els.bookmarklet.href = 'javascript:' + encodeURIComponent(code);
+}
+function generateBookmarkletCode(d){
+  // tries common patterns by name/id/placeholder
+  return `(function(){
+    function set(v, sels){
+      for (let i=0;i<sels.length;i++){
+        try {
+          var el = document.querySelector(sels[i]);
+          if (el){ el.focus(); el.value = v; el.dispatchEvent(new Event('input',{bubbles:true})); el.dispatchEvent(new Event('change',{bubbles:true})); return true; }
+        } catch(e){}
+      }
+      return false;
+    }
+    function tryAll(map){
+      Object.keys(map).forEach(function(key){
+        var v = map[key].v, sels = map[key].s;
+        if (v) set(v, sels);
+      });
+    }
+    var data = ${JSON.stringify(d)};
+    // if the page has a single large textarea, assume it's the message box
+    var bigTA = (function(){ var tas=[].slice.call(document.querySelectorAll('textarea')); tas.sort(function(a,b){return (b.rows||0)-(a.rows||0)}); return tas[0];})();
+    if (bigTA && (!bigTA.value || bigTA.value.length < 10)) { bigTA.value = data.msg; bigTA.dispatchEvent(new Event('input',{bubbles:true})); bigTA.dispatchEvent(new Event('change',{bubbles:true})); }
+
+    tryAll({
+      first:{v:data.first,s:['input[name*=\"first\" i]','input[id*=\"first\" i]','input[placeholder*=\"first\" i]']},
+      last:{v:data.last,s:['input[name*=\"last\" i]','input[id*=\"last\" i]','input[placeholder*=\"last\" i]']},
+      name:{v:(data.first+' '+data.last).trim(),s:['input[name*=\"name\" i]','input[id*=\"name\" i]','input[placeholder*=\"name\" i]']},
+      email:{v:data.email,s:['input[type=email]','input[name*=\"email\" i]','input[id*=\"email\" i]']},
+      phone:{v:data.phone,s:['input[type=tel]','input[name*=\"phone\" i]','input[id*=\"phone\" i]']},
+      addr1:{v:data.addr1,s:['input[name*=\"address\" i]','input[id*=\"address\" i]','input[placeholder*=\"address\" i]']},
+      city:{v:data.city,s:['input[name*=\"city\" i]','input[id*=\"city\" i]','input[placeholder*=\"city\" i]']},
+      state:{v:data.state,s:['input[name*=\"state\" i]','input[id*=\"state\" i]','select[name*=\"state\" i]']},
+      zip:{v:data.zip,s:['input[name*=\"zip\" i]','input[id*=\"zip\" i]','input[placeholder*=\"zip\" i]','input[name*=\"postal\" i]']},
+      subject:{v:data.subj,s:['input[name*=\"subject\" i]','input[id*=\"subject\" i]','input[placeholder*=\"subject\" i]','textarea[name*=\"subject\" i]']}
+    });
+    // message (again) if not caught by bigTA
+    (function(){
+      var ok = set(data.msg, ['textarea[name*=\"message\" i]','textarea[id*=\"message\" i]','textarea[placeholder*=\"message\" i]','textarea[name*=\"comment\" i]']);
+      if(!ok){
+        // some forms use 'body' or 'comments'
+        set(data.msg, ['textarea[name*=\"body\" i]','textarea[name*=\"comments\" i]']);
+      }
+    })();
+
+    alert('Attempted to fill common fields. Please review, solve any CAPTCHA, and submit.');
+  })();`;
+}
+els.copyBookmarklet.addEventListener('click', ()=>{
+  const href = els.bookmarklet.getAttribute('href');
+  const code = decodeURIComponent(href.replace(/^javascript:/,''));
+  copy(code);
+  alert('Bookmarklet code copied. Create a new bookmark and paste this into the URL field.');
+});
+
+/* ---------- Progress bar update on change ---------- */
+window.addEventListener('storage', (e)=>{
+  if (e.key === PKEY || e.key === LKEY) renderList(getList());
+});
+</script>
+</body>
+</html>
