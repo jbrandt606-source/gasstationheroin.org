@@ -199,6 +199,20 @@
 </section>
   </main>
 
+ <script>
+  function checkPassword() {
+    const input = document.getElementById('password-input').value;
+    const error = document.getElementById('error');
+    if (input === 'fart2025!') {
+      document.getElementById('password-screen').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+      window.scrollTo(0,0);
+    } else {
+      error.textContent = 'Incorrect password. Please try again.';
+    }
+  }
+</script>
+
   <footer>
     <p>GasStationHeroin.org is a public-health awareness project by <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">Mothers Against Herbal Abuse (MAHA)</a>. Visit the full site at <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">mothersagainstherbalabuse.org</a> • © <span id="y">2025</span></p>
   </footer>
