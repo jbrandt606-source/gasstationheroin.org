@@ -229,6 +229,7 @@
 
       const recipients = selected.map(opt => opt.value.split('|')[0]).join(',');
       const names = selected.map(opt => opt.value.split('|')[1]).join(', ');
+      const message = `Dear ${names},\n\n${story}\n\nSincerely,\n[Your Name]`;
       
       output.textContent = message;
       preview.style.display = 'block';
