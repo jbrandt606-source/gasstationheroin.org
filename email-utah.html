@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P31PD1SSTD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P31PD1SSTD');
+  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Utah Lawmakers • Gas Station Heroin</title>
+  <meta name="description" content="Send a personalized email to any Utah State Senator or Representative asking them to support a ban on kratom." />
+  <meta name="keywords" content="email utah lawmakers, ban kratom, maha, gas station heroin, utah senate, utah house, kratom outreach" />
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div class="brand"><span class="dot"></span>Gas Station Heroin<span style="font-weight:400"> • A MAHA Project</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- UTAH SENATE -->
+    <section class="wrap" id="email-utah-senate">
+      <h1>Email a Utah Senator</h1>
+      <p>Select one or more senators and write your message. A pre-filled email will open in your email app.</p>
+      <div class="card">
+        <label for="senator">Choose Senators:</label>
+        <select id="senator" name="utah_senator" multiple size="20" style="width:100%; margin-bottom:10px;">
+
+          <option value="ssandall@le.utah.gov|Senator Scott D. Sandall">Senator Scott D. Sandall</option>
+          <option value="cwilson@le.utah.gov|Senator Chris H. Wilson">Senator Chris H. Wilson</option>
+          <option value="jjohnson@le.utah.gov|Senator John D. Johnson">Senator John D. Johnson</option>
+          <option value="cmusselman@le.utah.gov|Senator Calvin R. Musselman">Senator Calvin R. Musselman</option>
+          <option value="amillner@le.utah.gov|Senator Ann Millner">Senator Ann Millner</option>
+
+          <option value="jwstevenson@le.utah.gov|Senator Jerry W. Stevenson">Senator Jerry W. Stevenson</option>
+          <option value="jsadams@le.utah.gov|Senator J. Stuart Adams">Senator J. Stuart Adams</option>
+          <option value="tweiler@le.utah.gov|Senator Todd Weiler">Senator Todd Weiler</option>
+          <option value="jplumb@le.utah.gov|Senator Jen Plumb">Senator Jen Plumb</option>
+          <option value="lescamilla@le.utah.gov|Senator Luz Escamilla">Senator Luz Escamilla</option>
+
+          <option value="dthatcher@le.utah.gov|Senator Daniel W. Thatcher">Senator Daniel W. Thatcher</option>
+          <option value="kkwan@le.utah.gov|Senator Karen Kwan">Senator Karen Kwan</option>
+          <option value="nblouin@le.utah.gov|Senator Nate Blouin">Senator Nate Blouin</option>
+          <option value="spitcher@le.utah.gov|Senator Stephanie Pitcher">Senator Stephanie Pitcher</option>
+          <option value="kriebe@le.utah.gov|Senator Kathleen A. Riebe">Senator Kathleen A. Riebe</option>
+
+          <option value="wharper@le.utah.gov|Senator Wayne A. Harper">Senator Wayne A. Harper</option>
+          <option value="lfillmore@le.utah.gov|Senator Lincoln Fillmore">Senator Lincoln Fillmore</option>
+          <option value="dmccay@le.utah.gov|Senator Daniel McCay">Senator Daniel McCay</option>
+          <option value="kcullimore@le.utah.gov|Senator Kirk A. Cullimore">Senator Kirk A. Cullimore</option>
+          <option value="rwinterton@le.utah.gov|Senator Ronald M. Winterton">Senator Ronald M. Winterton</option>
+
+          <option value="bbrammer@le.utah.gov|Senator Brady Brammer">Senator Brady Brammer</option>
+          <option value="hbalderree@le.utah.gov|Senator Heidi Balderree">Senator Heidi Balderree</option>
+          <option value="keithgrover@le.utah.gov|Senator Keith Grover">Senator Keith Grover</option>
+          <option value="kstratton@le.utah.gov|Senator Keven J. Stratton">Senator Keven J. Stratton</option>
+          <option value="mmckell@le.utah.gov|Senator Michael K. McKell">Senator Michael K. McKell</option>
+
+          <option value="dhinkins@le.utah.gov|Senator David P. Hinkins">Senator David P. Hinkins</option>
+          <option value="derrinowens@le.utah.gov|Senator Derrin R. Owens">Senator Derrin R. Owens</option>
+          <option value="evickers@le.utah.gov|Senator Evan J. Vickers">Senator Evan J. Vickers</option>
+
+        </select>
+
+        <label for="story">Your Message:</label>
+        <textarea id="story" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+        <button class="btn" onclick="generateEmail('senator')">Generate Email</button>
+        <div id="emailPreview" style="margin-top:20px; display:none">
+          <h3>Your Draft Email:</h3>
+          <p id="emailBody" style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; background:#121832;"></p>
+          <a id="mailtoLink" class="btn" style="margin-top:10px; display:inline-block" href="#">Open Email App →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- UTAH HOUSE -->
+    <section class="wrap" id="email-utah-house" style="margin-top:60px">
+      <h1>Email a Utah House Representative</h1>
+      <p>Select one or more representatives and write your message. A pre-filled email will open in your email app.</p>
+      <div class="card">
+        <label for="house">Choose House Members:</label>
+        <select id="house" name="utah_representative" multiple size="20" style="width:100%; margin-bottom:10px;">
+
+          <option value="mpetersen@le.utah.gov|Representative Michael J. Petersen">Representative Michael J. Petersen</option>
+          <option value="jthompson@le.utah.gov|Representative Jason E. Thompson">Representative Jason E. Thompson</option>
+          <option value="tauxier@le.utah.gov|Representative Tiara Auxier">Representative Tiara Auxier</option>
+          <option value="csnider@le.utah.gov|Representative Casey Snider">Representative Casey Snider</option>
+          <option value="mgwynn@le.utah.gov|Representative Matthew H. Gwynn">Representative Matthew H. Gwynn</option>
+          <option value="ryanwilcox@le.utah.gov|Representative Ryan D. Wilcox">Representative Ryan D. Wilcox</option>
+          <option value="jkyle@le.utah.gov|Representative Jason B. Kyle">Representative Jason B. Kyle</option>
+          <option value="jsawyer@le.utah.gov|Representative Jake Sawyer">Representative Jake Sawyer</option>
+          <option value="jkoford@le.utah.gov|Representative Jill Koford">Representative Jill Koford</option>
+          <option value="khall@le.utah.gov|Representative Katy Hall">Representative Katy Hall</option>
+
+          <option value="kpeterson@le.utah.gov|Representative Karen M. Peterson">Representative Karen M. Peterson</option>
+          <option value="karilisonbee@le.utah.gov|Representative Karianne Lisonbee">Representative Karianne Lisonbee</option>
+          <option value="adefay@le.utah.gov|Representative Ariel Defay">Representative Ariel Defay</option>
+          <option value="tlee@le.utah.gov|Representative Trevor Lee">Representative Trevor Lee</option>
+          <option value="pcutler@le.utah.gov|Representative Paul A. Cutler">Representative Paul A. Cutler</option>
+
+          <option value="mballard@le.utah.gov|Representative Melissa G. Ballard">Representative Melissa G. Ballard</option>
+          <option value="shollins@le.utah.gov|Representative Sandra Hollins">Representative Sandra Hollins</option>
+          <option value="jdprovost@le.utah.gov|Representative Jennifer Dailey-Provost">Representative Jennifer Dailey-Provost</option>
+          <option value="hnguyen@le.utah.gov|Representative Hoang Nguyen">Representative Hoang Nguyen</option>
+          <option value="gmiller@le.utah.gov|Representative Grant Amjad Miller">Representative Grant Amjad Miller</option>
+
+          <option value="angelaromero@le.utah.gov|Representative Angela Romero">Representative Angela Romero</option>
+          <option value="mmacpherson@le.utah.gov|Representative Matt MacPherson">Representative Matt MacPherson</option>
+          <option value="aloubet@le.utah.gov|Representative Anthony E. Loubet">Representative Anthony E. Loubet</option>
+          <option value="npeck@le.utah.gov|Representative Nicholeen P. Peck">Representative Nicholeen P. Peck</option>
+          <option value="bbolinder@le.utah.gov|Representative Bridger Bolinder">Representative Bridger Bolinder</option>
+
+          <option value="jfitisemanu@le.utah.gov|Representative Jake Fitisemanu">Representative Jake Fitisemanu</option>
+          <option value="vmauga@le.utah.gov|Representative Verona Mauga">Representative Verona Mauga</option>
+          <option value="shayes@le.utah.gov|Representative Sahara Hayes">Representative Sahara Hayes</option>
+          <option value="dougowens@le.utah.gov|Representative Doug Owens">Representative Doug Owens</option>
+          <option value="csmoss@le.utah.gov|Representative Carol S. Moss">Representative Carol S. Moss</option>
+
+          <option value="rdominguez@le.utah.gov|Representative Rosalba Dominguez">Representative Rosalba Dominguez</option>
+          <option value="jdunnigan@le.utah.gov|Representative James A. Dunnigan">Representative James A. Dunnigan</option>
+          <option value="amatthews@le.utah.gov|Representative Ashlee Matthews">Representative Ashlee Matthews</option>
+          <option value="cacton@le.utah.gov|Representative Cheryl K. Acton">Representative Cheryl K. Acton</option>
+          <option value="kivory@le.utah.gov|Representative Ken Ivory">Representative Ken Ivory</option>
+
+          <option value="astoddard@le.utah.gov|Representative Andrew Stoddard">Representative Andrew Stoddard</option>
+          <option value="glbennion@le.utah.gov|Representative Gay Lynn Bennion">Representative Gay Lynn Bennion</option>
+          <option value="cokerlund@le.utah.gov|Representative Clinton Okerlund">Representative Clinton Okerlund</option>
+          <option value="seliason@le.utah.gov|Representative Steve Eliason">Representative Steve Eliason</option>
+          <option value="jteuscher@le.utah.gov|Representative Jordan D. Teuscher">Representative Jordan D. Teuscher</option>
+
+          <option value="tmiller@le.utah.gov|Representative Tracy Miller">Representative Tracy Miller</option>
+          <option value="croberts@le.utah.gov|Representative Calvin Roberts">Representative Calvin Roberts</option>
+          <option value="mstrong@le.utah.gov|Representative Mark A. Strong">Representative Mark A. Strong</option>
+          <option value="dfiefia@le.utah.gov|Representative Doug Fiefia">Representative Doug Fiefia</option>
+          <option value="cpierucci@le.utah.gov|Representative Candice B. Pierucci">Representative Candice B. Pierucci</option>
+
+          <option value="sgricius@le.utah.gov|Representative Stephanie Gricius">Representative Stephanie Gricius</option>
+          <option value="lhansen@le.utah.gov|Representative Leah Hansen">Representative Leah Hansen</option>
+          <option value="corymaloy@le.utah.gov|Representative A. Cory Maloy">Representative A. Cory Maloy</option>
+          <option value="kchristofferson@le.utah.gov|Representative Kay J. Christofferson">Representative Kay J. Christofferson</option>
+          <option value="kchevrier@le.utah.gov|Representative Kristen Chevrier">Representative Kristen Chevrier</option>
+
+          <option value="jhawkins@le.utah.gov|Representative Jon Hawkins">Representative Jon Hawkins</option>
+          <option value="vpeterson@le.utah.gov|Representative Val L. Peterson">Representative Val L. Peterson</option>
+          <option value="nabbott@le.utah.gov|Representative Nelson T. Abbott">Representative Nelson T. Abbott</option>
+          <option value="dshallenberger@le.utah.gov|Representative David Shallenberger">Representative David Shallenberger</option>
+          <option value="mkohler@le.utah.gov|Representative Mike L. Kohler">Representative Mike L. Kohler</option>
+
+          <option value="tclancy@le.utah.gov|Representative Tyler Clancy">Representative Tyler Clancy</option>
+          <option value="lshepherd@le.utah.gov|Representative Lisa Shepherd">Representative Lisa Shepherd</option>
+          <option value="normthurston@le.utah.gov|Representative Norman K. Thurston">Representative Norman K. Thurston</option>
+          <option value="swhyte@le.utah.gov|Representative Stephen L. Whyte">Representative Stephen L. Whyte</option>
+          <option value="jburton@le.utah.gov|Representative Jefferson S. Burton">Representative Jefferson S. Burton</option>
+
+          <option value="dwelton@le.utah.gov|Representative Doug Welton">Representative Doug Welton</option>
+          <option value="tshelley@le.utah.gov|Representative Troy Shelley">Representative Troy Shelley</option>
+          <option value="christinewatkins@le.utah.gov|Representative Christine F. Watkins">Representative Christine F. Watkins</option>
+          <option value="scottchew@le.utah.gov|Representative Scott H. Chew">Representative Scott H. Chew</option>
+          <option value="lmonson@le.utah.gov|Representative Logan Monson">Representative Logan Monson</option>
+
+          <option value="carlalbrecht@le.utah.gov|Representative Carl R. Albrecht">Representative Carl R. Albrecht</option>
+          <option value="rshipp@le.utah.gov|Representative Rex P. Shipp">Representative Rex P. Shipp</option>
+          <option value="jelison@le.utah.gov|Representative Joseph Elison">Representative Joseph Elison</option>
+          <option value="cjack@le.utah.gov|Representative Colin W. Jack">Representative Colin W. Jack</option>
+          <option value="nwalter@le.utah.gov|Representative R. Neil Walter">Representative R. Neil Walter</option>
+
+        </select>
+
+        <label for="story-house">Your Message:</label>
+        <textarea id="story-house" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+        <button class="btn" onclick="generateEmail('house')">Generate Email</button>
+
+        <div id="emailPreview-house" style="margin-top:20px; display:none">
+          <h3>Your Draft Email:</h3>
+          <p id="emailBody-house" style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; background:#121832;"></p>
+          <a id="mailtoLink-house" class="btn" style="margin-top:10px; display:inline-block" href="#">Open Email App →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('password-input')?.value;
+      const error = document.getElementById('error');
+      if (input === 'fart2025!') {
+        document.getElementById('password-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        window.scrollTo(0,0);
+      } else {
+        if (error) {
+          error.textContent = 'Incorrect password. Please try again.';
+        }
+      }
+    }
+  </script>
+
+  <footer>
+    <p>GasStationHeroin.org is a public-health awareness project by <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">Mothers Against Herbal Abuse (MAHA)</a>. Visit the full site at <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">mothersagainstherbalabuse.org</a> • © <span id="y">2025</span></p>
+  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function generateEmail(chamber) {
+      const id = chamber === 'house' ? 'house' : 'senator';
+      const textarea = document.getElementById(chamber === 'house' ? 'story-house' : 'story');
+      const preview = document.getElementById(chamber === 'house' ? 'emailPreview-house' : 'emailPreview');
+      const output = document.getElementById(chamber === 'house' ? 'emailBody-house' : 'emailBody');
+      const link = document.getElementById(chamber === 'house' ? 'mailtoLink-house' : 'mailtoLink');
+
+      const selected = Array.from(document.getElementById(id).selectedOptions);
+      const story = textarea.value.trim();
+
+      if (!selected.length) {
+        alert("Please select at least one " + (chamber === 'house' ? "representative" : "senator") + ".");
+        return;
+      }
+
+      const recipients = selected.map(opt => opt.value.split('|')[0]).join(',');
+      const names = selected.map(opt => opt.value.split('|')[1]).join(', ');
+      
+      output.textContent = message;
+      preview.style.display = 'block';
+      link.href = `mailto:${recipients}?subject=${encodeURIComponent('Support a Kratom Ban in Utah')}&body=${encodeURIComponent(message)}`;
+    }
+  </script>
+</body>
+</html>
