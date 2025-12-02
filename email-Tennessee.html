@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P31PD1SSTD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P31PD1SSTD');
+  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Tennessee Lawmakers • Gas Station Heroin</title>
+  <meta name="description" content="Send a personalized email to any Tennessee State Senator or Representative asking them to support a ban on kratom." />
+  <meta name="keywords" content="email tennessee lawmakers, ban kratom, maha, gas station heroin, tennessee senate, tennessee house, kratom outreach" />
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div class="brand"><span class="dot"></span>Gas Station Heroin<span style="font-weight:400"> • A MAHA Project</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- TENNESSEE SENATE -->
+    <section class="wrap" id="email-tennessee-senate">
+      <h1>Email a Tennessee Senator</h1>
+      <p>Select one or more senators and write your message. A pre-filled email will open in your email app.</p>
+      <div class="card">
+        <label for="senator">Choose Senators:</label>
+        <select id="senator" name="tennessee_senator" multiple size="20" style="width:100%; margin-bottom:10px;">
+
+          <option value="sen.raumesh.akbari@capitol.tn.gov|Senator Raumesh Akbari">Senator Raumesh Akbari</option>
+          <option value="sen.paul.bailey@capitol.tn.gov|Senator Paul Bailey">Senator Paul Bailey</option>
+          <option value="sen.janice.bowling@capitol.tn.gov|Senator Janice Bowling">Senator Janice Bowling</option>
+          <option value="sen.richard.briggs@capitol.tn.gov|Senator Richard Briggs">Senator Richard Briggs</option>
+          <option value="sen.heidi.campbell@capitol.tn.gov|Senator Heidi Campbell">Senator Heidi Campbell</option>
+          <option value="sen.rusty.crowe@capitol.tn.gov|Senator Rusty Crowe">Senator Rusty Crowe</option>
+          <option value="sen.todd.gardenhire@capitol.tn.gov|Senator Todd Gardenhire">Senator Todd Gardenhire</option>
+          <option value="sen.ferrell.haile@capitol.tn.gov|Senator Ferrell Haile">Senator Ferrell Haile</option>
+          <option value="sen.bobby.harshbarger@capitol.tn.gov|Senator Bobby Harshbarger">Senator Bobby Harshbarger</option>
+          <option value="sen.tom.hatcher@capitol.tn.gov|Senator Tom Hatcher">Senator Tom Hatcher</option>
+
+          <option value="sen.joey.hensley@capitol.tn.gov|Senator Joey Hensley">Senator Joey Hensley</option>
+          <option value="sen.ed.jackson@capitol.tn.gov|Senator Ed Jackson">Senator Ed Jackson</option>
+          <option value="sen.jack.johnson@capitol.tn.gov|Senator Jack Johnson">Senator Jack Johnson</option>
+          <option value="sen.sara.kyle@capitol.tn.gov|Senator Sara Kyle">Senator Sara Kyle</option>
+          <option value="sen.london.lamar@capitol.tn.gov|Senator London Lamar">Senator London Lamar</option>
+          <option value="sen.adam.lowe@capitol.tn.gov|Senator Adam Lowe">Senator Adam Lowe</option>
+          <option value="sen.becky.massey@capitol.tn.gov|Senator Becky Massey">Senator Becky Massey</option>
+          <option value="lt.gov.randy.mcnally@capitol.tn.gov|Senator Randy McNally">Senator Randy McNally</option>
+          <option value="sen.charlane.oliver@capitol.tn.gov|Senator Charlane Oliver">Senator Charlane Oliver</option>
+          <option value="sen.mark.pody@capitol.tn.gov|Senator Mark Pody">Senator Mark Pody</option>
+
+          <option value="sen.bill.powers@capitol.tn.gov|Senator Bill Powers">Senator Bill Powers</option>
+          <option value="sen.shane.reeves@capitol.tn.gov|Senator Shane Reeves">Senator Shane Reeves</option>
+          <option value="sen.kerry.roberts@capitol.tn.gov|Senator Kerry Roberts">Senator Kerry Roberts</option>
+          <option value="sen.paul.rose@capitol.tn.gov|Senator Paul Rose">Senator Paul Rose</option>
+          <option value="sen.jessie.seal@capitol.tn.gov|Senator Jessie Seal">Senator Jessie Seal</option>
+          <option value="sen.steve.southerland@capitol.tn.gov|Senator Steve Southerland">Senator Steve Southerland</option>
+          <option value="sen.john.stevens@capitol.tn.gov|Senator John Stevens">Senator John Stevens</option>
+          <option value="sen.brent.taylor@capitol.tn.gov|Senator Brent Taylor">Senator Brent Taylor</option>
+          <option value="sen.page.walley@capitol.tn.gov|Senator Page Walley">Senator Page Walley</option>
+          <option value="sen.bo.watson@capitol.tn.gov|Senator Bo Watson">Senator Bo Watson</option>
+
+          <option value="sen.dawn.white@capitol.tn.gov|Senator Dawn White">Senator Dawn White</option>
+          <option value="sen.ken.yager@capitol.tn.gov|Senator Ken Yager">Senator Ken Yager</option>
+          <option value="sen.jeff.yarbro@capitol.tn.gov|Senator Jeff Yarbro">Senator Jeff Yarbro</option>
+
+        </select>
+
+        <label for="story">Your Message:</label>
+        <textarea id="story" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+        <button class="btn" onclick="generateEmail('senator')">Generate Email</button>
+        <div id="emailPreview" style="margin-top:20px; display:none">
+          <h3>Your Draft Email:</h3>
+          <p id="emailBody" style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; background:#121832;"></p>
+          <a id="mailtoLink" class="btn" style="margin-top:10px; display:inline-block" href="#">Open Email App →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENNESSEE HOUSE -->
+    <section class="wrap" id="email-tennessee-house" style="margin-top:60px">
+      <h1>Email a Tennessee House Member</h1>
+      <p>Select one or more representatives and write your message. A pre-filled email will open in your email app.</p>
+      <div class="card">
+        <label for="house">Choose House Members:</label>
+        <select id="house" name="tennessee_representative" multiple size="20" style="width:100%; margin-bottom:10px;">
+
+          <option value="rep.rebecca.alexander@capitol.tn.gov|Representative Rebecca Alexander">Representative Rebecca Alexander</option>
+          <option value="rep.fred.atchley@capitol.tn.gov|Representative Fred Atchley">Representative Fred Atchley</option>
+          <option value="rep.jody.barrett@capitol.tn.gov|Representative Jody Barrett">Representative Jody Barrett</option>
+          <option value="rep.charlie.baum@capitol.tn.gov|Representative Charlie Baum">Representative Charlie Baum</option>
+          <option value="rep.aftyn.behn@capitol.tn.gov|Representative Aftyn Behn">Representative Aftyn Behn</option>
+          <option value="rep.clark.boyd@capitol.tn.gov|Representative Clark Boyd">Representative Clark Boyd</option>
+          <option value="rep.rush.bricken@capitol.tn.gov|Representative Rush Bricken">Representative Rush Bricken</option>
+          <option value="rep.shaundelle.brooks@capitol.tn.gov|Representative Shaundelle Brooks">Representative Shaundelle Brooks</option>
+          <option value="rep.gino.bulso@capitol.tn.gov|Representative Gino Bulso">Representative Gino Bulso</option>
+          <option value="rep.jeff.burkhart@capitol.tn.gov|Representative Jeff Burkhart">Representative Jeff Burkhart</option>
+
+          <option value="rep.ed.butler@capitol.tn.gov|Representative Ed Butler">Representative Ed Butler</option>
+          <option value="rep.karen.camper@capitol.tn.gov|Representative Karen Camper">Representative Karen Camper</option>
+          <option value="rep.kip.capley@capitol.tn.gov|Representative Kip Capley">Representative Kip Capley</option>
+          <option value="rep.michele.carringer@capitol.tn.gov|Representative Michele Carringer">Representative Michele Carringer</option>
+          <option value="rep.scott.cepicky@capitol.tn.gov|Representative Scott Cepicky">Representative Scott Cepicky</option>
+          <option value="rep.jesse.chism@capitol.tn.gov|Representative Jesse Chism">Representative Jesse Chism</option>
+          <option value="rep.john.ray.clemmons@capitol.tn.gov|Representative John Ray Clemmons">Representative John Ray Clemmons</option>
+          <option value="rep.mark.cochran@capitol.tn.gov|Representative Mark Cochran">Representative Mark Cochran</option>
+          <option value="rep.john.crawford@capitol.tn.gov|Representative John Crawford">Representative John Crawford</option>
+          <option value="rep.tandy.darby@capitol.tn.gov|Representative Tandy Darby">Representative Tandy Darby</option>
+
+          <option value="rep.elaine.davis@capitol.tn.gov|Representative Elaine Davis">Representative Elaine Davis</option>
+          <option value="rep.vincent.dixie@capitol.tn.gov|Representative Vincent Dixie">Representative Vincent Dixie</option>
+          <option value="rep.clay.doggett@capitol.tn.gov|Representative Clay Doggett">Representative Clay Doggett</option>
+          <option value="rep.rick.eldridge@capitol.tn.gov|Representative Rick Eldridge">Representative Rick Eldridge</option>
+          <option value="rep.jeremy.faison@capitol.tn.gov|Representative Jeremy Faison">Representative Jeremy Faison</option>
+          <option value="rep.andrew.farmer@capitol.tn.gov|Representative Andrew Farmer">Representative Andrew Farmer</option>
+          <option value="rep.bob.freeman@capitol.tn.gov|Representative Bob Freeman">Representative Bob Freeman</option>
+          <option value="rep.monty.fritts@capitol.tn.gov|Representative Monty Fritts">Representative Monty Fritts</option>
+          <option value="rep.ron.gant@capitol.tn.gov|Representative Ron Gant">Representative Ron Gant</option>
+          <option value="rep.johnny.garrett@capitol.tn.gov|Representative Johnny Garrett">Representative Johnny Garrett</option>
+
+          <option value="rep.yusuf.hakeem@capitol.tn.gov|Representative Yusuf Hakeem">Representative Yusuf Hakeem</option>
+          <option value="rep.michael.hale@capitol.tn.gov|Representative Michael Hale">Representative Michael Hale</option>
+          <option value="rep.ga.hardaway@capitol.tn.gov|Representative G.A. Hardaway">Representative G.A. Hardaway</option>
+          <option value="rep.torrey.harris@capitol.tn.gov|Representative Torrey Harris">Representative Torrey Harris</option>
+          <option value="rep.kirk.haston@capitol.tn.gov|Representative Kirk Haston">Representative Kirk Haston</option>
+          <option value="rep.david.hawk@capitol.tn.gov|Representative David Hawk">Representative David Hawk</option>
+          <option value="rep.esther.helton@capitol.tn.gov|Representative Esther Helton-Haynes">Representative Esther Helton-Haynes</option>
+          <option value="rep.caleb.hemmer@capitol.tn.gov|Representative Caleb Hemmer">Representative Caleb Hemmer</option>
+          <option value="rep.gary.hicks@capitol.tn.gov|Representative Gary Hicks">Representative Gary Hicks</option>
+          <option value="rep.tim.hicks@capitol.tn.gov|Representative Tim Hicks">Representative Tim Hicks</option>
+
+          <option value="rep.timothy.hill@capitol.tn.gov|Representative Timothy Hill">Representative Timothy Hill</option>
+          <option value="rep.dan.howell@capitol.tn.gov|Representative Dan Howell">Representative Dan Howell</option>
+          <option value="rep.bud.hulsey@capitol.tn.gov|Representative Bud Hulsey">Representative Bud Hulsey</option>
+          <option value="rep.chris.hurt@capitol.tn.gov|Representative Chris Hurt">Representative Chris Hurt</option>
+          <option value="rep.gloria.johnson@capitol.tn.gov|Representative Gloria Johnson">Representative Gloria Johnson</option>
+          <option value="rep.justin.jones@capitol.tn.gov|Representative Justin Jones">Representative Justin Jones</option>
+          <option value="rep.renea.jones@capitol.tn.gov|Representative Renea Jones">Representative Renea Jones</option>
+          <option value="rep.kelly.keisling@capitol.tn.gov|Representative Kelly Keisling">Representative Kelly Keisling</option>
+          <option value="rep.sabi.kumar@capitol.tn.gov|Representative Sabi 'Doc' Kumar">Representative Sabi 'Doc' Kumar</option>
+          <option value="rep.justin.lafferty@capitol.tn.gov|Representative Justin Lafferty">Representative Justin Lafferty</option>
+
+          <option value="rep.william.lamberth@capitol.tn.gov|Representative William Lamberth">Representative William Lamberth</option>
+          <option value="rep.tom.leatherwood@capitol.tn.gov|Representative Tom Leatherwood">Representative Tom Leatherwood</option>
+          <option value="rep.mary.littleton@capitol.tn.gov|Representative Mary Littleton">Representative Mary Littleton</option>
+          <option value="rep.harold.love@capitol.tn.gov|Representative Harold Love, Jr.">Representative Harold Love, Jr.</option>
+          <option value="rep.susan.lynn@capitol.tn.gov|Representative Susan Lynn">Representative Susan Lynn</option>
+          <option value="rep.aron.maberry@capitol.tn.gov|Representative Aron Maberry">Representative Aron Maberry</option>
+          <option value="rep.pat.marsh@capitol.tn.gov|Representative Pat Marsh">Representative Pat Marsh</option>
+          <option value="rep.brock.martin@capitol.tn.gov|Representative Brock Martin">Representative Brock Martin</option>
+          <option value="rep.greg.martin@capitol.tn.gov|Representative Greg Martin">Representative Greg Martin</option>
+          <option value="rep.jake.mccalmon@capitol.tn.gov|Representative Jake McCalmon">Representative Jake McCalmon</option>
+
+          <option value="rep.sam.mckenzie@capitol.tn.gov|Representative Sam McKenzie">Representative Sam McKenzie</option>
+          <option value="rep.larry.miller@capitol.tn.gov|Representative Larry Miller">Representative Larry Miller</option>
+          <option value="rep.bo.mitchell@capitol.tn.gov|Representative Bo Mitchell">Representative Bo Mitchell</option>
+          <option value="rep.debra.moody@capitol.tn.gov|Representative Debra Moody">Representative Debra Moody</option>
+          <option value="rep.jerome.moon@capitol.tn.gov|Representative Jerome Moon">Representative Jerome Moon</option>
+          <option value="rep.antonio.parkinson@capitol.tn.gov|Representative Antonio Parkinson">Representative Antonio Parkinson</option>
+          <option value="rep.justin.j.pearson@capitol.tn.gov|Representative Justin J. Pearson">Representative Justin J. Pearson</option>
+          <option value="rep.jason.powell@capitol.tn.gov|Representative Jason Powell">Representative Jason Powell</option>
+          <option value="rep.dennis.powers@capitol.tn.gov|Representative Dennis Powers">Representative Dennis Powers</option>
+          <option value="rep.kevin.raper@capitol.tn.gov|Representative Kevin Raper">Representative Kevin Raper</option>
+
+          <option value="rep.jay.reedy@capitol.tn.gov|Representative Jay Reedy">Representative Jay Reedy</option>
+          <option value="rep.lee.reeves@capitol.tn.gov|Representative Lee Reeves">Representative Lee Reeves</option>
+          <option value="rep.michele.reneau@capitol.tn.gov|Representative Michele Reneau">Representative Michele Reneau</option>
+          <option value="rep.tim.rudd@capitol.tn.gov|Representative Tim Rudd">Representative Tim Rudd</option>
+          <option value="rep.iris.rudder@capitol.tn.gov|Representative Iris Rudder">Representative Iris Rudder</option>
+          <option value="rep.lowell.russell@capitol.tn.gov|Representative Lowell Russell">Representative Lowell Russell</option>
+          <option value="rep.gabby.salinas@capitol.tn.gov|Representative Gabby Salinas">Representative Gabby Salinas</option>
+          <option value="rep.rick.scarbrough@capitol.tn.gov|Representative Rick Scarbrough">Representative Rick Scarbrough</option>
+          <option value="speaker.cameron.sexton@capitol.tn.gov|Representative Cameron Sexton">Representative Cameron Sexton</option>
+          <option value="rep.johnny.shaw@capitol.tn.gov|Representative Johnny Shaw">Representative Johnny Shaw</option>
+
+          <option value="rep.paul.sherrell@capitol.tn.gov|Representative Paul Sherrell">Representative Paul Sherrell</option>
+          <option value="rep.william.slater@capitol.tn.gov|Representative William Slater">Representative William Slater</option>
+          <option value="rep.mike.sparks@capitol.tn.gov|Representative Mike Sparks">Representative Mike Sparks</option>
+          <option value="rep.robert.stevens@capitol.tn.gov|Representative Robert Stevens">Representative Robert Stevens</option>
+          <option value="rep.tom.stinnett@capitol.tn.gov|Representative Tom Stinnett">Representative Tom Stinnett</option>
+          <option value="rep.bryan.terry@capitol.tn.gov|Representative Bryan Terry">Representative Bryan Terry</option>
+          <option value="rep.chris.todd@capitol.tn.gov|Representative Chris Todd">Representative Chris Todd</option>
+          <option value="rep.joe.towns@capitol.tn.gov|Representative Joe Towns, Jr.">Representative Joe Towns, Jr.</option>
+          <option value="rep.ron.travis@capitol.tn.gov|Representative Ron Travis">Representative Ron Travis</option>
+          <option value="rep.kevin.vaughan@capitol.tn.gov|Representative Kevin Vaughan">Representative Kevin Vaughan</option>
+
+          <option value="rep.greg.vital@capitol.tn.gov|Representative Greg Vital">Representative Greg Vital</option>
+          <option value="rep.todd.warner@capitol.tn.gov|Representative Todd Warner">Representative Todd Warner</option>
+          <option value="rep.mark.white@capitol.tn.gov|Representative Mark White">Representative Mark White</option>
+          <option value="rep.ryan.williams@capitol.tn.gov|Representative Ryan Williams">Representative Ryan Williams</option>
+          <option value="rep.dave.wright@capitol.tn.gov|Representative Dave Wright">Representative Dave Wright</option>
+          <option value="rep.jason.zachary@capitol.tn.gov|Representative Jason Zachary">Representative Jason Zachary</option>
+
+        </select>
+
+        <label for="story-house">Your Message:</label>
+        <textarea id="story-house" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+        <button class="btn" onclick="generateEmail('house')">Generate Email</button>
+
+        <div id="emailPreview-house" style="margin-top:20px; display:none">
+          <h3>Your Draft Email:</h3>
+          <p id="emailBody-house" style="white-space:pre-wrap; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:8px; background:#121832;"></p>
+          <a id="mailtoLink-house" class="btn" style="margin-top:10px; display:inline-block" href="#">Open Email App →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('password-input')?.value;
+      const error = document.getElementById('error');
+      if (input === 'fart2025!') {
+        document.getElementById('password-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        window.scrollTo(0,0);
+      } else {
+        if (error) {
+          error.textContent = 'Incorrect password. Please try again.';
+        }
+      }
+    }
+  </script>
+
+  <footer>
+    <p>GasStationHeroin.org is a public-health awareness project by <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">Mothers Against Herbal Abuse (MAHA)</a>. Visit the full site at <a href="https://www.mothersagainstherbalabuse.org/" target="_blank">mothersagainstherbalabuse.org</a> • © <span id="y">2025</span></p>
+  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function generateEmail(chamber) {
+      const id = chamber === 'house' ? 'house' : 'senator';
+      const textarea = document.getElementById(chamber === 'house' ? 'story-house' : 'story');
+      const preview = document.getElementById(chamber === 'house' ? 'emailPreview-house' : 'emailPreview');
+      const output = document.getElementById(chamber === 'house' ? 'emailBody-house' : 'emailBody');
+      const link = document.getElementById(chamber === 'house' ? 'mailtoLink-house' : 'mailtoLink');
+
+      const selected = Array.from(document.getElementById(id).selectedOptions);
+      const story = textarea.value.trim();
+
+      if (!selected.length) {
+        alert("Please select at least one " + (chamber === 'house' ? "representative" : "senator") + ".");
+        return;
+      }
+
+      const recipients = selected.map(opt => opt.value.split('|')[0]).join(',');
+      const names = selected.map(opt => opt.value.split('|')[1]).join(', ');
+      const message = `Dear ${names},\n\n${story}\n\nSincerely,\n[Your Name]`;
+
+      output.textContent = message;
+      preview.style.display = 'block';
+      link.href = `mailto:${recipients}?subject=${encodeURIComponent('Support a Kratom Ban in Tennessee')}&body=${encodeURIComponent(message)}`;
+    }
+  </script>
+</body>
+</html>
