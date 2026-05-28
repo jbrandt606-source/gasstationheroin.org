@@ -1,349 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Gas Station Heroin – investigative public awareness campaign. Educating parents and communities about dangerous substances sold in gas stations and vape shops.">
-  <title>Gas Station Heroin | Investigative Advocacy</title>
-  <!-- Professional condensed sans-serif (distressed / editorial feel) -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Gas Station Heroin</title>
 
-    body {
-      background: #050505;
-      font-family: 'Inter', sans-serif;
-      color: #f0f0f0;
-      line-height: 1.4;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    /* --- DESKTOP HERO: 50/50 SPLIT --- */
-    .hero-desktop {
-      display: flex;
-      min-height: 100vh;
-      width: 100%;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* LEFT SIDE: black background, typography, gritty texture (subtle) */
-    .hero-left {
-      flex: 1;
-      background: #050505;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 3rem 3rem 3rem 4rem;
-      z-index: 1;
-      overflow-x: hidden;
-    }
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: #050505;
+  color: #fff;
+  font-family: Inter, sans-serif;
+}
 
-    /* Distressed/gritty texture overlay (editorial, no glow/blur) */
-    .hero-left::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      opacity: 0.25;
-      pointer-events: none;
-      mix-blend-mode: multiply;
-    }
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.98) 0%, rgba(0,0,0,.92) 34%, rgba(0,0,0,.45) 62%, rgba(0,0,0,.12) 100%),
+    url("herostore.jpeg") center center / cover no-repeat;
+}
 
-    .hero-left-content {
-      position: relative;
-      z-index: 2;
-      max-width: 540px;
-      width: 100%;
-    }
+.hero-inner {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 5vw;
+}
 
-    /* Typography: bold condensed, distressed/no glow, no neon */
-    .headline {
-      font-family: 'Oswald', 'Impact', 'Arial Black', sans-serif;
-      font-weight: 700;
-      text-transform: uppercase;
-      line-height: 0.92;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.8rem;
-    }
-    .gas-station {
-      font-size: clamp(3rem, 7vw, 5.2rem);
-      color: #ffffff;
-      display: block;
-      text-shadow: none;
-    }
-    .heroin {
-      font-size: clamp(3rem, 7vw, 5.8rem);
-      color: #b1212c;   /* deep matte red — no glow */
-      display: block;
-      margin-top: -0.1em;
-      text-shadow: none;
-    }
+.hero-copy {
+  width: min(560px, 46vw);
+  z-index: 2;
+}
 
-    .subhead {
-      font-size: 1.05rem;
-      line-height: 1.45;
-      font-weight: 500;
-      color: #cccccc;
-      margin-bottom: 2rem;
-      border-left: 3px solid #b1212c;
-      padding-left: 1rem;
-    }
+h1 {
+  font-family: Oswald, Impact, sans-serif;
+  text-transform: uppercase;
+  line-height: .88;
+  letter-spacing: -0.03em;
+  margin-bottom: 34px;
+}
 
-    /* editorial bullet list */
-    .bullet-list {
-      list-style: none;
-      margin-bottom: 2.2rem;
-    }
-    .bullet-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      font-weight: 500;
-      color: #ececec;
-    }
-    .bullet-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 26px;
-      color: #b1212c;
-      font-weight: 600;
-      font-size: 1.2rem;
-    }
+h1 .white {
+  display: block;
+  font-size: clamp(4rem, 7vw, 8rem);
+  color: #f4f4f4;
+}
 
-    /* bottom tagline */
-    .tagline {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 600;
-      font-size: 1.1rem;
-      letter-spacing: 1.5px;
-      color: #ffffff;
-      text-transform: uppercase;
-      border-top: 1px solid rgba(180, 180, 180, 0.3);
-      padding-top: 1.3rem;
-      display: inline-block;
-    }
-    .tagline span {
-      color: #b1212c;
-      margin: 0 2px;
-    }
+h1 .red {
+  display: block;
+  font-size: clamp(4.5rem, 8vw, 9rem);
+  color: #b5121b;
+}
 
-    /* RIGHT SIDE: full-height storefront – natural uncropped framing (roof, signs, wet pavement) */
-    .hero-right {
-      flex: 1;
-      position: relative;
-      background-color: #000;
-      overflow: hidden;
-    }
-    .storefront-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 35% 20%;  /* optimized to show roof peak, smoke & vape sign, KRATOM lettering, wet pavement */
-      display: block;
-    }
-    /* subtle cinematic overlay (dark moody, preserves details) */
-    .hero-right::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(95deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 100%);
-      pointer-events: none;
-    }
+.subhead {
+  border-left: 5px solid #c51624;
+  padding-left: 24px;
+  max-width: 560px;
+  font-size: clamp(1.15rem, 1.8vw, 1.8rem);
+  line-height: 1.35;
+  color: #f1f1f1;
+  margin-bottom: 36px;
+}
 
-    /* ========== MOBILE HERO (background image + gradient overlay) ========== */
-    .hero-mobile {
-      display: none;
-      min-height: 100vh;
-      width: 100%;
-      position: relative;
-      background: url('herostore.jpeg') center 25% / cover no-repeat;
-      background-attachment: scroll;
-    }
-    /* Dark gradient overlay: left-to-right + top-to-bottom for readability */
-    .hero-mobile::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(145deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0.55) 100%);
-      z-index: 1;
-    }
-    .hero-mobile-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: 3rem 2rem;
-      max-width: 600px;
-      margin: 0 auto;
-      width: 100%;
-    }
+.bullets {
+  list-style: none;
+  margin-bottom: 42px;
+}
 
-    /* Same typography rules for mobile — NO GLOW, NO NEON */
-    .mobile-headline {
-      font-family: 'Oswald', 'Impact', sans-serif;
-      font-weight: 700;
-      text-transform: uppercase;
-      line-height: 0.92;
-      margin-bottom: 1.5rem;
-    }
-    .mobile-gas {
-      font-size: clamp(2.8rem, 12vw, 4.8rem);
-      color: #ffffff;
-      display: block;
-    }
-    .mobile-heroin {
-      font-size: clamp(2.8rem, 12vw, 5rem);
-      color: #b1212c;
-      display: block;
-      margin-top: -0.05em;
-    }
-    .mobile-sub {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #e0e0e0;
-      margin-bottom: 1.8rem;
-      border-left: 3px solid #b1212c;
-      padding-left: 1rem;
-    }
-    .mobile-bullets {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-    .mobile-bullets li {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      margin-bottom: 1rem;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-    .mobile-bullet-icon {
-      color: #b1212c;
-      font-size: 1.1rem;
-      width: 26px;
-    }
-    .mobile-tagline {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      color: #ffffff;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 1.2rem;
-      display: inline-block;
-    }
-    .mobile-tagline span {
-      color: #b1212c;
-    }
+.bullets li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 18px 0;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
 
-    /* RESPONSIVE BREAKPOINTS */
-    @media (max-width: 880px) {
-      .hero-desktop {
-        display: none;
-      }
-      .hero-mobile {
-        display: block;
-      }
-    }
+.icon {
+  width: 54px;
+  height: 54px;
+  border: 3px solid #c51624;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #c51624;
+  font-size: 1.3rem;
+}
 
-    /* Fine-tuning for desktop: ensure right side image shows roof peak, KRATOM lettering, wet reflections */
-    @media (min-width: 881px) {
-      .storefront-img {
-        object-position: 35% 18%; /* further refined: reveals full roofline, smoke shop sign, KRATOM text, wet ground */
-      }
-      .hero-left {
-        padding: 3rem 2rem 3rem 4rem;
-      }
-      .hero-left-content {
-        max-width: 520px;
-      }
-    }
+.tagline {
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: clamp(1.25rem, 2vw, 2rem);
+}
 
-    @media (min-width: 1400px) {
-      .hero-left-content {
-        max-width: 600px;
-      }
-      .gas-station {
-        font-size: 5.6rem;
-      }
-      .heroin {
-        font-size: 6.2rem;
-      }
-      .storefront-img {
-        object-position: 35% 16%;
-      }
-    }
+.tagline .red { color: #c51624; }
+.tagline .green { color: #67b735; }
+.tagline .blue { color: #1e75bd; }
+.tagline span { margin-right: 18px; }
 
-    /* no glow, no neon, no blur, no floating UI elements — verified */
-    /* all text is sharp, image keeps original sign details (KRAITOM/KRATOM letters, smoke/vape branding) */
-  </style>
+/* MOBILE */
+@media (max-width: 800px) {
+  .hero {
+    min-height: 100svh;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.72) 42%, rgba(0,0,0,.36) 100%),
+      url("herostore.jpeg") center top / cover no-repeat;
+  }
+
+  .hero-inner {
+    min-height: 100svh;
+    align-items: flex-start;
+    padding: 72px 30px 42px;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  h1 {
+    margin-bottom: 26px;
+  }
+
+  h1 .white {
+    font-size: clamp(3.9rem, 16vw, 6.2rem);
+  }
+
+  h1 .red {
+    font-size: clamp(4.4rem, 18vw, 7rem);
+  }
+
+  .subhead {
+    font-size: 1.25rem;
+    line-height: 1.35;
+    max-width: 92%;
+    margin-bottom: 34px;
+  }
+
+  .bullets li {
+    font-size: 1rem;
+    margin: 16px 0;
+  }
+
+  .icon {
+    width: 46px;
+    height: 46px;
+    font-size: 1rem;
+  }
+
+  .tagline {
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+}
+
+/* VERY SMALL PHONES */
+@media (max-width: 420px) {
+  .hero-inner {
+    padding: 56px 24px 36px;
+  }
+
+  h1 .white {
+    font-size: 3.5rem;
+  }
+
+  h1 .red {
+    font-size: 4rem;
+  }
+
+  .subhead {
+    font-size: 1.05rem;
+  }
+
+  .bullets li {
+    font-size: .92rem;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- DESKTOP HERO: 50/50 split, right side storefront full height, natural framing -->
-  <div class="hero-desktop">
-    <div class="hero-left">
-      <div class="hero-left-content">
-        <div class="headline">
-          <span class="gas-station">GAS STATION</span>
-          <span class="heroin">HEROIN</span>
-        </div>
-        <div class="subhead">
-          Educating parents and communities on what is being sold in gas stations and vape shops across America.
-        </div>
-        <ul class="bullet-list">
-          <li><span class="bullet-icon">👁️</span> See what’s really being sold</li>
-          <li><span class="bullet-icon">⚠️</span> Understand the risks</li>
-          <li><span class="bullet-icon">🛡️</span> Protect children & communities</li>
-        </ul>
-        <div class="tagline">
-          AWARENESS <span>|</span> EDUCATION <span>|</span> ACTION
-        </div>
-      </div>
-    </div>
-    <div class="hero-right">
-      <img class="storefront-img" src="herostore.jpeg" alt="Gas station storefront with KRATOM window lettering, smoke & vape sign, wet pavement reflections, night atmosphere">
-    </div>
-  </div>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
 
-  <!-- MOBILE HERO: storefront as background image with cinematic gradient overlay, same hierarchy -->
-  <div class="hero-mobile">
-    <div class="hero-mobile-content">
-      <div class="mobile-headline">
-        <span class="mobile-gas">GAS STATION</span>
-        <span class="mobile-heroin">HEROIN</span>
-      </div>
-      <div class="mobile-sub">
+      <h1>
+        <span class="white">Gas Station</span>
+        <span class="red">Heroin</span>
+      </h1>
+
+      <p class="subhead">
         Educating parents and communities on what is being sold in gas stations and vape shops across America.
-      </div>
-      <ul class="mobile-bullets">
-        <li><span class="mobile-bullet-icon">👁️</span> See what’s really being sold</li>
-        <li><span class="mobile-bullet-icon">⚠️</span> Understand the risks</li>
-        <li><span class="mobile-bullet-icon">🛡️</span> Protect children & communities</li>
+      </p>
+
+      <ul class="bullets">
+        <li><span class="icon">◉</span> See what’s really being sold</li>
+        <li><span class="icon">!</span> Understand the risks</li>
+        <li><span class="icon">◆</span> Protect children & communities</li>
       </ul>
-      <div class="mobile-tagline">
-        AWARENESS <span>|</span> EDUCATION <span>|</span> ACTION
+
+      <div class="tagline">
+        <span class="red">Awareness.</span>
+        <span class="green">Education.</span>
+        <span class="blue">Action.</span>
       </div>
+
     </div>
   </div>
+</section>
+
 </body>
 </html>
