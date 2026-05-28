@@ -109,17 +109,13 @@ h1 {
 .g { color: #67b735; }
 .b { color: #1f77d0; }
 
-/* MOBILE PORTRAIT — WIDE HERO IMAGE SCALED DOWN */
+/* MOBILE PORTRAIT — WIDE HERO SCALED DOWN, NO TOP GAP */
 @media (max-width: 800px) and (orientation: portrait) {
-  body {
-    background: #000;
-  }
-
   .hero {
     min-height: auto;
     height: auto;
     aspect-ratio: 16 / 9;
-    margin-top: 34vh;
+    margin-top: 0;
 
     background:
       linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.84) 36%, rgba(0,0,0,.25) 63%, rgba(0,0,0,0) 100%),
