@@ -22,7 +22,7 @@ body {
   line-height: 1.4;
 }
 
-/* ----- HERO: no gap, full viewport, exactly as designed but without extra margins ----- */
+/* ----- HERO: exactly as original (no top gap, correct gradient) ----- */
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -108,11 +108,11 @@ li {
 .g { color: #67b735; }
 .b { color: #1f77d0; }
 
-/* RESPONSIVE HERO: remove the weird margin-top gap on mobile */
+/* RESPONSIVE HERO: exactly as original (no gap on mobile) */
 @media (max-width: 800px) and (orientation: portrait) {
   .hero {
     min-height: 100vh;
-    margin-top: 0;          /* removed the 34vh gap */
+    margin-top: 0;          /* removed the previous 34vh gap */
     aspect-ratio: auto;
     background: linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.82) 36%, rgba(0,0,0,.22) 62%, rgba(0,0,0,0) 100%),
                 url("herostore.jpeg") center center/cover no-repeat;
@@ -155,14 +155,14 @@ li {
   .red { font-size: 9vw; }
 }
 
-/* ----- NEW SECTIONS: editorial & informational (germane to topic) ----- */
+/* ----- NEW SECTIONS (stats, shelf, risk, footer) - all germane ----- */
 .container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* Crisis stats banner */
+/* crisis stats banner */
 .stats-banner {
   background: #0a0a0a;
   padding: 3rem 0;
@@ -196,7 +196,7 @@ li {
   margin-top: 0.5rem;
 }
 
-/* Shelf section (existing, enhanced) */
+/* shelf section */
 .shelf-section {
   background: #050505;
   padding: 4rem 0;
@@ -241,7 +241,7 @@ li {
   transform: translateY(-2px);
 }
 
-/* Risk & education section */
+/* risk & education columns */
 .risk-section {
   background: #0c0c0c;
   padding: 4rem 0;
@@ -303,7 +303,7 @@ li {
   color: #000;
 }
 
-/* Resource links + secondary */
+/* secondary links (about, media, etc) */
 .secondary-links {
   margin-top: 2rem;
   display: flex;
@@ -332,7 +332,7 @@ li {
   color: #d71920;
 }
 
-/* Footer */
+/* footer */
 .main-footer {
   background: #020202;
   padding: 2rem 0;
@@ -386,7 +386,7 @@ li {
 </head>
 <body>
 
-<!-- Hero section – no top gap, fully functional -->
+<!-- HERO SECTION: EXACTLY AS ORIGINAL (restored) -->
 <section class="hero">
   <div class="hero-content">
     <h1>
@@ -409,7 +409,7 @@ li {
   </div>
 </section>
 
-<!-- Crisis stats (germane for an information site) -->
+<!-- STATS BANNER (germane for an information site) -->
 <div class="stats-banner">
   <div class="container">
     <div class="stats-grid">
@@ -429,7 +429,7 @@ li {
   </div>
 </div>
 
-<!-- "What's on the shelf" section -->
+<!-- "WHAT IS ON THE SHELF" SECTION -->
 <div class="shelf-section">
   <div class="container">
     <div class="section-title">What's <span>on the shelf</span></div>
@@ -444,7 +444,8 @@ li {
       <a href="#" class="shelf-link">Vapes / E-liquids</a>
       <a href="#" class="shelf-link">Other Synthetics</a>
     </div>
-    <!-- helpful links (About, Media, etc) -->
+
+    <!-- HELPFUL LINKS (About, Media Center, etc) -->
     <div class="secondary-links">
       <div class="secondary-group">
         <a href="#">About Us</a>
@@ -456,12 +457,13 @@ li {
       <div class="secondary-group">
         <a href="#">Take Action</a>
         <a href="#">Contact</a>
+        <a href="#">Legislative Updates</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- In-depth risk and education section -->
+<!-- IN-DEPTH RISK & EDUCATION SECTION -->
 <div class="risk-section">
   <div class="container">
     <div class="section-title">Know the <span>real danger</span></div>
@@ -490,7 +492,7 @@ li {
   </div>
 </div>
 
-<!-- Additional informative block: how to identify + resources -->
+<!-- ADDITIONAL IDENTIFICATION & RESOURCES BLOCK -->
 <div class="shelf-section" style="background:#0a0a0a; border-bottom: none;">
   <div class="container">
     <div class="section-title">Spot <span>the signs</span> — protect your child</div>
@@ -509,7 +511,7 @@ li {
   </div>
 </div>
 
-<!-- footer -->
+<!-- FOOTER -->
 <footer class="main-footer">
   <div class="container footer-inner">
     <div class="copyright">
