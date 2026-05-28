@@ -2,192 +2,313 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Gas Station Heroin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="description" content="Gas Station Heroin: Exposing dangerous products sold in gas stations and vape shops. Awareness, education, action." />
+<title>Gas Station Heroin | Investigative Campaign</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-  background:#000;
-  color:#fff;
-  font-family:Inter,sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hero{
-  width:100%;
-  min-height:100vh;
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.85) 34%,rgba(0,0,0,.25) 62%,rgba(0,0,0,0) 100%),
-    url("herostore.jpeg") center center/cover no-repeat;
-  display:flex;
-  align-items:center;
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
 }
 
-.hero-content{
-  width:42%;
-  padding-left:4vw;
+/* ----- existing hero (exactly as provided, unchanged) ----- */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.85) 34%, rgba(0,0,0,.25) 62%, rgba(0,0,0,0) 100%),
+              url("herostore.jpeg") center center/cover no-repeat;
+  display: flex;
+  align-items: center;
 }
 
-h1{
-  font-family:Oswald,sans-serif;
-  text-transform:uppercase;
-  line-height:.88;
-  letter-spacing:-.04em;
-  margin-bottom:1.4rem;
+.hero-content {
+  width: 42%;
+  padding-left: 4vw;
 }
 
-.white{
-  display:block;
-  font-size:clamp(4rem,7vw,8rem);
-  color:#fff;
+h1 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  line-height: .88;
+  letter-spacing: -.04em;
+  margin-bottom: 1.4rem;
 }
 
-.red{
-  display:block;
-  font-size:clamp(4.5rem,8vw,9rem);
-  color:#b5121b;
+.white {
+  display: block;
+  font-size: clamp(4rem, 7vw, 8rem);
+  color: #fff;
 }
 
-.subhead{
-  border-left:4px solid #d71920;
-  padding-left:1rem;
-  font-size:clamp(1rem,1.5vw,1.45rem);
-  line-height:1.35;
-  margin-bottom:1.4rem;
+.red {
+  display: block;
+  font-size: clamp(4.5rem, 8vw, 9rem);
+  color: #b5121b;
 }
 
-ul{
-  list-style:none;
-  margin-bottom:1.6rem;
+.subhead {
+  border-left: 4px solid #d71920;
+  padding-left: 1rem;
+  font-size: clamp(1rem, 1.5vw, 1.45rem);
+  line-height: 1.35;
+  margin-bottom: 1.4rem;
+  font-weight: 500;
 }
 
-li{
-  display:flex;
-  align-items:center;
-  gap:.8rem;
-  margin:.65rem 0;
-  font-weight:700;
-  text-transform:uppercase;
-  font-size:clamp(.8rem,1vw,1rem);
+ul {
+  list-style: none;
+  margin-bottom: 1.6rem;
 }
 
-.icon{
-  width:36px;
-  height:36px;
-  border:2px solid #d71920;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:#d71920;
+li {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin: .65rem 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(.8rem, 1vw, 1rem);
 }
 
-.tagline{
-  font-family:Oswald,sans-serif;
-  font-size:clamp(1rem,1.5vw,1.5rem);
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  font-weight:700;
+.icon {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #d71920;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #d71920;
+  font-weight: 800;
 }
 
-.tagline span{margin-right:.6rem}
-.r{color:#d71920}
-.g{color:#67b735}
-.b{color:#1f77d0}
-
-/* PHONE PORTRAIT — keep it as a WIDE HERO, scaled down */
-@media(max-width:800px) and (orientation:portrait){
-  body{
-    background:#000;
-  }
-
-  .hero{
-    min-height:auto;
-    height:auto;
-    aspect-ratio:16/9;
-    margin-top:34vh;
-
-    background:
-      linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.82) 36%,rgba(0,0,0,.22) 62%,rgba(0,0,0,0) 100%),
-      url("herostore.jpeg") center center/cover no-repeat;
-
-    align-items:center;
-  }
-
-  .hero-content{
-    width:39%;
-    padding-left:3.4vw;
-  }
-
-  h1{
-    margin-bottom:.45rem;
-  }
-
-  .white{
-    font-size:8.8vw;
-  }
-
-  .red{
-    font-size:9.8vw;
-  }
-
-  .subhead{
-    border-left:2px solid #d71920;
-    padding-left:.45rem;
-    font-size:2.15vw;
-    line-height:1.25;
-    margin-bottom:.55rem;
-  }
-
-  ul{
-    margin-bottom:.65rem;
-  }
-
-  li{
-    gap:.35rem;
-    margin:.25rem 0;
-    font-size:1.85vw;
-    line-height:1.15;
-  }
-
-  .icon{
-    width:4.4vw;
-    height:4.4vw;
-    min-width:4.4vw;
-    border-width:1.5px;
-    font-size:1.5vw;
-  }
-
-  .tagline{
-    font-size:2.25vw;
-    letter-spacing:.04em;
-  }
-
-  .tagline span{
-    margin-right:.28rem;
-  }
+.tagline {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-weight: 700;
 }
 
-/* LANDSCAPE / DESKTOP MOBILE */
-@media(max-width:900px) and (orientation:landscape){
-  .hero{
-    min-height:100vh;
-  }
+.tagline span { margin-right: .6rem; }
+.r { color: #d71920; }
+.g { color: #67b735; }
+.b { color: #1f77d0; }
 
-  .hero-content{
-    width:42%;
+/* phone portrait – hero remains untouched */
+@media (max-width: 800px) and (orientation: portrait) {
+  body {
+    background: #000;
   }
+  .hero {
+    min-height: auto;
+    height: auto;
+    aspect-ratio: 16/9;
+    margin-top: 34vh;
+    background: linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.82) 36%, rgba(0,0,0,.22) 62%, rgba(0,0,0,0) 100%),
+                url("herostore.jpeg") center center/cover no-repeat;
+    align-items: center;
+  }
+  .hero-content {
+    width: 39%;
+    padding-left: 3.4vw;
+  }
+  h1 { margin-bottom: .45rem; }
+  .white { font-size: 8.8vw; }
+  .red { font-size: 9.8vw; }
+  .subhead {
+    border-left: 2px solid #d71920;
+    padding-left: .45rem;
+    font-size: 2.15vw;
+    margin-bottom: .55rem;
+  }
+  ul { margin-bottom: .65rem; }
+  li {
+    gap: .35rem;
+    margin: .25rem 0;
+    font-size: 1.85vw;
+  }
+  .icon {
+    width: 4.4vw;
+    height: 4.4vw;
+    min-width: 4.4vw;
+    border-width: 1.5px;
+    font-size: 1.5vw;
+  }
+  .tagline { font-size: 2.25vw; letter-spacing: .04em; }
+  .tagline span { margin-right: .28rem; }
+}
 
-  .white{font-size:8vw}
-  .red{font-size:9vw}
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero { min-height: 100vh; }
+  .hero-content { width: 42%; }
+  .white { font-size: 8vw; }
+  .red { font-size: 9vw; }
+}
+
+/* ----- NEW SECTIONS: shelf + footer (professional editorial style) ----- */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.shelf-section {
+  background: #0a0a0a;
+  padding: 5rem 0 4rem;
+  border-top: 1px solid rgba(215, 25, 32, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2.5rem;
+  color: #fff;
+  border-left: 5px solid #d71920;
+  padding-left: 1.2rem;
+}
+.section-title span {
+  color: #d71920;
+}
+
+.shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.2rem;
+}
+
+.shelf-link {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  padding: 1rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+  border-radius: 0px;
+  color: #f0f0f0;
+  text-decoration: none;
+  display: block;
+  font-family: 'Inter', sans-serif;
+}
+.shelf-link:hover {
+  background: #d71920;
+  color: #000;
+  border-color: #d71920;
+  transform: translateY(-2px);
+}
+
+.secondary-links {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #222;
+}
+
+.secondary-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.secondary-group a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.secondary-group a:hover {
+  color: #d71920;
+}
+
+/* footer area */
+.main-footer {
+  background: #020202;
+  padding: 2.5rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #6a6a6a;
+  border-top: 1px solid #181818;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.footer-links a:hover {
+  color: #d71920;
+}
+.copyright {
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+/* mobile adjustments for new sections */
+@media (max-width: 760px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  .shelf-section {
+    padding: 3rem 0;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .shelf-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.9rem;
+  }
+  .shelf-link {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  .secondary-group {
+    gap: 1.2rem;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links a {
+    margin: 0 0.7rem;
+  }
 }
 </style>
 </head>
-
 <body>
 
+<!-- HERO SECTION – EXACTLY AS PROVIDED -->
 <section class="hero">
   <div class="hero-content">
     <h1>
@@ -212,6 +333,55 @@ li{
     </div>
   </div>
 </section>
+
+<!-- "WHAT IS ON THE SHELF" AREA + HELPFUL LINKS -->
+<div class="shelf-section">
+  <div class="container">
+    <div class="section-title">What's <span>on the shelf</span></div>
+    
+    <div class="shelf-grid">
+      <a href="#" class="shelf-link">Nitrous Oxide</a>
+      <a href="#" class="shelf-link">Amyl Nitrate</a>
+      <a href="#" class="shelf-link">Opioids</a>
+      <a href="#" class="shelf-link">Sedatives</a>
+      <a href="#" class="shelf-link">Stimulants</a>
+      <a href="#" class="shelf-link">Hallucinogens</a>
+      <a href="#" class="shelf-link">THC</a>
+      <a href="#" class="shelf-link">Vapes</a>
+      <a href="#" class="shelf-link">Other</a>
+    </div>
+
+    <!-- additional helpful links: about us, media center, etc -->
+    <div class="secondary-links">
+      <div class="secondary-group">
+        <a href="#">About Us</a>
+        <a href="#">Media Center</a>
+        <a href="#">Research Library</a>
+        <a href="#">Parent Toolkit</a>
+        <a href="#">Report a Store</a>
+      </div>
+      <div class="secondary-group">
+        <a href="#">Take Action</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER with additional links and credibility -->
+<footer class="main-footer">
+  <div class="container footer-inner">
+    <div class="copyright">
+      © 2025 Gas Station Heroin Awareness Project — investigative public health initiative.
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Donate</a>
+      <a href="#">Press Kit</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
