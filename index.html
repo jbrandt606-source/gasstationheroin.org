@@ -16,7 +16,7 @@ body {
   color: #fff;
   font-family: 'Inter', sans-serif;
 }
-/* DESKTOP HERO - original style, cover crop is fine on large screens */
+/* DESKTOP HERO */
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -89,22 +89,21 @@ li {
 .g { color: #67b735; }
 .b { color: #1f77d0; }
 
-/* ========== MOBILE PORTRAIT: show ENTIRE hero image, no crop ========== */
+/* ========== MOBILE PORTRAIT: NO GAPS, FULL SCREEN, OPTIMAL CROP ========== */
 @media (max-width: 800px) and (orientation: portrait) {
   .hero {
     min-height: 100vh;
     margin-top: 0;
-    /* Change from cover to contain to see full building + signage + wet pavement */
+    /* cover fills screen, position shows roof + KRATOM sign + wet ground */
     background: linear-gradient(135deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.75) 40%, rgba(0,0,0,.5) 100%),
-                url("herostore.jpeg") center 30% / contain no-repeat;
-    background-color: #000;
-    align-items: flex-start;
-    padding-top: 8vh;
+                url("herostore.jpeg") center 30% / cover no-repeat;
+    align-items: center; /* vertically center text */
+    padding: 0;
   }
   .hero-content {
     width: 85%;
     padding-left: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 0;
   }
   .white {
     font-size: 12vw;
@@ -132,7 +131,7 @@ li {
   }
 }
 
-/* landscape & tablet – keep cover but no gap */
+/* landscape & tablet – keep cover, no gaps */
 @media (max-width: 900px) and (orientation: landscape) {
   .hero {
     min-height: 100vh;
@@ -338,7 +337,7 @@ li {
   </div>
 </section>
 
-<!-- stats, shelf, risk, footer sections (identical to previous functional version) -->
+<!-- stats, shelf, risk, footer sections -->
 <div class="stats-banner">
   <div class="container">
     <div class="stats-grid">
