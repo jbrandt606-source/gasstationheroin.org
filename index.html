@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="Gas Station Heroin — exposing dangerous products sold in gas stations and vape shops. Awareness. Education. Action." />
-  <title>Gas Station Heroin | Investigative Awareness</title>
+  <title>Gas Station Heroin | Awareness Campaign</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <style>
     * {
@@ -20,89 +20,115 @@
       line-height: 1.4;
     }
 
-    /* Hero section — image background, gradient overlay for readability */
+    /* HERO SECTION — using hero2.jpeg, mobile-optimized readability */
     .hero {
       width: 100%;
       min-height: 100vh;
-      background: linear-gradient(135deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.5) 100%),
-                  url("herostore.jpeg") center 25% / cover no-repeat;
+      background: linear-gradient(135deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,0.5) 100%),
+                  url("hero2.jpeg") center center / cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: flex-start;
       padding: 2rem 1.5rem;
     }
 
-    /* Content container — limits width for readability */
     .hero-content {
       max-width: 680px;
       width: 100%;
     }
 
-    /* Top product strip (SMOKE & VAPE + KRATOM line) */
-    .product-strip {
+    /* top badge row: SMOKE & VAPE + product line + OPEN + KRA TOM */
+    .top-badge {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.75rem 1rem;
       margin-bottom: 1.5rem;
     }
     .smoke-vape {
       font-family: 'Oswald', sans-serif;
-      font-size: clamp(1rem, 4vw, 1.6rem);
-      letter-spacing: 2px;
-      color: #e0e0e0;
-      font-weight: 600;
+      font-size: clamp(1.2rem, 5vw, 1.8rem);
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #ffffff;
+      background: rgba(0,0,0,0.5);
+      padding: 0.2rem 0.8rem;
       border-left: 3px solid #d71920;
-      padding-left: 0.75rem;
-      margin-bottom: 0.5rem;
     }
-    .kratom-line {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(0.7rem, 3vw, 0.9rem);
+    .product-line {
+      font-size: clamp(0.7rem, 3.5vw, 0.9rem);
       font-weight: 600;
       text-transform: uppercase;
       color: #facc15;
-      letter-spacing: 1px;
       background: rgba(0,0,0,0.5);
-      display: inline-block;
       padding: 0.2rem 0.8rem;
-      border-radius: 20px;
-      backdrop-filter: blur(2px);
+      border-radius: 30px;
+      letter-spacing: 0.5px;
+    }
+    .open-sign {
+      background: #d71920;
+      color: #000;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.2rem, 5vw, 1.6rem);
+      padding: 0.2rem 1rem;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .kratom-special {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.2rem, 5vw, 1.8rem);
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #ffaa33;
+      background: rgba(0,0,0,0.6);
+      padding: 0.1rem 0.8rem;
+      border-radius: 30px;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .kratom-special span {
+      display: inline-block;
     }
 
-    /* Main headline */
+    /* main headline */
     .headline {
       margin: 1rem 0 1rem 0;
     }
     .gas-station {
       font-family: 'Oswald', sans-serif;
-      font-size: clamp(2.8rem, 12vw, 5.5rem);
+      font-size: clamp(2.5rem, 11vw, 5rem);
       font-weight: 700;
       text-transform: uppercase;
       line-height: 0.95;
       color: #ffffff;
-      letter-spacing: -0.02em;
       display: block;
     }
     .heroin {
       font-family: 'Oswald', sans-serif;
-      font-size: clamp(3rem, 13vw, 6rem);
+      font-size: clamp(2.8rem, 12vw, 5.8rem);
       font-weight: 700;
       text-transform: uppercase;
       line-height: 1;
       color: #b1212c;
       display: block;
-      margin-top: -0.05em;
     }
 
-    /* Description */
+    /* description text */
     .description {
       font-size: clamp(0.9rem, 4vw, 1.1rem);
       font-weight: 500;
-      color: #ececec;
+      color: #f0f0f0;
       margin: 1rem 0 1.5rem 0;
       border-left: 3px solid #b1212c;
       padding-left: 1rem;
-      max-width: 90%;
+      max-width: 95%;
     }
 
-    /* Three bullet points (exactly as reference) */
+    /* three bullet points */
     .bullet-list {
       list-style: none;
       margin: 1.5rem 0;
@@ -113,7 +139,7 @@
       gap: 0.75rem;
       margin-bottom: 0.9rem;
       font-weight: 700;
-      font-size: clamp(0.8rem, 3.5vw, 1rem);
+      font-size: clamp(0.75rem, 3.5vw, 1rem);
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -125,13 +151,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 800;
       color: #d71920;
       flex-shrink: 0;
     }
 
-    /* Bottom tagline */
+    /* bottom tagline */
     .tagline {
       font-family: 'Oswald', sans-serif;
       font-size: clamp(0.9rem, 4vw, 1.3rem);
@@ -139,7 +165,7 @@
       font-weight: 700;
       letter-spacing: 1.5px;
       margin-top: 1rem;
-      border-top: 1px solid rgba(255,255,255,0.2);
+      border-top: 1px solid rgba(255,255,255,0.25);
       padding-top: 1.2rem;
       display: inline-block;
     }
@@ -148,7 +174,7 @@
       margin: 0 2px;
     }
 
-    /* --- rest of page sections (stats, shelf, risk, footer) --- */
+    /* ----- rest of page sections (stats, shelf, risk, footer) ----- */
     .container {
       max-width: 1280px;
       margin: 0 auto;
@@ -314,6 +340,7 @@
     }
     .footer-links a:hover { color: #d71920; }
 
+    /* mobile specific improvements for readability */
     @media (max-width: 760px) {
       .hero {
         align-items: flex-start;
@@ -322,6 +349,9 @@
       }
       .hero-content {
         max-width: 100%;
+      }
+      .top-badge {
+        gap: 0.5rem;
       }
       .description {
         max-width: 100%;
@@ -343,7 +373,6 @@
       }
     }
 
-    /* Extra small devices */
     @media (max-width: 480px) {
       .hero {
         padding: 2rem 1rem;
@@ -356,17 +385,27 @@
         height: 24px;
         font-size: 0.7rem;
       }
+      .open-sign {
+        font-size: 1rem;
+        padding: 0.1rem 0.8rem;
+      }
+      .kratom-special {
+        font-size: 1rem;
+        padding: 0.1rem 0.6rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO SECTION — exact match to reference image content -->
+  <!-- HERO SECTION — using hero2.jpeg, layout matches reference images (smoke & vape, open, KRA TOM, etc) -->
   <section class="hero">
     <div class="hero-content">
-      <div class="product-strip">
+      <div class="top-badge">
         <div class="smoke-vape">SMOKE & VAPE</div>
-        <div class="kratom-line">KRATOM • VAPE • CIGAR • HOOKAH • CBD</div>
+        <div class="product-line">KRATOM · VAPE · CIGAR · HOOKAH · CBD</div>
+        <div class="open-sign">OPEN</div>
+        <div class="kratom-special"><span>KRA</span> <span>TOM</span></div>
       </div>
 
       <div class="headline">
@@ -381,7 +420,7 @@
       <ul class="bullet-list">
         <li><span class="bullet-icon">👁</span> SEE WHAT’S REALLY BEING SOLD</li>
         <li><span class="bullet-icon">⚠️</span> UNDERSTAND THE RISKS</li>
-        <li><span class="bullet-icon">🛡️</span> PROTECT OUR CHILDREN</li>
+        <li><span class="bullet-icon">🛡️</span> PROTECT OUR CHILDREN & COMMUNITIES</li>
       </ul>
 
       <div class="tagline">
@@ -390,13 +429,13 @@
     </div>
   </section>
 
-  <!-- STATS BANNER (adds credibility) -->
+  <!-- STATISTICS BANNER (credibility) -->
   <div class="stats-banner">
     <div class="container">
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-number">+230%</div>
-          <div class="stat-label">ER visits from gas station synthetics (2020-2024)</div>
+          <div class="stat-label">Increase in ER visits from gas station synthetics (2020-2024)</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">1 in 4</div>
@@ -410,7 +449,7 @@
     </div>
   </div>
 
-  <!-- WHAT'S ON THE SHELF + links -->
+  <!-- "WHAT IS ON THE SHELF" + helpful links -->
   <div class="shelf-section">
     <div class="container">
       <div class="section-title">What's <span>on the shelf</span></div>
@@ -442,7 +481,7 @@
     </div>
   </div>
 
-  <!-- RISK & ACTION SECTION -->
+  <!-- IN-DEPTH RISK + COMMUNITY ACTION -->
   <div class="risk-section">
     <div class="container">
       <div class="section-title">Know the <span>real danger</span></div>
@@ -471,7 +510,7 @@
     </div>
   </div>
 
-  <!-- SPOT THE SIGNS BONUS -->
+  <!-- SPOT THE SIGNS SECTION -->
   <div class="shelf-section" style="background:#0a0a0a; border-bottom: none;">
     <div class="container">
       <div class="section-title">Spot <span>the signs</span> — protect your child</div>
