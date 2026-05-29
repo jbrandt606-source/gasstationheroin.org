@@ -1,544 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Gas Station Heroin | Investigative Awareness</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  background: #000;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-}
-
-/* HERO */
-.hero {
-  width: 100%;
-  min-height: 100vh;
-  background:
-    linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.85) 34%, rgba(0,0,0,.25) 62%, rgba(0,0,0,0) 100%),
-    url("herostore.jpeg") center center / cover no-repeat;
-  display: flex;
-  align-items: center;
-}
-
-.hero-content {
-  width: 42%;
-  padding-left: 4vw;
-}
-
-h1 {
-  font-family: 'Oswald', sans-serif;
-  text-transform: uppercase;
-  line-height: .88;
-  letter-spacing: -.04em;
-  margin-bottom: 1.4rem;
-}
-
-.white {
-  display: block;
-  font-size: clamp(4rem, 7vw, 8rem);
-  color: #fff;
-}
-
-.red {
-  display: block;
-  font-size: clamp(4.5rem, 8vw, 9rem);
-  color: #b5121b;
-}
-
-.subhead {
-  border-left: 4px solid #d71920;
-  padding-left: 1rem;
-  font-size: clamp(1rem, 1.5vw, 1.45rem);
-  line-height: 1.35;
-  margin-bottom: 1.4rem;
-  font-weight: 500;
-}
-
-.hero ul {
-  list-style: none;
-  margin-bottom: 1.6rem;
-}
-
-.hero li {
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-  margin: .65rem 0;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: clamp(.8rem, 1vw, 1rem);
-}
-
-.icon {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  border: 2px solid #d71920;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: #d71920;
-  font-weight: 800;
-}
-
-.tagline {
-  font-family: 'Oswald', sans-serif;
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  font-weight: 700;
-}
-
-.tagline span {
-  margin-right: .6rem;
-}
-
-.r { color: #d71920; }
-.g { color: #67b735; }
-.b { color: #1f77d0; }
-
-/* MOBILE PORTRAIT — WIDE HERO SCALED DOWN, NO TOP GAP */
-@media (max-width: 800px) and (orientation: portrait) {
-  .hero {
-    min-height: auto;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    margin-top: 0;
-
-    background:
-      linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.84) 36%, rgba(0,0,0,.25) 63%, rgba(0,0,0,0) 100%),
-      url("herostore.jpeg") center center / cover no-repeat;
-
-    align-items: center;
-  }
-
-  .hero-content {
-    width: 39%;
-    padding-left: 3.4vw;
-  }
-
-  h1 {
-    margin-bottom: .45rem;
-  }
-
-  .white {
-    font-size: 8.8vw;
-  }
-
-  .red {
-    font-size: 9.8vw;
-  }
-
-  .subhead {
-    border-left: 2px solid #d71920;
-    padding-left: .45rem;
-    font-size: 2.15vw;
-    line-height: 1.25;
-    margin-bottom: .55rem;
-  }
-
-  .hero ul {
-    margin-bottom: .65rem;
-  }
-
-  .hero li {
-    gap: .35rem;
-    margin: .25rem 0;
-    font-size: 1.85vw;
-    line-height: 1.15;
-  }
-
-  .icon {
-    width: 4.4vw;
-    height: 4.4vw;
-    min-width: 4.4vw;
-    border-width: 1.5px;
-    font-size: 1.5vw;
-  }
-
-  .tagline {
-    font-size: 2.25vw;
-    letter-spacing: .04em;
-  }
-
-  .tagline span {
-    margin-right: .28rem;
-  }
-}
-
-/* MOBILE LANDSCAPE */
-@media (max-width: 900px) and (orientation: landscape) {
-  .hero {
-    min-height: 100vh;
-  }
-
-  .hero-content {
-    width: 42%;
-  }
-
-  .white {
-    font-size: 8vw;
-  }
-
-  .red {
-    font-size: 9vw;
-  }
-}
-
-/* REST OF PAGE */
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.stats-banner {
-  background: #0a0a0a;
-  padding: 3rem 0;
-  border-bottom: 1px solid rgba(215, 25, 32, 0.3);
-}
-
-.stats-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-  text-align: center;
-}
-
-.stat-card {
-  flex: 1;
-  background: #101010;
-  padding: 1.8rem 1rem;
-  border-left: 3px solid #d71920;
-}
-
-.stat-number {
-  font-family: 'Oswald', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: #d71920;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #ccc;
-  margin-top: 0.5rem;
-}
-
-.shelf-section {
-  background: #050505;
-  padding: 4rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.section-title {
-  font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 2rem;
-  color: #fff;
-  border-left: 5px solid #d71920;
-  padding-left: 1.2rem;
-}
-
-.section-title span {
-  color: #d71920;
-}
-
-.shelf-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-}
-
-.shelf-link {
-  background: #111;
-  border: 1px solid #2a2a2a;
-  padding: 0.9rem 0.8rem;
-  text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  transition: 0.2s;
-  color: #f0f0f0;
-  text-decoration: none;
-  display: block;
-}
-
-.shelf-link:hover {
-  background: #d71920;
-  color: #000;
-  transform: translateY(-2px);
-}
-
-.secondary-links {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #222;
-}
-
-.secondary-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.8rem;
-}
-
-.secondary-group a {
-  color: #ccc;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.secondary-group a:hover {
-  color: #d71920;
-}
-
-.risk-section {
-  background: #0c0c0c;
-  padding: 4rem 0;
-}
-
-.two-column {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 1rem;
-}
-
-.risk-col {
-  flex: 1;
-  background: #111;
-  padding: 1.8rem;
-  border-top: 3px solid #d71920;
-}
-
-.risk-col h3 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
-
-.risk-col p,
-.risk-col ul {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin-bottom: 1rem;
-}
-
-.risk-col ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.risk-col li {
-  margin: 0.5rem 0;
-  text-transform: none;
-  gap: 0.6rem;
-}
-
-.small-icon {
-  color: #d71920;
-  margin-right: 0.5rem;
-}
-
-.cta-btn {
-  background: transparent;
-  border: 2px solid #d71920;
-  padding: 0.6rem 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  color: #fff;
-  display: inline-block;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.cta-btn:hover {
-  background: #d71920;
-  color: #000;
-}
-
-.main-footer {
-  background: #020202;
-  padding: 2rem 0;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #6a6a6a;
-  border-top: 1px solid #181818;
-}
-
-.footer-inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-
-.footer-links a {
-  color: #aaa;
-  text-decoration: none;
-  margin: 0 1rem;
-  font-weight: 500;
-}
-
-.footer-links a:hover {
-  color: #d71920;
-}
-
-@media (max-width: 760px) {
-  .container {
-    padding: 0 1.2rem;
-  }
-
-  .stats-grid {
-    flex-direction: column;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-  }
-
-  .shelf-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  }
-
-  .two-column {
-    flex-direction: column;
-  }
-
-  .secondary-group {
-    gap: 1rem;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-  }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Gas Station Heroin — exposing dangerous products sold in gas stations and vape shops. Awareness. Education. Action." />
+  <title>Gas Station Heroin | Investigative Awareness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.4;
+    }
+
+    /* Hero section — image background, gradient overlay for readability */
+    .hero {
+      width: 100%;
+      min-height: 100vh;
+      background: linear-gradient(135deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.5) 100%),
+                  url("herostore.jpeg") center 25% / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Content container — limits width for readability */
+    .hero-content {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* Top product strip (SMOKE & VAPE + KRATOM line) */
+    .product-strip {
+      margin-bottom: 1.5rem;
+    }
+    .smoke-vape {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1rem, 4vw, 1.6rem);
+      letter-spacing: 2px;
+      color: #e0e0e0;
+      font-weight: 600;
+      border-left: 3px solid #d71920;
+      padding-left: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .kratom-line {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.7rem, 3vw, 0.9rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #facc15;
+      letter-spacing: 1px;
+      background: rgba(0,0,0,0.5);
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* Main headline */
+    .headline {
+      margin: 1rem 0 1rem 0;
+    }
+    .gas-station {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.8rem, 12vw, 5.5rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 0.95;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      display: block;
+    }
+    .heroin {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(3rem, 13vw, 6rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1;
+      color: #b1212c;
+      display: block;
+      margin-top: -0.05em;
+    }
+
+    /* Description */
+    .description {
+      font-size: clamp(0.9rem, 4vw, 1.1rem);
+      font-weight: 500;
+      color: #ececec;
+      margin: 1rem 0 1.5rem 0;
+      border-left: 3px solid #b1212c;
+      padding-left: 1rem;
+      max-width: 90%;
+    }
+
+    /* Three bullet points (exactly as reference) */
+    .bullet-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    .bullet-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+      font-weight: 700;
+      font-size: clamp(0.8rem, 3.5vw, 1rem);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .bullet-icon {
+      width: 28px;
+      height: 28px;
+      border: 2px solid #d71920;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #d71920;
+      flex-shrink: 0;
+    }
+
+    /* Bottom tagline */
+    .tagline {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(0.9rem, 4vw, 1.3rem);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 1.2rem;
+      display: inline-block;
+    }
+    .tagline span {
+      color: #d71920;
+      margin: 0 2px;
+    }
+
+    /* --- rest of page sections (stats, shelf, risk, footer) --- */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .stats-banner {
+      background: #0a0a0a;
+      padding: 3rem 0;
+      border-bottom: 1px solid rgba(215, 25, 32, 0.3);
+    }
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-card {
+      flex: 1;
+      background: #101010;
+      padding: 1.5rem 1rem;
+      border-left: 3px solid #d71920;
+    }
+    .stat-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #d71920;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ccc;
+      margin-top: 0.5rem;
+    }
+
+    .shelf-section {
+      background: #050505;
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      border-left: 5px solid #d71920;
+      padding-left: 1rem;
+    }
+    .section-title span { color: #d71920; }
+    .shelf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .shelf-link {
+      background: #111;
+      border: 1px solid #2a2a2a;
+      padding: 0.8rem 0.5rem;
+      text-align: center;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      color: #f0f0f0;
+      text-decoration: none;
+      display: block;
+      transition: 0.2s;
+    }
+    .shelf-link:hover {
+      background: #d71920;
+      color: #000;
+      transform: translateY(-2px);
+    }
+    .secondary-links {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #222;
+    }
+    .secondary-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .secondary-group a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .secondary-group a:hover { color: #d71920; }
+
+    .risk-section {
+      background: #0c0c0c;
+      padding: 4rem 0;
+    }
+    .two-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .risk-col {
+      flex: 1;
+      background: #111;
+      padding: 1.5rem;
+      border-top: 3px solid #d71920;
+    }
+    .risk-col h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .risk-col p, .risk-col ul {
+      font-size: 0.85rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+    .risk-col ul { list-style: none; padding-left: 0; }
+    .risk-col li { margin: 0.5rem 0; display: flex; gap: 0.5rem; }
+    .small-icon { color: #d71920; }
+    .cta-btn {
+      background: transparent;
+      border: 2px solid #d71920;
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      color: #fff;
+      display: inline-block;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .cta-btn:hover { background: #d71920; color: #000; }
+
+    .main-footer {
+      background: #020202;
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #6a6a6a;
+      border-top: 1px solid #181818;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 0.8rem;
+    }
+    .footer-links a:hover { color: #d71920; }
+
+    @media (max-width: 760px) {
+      .hero {
+        align-items: flex-start;
+        padding-top: 3rem;
+        background-position: center 20%;
+      }
+      .hero-content {
+        max-width: 100%;
+      }
+      .description {
+        max-width: 100%;
+      }
+      .stats-grid {
+        flex-direction: column;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .shelf-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+      .secondary-group {
+        gap: 1rem;
+      }
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    /* Extra small devices */
+    @media (max-width: 480px) {
+      .hero {
+        padding: 2rem 1rem;
+      }
+      .bullet-list li {
+        gap: 0.5rem;
+      }
+      .bullet-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>
-      <span class="white">Gas Station</span>
-      <span class="red">Heroin</span>
-    </h1>
-
-    <p class="subhead">
-      Educating parents and communities on what is being sold in gas stations and vape shops across America.
-    </p>
-
-    <ul>
-      <li><span class="icon">◉</span> See what’s really being sold</li>
-      <li><span class="icon">!</span> Understand the risks</li>
-      <li><span class="icon">◆</span> Protect our children & communities</li>
-    </ul>
-
-    <div class="tagline">
-      <span class="r">Awareness.</span>
-      <span class="g">Education.</span>
-      <span class="b">Action.</span>
-    </div>
-  </div>
-</section>
-
-<div class="stats-banner">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">+230%</div>
-        <div class="stat-label">ER visits from gas station synthetics</div>
+  <!-- HERO SECTION — exact match to reference image content -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="product-strip">
+        <div class="smoke-vape">SMOKE & VAPE</div>
+        <div class="kratom-line">KRATOM • VAPE • CIGAR • HOOKAH • CBD</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-number">1 in 4</div>
-        <div class="stat-label">Teens report easy access to unregulated products</div>
+
+      <div class="headline">
+        <span class="gas-station">GAS STATION</span>
+        <span class="heroin">HEROIN</span>
       </div>
-      <div class="stat-card">
-        <div class="stat-number">37 states</div>
-        <div class="stat-label">Where tianeptine remains loosely regulated</div>
+
+      <p class="description">
+        Educating parents and communities on what is being sold in gas stations and vape shops across America.
+      </p>
+
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">👁</span> SEE WHAT’S REALLY BEING SOLD</li>
+        <li><span class="bullet-icon">⚠️</span> UNDERSTAND THE RISKS</li>
+        <li><span class="bullet-icon">🛡️</span> PROTECT OUR CHILDREN</li>
+      </ul>
+
+      <div class="tagline">
+        AWARENESS. <span>•</span> EDUCATION. <span>•</span> ACTION.
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="shelf-section">
-  <div class="container">
-    <div class="section-title">What's <span>on the shelf</span></div>
-
-    <div class="shelf-grid">
-      <a href="#" class="shelf-link">Nitrous Oxide</a>
-      <a href="#" class="shelf-link">Amyl Nitrate</a>
-      <a href="#" class="shelf-link">Opioids</a>
-      <a href="#" class="shelf-link">Sedatives</a>
-      <a href="#" class="shelf-link">Stimulants</a>
-      <a href="#" class="shelf-link">Hallucinogens</a>
-      <a href="#" class="shelf-link">THC / Delta-8</a>
-      <a href="#" class="shelf-link">Vapes</a>
-      <a href="#" class="shelf-link">Other Synthetics</a>
-    </div>
-  </div>
-</div>
-
-<div class="risk-section">
-  <div class="container">
-    <div class="section-title">Know the <span>real danger</span></div>
-
-    <div class="two-column">
-      <div class="risk-col">
-        <h3>Hidden chemicals, unknown doses</h3>
-        <p>Products sold as “herbal,” “wellness,” or “not for human consumption” can contain potent psychoactive substances with unpredictable effects.</p>
-        <a href="#" class="cta-btn">Read the science →</a>
-      </div>
-
-      <div class="risk-col">
-        <h3>What parents & communities can do</h3>
-        <p>Education, store reporting, local ordinances, and community awareness can help reduce dangerous retail exposure.</p>
-        <a href="#" class="cta-btn">Get involved →</a>
+  <!-- STATS BANNER (adds credibility) -->
+  <div class="stats-banner">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">+230%</div>
+          <div class="stat-label">ER visits from gas station synthetics (2020-2024)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1 in 4</div>
+          <div class="stat-label">Teens report easy access to unregulated vapes / kratom</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">37 states</div>
+          <div class="stat-label">Where tianeptine remains loosely regulated</div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<footer class="main-footer">
-  <div class="container footer-inner">
-    <div>© 2025 Gas Station Heroin Awareness Project</div>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Press Kit</a>
-      <a href="#">Contact</a>
+  <!-- WHAT'S ON THE SHELF + links -->
+  <div class="shelf-section">
+    <div class="container">
+      <div class="section-title">What's <span>on the shelf</span></div>
+      <div class="shelf-grid">
+        <a href="#" class="shelf-link">Nitrous Oxide</a>
+        <a href="#" class="shelf-link">Amyl Nitrate</a>
+        <a href="#" class="shelf-link">Opioids</a>
+        <a href="#" class="shelf-link">Sedatives</a>
+        <a href="#" class="shelf-link">Stimulants</a>
+        <a href="#" class="shelf-link">Hallucinogens</a>
+        <a href="#" class="shelf-link">THC (Delta-8, HHC)</a>
+        <a href="#" class="shelf-link">Vapes / E-liquids</a>
+        <a href="#" class="shelf-link">Other Synthetics</a>
+      </div>
+      <div class="secondary-links">
+        <div class="secondary-group">
+          <a href="#">About Us</a>
+          <a href="#">Media Center</a>
+          <a href="#">Research Library</a>
+          <a href="#">Parent Toolkit</a>
+          <a href="#">Report a Store</a>
+        </div>
+        <div class="secondary-group">
+          <a href="#">Take Action</a>
+          <a href="#">Contact</a>
+          <a href="#">Legislative Updates</a>
+        </div>
+      </div>
     </div>
   </div>
-</footer>
 
+  <!-- RISK & ACTION SECTION -->
+  <div class="risk-section">
+    <div class="container">
+      <div class="section-title">Know the <span>real danger</span></div>
+      <div class="two-column">
+        <div class="risk-col">
+          <h3>Hidden chemicals, unknown doses</h3>
+          <p>Products labeled as "herbal incense" or "glass cleaner" often contain tianeptine (gas station heroin), bromazolam, or unregulated kratom extracts. These cause respiratory depression, seizures, and sudden death.</p>
+          <ul>
+            <li><span class="small-icon">⚠️</span> Tianeptine: highly addictive, opioid-like withdrawal</li>
+            <li><span class="small-icon">⚠️</span> Unregulated vapes: heavy metals, synthetic cannabinoids</li>
+            <li><span class="small-icon">⚠️</span> Nitrites / poppers: vision loss, cardiac events</li>
+          </ul>
+          <a href="#" class="cta-btn">Read the science →</a>
+        </div>
+        <div class="risk-col">
+          <h3>What parents & communities can do</h3>
+          <p>Gas stations and smoke shops often avoid age verification. Advocacy, store reporting, and local ordinances can shut down dangerous sales. We provide toolkits for school boards and law enforcement.</p>
+          <ul>
+            <li><span class="small-icon">📋</span> Spot warning signs: "not for human consumption" labels</li>
+            <li><span class="small-icon">🏛️</span> Petition local bans on synthetic drugs</li>
+            <li><span class="small-icon">📢</span> Share fact sheets with parent-teacher associations</li>
+          </ul>
+          <a href="#" class="cta-btn">Get involved →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPOT THE SIGNS BONUS -->
+  <div class="shelf-section" style="background:#0a0a0a; border-bottom: none;">
+    <div class="container">
+      <div class="section-title">Spot <span>the signs</span> — protect your child</div>
+      <div class="two-column">
+        <div class="risk-col" style="background:#0f0f0f;">
+          <h3>In the store</h3>
+          <p>Look for packaging that mimics energy drinks but contains tianeptine, kratom shots behind the counter, or vape cartridges with homemade labels. Many products include QR codes that lead to grey-market dosing info.</p>
+          <a href="#" class="cta-btn">Download checklist</a>
+        </div>
+        <div class="risk-col" style="background:#0f0f0f;">
+          <h3>Physical warning signs</h3>
+          <p>Unexplained drowsiness, pinpoint pupils, sudden mood swings, secretive behavior, unusual powders or vaping devices. Emergency rooms report teens with seizures after using "gas station special" blends.</p>
+          <a href="#" class="cta-btn">Signs of exposure →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="container footer-inner">
+      <div class="copyright">© 2025 Gas Station Heroin Awareness Project — independent public health initiative.</div>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Donate</a>
+        <a href="#">Press Kit</a>
+        <a href="#">Newsletter</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
