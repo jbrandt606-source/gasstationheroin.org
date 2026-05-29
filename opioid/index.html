@@ -1,1 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Gas Station Opioids – exposing dangerous synthetic opioids, Kratom analogs, Tianeptine, and unregulated chemicals sold in gas stations and smoke shops." />
+  <title>Gas Station Opioids | Hidden Dangers Exposed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+    }
+
+    /* Hero section with opioid.jpeg – full storefront visible, text overlay compact */
+    .hero {
+      width: 100%;
+      min-height: 90vh;
+      position: relative;
+      background: url("opioid.jpeg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        background-size: contain;
+        background-color: #111;
+        min-height: auto;
+        padding: 2rem 0;
+      }
+    }
+
+    .hero-text {
+      width: 100%;
+      max-width: 950px;
+      margin: 0 auto 2rem auto;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      border-radius: 24px;
+      padding: 1.2rem 2rem;
+      text-align: center;
+      border: 1px solid rgba(220, 60, 50, 0.5);
+    }
+
+    .hero-text h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2rem, 8vw, 4rem);
+      letter-spacing: 2px;
+    }
+    .hero-text .gas { color: #fff; }
+    .hero-text .opioids { color: #d43a2a; }
+
+    .hero-text .tagline {
+      font-size: clamp(0.8rem, 3vw, 1rem);
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    /* rest of page */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+      border-left: 5px solid #d43a2a;
+      padding-left: 1rem;
+      margin: 2rem 0 1.5rem;
+    }
+    .section-title span { color: #d43a2a; }
+
+    .compound-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+    .compound-card {
+      background: #0f0f0f;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #2a2a2a;
+      transition: transform 0.2s;
+    }
+    .compound-card:hover {
+      transform: translateY(-4px);
+      border-color: #d43a2a;
+    }
+    .compound-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6rem;
+      background: #1a1a1a;
+      padding: 0.8rem 1rem;
+      color: #d43a2a;
+    }
+    .compound-card p {
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+    .risk-badge {
+      display: inline-block;
+      background: #2a0a0a;
+      color: #ff8888;
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      margin: 0 1rem 1rem;
+    }
+
+    /* product gallery for images under opioid/assets */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .gallery-item {
+      background: #111;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #333;
+      transition: 0.2s;
+    }
+    .gallery-item img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-item p {
+      font-size: 0.7rem;
+      text-align: center;
+      padding: 0.4rem;
+      color: #aaa;
+      background: #0a0a0a;
+    }
+
+    .stats-banner {
+      background: #0a0a0a;
+      padding: 2rem 0;
+      border-top: 1px solid #2a2a2a;
+      border-bottom: 1px solid #2a2a2a;
+      margin: 2rem 0;
+    }
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .stat-card {
+      background: #111;
+      padding: 1.2rem;
+      border-left: 3px solid #d43a2a;
+      text-align: center;
+      flex: 1;
+    }
+    .stat-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      color: #d43a2a;
+    }
+
+    .footer {
+      background: #020202;
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #666;
+      margin-top: 2rem;
+    }
+    .footer a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    @media (max-width: 760px) {
+      .section-title { font-size: 1.5rem; }
+      .hero-text { margin: 1rem; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1><span class="gas">GAS STATION</span> <span class="opioids">OPIOIDS</span></h1>
+    <div class="tagline">What’s really hiding behind the counter — synthetic opioids, unregulated kratom extracts, and deadly chemicals sold as “herbal supplements.”<br>Educate yourself. Protect your community.</div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="section-title">The <span>hidden dangers</span> on the shelf</div>
+  <p style="margin-bottom: 1rem;">Gas stations and smoke shops across America sell dangerous, unregulated opioid-like compounds. Below are the most common substances you need to know about.</p>
+
+  <!-- compound cards -->
+  <div class="compound-grid">
+    <div class="compound-card"><h3>KRATOM</h3><p>Mitragynine and 7-OH are partial opioid agonists. Widely sold as powder, capsules, shots. Can cause seizures, liver toxicity, and dependence. Often mixed with other synthetics.</p><div class="risk-badge">Highly variable potency</div></div>
+    <div class="compound-card"><h3>7‑OH (7-Hydroxymitragynine)</h3><p>Up to 13x more potent than morphine. Found in “enhanced” kratom products. Rapid addiction, respiratory depression, overdose risk. Sold as chewable tablets, gummies.</p><div class="risk-badge">Extreme potency</div></div>
+    <div class="compound-card"><h3>MGM‑15</h3><p>Synthetic opioid receptor agonist, sold in “research chemical” blends. No human safety data. Linked to severe respiratory depression.</p><div class="risk-badge">Experimental</div></div>
+    <div class="compound-card"><h3>Pseudoindoxyl</h3><p>Potent semi-synthetic kratom alkaloid, up to 20x stronger than morphine. Found in “Ultra Seven” and “Pseudo” shots. High addiction liability.</p><div class="risk-badge">Extreme potency</div></div>
+    <div class="compound-card"><h3>Tianeptine</h3><p>Known as “gas station heroin.” Tricyclic antidepressant that acts as a full mu‑opioid agonist at high doses. Causes severe withdrawal, seizures, deaths.</p><div class="risk-badge">Gas station heroin</div></div>
+    <div class="compound-card"><h3>Akuamma</h3><p>African seed traditionally used for pain, but now sold as a “natural opioid.” Can interact dangerously with other depressants.</p><div class="risk-badge">Understudied</div></div>
+    <div class="compound-card"><h3>A‑238</h3><p>Novel synthetic opioid, structurally related to U‑class drugs. No medical use, sold as “research chemical.” Extreme overdose risk.</p><div class="risk-badge">Deadly potent</div></div>
+    <div class="compound-card"><h3>U‑class chemicals (U-47700, U-48800)</h3><p>“Pink” or “U‑4” – illicit fentanyl analogs found in gas station “incense.” Numerous fatalities reported.</p><div class="risk-badge">DEA Schedule I</div></div>
+    <div class="compound-card"><h3>SR‑17018</h3><p>Novel opioid with biased agonism, sold online and in some vape shops as “legal high.” No safety data, linked to coma and respiratory failure.</p><div class="risk-badge">Extreme danger</div></div>
+  </div>
+
+  <div class="section-title">Real products <span>found nationwide</span></div>
+  <p>These images show actual gas station / smoke shop products containing the above substances. (Images courtesy of public health investigations)</p>
+  
+  <!-- product gallery referencing files under opioid/assets -->
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="opioid/assets/Tianeptine1.jpeg" alt="Tianeptine product"><p>Tianeptine “Tropical Elixir”</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7ohad3.jpeg" alt="7-OH product"><p>Ultra Seven / 7-OH shots</p></div>
+    <div class="gallery-item"><img src="opioid/assets/IMG_7549.jpeg" alt="7-Hydroxy tablets"><p>Blacked Out 7-OH tablets</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7ohad4.jpeg" alt="Kratom shot"><p>7-OH shot / Kratom blends</p></div>
+    <div class="gallery-item"><img src="opioid/assets/kratomad6.png" alt="Kratom ad"><p>Kratom shots – “Feel Free”</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Kratom2.jpeg" alt="Kratom powder"><p>Green Sumatra Kratom powder</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Kratomad5.jpeg" alt="Happy Hippo"><p>Happy Hippo Kratom caps</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Tianeptine2.jpeg" alt="Tianeptine elixir"><p>Tianeptine – “Happiness in a bottle”</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Kratom.jpeg" alt="Kratom powder bag"><p>Happy Hippo Kratom powder</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Tianeptine3.jpeg" alt="Za Za Red"><p>Za Za Red – Tianeptine capsules</p></div>
+    <div class="gallery-item"><img src="opioid/assets/opioid.png" alt="Collage"><p>Various Kratom, akuamma, tianeptine</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Kratomad3.jpeg" alt="Mitra9 seltzer"><p>Kratom seltzer – “feel good”</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7OHad1.png" alt="7OH Plus"><p>7-OH Plus daily formula</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7ohad2.png" alt="Hydroxie"><p>Hydroxie 7-OH tablets</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7ohad5.jpeg" alt="Kures.co stax"><p>Kures – high potency botanical extracts</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Kratomad1.jpeg" alt="Microgreen kratom"><p>Microgreen kratom powder</p></div>
+    <div class="gallery-item"><img src="opioid/assets/157BC4CB-D736-449A-B422-A850B11B6813.png" alt="Kratom display"><p>Gas station shelf – Kratom, akuamma, tianeptine</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Kratomad2.jpeg" alt="Mitra9 seltzer"><p>Nitrogen-infused kratom seltzer</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7oh5.jpeg" alt="Pure7"><p>Pure7 – 7-Hydroxymitragynine tablets</p></div>
+    <div class="gallery-item"><img src="opioid/assets/IMG_7587.jpeg" alt="Sluggerl"><p>Sluggerl euphoria blend – 7-OH mix</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7oh8.jpeg" alt="7-hydroxy blister"><p>“Heat” 7-hydroxy 600mg</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7oh7.jpeg" alt="Zohm tablets"><p>Zohm blue raspberry 7-OH</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7oh2.jpeg" alt="7-Hydro 100mg"><p>7-Hydro – 10mg per tablet</p></div>
+    <div class="gallery-item"><img src="opioid/assets/kratom8.jpeg" alt="Jubi shot"><p>Jubi kratom energy shot</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7oh3.jpeg" alt="30mg 7-OH"><p>30mg 7-OH extra strength</p></div>
+    <div class="gallery-item"><img src="opioid/assets/kratom7.jpeg" alt="Fuzzy kratom"><p>Fuzzy enhanced kratom 35mg</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Hydroxie.jpeg" alt="Hydroxie 15mg"><p>Hydroxie 7-OH 15mg tablets</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7oh1.jpeg" alt="Method 7-OH"><p>Method 7-Hydroxymitragynine strawberry</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Kratom6.jpeg" alt="Kratom gummies"><p>Kratom gummies – 40mg each</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Mgm15ad.jpeg" alt="Oxonol MGM-15"><p>Oxonol – MGM-15 enhanced alkaloid</p></div>
+    <div class="gallery-item"><img src="opioid/assets/Kratomad4.jpeg" alt="Mitra9 ad"><p>Mitra9 kratom seltzer – fast delivery</p></div>
+    <div class="gallery-item"><img src="opioid/assets/7oh4.jpeg" alt="7OF tablets"><p>7OF – 7-Hydroxymitragynine tablets</p></div>
+  </div>
+
+  <div class="stats-banner">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number">+350%</div><div>Increase in poison center calls for tianeptine (2019-2023)</div></div>
+        <div class="stat-card"><div class="stat-number">80%</div><div>Of gas station “kratom” shots contain unlisted synthetic opioids</div></div>
+        <div class="stat-card"><div class="stat-number">27 states</div><div>With pending or active bans on gas station opioids</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Recognize <span>the packaging</span> & take action</div>
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;">
+    <div style="flex:1; background:#0f0f0f; padding:1.2rem; border-left: 3px solid #d43a2a;">
+      <h3 style="color:#d43a2a;">Signs to watch for</h3>
+      <ul style="margin-left: 1rem; color:#ccc;">
+        <li>“Not for human consumption” / “Research chemical”</li>
+        <li>Small plastic jars or colorful vials with gas station labels</li>
+        <li>Names like “Za Za,” “Tianaa,” “Pegasus,” “Neptune’s Fix” (tianeptine)</li>
+        <li>“7-OH,” “Pseudo,” “Ultra” blends</li>
+        <li>QR codes that lead to dosing instructions</li>
+      </ul>
+    </div>
+    <div style="flex:1; background:#0f0f0f; padding:1.2rem; border-left: 3px solid #d43a2a;">
+      <h3 style="color:#d43a2a;">What you can do</h3>
+      <ul style="margin-left: 1rem; color:#ccc;">
+        <li>Report suspicious products to the FDA via MedWatch</li>
+        <li>Contact local health departments and law enforcement</li>
+        <li>Advocate for state bans on tianeptine and unlabeled synthetic opioids</li>
+        <li>Share this guide with schools and parent groups</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Gas Station Opioids Awareness — independent public health research. Not for medical advice.</p>
+    <p><a href="#">About</a> | <a href="#">Media Center</a> | <a href="#">Report a Store</a> | <a href="#">Donate</a></p>
+  </div>
+</footer>
+</body>
+</html>
