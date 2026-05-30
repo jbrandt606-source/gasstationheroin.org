@@ -1,1 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
+  <meta name="description" content="Tianeptine is a tricyclic antidepressant that acts as a full mu-opioid agonist at high doses — known as 'gas station heroin.' Sold in gas stations as Za Za, Tianaa, Neptune's Fix. Brutal facts for parents." />
+  <title>Tianeptine | Gas Station Heroin – The Antidepressant That Kills</title>
 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --red: #e21b23;
+      --dark: #050505;
+      --panel: #0d0d0f;
+      --line: #2a2a2f;
+      --text: #ffffff;
+      --muted: #b9bcc6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--red);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .alert-banner {
+      background: var(--red);
+      text-align: center;
+      padding: 10px 4vw;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      width: 100%;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5,5,5,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 6vw;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .nav-links a:hover { color: var(--red); }
+
+    .hero {
+      min-height: 82vh;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.50) 38%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.05) 100%),
+        url("/opioid/tianeptinehero.jpeg") center center/cover no-repeat;
+      display: flex;
+      align-items: flex-start;
+      padding: 58px 6vw;
+      width: 100%;
+    }
+
+    .hero-text {
+      max-width: 700px;
+      margin-top: clamp(60px, 8vh, 110px);
+    }
+
+    h1 {
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+    }
+    h1 span { color: var(--red); }
+
+    .redline {
+      width: 92px;
+      height: 5px;
+      background: var(--red);
+      margin: 32px 0;
+    }
+
+    .hero-subtitle {
+      max-width: 590px;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.3;
+      color: #f0f0f0;
+      margin-bottom: 36px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary, .btn-secondary {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 6px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: 0.2s;
+    }
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #c5151c;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .section {
+      padding: 72px 6vw;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    .thesis {
+      background: #09090b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      max-width: 980px;
+    }
+
+    .section p, .section-intro {
+      max-width: 820px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+      width: 100%;
+    }
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px 28px;
+      width: 100%;
+    }
+    .faq-item h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--red);
+    }
+    .faq-item p, .faq-item ul {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+    .faq-item ul { margin-left: 1.5rem; }
+    .faq-item li { margin: 6px 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+      width: 100%;
+    }
+
+    .gallery-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #1a1a1f;
+    }
+    .gallery-caption {
+      padding: 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #0a0a0c;
+    }
+    .gallery-caption strong {
+      color: var(--red);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 36px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+    .warning-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+      flex: 1;
+      min-width: 260px;
+    }
+    .warning-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      color: var(--red);
+    }
+    .warning-card ul {
+      margin-left: 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .warning-card li { margin: 8px 0; }
+
+    footer {
+      padding: 40px 6vw;
+      background: #000;
+      color: #8f93a0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      width: 100%;
+    }
+    .footer-mission { max-width: 440px; line-height: 1.6; }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-links a:hover { color: var(--red); }
+
+    @media (max-width: 1000px) {
+      .nav-links { gap: 16px; font-size: 0.88rem; }
+      .section { padding: 48px 5vw; }
+      .hero { padding: 36px 5vw; }
+      footer { padding: 32px 5vw; }
+    }
+
+    @media (max-width: 650px) {
+      body, html { 
+        overflow-x: hidden; 
+        width: 100%;
+      }
+      .hero {
+        min-height: 70vh;
+        padding: 36px 1.2rem;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.25) 100%),
+          url("/opioid/tianeptinehero.jpeg") center center/cover no-repeat;
+        background-size: cover;
+        align-items: center;
+      }
+      .hero-text {
+        margin-top: 0;
+        padding-top: 20px;
+        max-width: 100%;
+      }
+      h1 { 
+        font-size: clamp(3.2rem, 12vw, 4.5rem);
+        line-height: 0.92;
+      }
+      .hero-subtitle { 
+        font-size: 1rem;
+        margin-bottom: 28px;
+      }
+      .nav-links { display: none; }
+      .btn-primary, .btn-secondary { 
+        padding: 12px 18px; 
+        font-size: 0.85rem;
+      }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .faq-item { padding: 18px; }
+      .faq-item h3 { font-size: 1.2rem; }
+      .section { padding: 40px 1.2rem; }
+      footer { flex-direction: column; padding: 32px 1.2rem; }
+      .warning-card { min-width: auto; }
+      .two-col { gap: 20px; }
+      .alert-banner { 
+        font-size: 0.75rem; 
+        padding: 8px 1rem;
+        line-height: 1.3;
+      }
+      nav { padding: 12px 1.2rem; }
+      .redline { margin: 24px 0; width: 70px; }
+      .hero-actions { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="alert-banner" role="alert">
+  TIANEPTINE: AN ANTIDEPRESSANT THAT BECOMES A FULL OPIOID AGONIST AT HIGH DOSES — KNOWN AS "GAS STATION HEROIN." SOLD AS ZA ZA, TIANAA, NEPTUNE'S FIX. EXTREME DANGER.
+</div>
+
+<nav aria-label="Main navigation">
+  <span class="nav-logo">GasStationHeroin.org</span>
+  <ul class="nav-links">
+    <li><a href="#risks">Risks</a></li>
+    <li><a href="#gallery">Products & Ads</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#action">Take Action</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+  <section class="hero" aria-label="Hero">
+    <div class="hero-text">
+      <h1>Tianeptine<br /><span>Gas Station Heroin</span></h1>
+      <div class="redline" aria-hidden="true"></div>
+      <p class="hero-subtitle">
+        Tianeptine is a tricyclic antidepressant. At high doses — the doses sold in gas stations — it becomes a full mu-opioid agonist, more potent than morphine. It is sold under names like Za Za, Tianaa, Neptune's Fix, and Elixir. It is not a supplement. It is a deadly opioid in a shiny bottle.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#gallery">See the Products</a>
+        <a class="btn-secondary" href="#faq">Get the Brutal Facts</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
+    <h2 id="thesis-heading">Tianeptine: The antidepressant that acts like heroin.</h2>
+    <p>
+      Tianeptine is approved in some countries as an antidepressant at low doses (12.5mg three times daily). But the products sold in U.S. gas stations contain massive doses — 150mg, 300mg, even 3000mg per bottle. At these levels, tianeptine is a full mu-opioid agonist, producing euphoria, respiratory depression, and rapid addiction. The FDA has issued repeated warnings. Thousands have been hospitalized, and many have died. Yet it remains on gas station shelves as "dietary supplements" with names like "Za Za Red," "Tianaa," "Neptune's Elixir," and "Wide Awake."
+    </p>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">What Every Parent Must Know About Tianeptine</h2>
+    <p class="section-intro">
+      Based on FDA warnings, CDC poison center data, and state health records. Tianeptine is not a supplement. It is an antidepressant that becomes a dangerous opioid when abused.
+    </p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>What Is It?</h3>
+        <p><strong>What is this product?</strong> Tianeptine is a tricyclic antidepressant. At low therapeutic doses (12.5mg), it has mild effects. But the products sold in gas stations contain 150mg, 200mg, or even 300mg per dose. At these high doses, tianeptine acts as a full mu-opioid receptor agonist — exactly like heroin or morphine. It is often called "gas station heroin" for a reason.</p>
+        <p><strong>What is it sold as?</strong> Sold as “dietary supplement,” “elixir,” “capsules,” “tablets,” “energy shot.” Brand names: Za Za (Red, Silver), Tianaa (Red, White, Green), Neptune's Fix, Neptune's Elixir, Wide Awake, Tropicat Elixir, TD Red.</p>
+        <p><strong>Is it a drug, supplement, vape, or something else?</strong> It is an unapproved, illegal drug when sold for human consumption in the U.S. The FDA has declared tianeptine products adulterated and has issued multiple warning letters. It is not a dietary supplement by any legal definition.</p>
+        <p><strong>Street names and brand names:</strong> “Gas station heroin,” “Za Za,” “Tianaa,” “Neptune’s Fix,” “Neptune’s Elixir,” “Wide Awake,” “Tropicat,” “TD Red.”</p>
+      </div>
+      <div class="faq-item">
+        <h3>Where Do Kids Get It?</h3>
+        <p><strong>Can it be bought at gas stations?</strong> Yes. Widely available at gas stations, often next to the cash register alongside energy drinks and candy.</p>
+        <p><strong>Is it sold in vape shops?</strong> Yes. Vape shops, smoke shops, and CBD stores are primary retail locations. Often sold in shiny bottles that look like energy shots.</p>
+        <p><strong>Can it be purchased online?</strong> Yes. Numerous websites sell tianeptine with no age verification. Shipped in discreet packaging.</p>
+        <p><strong>Is there an age restriction?</strong> No federal law. Some states have banned tianeptine, but in states where it's still legal, there is no age verification. Bottles say “21+” in fine print, universally ignored.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why Are Teens Using It?</h3>
+        <p><strong>What effects are they looking for?</strong> An opioid high — euphoria, warmth, sedation, pain relief. Because it’s sold as a “supplement,” many teens believe it’s safe. It is not.</p>
+        <p><strong>Is it being marketed as energy, relaxation, focus, pain relief, or a legal high?</strong> Marketing uses “happiness in a bottle,” “elixir,” “wide awake,” “extra strength.” Some products claim to be for “focus” or “mood support.” These are lies to hide the opioid effect.</p>
+        <p><strong>What are people saying about it on social media?</strong> Reddit communities like r/QuittingTianeptine and r/Tianeptine show thousands of users addicted, suffering brutal withdrawal, and trying to quit. Many report spending hundreds of dollars per day on gas station tianeptine products. Some compare the withdrawal to heroin or fentanyl.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What Does It Do?</h3>
+        <p><strong>How does it affect the brain and body?</strong> At high doses, tianeptine is a full mu-opioid agonist. It produces euphoria, pain relief, sedation, respiratory depression, constipation, and pinpoint pupils. It also affects serotonin and dopamine, adding stimulant-like effects at low doses.</p>
+        <p><strong>How quickly does it work?</strong> Liquid elixirs work in 10–20 minutes. Capsules take 30–60 minutes.</p>
+        <p><strong>How long do the effects last?</strong> 2–4 hours, but tolerance builds rapidly. Users quickly need higher doses to achieve the same effect.</p>
+        <p><strong>Does it act like an opioid, stimulant, sedative, hallucinogen, or something else?</strong> It is primarily an opioid at abused doses. Some users report mild stimulant effects at low doses, but the dangerous effects are opioid-based.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What Are the Risks?</h3>
+        <p><strong>Can it cause addiction?</strong> Yes. Extremely addictive. Users report severe withdrawal within hours of last dose after only a few weeks of daily use. Withdrawal includes vomiting, diarrhea, severe anxiety, muscle pain, insomnia, and intense cravings.</p>
+        <p><strong>Can it cause overdose?</strong> Yes. Respiratory depression can be fatal. Because gas station products vary wildly in potency, users easily take too much. Overdose looks like heroin overdose — unresponsive, blue lips, shallow breathing.</p>
+        <p><strong>Can it cause seizures?</strong> Yes. Tianeptine is known to lower seizure threshold. Many poison center reports of seizures after high-dose tianeptine use.</p>
+        <p><strong>Can it cause psychosis or hallucinations?</strong> Yes. High doses can cause confusion, agitation, and psychotic episodes.</p>
+        <p><strong>Can it cause heart problems?</strong> Yes. Tianeptine can cause tachycardia, hypertension, arrhythmias, and in rare cases, cardiac arrest.</p>
+        <p><strong>Can it cause liver injury?</strong> Yes. Several case reports of acute liver failure requiring transplant after tianeptine abuse.</p>
+        <p><strong>Has it been linked to deaths?</strong> Yes. The CDC and FDA confirm multiple tianeptine-associated deaths. Poison center calls for tianeptine increased over 350% in recent years. Many overdoses involve tianeptine alone.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is It Legal?</h3>
+        <p><strong>Is it legal federally?</strong> Tianeptine is not FDA-approved for any use in the U.S. It is not a lawful dietary supplement. The FDA has issued warning letters and import alerts, but it remains sold in a gray market.</p>
+        <p><strong>Is it legal in my state?</strong> Multiple states have banned tianeptine: Alabama, Arkansas, Georgia, Indiana, Kentucky, Michigan, Mississippi, Ohio, Oklahoma, South Carolina, Tennessee, Texas, Utah, Virginia, West Virginia, and others. In states without bans, it is still sold openly. Check local laws.</p>
+        <p><strong>Are there age restrictions?</strong> No federal. Some states have 18+ or 21+, but rarely enforced.</p>
+        <p><strong>Has the FDA issued warnings?</strong> Yes. The FDA has repeatedly warned consumers about tianeptine, calling it a dangerous opioid that has led to hospitalizations, overdoses, and deaths. The agency has sent warning letters to manufacturers and issued import alerts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery with all tianeptine product images -->
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Tianeptine Products: Deceptive Branding, Deadly Effects</h2>
+    <p class="section-intro">
+      These are real products sold in gas stations and smoke shops. Notice the names: "Happiness in a bottle," "Za Za Red," "Neptune's Elixir," "Wide Awake." They hide the fact that each bottle contains a potent, addictive opioid.
+    </p>
+
+    <div class="gallery-grid">
+      <!-- Tianeptine1.jpeg - Tropicat Elixir -->
+      <div class="gallery-card">
+        <img src="/opioid/Tianeptine1.jpeg" alt="Tropicat Tianeptine Elixir" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Tropicat – Tianeptine Elixir</strong>
+          “Tianeptine Tropicat Elixir” – bright, tropical branding. 0.338oz bottles. Looks like a trendy wellness shot. Contains opioid-level tianeptine.
+        </div>
+      </div>
+      <!-- Tianeptine2.jpeg - Cherry Tianeptine Elixir -->
+      <div class="gallery-card">
+        <img src="/opioid/Tianeptine2.jpeg" alt="Cherry Tianeptine Elixir" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Cherry Tianeptine Elixir</strong>
+          “For external use only” – a legal loophole. Cherry flavor. “Happiness in a bottle” – directly marketing opioid euphoria to young people.
+        </div>
+      </div>
+      <!-- tianeptine5.jpeg - Wide Awake Tianeptine Tablets -->
+      <div class="gallery-card">
+        <img src="/opioid/tianeptine5.jpeg" alt="Wide Awake Tianeptine 3000mg" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Wide Awake – Tianeptine Tablets</strong>
+          3000mg per box, 150mg per tablet. “Dietary supplement” – a lie. Markets as a focus/energy product, but delivers an opioid high.
+        </div>
+      </div>
+      <!-- Tianeptine3.jpeg - Za Za Red Extra Strength -->
+      <div class="gallery-card">
+        <img src="/opioid/Tianeptine3.jpeg" alt="Za Za Red Extra Strength" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Za Za Red – Extra Strength</strong>
+          One of the most well-known tianeptine brands. Capsules. “Za Za” sounds harmless. Contains massive opioid doses. Has caused countless overdoses.
+        </div>
+      </div>
+      <!-- tianpetine8.jpeg - Za Za Red (duplicate angle) -->
+      <div class="gallery-card">
+        <img src="/opioid/tianpetine8.jpeg" alt="Za Za Red capsules" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Za Za Red – Extra Strength Capsules</strong>
+          Bright red bottle, eye-catching. No warning about opioid effects. Sold next to candy and energy drinks.
+        </div>
+      </div>
+      <!-- tianeptine6.jpeg - Neptune's Elixir display -->
+      <div class="gallery-card">
+        <img src="/opioid/tianeptine6.jpeg" alt="Neptune's Elixir multiple flavors" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Neptune's Elixir – Multiple Flavors</strong>
+          “Fast elixir,” tropical, cherry. Neptune’s brand is one of the most popular gas station tianeptine products. Bright, shiny bottles attract young eyes.
+        </div>
+      </div>
+      <!-- tianeptine4.jpeg - Neptune's Elixir single -->
+      <div class="gallery-card">
+        <img src="/opioid/tianeptine4.jpeg" alt="Neptune's Elixir bottle" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Neptune's Elixir</strong>
+          Simple, elegant bottle design – looks like a high-end supplement. No mention of opioid risk. Contains tianeptine at abuse-level doses.
+        </div>
+      </div>
+      <!-- tianeptine7.jpeg - TD Red Dietary Supplement -->
+      <div class="gallery-card">
+        <img src="/opioid/tianeptine7.jpeg" alt="TD Red dietary supplement" loading="lazy">
+        <div class="gallery-caption">
+          <strong>TD Red – “Dietary Supplement”</strong>
+          Red bottle, “dietary supplements” label. Hides the fact that it contains tianeptine – an unapproved opioid. Sold in gas stations nationwide.
+        </div>
+      </div>
+    </div>
+    <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
+      <strong>The brutal truth:</strong> Tianeptine is not a harmless supplement. It is an antidepressant that, at the doses sold in gas stations, becomes a full opioid agonist — more potent than morphine. The FDA has documented over 500 adverse events, including deaths. Poison center calls for tianeptine increased over 350% in recent years. Products like Za Za, Tianaa, and Neptune’s Elixir have destroyed lives. In states that have banned tianeptine, gas stations still sell it. Parents: these bottles look like energy shots. They are death in a shiny wrapper.
+    </p>
+  </section>
+
+  <!-- Action section -->
+  <section class="section" id="action">
+    <h2>Recognize <span style="color:var(--red)">tianeptine products that hide deadly opioids</span></h2>
+    <div class="two-col">
+      <div class="warning-card">
+        <h3>Red flags: deceptive marketing</h3>
+        <ul>
+          <li>Names like “Za Za,” “Tianaa,” “Neptune’s Fix,” “Wide Awake,” “Tropicat” – sound harmless or fun</li>
+          <li>“Happiness in a bottle,” “elixir,” “fast” – code for rapid opioid high</li>
+          <li>Bright, shiny bottles that look like energy shots or wellness tinctures</li>
+          <li>Labeled as “dietary supplement” – an illegal lie</li>
+          <li>Sold right next to energy drinks, candy, and vapes at gas station checkout</li>
+          <li>No child-resistant caps – bottles twist open easily</li>
+        </ul>
+      </div>
+      <div class="warning-card">
+        <h3>How parents can fight back</h3>
+        <ul>
+          <li>Search backpacks for small colorful bottles labeled “Za Za,” “Tianaa,” “Neptune’s,” “Wide Awake,” “Tropicat.”</li>
+          <li>Talk to teens: “Tianeptine is an antidepressant that acts like heroin at high doses. One bottle can kill you.”</li>
+          <li>Report gas stations and vape shops selling tianeptine to local health departments and police.</li>
+          <li>File a complaint with the Federal Trade Commission (FTC) about deceptive marketing: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
+          <li>Advocate for state and federal bans on tianeptine – it is already banned in 15+ states.</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top: 24px;">
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Parent Alert</a>
+      <a class="btn-secondary" href="#">Report a Store</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-mission">
+    <strong style="color:#fff;">GasStationHeroin.org</strong><br />
+    Exposing tianeptine — the antidepressant sold as a gas station opioid. These are not supplements. They are chemical weapons in shiny bottles. Protect your children. Know the names: Za Za, Tianaa, Neptune’s Fix. Act now.
+  </div>
+  <div class="footer-links">
+    <a href="#risks">Tianeptine risks</a>
+    <a href="#gallery">Product gallery</a>
+    <a href="#faq">FAQ</a>
+    <a href="#action">Take action</a>
+  </div>
+</footer>
+
+</body>
+</html>
