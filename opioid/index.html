@@ -3,380 +3,594 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Gas Station Opioids: Unregulated Kratom, 7-OH, Tianeptine, Pseudoindoxyl, MGM-15, Akuamma, A-238, U‑class chemicals, SR‑17018. Learn the risks and protect your community." />
+  <meta name="description" content="Gas Station Opioids: Unregulated Kratom, 7-OH, Tianeptine, Pseudoindoxyl, MGM-15, Akuamma, A-238, U‑class chemicals, SR‑17018. Learn the risks and protect your family." />
   <title>Gas Station Opioids | Hidden Dangers Exposed</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,700&display=swap" rel="stylesheet">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    :root {
+      --red: #e21b23;
+      --dark: #050505;
+      --panel: #0d0d0f;
+      --line: #2a2a2f;
+      --text: #ffffff;
+      --muted: #b9bcc6;
+    }
+
     body {
-      background: #000;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--text);
       line-height: 1.5;
     }
 
-    /* Hero section with opioid/opioid.png */
-    .hero {
-      width: 100%;
-      min-height: 90vh;
-      position: relative;
-      background: url("opioid/opioid.png") no-repeat center center;
-      background-size: cover;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--red);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* Navbar (matches homepage style) */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
       display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 6vw;
     }
-
-    @media (max-width: 768px) {
-      .hero {
-        background-size: contain;
-        background-color: #111;
-        min-height: auto;
-        padding: 2rem 0;
-      }
+    .nav-logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+      color: var(--red);
     }
-
-    .hero-text {
-      width: 100%;
-      max-width: 950px;
-      margin: 0 auto 2rem auto;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(6px);
-      border-radius: 24px;
-      padding: 1.2rem 2rem;
-      text-align: center;
-      border: 1px solid rgba(220, 60, 50, 0.5);
-    }
-
-    .hero-text h1 {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(2rem, 8vw, 4rem);
-      letter-spacing: 2px;
-    }
-    .hero-text .gas { color: #fff; }
-    .hero-text .opioids { color: #d43a2a; }
-
-    .hero-text .tagline {
-      font-size: clamp(0.8rem, 3vw, 1rem);
-      margin-top: 0.5rem;
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.95rem;
       font-weight: 500;
     }
+    .nav-links a:hover { color: var(--red); }
 
-    /* container & sections */
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .section-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: 2rem;
-      text-transform: uppercase;
-      border-left: 5px solid #d43a2a;
-      padding-left: 1rem;
-      margin: 2.5rem 0 1.5rem;
-    }
-    .section-title span { color: #d43a2a; }
-
-    /* button grid */
-    .drug-buttons {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.2rem;
-      margin: 2rem 0;
-    }
-    .drug-btn {
-      background: #111;
-      border: 1px solid #2a2a2a;
-      border-radius: 60px;
-      padding: 1rem 0.5rem;
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #fff;
-      cursor: pointer;
-      transition: all 0.2s ease;
+    /* Alert banner */
+    .alert-banner {
+      background: var(--red);
       text-align: center;
+      padding: 10px 4vw;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
-    .drug-btn:hover {
-      background: #d43a2a;
-      border-color: #d43a2a;
-      color: #000;
+
+    /* Hero using opioid/opioid.png */
+    .hero {
+      min-height: 82vh;
+      background: linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.78) 38%, rgba(0,0,0,0.16) 72%, rgba(0,0,0,0.02) 100%),
+                  url("opioid/opioid.png") center center/cover no-repeat;
+      display: flex;
+      align-items: flex-start;
+      padding: 58px 6vw;
+    }
+    .hero-text {
+      max-width: 700px;
+      margin-top: clamp(60px, 8vh, 110px);
+    }
+    h1 {
+      font-size: clamp(4.3rem, 9.6vw, 8.6rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+    }
+    h1 span { color: var(--red); }
+    .redline {
+      width: 92px;
+      height: 5px;
+      background: var(--red);
+      margin: 32px 0;
+    }
+    .hero-subtitle {
+      max-width: 590px;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.3;
+      color: #f0f0f0;
+      margin-bottom: 36px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      padding: 16px 28px;
+      border-radius: 6px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: 0.2s;
+    }
+    .btn-primary:hover {
+      background: #c5151c;
       transform: translateY(-2px);
     }
-    .drug-btn:active {
-      transform: translateY(1px);
+    .btn-secondary {
+      display: inline-block;
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 16px 28px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
     }
 
-    /* info panel that updates when button is clicked */
+    /* Sections */
+    .section {
+      padding: 72px 7vw;
+    }
+    .thesis {
+      background: #09090b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .section h2 {
+      font-size: clamp(2rem, 4.5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      max-width: 980px;
+    }
+    .section p, .section-intro {
+      max-width: 820px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    /* Category grid for opioid buttons (same style as homepage product grid) */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .drug-btn {
+      background: linear-gradient(180deg, #17171b, #0d0d10);
+      border: 1px solid var(--line);
+      color: #fff;
+      padding: 22px;
+      border-radius: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+    }
+    .drug-btn:hover {
+      border-color: var(--red);
+      transform: translateY(-3px);
+      background: #161618;
+    }
+    .drug-btn small {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* Info panel (dynamic) */
     .info-panel {
-      background: #0c0c0c;
-      border-left: 5px solid #d43a2a;
-      padding: 1.5rem;
-      border-radius: 16px;
-      margin: 1.5rem 0 2rem;
+      background: var(--panel);
+      border-left: 5px solid var(--red);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0 24px;
       transition: 0.2s;
     }
     .info-panel h3 {
-      font-family: 'Oswald', sans-serif;
       font-size: 1.8rem;
-      color: #d43a2a;
-      margin-bottom: 0.75rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--red);
     }
     .info-panel p {
-      color: #ddd;
+      color: var(--muted);
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.6;
     }
-    .info-panel .risk-tag {
+    .risk-tag {
       display: inline-block;
-      background: #2a0a0a;
+      background: rgba(226, 27, 35, 0.18);
       color: #ff8a8a;
       font-size: 0.75rem;
       font-weight: bold;
-      padding: 0.2rem 0.8rem;
-      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
       margin-top: 1rem;
     }
 
-    /* stats banner */
-    .stats-banner {
-      background: #0a0a0a;
-      padding: 2rem 0;
-      border-top: 1px solid #2a2a2a;
-      border-bottom: 1px solid #2a2a2a;
-      margin: 2rem 0;
+    /* Stats row (styled like cards) */
+    .stats-row {
+      background: #0a0a0c;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 48px 7vw;
+      margin: 24px 0 0;
     }
     .stats-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 24px;
       justify-content: center;
     }
     .stat-card {
-      background: #111;
-      padding: 1.2rem;
-      border-left: 3px solid #d43a2a;
-      text-align: center;
+      background: var(--panel);
+      border-left: 4px solid var(--red);
+      padding: 28px 24px;
+      border-radius: 12px;
       flex: 1;
-      min-width: 180px;
+      min-width: 220px;
+      text-align: center;
     }
     .stat-number {
-      font-family: 'Oswald', sans-serif;
-      font-size: 2rem;
-      color: #d43a2a;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+    .stat-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    /* call to action */
-    .action-box {
-      background: #0f0f0f;
-      padding: 1.5rem;
-      border-radius: 20px;
-      margin: 2rem 0;
+    /* Two column warning cards */
+    .two-col {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: space-between;
-      align-items: center;
+      gap: 28px;
+      margin-top: 36px;
+      margin-bottom: 24px;
     }
-    .action-box p { color: #ccc; max-width: 60%; }
-    .action-button {
-      background: transparent;
-      border: 2px solid #d43a2a;
-      padding: 0.7rem 1.5rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      color: white;
-      text-decoration: none;
-      border-radius: 40px;
-      transition: 0.2s;
+    .warning-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--red);
+      padding: 28px;
+      border-radius: 12px;
+      flex: 1;
     }
-    .action-button:hover {
-      background: #d43a2a;
-      color: black;
+    .warning-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+    .warning-card ul {
+      margin-left: 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .warning-card li {
+      margin: 8px 0;
     }
 
-    .footer {
-      background: #020202;
-      padding: 2rem 0;
-      text-align: center;
-      font-size: 0.75rem;
-      color: #666;
-      margin-top: 2rem;
+    /* Footer (match homepage) */
+    footer {
+      padding: 40px 7vw;
+      background: #000;
+      color: #8f93a0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 0.92rem;
     }
-    .footer a {
-      color: #aaa;
-      text-decoration: none;
-      margin: 0 0.5rem;
+    .footer-mission {
+      max-width: 440px;
+      line-height: 1.6;
     }
-    @media (max-width: 760px) {
-      .section-title { font-size: 1.5rem; }
-      .hero-text { margin: 1rem; padding: 1rem; }
-      .action-box p { max-width: 100%; }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-links a:hover {
+      color: var(--red);
+    }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-links {
+        gap: 16px;
+        font-size: 0.88rem;
+      }
+    }
+    @media (max-width: 650px) {
+      .hero {
+        min-height: 76vh;
+        padding: 36px 18px;
+        background: linear-gradient(180deg, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.82) 60%, rgba(0,0,0,0.2) 100%),
+                    url("opioid/opioid.png") center center/cover no-repeat;
+      }
+      .hero-text {
+        margin-top: 50px;
+      }
+      h1 {
+        font-size: clamp(3.4rem, 15vw, 5.2rem);
+      }
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      footer {
+        flex-direction: column;
+      }
+      .section {
+        padding: 48px 1.5rem;
+      }
+      .stats-row {
+        padding: 36px 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1><span class="gas">GAS STATION</span> <span class="opioids">OPIOIDS</span></h1>
-    <div class="tagline">What’s really hiding behind the counter — synthetic opioids, unregulated kratom extracts, and deadly chemicals sold as “herbal supplements.”<br>Educate yourself. Protect your community.</div>
-  </div>
-</section>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<div class="container">
-  <div class="section-title">The <span>hidden dangers</span> on the shelf</div>
-  <p style="margin-bottom: 1rem;">Gas stations and smoke shops across America sell dangerous, unregulated opioid‑like compounds. Click any substance below to learn about the specific risks.</p>
+<!-- Alert banner (consistent with homepage) -->
+<div class="alert-banner" role="alert">
+  ⚠️ Gas station opioids: unregulated & deadly — sold next to candy and vapes. Know the names.
+</div>
 
-  <!-- Button grid for each drug -->
-  <div class="drug-buttons">
-    <button class="drug-btn" data-drug="kratom">KRATOM</button>
-    <button class="drug-btn" data-drug="7oh">7‑OH (7‑Hydroxymitragynine)</button>
-    <button class="drug-btn" data-drug="mgm15">MGM‑15</button>
-    <button class="drug-btn" data-drug="pseudo">Pseudoindoxyl</button>
-    <button class="drug-btn" data-drug="tianeptine">TIANEPTINE</button>
-    <button class="drug-btn" data-drug="akuamma">AKUAMMA</button>
-    <button class="drug-btn" data-drug="a238">A‑238</button>
-    <button class="drug-btn" data-drug="uclass">U‑class chemicals (U‑47700, U‑48800)</button>
-    <button class="drug-btn" data-drug="sr17018">SR‑17018</button>
-  </div>
+<!-- Sticky Nav (mirror main site) -->
+<nav aria-label="Main navigation">
+  <span class="nav-logo">GasStationHeroin.org</span>
+  <ul class="nav-links">
+    <li><a href="#opioid-list">Substances</a></li>
+    <li><a href="#stats">Data</a></li>
+    <li><a href="#action">Take Action</a></li>
+  </ul>
+</nav>
 
-  <!-- Dynamic info panel that updates based on button click -->
-  <div id="drugInfoPanel" class="info-panel">
-    <h3>Select a substance</h3>
-    <p>Click any button above to see the real dangers of that gas station opioid. These compounds are often sold under innocent names like “herbal incense,” “glass cleaner,” or “research chemicals.”</p>
-    <div class="risk-tag">⚠️ Unregulated & deadly</div>
-  </div>
+<main id="main">
+  <!-- Hero section with opioid/opioid.png -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-text">
+      <h1>Gas Station<br /><span>Opioids</span></h1>
+      <div class="redline" aria-hidden="true"></div>
+      <p class="hero-subtitle">
+        Kratom extracts, 7‑OH, Tianeptine, and synthetic opioids are sold legally beside energy drinks — 
+        more potent than morphine, hidden in plain sight.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#opioid-list">See the Dangers</a>
+        <a class="btn-secondary" href="#action">Protect Your Family</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- Statistics Banner -->
-  <div class="stats-banner">
-    <div class="container" style="padding:0">
-      <div class="stats-grid">
-        <div class="stat-card"><div class="stat-number">+350%</div><div>Increase in poison center calls for tianeptine (2019-2023)</div></div>
-        <div class="stat-card"><div class="stat-number">80%</div><div>Of gas station “kratom” shots contain unlisted synthetic opioids</div></div>
-        <div class="stat-card"><div class="stat-number">27 states</div><div>With pending or active bans on gas station opioids</div></div>
+  <!-- Thesis / intro -->
+  <section class="section thesis" aria-labelledby="thesis-heading">
+    <h2 id="thesis-heading">Unregulated opioids are reaching teens through gas stations & vape shops.</h2>
+    <p>
+      From “7‑Hydroxymitragynine” to “Tianeptine” (known as gas station heroin), these compounds cause 
+      severe addiction, respiratory depression, and death. No medical oversight, no warning labels — 
+      just colorful packaging and QR codes. Parents have no idea they exist.
+    </p>
+  </section>
+
+  <!-- Opioid substances grid + dynamic info panel -->
+  <section class="section" id="opioid-list" aria-labelledby="opioid-heading">
+    <h2 id="opioid-heading">Substances you must recognize</h2>
+    <p class="section-intro">
+      Click any compound below to see the specific dangers. Each one is currently sold in smoke shops, 
+      gas stations, or online as “herbal supplements” or “research chemicals.”
+    </p>
+
+    <div class="category-grid">
+      <button class="drug-btn" data-drug="kratom">KRATOM <small>Mitragynine extracts</small></button>
+      <button class="drug-btn" data-drug="7oh">7‑OH <small>7‑Hydroxymitragynine</small></button>
+      <button class="drug-btn" data-drug="mgm15">MGM‑15 <small>Synthetic opioid</small></button>
+      <button class="drug-btn" data-drug="pseudo">Pseudoindoxyl <small>Ultra potent</small></button>
+      <button class="drug-btn" data-drug="tianeptine">TIANEPTINE <small>Gas station heroin</small></button>
+      <button class="drug-btn" data-drug="akuamma">AKUAMMA <small>Unregulated seed</small></button>
+      <button class="drug-btn" data-drug="a238">A‑238 <small>Novel synthetic</small></button>
+      <button class="drug-btn" data-drug="uclass">U‑class <small>U-47700, U-48800</small></button>
+      <button class="drug-btn" data-drug="sr17018">SR‑17018 <small>Biased agonist</small></button>
+    </div>
+
+    <!-- Dynamic info panel (same style as resource cards) -->
+    <div id="drugInfoPanel" class="info-panel">
+      <h3>Select a substance</h3>
+      <p>Tap any button above to reveal the real danger behind gas station opioids. Many are sold under names like “Za Za,” “Tianaa,” “Ultra Seven,” or “Neptune’s Fix.” Don’t let deceptive packaging fool you.</p>
+      <div class="risk-tag">⚠️ Unregulated & potentially fatal</div>
+    </div>
+  </section>
+
+  <!-- Statistics banner (matching style) -->
+  <div class="stats-row" id="stats">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">+350%</div>
+        <p>Increase in poison center calls for tianeptine (2019–2023)</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">~80%</div>
+        <p>Gas station “kratom” shots contain unlisted synthetic adulterants</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">27 states</div>
+        <p>Pending or active bans on gas station opioids & tianeptine</p>
       </div>
     </div>
   </div>
 
-  <!-- Recognize packaging + call to action -->
-  <div class="section-title">Recognize <span>the warning signs</span></div>
-  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;">
-    <div style="flex:1; background:#0f0f0f; padding:1.2rem; border-left: 3px solid #d43a2a;">
-      <h3 style="color:#d43a2a;">Red flags on packaging</h3>
-      <ul style="margin-left: 1rem; color:#ccc;">
-        <li>“Not for human consumption” / “Research chemical”</li>
-        <li>Small colorful vials or jars with gas station logos</li>
-        <li>Names like “Za Za,” “Tianaa,” “Pegasus,” “Neptune’s Fix” (tianeptine)</li>
-        <li>“7‑OH,” “Pseudo,” “Ultra,” “Blacked Out” labels</li>
-        <li>QR codes that link to grey‑market dosing instructions</li>
-      </ul>
+  <!-- Warning signs + action (two column cards) -->
+  <section class="section" id="action">
+    <h2>Recognize <span style="color:var(--red)">packaging & take action</span></h2>
+    <div class="two-col">
+      <div class="warning-card">
+        <h3>🚨 Red flags on shelves</h3>
+        <ul>
+          <li>“Not for human consumption” / “Research chemical only”</li>
+          <li>Names like “Za Za,” “Tianaa,” “Pegasus,” “Neptune’s Fix” (tianeptine)</li>
+          <li>“7‑OH,” “Pseudo,” “Black,” “Ultra” – no ingredient transparency</li>
+          <li>Chewable tablets, gummies, colorful shots with QR codes</li>
+          <li>Sold next to vapes, energy drinks, and candy</li>
+        </ul>
+      </div>
+      <div class="warning-card">
+        <h3>🛡️ How you can fight back</h3>
+        <ul>
+          <li>Report suspicious products to FDA MedWatch (online form)</li>
+          <li>Share photos with local health department & law enforcement</li>
+          <li>Advocate for state bans on tianeptine & unlabeled synthetics</li>
+          <li>Use this site to warn parent groups, PTA, and school boards</li>
+        </ul>
+      </div>
     </div>
-    <div style="flex:1; background:#0f0f0f; padding:1.2rem; border-left: 3px solid #d43a2a;">
-      <h3 style="color:#d43a2a;">Take action today</h3>
-      <ul style="margin-left: 1rem; color:#ccc;">
-        <li>Report suspicious products to the FDA via MedWatch</li>
-        <li>Contact local health departments and law enforcement</li>
-        <li>Advocate for state bans on tianeptine and unlabeled synthetics</li>
-        <li>Share this guide with schools, parent groups, and community coalitions</li>
-      </ul>
+    <div style="margin-top: 24px;">
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download fact sheet</a>
+      <a class="btn-secondary" href="#">Report a store</a>
     </div>
-  </div>
+  </section>
+</main>
 
-  <div class="action-box">
-    <p><strong>⚠️ Overdose risk is real.</strong> These substances have sent thousands to the ER. Help us spread awareness.</p>
-    <a href="#" class="action-button">Download fact sheet</a>
+<!-- Footer (identical to homepage) -->
+<footer>
+  <div class="footer-mission">
+    <strong style="color:#fff;">GasStationHeroin.org</strong><br />
+    Protecting families from drug-like opioids sold in vape shops, smoke shops, and gas stations. 
+    Know the names. Recognize the packaging. Act before it becomes a crisis.
   </div>
-</div>
-
-<footer class="footer">
-  <div class="container">
-    <p>© 2025 Gas Station Opioids Awareness — independent public health research. Not for medical advice.</p>
-    <p><a href="#">About</a> | <a href="#">Media Center</a> | <a href="#">Report a Store</a> | <a href="#">Donate</a></p>
+  <div class="footer-links">
+    <a href="#opioid-list">Substance index</a>
+    <a href="#stats">Critical data</a>
+    <a href="#action">Take action</a>
   </div>
 </footer>
 
 <script>
-  // Define information for each drug (to be shown in the info panel)
+  // Detailed information for each opioid (matches dynamic panel)
   const drugData = {
     kratom: {
-      title: "KRATOM (Mitragynine)",
-      description: "Sold as powder, capsules, and shots. Acts as a partial opioid agonist. Can cause seizures, liver toxicity, severe dependence, and withdrawal. Often mixed with unknown synthetic additives. No FDA oversight.",
-      risk: "Highly variable potency | Addiction risk | Seizures"
+      title: "KRATOM (Mitragynine extracts)",
+      description: "Sold as shots, capsules, and powders. Acts as a partial opioid agonist. Frequent use leads to severe withdrawal, seizures, and liver injury. Gas station brands often spike products with synthetic adulterants without disclosure.",
+      risk: "Addiction | Seizures | Liver toxicity"
     },
     "7oh": {
       title: "7‑OH (7‑Hydroxymitragynine)",
-      description: "Up to 13x more potent than morphine. Found in ‘enhanced’ kratom products like chewable tablets, gummies, and shots. Rapid addiction, respiratory depression, and overdose risk even in small amounts.",
+      description: "Up to 13x more potent than morphine. Found in ‘enhanced’ kratom gummies, chewables, and ‘Ultra’ shots. Rapid tolerance, extreme respiratory depression, and emergency room visits spiking across the US.",
       risk: "Extreme potency | Overdose | Respiratory failure"
     },
     mgm15: {
       title: "MGM‑15",
-      description: "Synthetic opioid receptor agonist sold as a ‘research chemical.’ No human safety data. Linked to severe respiratory depression, unconsciousness, and death.",
-      risk: "Experimental | No safety data | Fatal overdose"
+      description: "Synthetic opioid agonist with no human safety data. Marketed as a ‘research chemical’ but found in gas station ‘incense’ blends. Caused comas and fatal respiratory depression in documented cases.",
+      risk: "No safety data | Fatal overdose"
     },
     pseudo: {
       title: "Pseudoindoxyl",
-      description: "Semi‑synthetic kratom alkaloid, up to 20x stronger than morphine. Found in ‘Ultra Seven,’ ‘Pseudo shots,’ and ‘Stacks.’ Extremely high addiction liability, respiratory collapse.",
-      risk: "20x morphine potency | High addiction | Respiratory depression"
+      description: "Semi‑synthetic alkaloid derived from kratom, 20x stronger than morphine. Common in ‘Pseudo shots’ and ‘Blackout extracts.’ High addiction liability and rapid onset of life-threatening respiratory depression.",
+      risk: "20x morphine potency | Respiratory collapse"
     },
     tianeptine: {
-      title: "Tianeptine (Gas Station Heroin)",
-      description: "Tricyclic antidepressant that becomes a full mu‑opioid agonist at high doses. Sold as ‘Za Za,’ ‘Tianaa,’ ‘Neptune’s Fix.’ Causes severe withdrawal, seizures, acute liver failure, and deaths.",
+      title: "TIANEPTINE (Gas Station Heroin)",
+      description: "An antidepressant that becomes a full mu‑opioid agonist at high doses. Sold as ‘Za Za,’ ‘Tianaa,’ ‘Neptune’s Fix.’ Causes seizures, acute liver failure, psychosis, and hundreds of overdoses yearly.",
       risk: "Gas station heroin | Seizures | Death"
     },
     akuamma: {
-      title: "Akuamma",
-      description: "African seed marketed as a ‘natural opioid.’ Unregulated extracts can interact dangerously with other CNS depressants. Little safety data, potential for dependence.",
+      title: "AKUAMMA",
+      description: "African seed marketed as natural opioid alternative. Unregulated extracts cause dangerous interactions with other CNS depressants. No dosage guidelines – linked to respiratory distress and dependence.",
       risk: "Understudied | Dangerous interactions"
     },
     a238: {
       title: "A‑238",
-      description: "Novel synthetic opioid, structurally related to U‑class drugs. No medical use, sold as ‘research chemical.’ Extremely potent, minute amounts can cause fatal overdose.",
-      risk: "Deadly potent | Minute dosing risk"
+      description: "Novel synthetic opioid structurally related to U‑class compounds. Minute amounts can cause fatal overdose. Sold online and in some smoke shops as ‘legal research chemical.’",
+      risk: "Deadly potent | Microgram risk"
     },
     uclass: {
       title: "U‑class chemicals (U-47700, U-48800)",
-      description: "‘Pink’ or ‘U‑4’ – illicit fentanyl analogs found in gas station ‘incense’ or ‘bath salts.’ DEA Schedule I. Numerous fatalities reported; causes rapid respiratory arrest.",
+      description: "DEA Schedule I substances often mislabeled as ‘bath salts’ or ‘glass cleaner.’ U-47700 is known as ‘Pink’ or ‘U4’ – numerous fatal overdoses reported, rapid respiratory arrest.",
       risk: "DEA Schedule I | Multiple deaths"
     },
     sr17018: {
       title: "SR‑17018",
-      description: "Novel opioid with biased agonism, sold online and in some vape shops as a ‘legal high.’ No safety studies – linked to coma, respiratory failure, and prolonged sedation.",
+      description: "Experimental biased opioid agonist sold as a grey-market ‘research chemical.’ No human studies. Linked to prolonged sedation, coma, and severe respiratory depression requiring ICU intervention.",
       risk: "Extreme danger | Coma | Respiratory failure"
     }
   };
 
-  // Get panel elements
   const panel = document.getElementById('drugInfoPanel');
-  
-  // Function to update panel
+
   function updatePanel(drugKey) {
     const data = drugData[drugKey];
     if (data) {
       panel.innerHTML = `
         <h3>${data.title}</h3>
         <p>${data.description}</p>
-        <div class="risk-tag">⚠️ ${data.risk}</div>
+        <div class="risk-tag">⚠️ Critical risk: ${data.risk}</div>
       `;
     } else {
       panel.innerHTML = `
         <h3>Select a substance</h3>
-        <p>Click any button above to see the real dangers of that gas station opioid. These compounds are often sold under innocent names like "herbal incense," "glass cleaner," or "research chemicals."</p>
-        <div class="risk-tag">⚠️ Unregulated & deadly</div>
+        <p>Tap any button above to reveal the real danger behind gas station opioids. Many are sold under names like “Za Za,” “Tianaa,” “Ultra Seven,” or “Neptune’s Fix.” Don’t let deceptive packaging fool you.</p>
+        <div class="risk-tag">⚠️ Unregulated & potentially fatal</div>
       `;
     }
   }
 
-  // Attach event listeners to all buttons
   const buttons = document.querySelectorAll('.drug-btn');
   buttons.forEach(btn => {
     btn.addEventListener('click', (e) => {
