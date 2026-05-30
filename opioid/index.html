@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Gas Station Opioids: Unregulated Kratom, 7-OH, Tianeptine, Pseudoindoxyl, MGM-15, Akuamma, A-238, U-class chemicals, SR-17018. Learn the risks and protect your family." />
+  <meta name="description" content="Gas Station Opioids: Unregulated Kratom, 7-OH, Tianeptine, Pseudoindoxyl, MGM-15, Akuamma, Corydalis, SR-17018. Learn the risks and protect your family." />
   <title>Gas Station Opioids | Hidden Dangers Exposed</title>
 
   <style>
@@ -223,10 +223,12 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
       text-align: left;
-      cursor: pointer;
       transition: 0.2s;
       font-family: 'Inter', sans-serif;
       font-size: 1rem;
+      display: block;
+      width: 100%;
+      cursor: pointer;
     }
 
     .drug-btn:hover {
@@ -245,37 +247,14 @@
       letter-spacing: 0;
     }
 
+    /* No info panel needed anymore, but keep for optional use */
     .info-panel {
       background: var(--panel);
       border-left: 5px solid var(--red);
       border-radius: 12px;
       padding: 28px;
       margin: 36px 0 24px;
-    }
-
-    .info-panel h3 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      color: var(--red);
-    }
-
-    .info-panel p {
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-top: 0;
-    }
-
-    .risk-tag {
-      display: inline-block;
-      background: rgba(226, 27, 35, 0.18);
-      color: #ff8a8a;
-      font-size: 0.75rem;
-      font-weight: 800;
-      padding: 0.35rem 1rem;
-      border-radius: 40px;
-      margin-top: 1rem;
+      display: none;
     }
 
     .stats-row {
@@ -470,31 +449,26 @@
     </p>
   </section>
 
-  <!-- Opioid substances grid + dynamic info panel -->
+  <!-- Opioid substances grid - buttons now link to dedicated pages -->
   <section class="section" id="opioid-list" aria-labelledby="opioid-heading">
     <h2 id="opioid-heading">Substances you must recognize</h2>
     <p class="section-intro">
-      Click any compound below to see the specific dangers. Each one is currently sold in smoke shops, 
-      gas stations, or online as “herbal supplements” or “research chemicals.”
+      Click any compound below to learn the specific dangers, see product images, and get detailed information. Each is sold in smoke shops, gas stations, or online.
     </p>
 
     <div class="category-grid">
-      <button class="drug-btn" data-drug="kratom">KRATOM <small>Mitragynine extracts</small></button>
-      <button class="drug-btn" data-drug="7oh">7‑OH <small>7‑Hydroxymitragynine</small></button>
-      <button class="drug-btn" data-drug="mgm15">MGM‑15 <small>Synthetic opioid</small></button>
-      <button class="drug-btn" data-drug="pseudo">Pseudoindoxyl <small>Ultra potent</small></button>
-      <button class="drug-btn" data-drug="tianeptine">TIANEPTINE <small>Gas station heroin</small></button>
-      <button class="drug-btn" data-drug="akuamma">AKUAMMA <small>Unregulated seed</small></button>
-      <button class="drug-btn" data-drug="a238">A‑238 <small>Novel synthetic</small></button>
-      <button class="drug-btn" data-drug="uclass">U‑class <small>U-47700, U-48800</small></button>
-      <button class="drug-btn" data-drug="sr17018">SR‑17018 <small>Biased agonist</small></button>
+      <a href="kratom.html" class="drug-btn">KRATOM <small>Mitragynine extracts</small></a>
+      <a href="7oh.html" class="drug-btn">7‑OH <small>7‑Hydroxymitragynine</small></a>
+      <a href="mgm.html" class="drug-btn">MGM‑15 <small>Synthetic opioid</small></a>
+      <a href="pseudo.html" class="drug-btn">Pseudoindoxyl <small>Ultra potent</small></a>
+      <a href="tianeptine.html" class="drug-btn">TIANEPTINE <small>Gas station heroin</small></a>
+      <a href="akuamma.html" class="drug-btn">AKUAMMA <small>Unregulated seed</small></a>
+      <a href="corydalis.html" class="drug-btn">Corydalis <small>Euphoric blends</small></a>
+      <a href="sr.html" class="drug-btn">SR‑17018 <small>Biased agonist</small></a>
     </div>
 
-    <div id="drugInfoPanel" class="info-panel">
-      <h3>Select a substance</h3>
-      <p>Tap any button above to reveal the real danger behind gas station opioids. Many are sold under names like “Za Za,” “Tianaa,” “Ultra Seven,” or “Neptune’s Fix.” Don’t let deceptive packaging fool you.</p>
-      <div class="risk-tag">⚠️ Unregulated & potentially fatal</div>
-    </div>
+    <!-- Hidden info panel (no longer used but kept for consistency) -->
+    <div id="drugInfoPanel" class="info-panel"></div>
   </section>
 
   <!-- Statistics banner -->
@@ -546,7 +520,7 @@
   </section>
 </main>
 
-<!-- Footer identical to index.html -->
+<!-- Footer identical to original -->
 <footer>
   <div class="footer-mission">
     <strong style="color:#fff;">GasStationHeroin.org</strong><br />
@@ -560,80 +534,6 @@
   </div>
 </footer>
 
-<script>
-  const drugData = {
-    kratom: {
-      title: "KRATOM (Mitragynine extracts)",
-      description: "Sold as shots, capsules, and powders. Acts as a partial opioid agonist. Frequent use leads to severe withdrawal, seizures, and liver injury. Gas station brands often spike products with synthetic adulterants without disclosure.",
-      risk: "Addiction | Seizures | Liver toxicity"
-    },
-    "7oh": {
-      title: "7‑OH (7‑Hydroxymitragynine)",
-      description: "Up to 13x more potent than morphine. Found in ‘enhanced’ kratom gummies, chewables, and ‘Ultra’ shots. Rapid tolerance, extreme respiratory depression, and emergency room visits spiking across the US.",
-      risk: "Extreme potency | Overdose | Respiratory failure"
-    },
-    mgm15: {
-      title: "MGM‑15",
-      description: "Synthetic opioid agonist with no human safety data. Marketed as a ‘research chemical’ but found in gas station ‘incense’ blends. Caused comas and fatal respiratory depression in documented cases.",
-      risk: "No safety data | Fatal overdose"
-    },
-    pseudo: {
-      title: "Pseudoindoxyl",
-      description: "Semi‑synthetic alkaloid derived from kratom, 20x stronger than morphine. Common in ‘Pseudo shots’ and ‘Blackout extracts.’ High addiction liability and rapid onset of life-threatening respiratory depression.",
-      risk: "20x morphine potency | Respiratory collapse"
-    },
-    tianeptine: {
-      title: "TIANEPTINE (Gas Station Heroin)",
-      description: "An antidepressant that becomes a full mu‑opioid agonist at high doses. Sold as ‘Za Za,’ ‘Tianaa,’ ‘Neptune’s Fix.’ Causes seizures, acute liver failure, psychosis, and hundreds of overdoses yearly.",
-      risk: "Gas station heroin | Seizures | Death"
-    },
-    akuamma: {
-      title: "AKUAMMA",
-      description: "African seed marketed as natural opioid alternative. Unregulated extracts cause dangerous interactions with other CNS depressants. No dosage guidelines – linked to respiratory distress and dependence.",
-      risk: "Understudied | Dangerous interactions"
-    },
-    a238: {
-      title: "A‑238",
-      description: "Novel synthetic opioid structurally related to U‑class compounds. Minute amounts can cause fatal overdose. Sold online and in some smoke shops as ‘legal research chemical.’",
-      risk: "Deadly potent | Microgram risk"
-    },
-    uclass: {
-      title: "U‑class chemicals (U-47700, U-48800)",
-      description: "DEA Schedule I substances often mislabeled as ‘bath salts’ or ‘glass cleaner.’ U-47700 is known as ‘Pink’ or ‘U4’ – numerous fatal overdoses reported, rapid respiratory arrest.",
-      risk: "DEA Schedule I | Multiple deaths"
-    },
-    sr17018: {
-      title: "SR‑17018",
-      description: "Experimental biased opioid agonist sold as a grey-market ‘research chemical.’ No human studies. Linked to prolonged sedation, coma, and severe respiratory depression requiring ICU intervention.",
-      risk: "Extreme danger | Coma | Respiratory failure"
-    }
-  };
-
-  const panel = document.getElementById("drugInfoPanel");
-  const buttons = document.querySelectorAll(".drug-btn");
-
-  function updatePanel(drugKey) {
-    const data = drugData[drugKey];
-    if (data) {
-      panel.innerHTML = `
-        <h3>${data.title}</h3>
-        <p>${data.description}</p>
-        <div class="risk-tag">⚠️ Critical risk: ${data.risk}</div>
-      `;
-    } else {
-      panel.innerHTML = `
-        <h3>Select a substance</h3>
-        <p>Tap any button above to reveal the real danger behind gas station opioids. Many are sold under names like "Za Za," "Tianaa," "Ultra Seven," or "Neptune’s Fix." Don’t let deceptive packaging fool you.</p>
-        <div class="risk-tag">⚠️ Unregulated & potentially fatal</div>
-      `;
-    }
-  }
-
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      updatePanel(btn.getAttribute("data-drug"));
-    });
-  });
-</script>
+<!-- Remove the old dynamic script since we use links now -->
 </body>
 </html>
