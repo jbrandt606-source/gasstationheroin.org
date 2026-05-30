@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
-  <meta name="description" content="Pseudoindoxyl is a semi-synthetic opioid derived from kratom’s alkaloids — up to 20x more potent than morphine. Sold in gas stations as candy-flavored chewable tablets. Brutal facts for parents." />
-  <title>Pseudoindoxyl | The Most Potent Kratom-Derived Opioid</title>
+  <meta name="description" content="Pseudoindoxyl is a kratom-derived semi-synthetic opioid sold in gas stations, vape shops, and online as flavored chewable tablets. A plain-English warning for communities." />
+  <title>Pseudoindoxyl | Kratom-Derived Opioid Sold Like Candy</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --red: #e21b23;
@@ -40,6 +36,8 @@
       max-width: 100%;
       position: relative;
     }
+
+    a { color: inherit; text-decoration: none; }
 
     .skip-link {
       position: absolute;
@@ -160,14 +158,17 @@
       background: var(--red);
       color: #fff;
     }
+
     .btn-primary:hover {
       background: #c5151c;
       transform: translateY(-2px);
     }
+
     .btn-secondary {
       border: 2px solid #fff;
       color: #fff;
     }
+
     .btn-secondary:hover {
       border-color: var(--red);
       color: var(--red);
@@ -202,6 +203,30 @@
       line-height: 1.6;
     }
 
+    .quick-list {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+    }
+
+    .quick-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--red);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
     .faq-grid {
       display: flex;
       flex-direction: column;
@@ -209,6 +234,7 @@
       margin-top: 40px;
       width: 100%;
     }
+
     .faq-item {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -216,18 +242,22 @@
       padding: 24px 28px;
       width: 100%;
     }
+
     .faq-item h3 {
       font-size: 1.5rem;
       font-weight: 800;
       margin-bottom: 12px;
       color: var(--red);
     }
+
     .faq-item p, .faq-item ul {
       color: var(--muted);
       line-height: 1.6;
       margin-top: 8px;
     }
+
     .faq-item ul { margin-left: 1.5rem; }
+
     .faq-item li { margin: 6px 0; }
 
     .gallery-grid {
@@ -245,16 +275,19 @@
       overflow: hidden;
       transition: transform 0.2s, border-color 0.2s;
     }
+
     .gallery-card:hover {
       transform: translateY(-4px);
       border-color: var(--red);
     }
+
     .gallery-card img {
       width: 100%;
       height: auto;
       display: block;
       background: #1a1a1f;
     }
+
     .gallery-caption {
       padding: 16px;
       font-size: 0.85rem;
@@ -262,6 +295,7 @@
       border-top: 1px solid var(--line);
       background: #0a0a0c;
     }
+
     .gallery-caption strong {
       color: var(--red);
       display: block;
@@ -276,6 +310,7 @@
       margin-bottom: 24px;
       width: 100%;
     }
+
     .warning-card {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -284,17 +319,20 @@
       flex: 1;
       min-width: 260px;
     }
+
     .warning-card h3 {
       font-size: 1.35rem;
       margin-bottom: 16px;
       font-weight: 800;
       color: var(--red);
     }
+
     .warning-card ul {
       margin-left: 1.2rem;
       color: var(--muted);
       line-height: 1.6;
     }
+
     .warning-card li { margin: 8px 0; }
 
     footer {
@@ -310,12 +348,15 @@
       font-size: 0.92rem;
       width: 100%;
     }
+
     .footer-mission { max-width: 440px; line-height: 1.6; }
+
     .footer-links {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
+
     .footer-links a:hover { color: var(--red); }
 
     @media (max-width: 1000px) {
@@ -326,10 +367,11 @@
     }
 
     @media (max-width: 650px) {
-      body, html { 
-        overflow-x: hidden; 
+      body, html {
+        overflow-x: hidden;
         width: 100%;
       }
+
       .hero {
         min-height: 70vh;
         padding: 36px 1.2rem;
@@ -339,248 +381,343 @@
         background-size: cover;
         align-items: center;
       }
+
       .hero-text {
         margin-top: 0;
         padding-top: 20px;
         max-width: 100%;
       }
-      h1 { 
+
+      h1 {
         font-size: clamp(3.2rem, 12vw, 4.5rem);
         line-height: 0.92;
       }
-      .hero-subtitle { 
+
+      .hero-subtitle {
         font-size: 1rem;
         margin-bottom: 28px;
       }
+
       .nav-links { display: none; }
-      .btn-primary, .btn-secondary { 
-        padding: 12px 18px; 
+
+      .btn-primary, .btn-secondary {
+        padding: 12px 18px;
         font-size: 0.85rem;
       }
+
       .gallery-grid { grid-template-columns: 1fr; }
+
       .faq-item { padding: 18px; }
+
       .faq-item h3 { font-size: 1.2rem; }
+
       .section { padding: 40px 1.2rem; }
+
       footer { flex-direction: column; padding: 32px 1.2rem; }
+
       .warning-card { min-width: auto; }
+
       .two-col { gap: 20px; }
-      .alert-banner { 
-        font-size: 0.75rem; 
+
+      .alert-banner {
+        font-size: 0.75rem;
         padding: 8px 1rem;
         line-height: 1.3;
       }
+
       nav { padding: 12px 1.2rem; }
+
       .redline { margin: 24px 0; width: 70px; }
+
       .hero-actions { gap: 10px; }
     }
   </style>
 </head>
+
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="alert-banner" role="alert">
-  PSEUDOINDOXYL: A SEMI-SYNTHETIC OPIOID DERIVED FROM KRATOM — UP TO 20X STRONGER THAN MORPHINE. SOLD IN GAS STATIONS AS CANDY-FLAVORED CHEWABLES.
+  PSEUDOINDOXYL IS A KRATOM-DERIVED SEMI-SYNTHETIC OPIOID — SOLD AS FLAVORED CHEWABLES IN ORDINARY STORES.
 </div>
 
 <nav aria-label="Main navigation">
   <span class="nav-logo">GasStationHeroin.org</span>
   <ul class="nav-links">
-    <li><a href="#risks">Risks</a></li>
-    <li><a href="#gallery">Products & Ads</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#risks">Why It Matters</a></li>
+    <li><a href="#gallery">Real Products</a></li>
+    <li><a href="#faq">Plain-English Facts</a></li>
     <li><a href="#action">Take Action</a></li>
   </ul>
 </nav>
 
 <main id="main">
+
   <section class="hero" aria-label="Hero">
     <div class="hero-text">
-      <h1>Pseudoindoxyl<br /><span>The Strongest Kratom-Derived Opioid</span></h1>
+      <h1>Pseudoindoxyl<br /><span>Kratom-Derived Opioid</span></h1>
       <div class="redline" aria-hidden="true"></div>
       <p class="hero-subtitle">
-        Pseudoindoxyl (mitragynine pseudoindoxyl) is a semi-synthetic opioid created from kratom’s alkaloids — estimated to be up to 20 times more potent than morphine and 5-10 times more potent than 7-OH. It is not natural. It is a chemical weapon, sold in gas stations as bomb pop, strawberry, and mixed berry chewable tablets.
+        A chemically altered kratom compound is being sold as flavored chewable tablets, “focus blends,” and instant-release products. Most people walking past it have no idea what it is.
       </p>
       <div class="hero-actions">
-        <a class="btn-primary" href="#gallery">See the Products</a>
-        <a class="btn-secondary" href="#faq">Get the Brutal Facts</a>
+        <a class="btn-primary" href="#gallery">See Real Products</a>
+        <a class="btn-secondary" href="#faq">Get the Facts</a>
       </div>
     </div>
   </section>
 
   <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
-    <h2 id="thesis-heading">Pseudoindoxyl: Kratom’s alkaloid pushed to the extreme.</h2>
+    <h2 id="thesis-heading">This is not natural kratom. It is chemistry being sold like candy.</h2>
     <p>
-      Pseudoindoxyl (mitragynine pseudoindoxyl) is a semi-synthetic derivative of mitragynine — the main alkaloid in kratom. It is not found in meaningful quantities in natural kratom leaf. Chemists create it by modifying 7-hydroxymitragynine, which itself comes from kratom. The result: an opioid up to 20x stronger than morphine. It has never been studied in humans for safety. Yet it is sold openly in gas stations and smoke shops, often in flavors like Bomb Pop, Strawberry B-Pop, Cherry, Blue Razz, Watermelon, and Mixed Berry. Multiple states are moving to ban it. It remains on shelves next to children’s candy.
+      Pseudoindoxyl, also called mitragynine pseudoindoxyl, is a semi-synthetic compound tied to kratom chemistry. It is made from kratom-related alkaloids and promoted in products that look like candy, mints, energy tabs, or wellness supplements.
     </p>
-  </section>
+    <p>
+      The public-facing labels may say kratom, alkaloid, focus blend, instant release, or botanical. But the concern is simple: powerful opioid-like chemistry is being sold in gas stations and vape shops before communities even know what to look for.
+    </p>
 
-  <!-- FAQ Section - "it is kratom-derived" -->
-  <section class="section" id="faq" aria-labelledby="faq-heading">
-    <h2 id="faq-heading">What Every Parent Must Know About Pseudoindoxyl</h2>
-    <p class="section-intro">
-      Based on forensic chemistry reports, FDA surveillance, and emerging public health data. Pseudoindoxyl is not a supplement. It is a semi-synthetic opioid derived from kratom — and it is dangerously potent.
-    </p>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3>What Is It?</h3>
-        <p><strong>What is this product?</strong> Pseudoindoxyl (mitragynine pseudoindoxyl) is a semi-synthetic opioid. It is made by chemically modifying 7-hydroxymitragynine — which is itself a metabolite of mitragynine, the main alkaloid in kratom. So pseudoindoxyl is a <strong>kratom-derived synthetic opioid</strong>, engineered to be one of the most potent mu-opioid receptor agonists available outside the black market. It is often mislabeled as simply “kratom extract.”</p>
-        <p><strong>What is it sold as?</strong> Sold as “chewable tablets,” “pseudoindoxyl tablets,” “7-hydroxy + pseudo blends,” “focus blend,” “instant release formula.” Flavors: Bomb Pop, Strawberry B-Pop, Cherry, Blue Razz, Watermelon, Mixed Berry.</p>
-        <p><strong>Is it a drug, supplement, vape, or something else?</strong> It is an unapproved, illegal drug when sold for human consumption. The FDA has identified pseudoindoxyl in commercial products. It has no medical use and no human safety data.</p>
-        <p><strong>Street names and brand names:</strong> “Pseudo,” “Pseudoindoxyl,” “Mitragynine pseudoindoxyl,” “Proxie,” “Kama,” “Hydroxie Pseudoidinoxyl,” “Wavy,” “Eighties Pseudo,” “Pseudoool! MAX,” “The Kratom Company Red.”</p>
+    <div class="quick-list">
+      <div class="quick-item">
+        <strong>It sounds scientific.</strong>
+        Names like pseudoindoxyl and mitragynine pseudoindoxyl make it hard for shoppers to understand.
       </div>
-      <div class="faq-item">
-        <h3>Where Do Kids Get It?</h3>
-        <p><strong>Can it be bought at gas stations?</strong> Yes. Same gas station checkout aisles as candy, energy drinks, and vapes. Sold openly.</p>
-        <p><strong>Is it sold in vape shops?</strong> Yes, often in the same display cases as 7-OH, MGM-15, and kratom. Packaging is bright and colorful.</p>
-        <p><strong>Can it be purchased online?</strong> Yes. Several online vendors sell pseudoindoxyl tablets with no age verification. Social media ads promote “limited stock” and “advanced kratom alkaloids.”</p>
-        <p><strong>Is there an age restriction?</strong> None federally. Some states have laws, but rarely enforced. Tiny “21+” fine print is ignored.</p>
+      <div class="quick-item">
+        <strong>It looks harmless.</strong>
+        Fruit flavors, bright labels, chewables, and blister packs can look like candy or gum.
       </div>
-      <div class="faq-item">
-        <h3>Why Are Teens Using It?</h3>
-        <p><strong>What effects are they looking for?</strong> An extremely potent opioid high — euphoria, deep sedation, pain relief. Because it’s marketed as a “kratom alkaloid,” teens mistakenly think it’s natural and safe. It is neither.</p>
-        <p><strong>Is it being marketed as energy, relaxation, focus, pain relief, or a legal high?</strong> Ads use phrases like “advanced kratom alkaloids,” “focus blend,” “instant release,” “40x stronger than mitragynine,” “limited stock – 20 per flavor.” They create scarcity and hype to drive sales.</p>
-        <p><strong>What are people saying about it on social media?</strong> Online forums discuss pseudoindoxyl as the “next level” beyond 7-OH. Users report extreme euphoria followed by brutal withdrawal. Some compare it to prescription opioids like oxycodone. Fake reviews and influencers promote it as a “clean” energy or focus product — a deadly lie.</p>
+      <div class="quick-item">
+        <strong>It is sold openly.</strong>
+        Gas stations, smoke shops, vape shops, CBD stores, and websites can carry these products.
       </div>
-      <div class="faq-item">
-        <h3>What Does It Do?</h3>
-        <p><strong>How does it affect the brain and body?</strong> Pseudoindoxyl is a full mu-opioid receptor agonist — the same mechanism as heroin, fentanyl, and morphine. It produces intense euphoria, profound sedation, respiratory depression, nausea, constipation, and pinpoint pupils. It is estimated to be up to 20 times more potent than morphine.</p>
-        <p><strong>How quickly does it work?</strong> Chewable tablets are formulated for rapid release, taking effect in 10–20 minutes.</p>
-        <p><strong>How long do the effects last?</strong> 4–8 hours, but tolerance builds extremely fast. Withdrawal symptoms appear within hours of last dose after only a few days of use.</p>
-        <p><strong>Does it act like an opioid, stimulant, sedative, hallucinogen, or something else?</strong> It is a pure opioid. No stimulant effects. Overdose causes respiratory arrest.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What Are the Risks?</h3>
-        <p><strong>Can it cause addiction?</strong> Yes. Extremely addictive. One week of daily use can cause severe physical dependence. Withdrawal includes vomiting, diarrhea, muscle cramps, severe anxiety, insomnia, and intense cravings.</p>
-        <p><strong>Can it cause overdose?</strong> Yes. Potency is extreme. Some tablets contain 200mg or more of pseudoindoxyl. A fatal dose for a non-tolerant user may be as low as 20–30mg.</p>
-        <p><strong>Can it cause seizures?</strong> Yes. Reported in emergency room cases involving pseudoindoxyl, especially when combined with other substances.</p>
-        <p><strong>Can it cause psychosis or hallucinations?</strong> High doses can cause delirium, agitation, and psychotic episodes.</p>
-        <p><strong>Can it cause heart problems?</strong> Yes. Opioid-induced QTc prolongation, arrhythmias, cardiac arrest — documented with other potent opioids and likely with pseudoindoxyl.</p>
-        <p><strong>Can it cause liver injury?</strong> Unknown but likely similar to kratom-induced hepatotoxicity, possibly worse due to higher potency and synthetic nature.</p>
-        <p><strong>Has it been linked to deaths?</strong> Yes. Forensic labs have identified pseudoindoxyl in fatal overdose cases. Because it is so new and often not tested for, many deaths are misclassified. It is a ticking time bomb.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is It Legal?</h3>
-        <p><strong>Is it legal federally?</strong> Not for human consumption. The FDA has issued warnings about pseudoindoxyl products. Under the Federal Analogue Act, it may be treated as a Schedule I controlled substance if intended for human consumption.</p>
-        <p><strong>Is it legal in my state?</strong> Multiple states have banned pseudoindoxyl under specific legislation or analog acts. However, many gas stations and online vendors continue to sell it. Check local laws.</p>
-        <p><strong>Are there age restrictions?</strong> No federal. Some states 18+ or 21+ but rarely enforced.</p>
-        <p><strong>Has the FDA issued warnings?</strong> Yes. The FDA has identified pseudoindoxyl in marketed products and issued warning letters to manufacturers. The agency considers pseudoindoxyl an unapproved and dangerous opioid.</p>
+      <div class="quick-item">
+        <strong>It targets vulnerability.</strong>
+        People seeking pain relief, focus, mood support, or withdrawal relief may be pulled in.
       </div>
     </div>
   </section>
 
-  <!-- Gallery with all pseudoindoxyl product and ad images -->
-  <section class="section" id="gallery" aria-labelledby="gallery-heading">
-    <h2 id="gallery-heading">Pseudoindoxyl Products & Ads: Designed to Hook Kids</h2>
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Pseudoindoxyl, explained in plain English</h2>
     <p class="section-intro">
-      These are real products sold in gas stations, vape shops, and online. Look at the flavors: Bomb Pop, Strawberry B-Pop, Cherry, Blue Razz, Watermelon, Mixed Berry. Chewable tablets. “Limited stock” urgency. This is a deliberate strategy to target young users.
+      You do not need a chemistry degree to understand the problem. A kratom-derived opioid-like product should not be sold like candy, focus tablets, or wellness supplements.
+    </p>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <h3>What is pseudoindoxyl?</h3>
+        <p>
+          Pseudoindoxyl is a kratom-derived semi-synthetic compound connected to mitragynine and 7-hydroxymitragynine, the opioid-active chemistry associated with kratom.
+        </p>
+        <p>
+          In plain English: companies are taking kratom-related chemistry and turning it into stronger, more concentrated retail products that ordinary shoppers may not recognize as dangerous.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why should regular people care?</h3>
+        <p>
+          Because these products are not staying in obscure labs or online forums. They are being packaged for everyday retail.
+        </p>
+        <ul>
+          <li>A tired worker may buy it for energy or focus.</li>
+          <li>A student may buy it because it says “focus blend.”</li>
+          <li>A person in pain may buy it for relief.</li>
+          <li>A person in recovery may buy it thinking it is “just kratom.”</li>
+          <li>A teen may see candy flavors and chewable tablets and think it is harmless.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where is it sold?</h3>
+        <p>
+          Pseudoindoxyl products may be sold in gas stations, vape shops, smoke shops, CBD stores, convenience stores, and online. They may appear beside kratom, 7-OH, MGM-15, vapes, energy drinks, and other checkout products.
+        </p>
+        <p>
+          When something is sold in a familiar place, people assume it has been checked and proven safe. That assumption can be dangerously wrong.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How is it marketed?</h3>
+        <p>
+          The marketing often uses language that makes the product sound advanced, clean, or functional:
+        </p>
+        <ul>
+          <li>“Focus blend”</li>
+          <li>“Instant release”</li>
+          <li>“Advanced kratom alkaloids”</li>
+          <li>“Organic plant alkaloid”</li>
+          <li>“Limited stock”</li>
+          <li>“40x stronger than mitragynine”</li>
+          <li>Flavors like Bomb Pop, Strawberry B-Pop, Cherry, Blue Razz, Watermelon, and Mixed Berry</li>
+        </ul>
+        <p>
+          That is the strategy. The product is made to feel like a trendy supplement while hiding the opioid-like concern.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What can it do to the body?</h3>
+        <p>
+          Pseudoindoxyl is promoted as a kratom-derived opioid-like compound. Products tied to this class raise concerns about euphoria, sedation, slowed breathing, nausea, dependence, withdrawal, and overdose risk.
+        </p>
+        <p>
+          The frightening part is the mismatch: the label looks casual, but the chemistry may be powerful.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why are chewables so alarming?</h3>
+        <p>
+          Because chewable tablets are familiar. They look like candy, mints, gum, vitamins, or energy products. They do not look like something connected to opioid-like effects.
+        </p>
+        <p>
+          That makes these products especially dangerous around children, teens, people in recovery, and adults who assume “legal” means “safe.”
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can pseudoindoxyl cause addiction?</h3>
+        <p>
+          Products in this kratom-derived opioid-like category raise serious addiction concerns. Users of concentrated kratom alkaloids report tolerance, cravings, withdrawal, and difficulty stopping.
+        </p>
+        <p>
+          The first purchase may look casual. Dependence does not feel casual.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is it legal?</h3>
+        <p>
+          The legal status is confusing and changing. Some states are moving against semi-synthetic kratom alkaloids and related compounds. Other places may still have products on shelves.
+        </p>
+        <p>
+          That confusion benefits sellers. Communities should not have to understand synthetic opioid chemistry before asking why these products are being sold beside snacks and drinks.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">This is what pseudoindoxyl looks like on shelves and online</h2>
+    <p class="section-intro">
+      These products do not look like dangerous opioid-like substances. They look like candy, focus tablets, supplements, or trendy internet products. That is exactly why communities should be alarmed.
     </p>
 
     <div class="gallery-grid">
-      <!-- pseudo1.jpeg - KAMA 7-Hydroxy + Pseudo 1000mg -->
+
       <div class="gallery-card">
         <img src="/opioid/pseudo1.jpeg" alt="KAMA 7-Hydroxy + Pseudoindoxyl 1000mg" loading="lazy">
         <div class="gallery-caption">
-          <strong>KAMA – 7-Hydroxy + Pseudoindoxyl</strong>
-          1000mg per pack, 200mg per tablet. “40x stronger than mitragynine.” Flavors: Cherry, Blue Razz, Watermelon. 20 servings. “Limited stock – 20 per flavor.” Death in a candy wrapper.
+          <strong>KAMA 7-Hydroxy + Pseudoindoxyl</strong>
+          Bright flavors, potency language, and “limited stock” urgency make a powerful kratom-derived product feel like a retail drop.
         </div>
       </div>
-      <!-- pseudo5.jpeg - Proxie Pseudoindoxyl Focus Blend -->
+
       <div class="gallery-card">
         <img src="/opioid/pseudo5.jpeg" alt="Proxie Pseudoindoxyl raspberry focus blend" loading="lazy">
         <div class="gallery-caption">
-          <strong>Proxie – Pseudoindoxyl “Focus Blend”</strong>
-          Raspberry flavor. “Instant release formula.” 60mg per pack, 20mg per tablet. Marketed as a focus product – hides opioid danger.
+          <strong>Proxie “Focus Blend”</strong>
+          Calling it a focus product makes an opioid-like compound sound useful, clean, and everyday.
         </div>
       </div>
-      <!-- Pseudo2.png - Hydroxie Pseudoidinoxyl -->
+
       <div class="gallery-card">
         <img src="/opioid/Pseudo2.png" alt="Hydroxie Pseudoidinoxyl 15mg chewable" loading="lazy">
         <div class="gallery-caption">
-          <strong>Hydroxie – Pseudoidinoxyl</strong>
-          15mg per tablet, 10 tablets, 20 servings. “Organic plant alkaloid” – deceptive labeling. Chewable. No warning about opioid effects.
+          <strong>Hydroxie Pseudoidinoxyl</strong>
+          “Organic plant alkaloid” language makes the product sound natural while hiding the risk.
         </div>
       </div>
-      <!-- pseudo3.jpeg - Wavy Pseudoinodoxyl Mixed Berry -->
+
       <div class="gallery-card">
         <img src="/opioid/pseudo3.jpeg" alt="Wavy Pseudoinodoxyl Mixed Berry" loading="lazy">
         <div class="gallery-caption">
-          <strong>Wavy – Pseudoinodoxyl Mixed Berry</strong>
-          10mg per tablet, 70mg per bottle. Packed in a bottle. Mixed berry flavor – directly appeals to children. No child-resistant cap.
+          <strong>Wavy Mixed Berry</strong>
+          Mixed berry flavor and bottle packaging make a serious product look like a supplement or candy.
         </div>
       </div>
-      <!-- Pseudo3.png - Pseudoool! MAX Strawberry B-Pop -->
+
       <div class="gallery-card">
         <img src="/opioid/Pseudo3.png" alt="Pseudoool! MAX Strawberry B-Pop 150mg per tablet" loading="lazy">
         <div class="gallery-caption">
-          <strong>Pseudoool! MAX – Strawberry B-Pop</strong>
-          150mg per tablet, 450mg per pack. “Advanced users only” – but sold to anyone. 6x servings per tablet. Extremely potent – lethal for a novice.
+          <strong>Pseudoool! MAX Strawberry B-Pop</strong>
+          Candy-style flavoring and “MAX” branding turn opioid-like chemistry into a thrill product.
         </div>
       </div>
-      <!-- pseudo4.jpeg - The Kratom Company Red (MIT + Pseudo) -->
+
       <div class="gallery-card">
         <img src="/opioid/pseudo4.jpeg" alt="The Kratom Company Red MIT + Pseudoindoxyl" loading="lazy">
         <div class="gallery-caption">
-          <strong>The Kratom Company – Red (MIT + Pseudo)</strong>
-          50mg mitragynine + 5mg pseudoindoxyl per tablet. 8 total servings. Labeled as “dietary supplement” – a lie. Combines kratom with synthetic pseudoindoxyl.
+          <strong>The Kratom Company Red</strong>
+          Labeled like a kratom or supplement product while combining mitragynine with pseudoindoxyl.
         </div>
       </div>
-      <!-- Pseudo1.png - Eighties Pseudo Bomb Pop -->
+
       <div class="gallery-card">
         <img src="/opioid/Pseudo1.png" alt="Eighties Pseudo Bomb Pop 80mg per tablet" loading="lazy">
         <div class="gallery-caption">
-          <strong>Eighties Pseudo – Bomb Pop</strong>
-          80mg per tablet, 3 tablets, 240mg blister. “Sharing it HEAT” – youth slang. Bomb Pop flavor – named after a classic children’s popsicle. Direct marketing to minors.
+          <strong>Eighties Pseudo Bomb Pop</strong>
+          Bomb Pop flavor and bright packaging make this look like candy culture, not a public-health warning.
         </div>
       </div>
+
     </div>
+
     <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
-      <strong>The brutal truth:</strong> Pseudoindoxyl is not natural kratom. It is a semi-synthetic opioid created by chemists, engineered to be one of the most potent opioid receptor agonists available outside of the black market. It has never been tested for safety in humans. Yet it is sold in gas stations nationwide, in flavors like Bomb Pop and Strawberry B-Pop — directly targeting children. Tablet strengths range from 10mg to 200mg. A fatal dose for a non-tolerant user is likely under 30mg. These are death in a popsicle-flavored chewable tablet.
+      The disturbing part is not just that pseudoindoxyl exists. It is that kratom-derived opioid-like chemistry is being dressed up as fruit-flavored chewables, focus blends, and trendy retail products while being sold in ordinary places.
     </p>
   </section>
 
-  <!-- Action section -->
   <section class="section" id="action">
-    <h2>Recognize <span style="color:var(--red)">pseudoindoxyl products that target children</span></h2>
+    <h2>What to look for in your neighborhood</h2>
+
     <div class="two-col">
       <div class="warning-card">
-        <h3>Red flags: child-friendly design</h3>
+        <h3>Red flags on shelves</h3>
         <ul>
-          <li>Flavors: Bomb Pop, Strawberry B-Pop, Cherry, Blue Razz, Watermelon, Mixed Berry</li>
-          <li>Chewable tablets, “instant release,” “focus blend” – mimics candy or gum</li>
-          <li>Bright neon packaging, cartoonish fonts, “limited stock” urgency marketing</li>
-          <li>No child-resistant closures – bottles and blister packs open easily</li>
-          <li>Sold right next to energy drinks, chips, and gum at gas station checkout</li>
-          <li>Social media ads using “advanced kratom alkaloids,” “40x stronger” – hyping potency to thrill-seekers</li>
+          <li>Labels that say “pseudo,” “pseudoindoxyl,” “mitragynine pseudoindoxyl,” “KAMA,” “Proxie,” “Hydroxie,” “Wavy,” or “Eighties Pseudo”</li>
+          <li>Chewable tablets, instant-release formulas, focus blends, blister packs, or small colorful bottles</li>
+          <li>Flavors like Bomb Pop, Strawberry B-Pop, Cherry, Blue Razz, Watermelon, or Mixed Berry</li>
+          <li>Words like “advanced alkaloid,” “focus,” “instant release,” “organic plant alkaloid,” or “limited stock”</li>
+          <li>Products displayed near kratom, 7-OH, MGM-15, vapes, candy, energy drinks, or checkout counters</li>
+          <li>Online ads using potency claims, scarcity, bright colors, youth slang, or candy-style flavors</li>
         </ul>
       </div>
+
       <div class="warning-card">
-        <h3>How parents can fight back</h3>
+        <h3>What communities can do</h3>
         <ul>
-          <li>Search backpacks for blister packs or bottles labeled “pseudo,” “pseudoindoxyl,” “KAMA,” “Proxie,” “Hydroxie,” “Wavy,” “Eighties Pseudo.”</li>
-          <li>Talk to teens: “Pseudoindoxyl is a synthetic opioid made from kratom – 20x stronger than morphine. One tablet can kill you.”</li>
-          <li>Report gas stations and vape shops selling pseudoindoxyl to local health departments and police.</li>
-          <li>File a complaint with the Federal Trade Commission (FTC) about deceptive marketing to minors: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
-          <li>Advocate for state and federal bans on all semi-synthetic kratom alkaloids, including pseudoindoxyl.</li>
+          <li>Ask local stores why kratom-derived semi-synthetic products are being sold near ordinary snacks and drinks.</li>
+          <li>Warn schools, recovery groups, churches, coaches, employers, and neighborhood organizations.</li>
+          <li>Report deceptive marketing to local health departments and consumer protection agencies.</li>
+          <li>Tell local and state officials that pseudoindoxyl and related products should not be sold like candy.</li>
+          <li>File a complaint with the FTC about deceptive marketing: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
         </ul>
       </div>
     </div>
+
     <div style="margin-top: 24px;">
-      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Parent Alert</a>
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Community Alert</a>
       <a class="btn-secondary" href="#">Report a Store</a>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="footer-mission">
     <strong style="color:#fff;">GasStationHeroin.org</strong><br />
-    Exposing pseudoindoxyl — a semi-synthetic opioid derived from kratom, up to 20x stronger than morphine. These are not natural supplements. They are chemical weapons in children’s candy flavors. Protect your children. Know the names. Act now.
+    Exposing pseudoindoxyl and kratom-derived gas station opioids sold in plain sight. Helping communities recognize deceptive packaging, hidden risks, and products that should never be treated like candy.
   </div>
+
   <div class="footer-links">
-    <a href="#risks">Pseudoindoxyl risks</a>
+    <a href="#risks">Why it matters</a>
     <a href="#gallery">Product gallery</a>
-    <a href="#faq">FAQ</a>
+    <a href="#faq">Plain-English facts</a>
     <a href="#action">Take action</a>
   </div>
 </footer>
