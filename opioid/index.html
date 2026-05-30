@@ -98,7 +98,7 @@
       color: var(--red);
     }
 
-    /* Hero section — styled exactly like index.html (background overlay) */
+    /* Hero section — identical to index.html */
     .hero {
       min-height: 82vh;
       background:
@@ -178,7 +178,7 @@
       color: var(--red);
     }
 
-    /* Section styling (unchanged from previous) */
+    /* Sections */
     .section {
       padding: 72px 7vw;
     }
@@ -444,7 +444,7 @@
 </nav>
 
 <main id="main">
-  <!-- Hero section redesigned exactly like index.html: background image + overlay + text on top -->
+  <!-- Hero section — background image + text overlay (exactly like homepage) -->
   <section class="hero" aria-label="Hero">
     <div class="hero-text">
       <h1>Gas Station<br /><span>Opioids</span></h1>
@@ -561,7 +561,6 @@
 </footer>
 
 <script>
-  // Detailed information for each opioid (matching the dynamic panel)
   const drugData = {
     kratom: {
       title: "KRATOM (Mitragynine extracts)",
@@ -610,7 +609,8 @@
     }
   };
 
-  const panel = document.getElementById('drugInfoPanel');
+  const panel = document.getElementById("drugInfoPanel");
+  const buttons = document.querySelectorAll(".drug-btn");
 
   function updatePanel(drugKey) {
     const data = drugData[drugKey];
@@ -629,11 +629,9 @@
     }
   }
 
-  const buttons = document.querySelectorAll('.drug-btn');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const drug = btn.getAttribute('data-drug');
-      if (drug) updatePanel(drug);
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      updatePanel(btn.getAttribute("data-drug"));
     });
   });
 </script>
