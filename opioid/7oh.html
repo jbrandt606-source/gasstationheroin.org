@@ -26,6 +26,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
@@ -33,6 +34,8 @@
       background: var(--dark);
       color: var(--text);
       line-height: 1.5;
+      overflow-x: hidden;
+      max-width: 100%;
     }
 
     a {
@@ -64,6 +67,7 @@
       font-size: 0.95rem;
       font-weight: 800;
       letter-spacing: 0.02em;
+      width: 100%;
     }
 
     nav {
@@ -77,6 +81,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 14px 6vw;
+      width: 100%;
     }
 
     .nav-logo {
@@ -98,14 +103,16 @@
       color: var(--red);
     }
 
+    /* Hero section — brighter gradient (less dark) */
     .hero {
       min-height: 82vh;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.78) 38%, rgba(0,0,0,.16) 72%, rgba(0,0,0,.02) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 38%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.05) 100%),
         url("/opioid/7ohhero.png") center center/cover no-repeat;
       display: flex;
       align-items: flex-start;
       padding: 58px 6vw;
+      width: 100%;
     }
 
     .hero-text {
@@ -137,6 +144,7 @@
       line-height: 1.3;
       color: #f0f0f0;
       margin-bottom: 36px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
     }
 
     .hero-actions {
@@ -179,6 +187,7 @@
 
     .section {
       padding: 72px 7vw;
+      width: 100%;
     }
 
     .thesis {
@@ -210,12 +219,14 @@
       flex-direction: column;
       gap: 24px;
       margin-top: 40px;
+      width: 100%;
     }
     .faq-item {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 12px;
       padding: 24px 28px;
+      width: 100%;
     }
     .faq-item h3 {
       font-size: 1.5rem;
@@ -241,6 +252,7 @@
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 24px;
       margin-top: 48px;
+      width: 100%;
     }
 
     .gallery-card {
@@ -277,13 +289,14 @@
       margin-bottom: 6px;
     }
 
-    /* Two column callout boxes - professional */
+    /* Two column callout boxes */
     .two-col {
       display: flex;
       flex-wrap: wrap;
       gap: 28px;
       margin-top: 36px;
       margin-bottom: 24px;
+      width: 100%;
     }
 
     .warning-card {
@@ -323,6 +336,7 @@
       justify-content: space-between;
       align-items: flex-start;
       font-size: 0.92rem;
+      width: 100%;
     }
 
     .footer-mission {
@@ -340,19 +354,26 @@
       color: var(--red);
     }
 
+    /* Mobile fixes - prevent horizontal scroll */
     @media (max-width: 1000px) {
       .nav-links {
         gap: 16px;
         font-size: 0.88rem;
+      }
+      .section {
+        padding: 48px 1.5rem;
+      }
+      .hero {
+        padding: 36px 1.5rem;
       }
     }
 
     @media (max-width: 650px) {
       .hero {
         min-height: 76vh;
-        padding: 36px 18px;
+        padding: 36px 1.2rem;
         background:
-          linear-gradient(180deg, rgba(0,0,0,.97) 0%, rgba(0,0,0,.82) 60%, rgba(0,0,0,.2) 100%),
+          linear-gradient(180deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.60) 60%, rgba(0,0,0,.25) 100%),
           url("/opioid/7ohhero.png") center center/cover no-repeat;
       }
       .hero-text {
@@ -364,9 +385,6 @@
       .hero-subtitle {
         font-size: 1.1rem;
       }
-      .section {
-        padding: 48px 1.5rem;
-      }
       .nav-links {
         display: none;
       }
@@ -374,9 +392,6 @@
       .btn-secondary {
         padding: 14px 20px;
         font-size: 0.9rem;
-      }
-      footer {
-        flex-direction: column;
       }
       .gallery-grid {
         grid-template-columns: 1fr;
@@ -386,6 +401,22 @@
       }
       .faq-item h3 {
         font-size: 1.2rem;
+      }
+      .section {
+        padding: 48px 1.2rem;
+      }
+      footer {
+        flex-direction: column;
+        padding: 32px 1.2rem;
+      }
+      .warning-card {
+        min-width: auto;
+      }
+      .two-col {
+        gap: 20px;
+      }
+      body, html {
+        overflow-x: hidden;
       }
     }
   </style>
@@ -430,7 +461,7 @@
     </p>
   </section>
 
-  <!-- FAQ Section - answers all questions, subtly connecting to kratom -->
+  <!-- FAQ Section -->
   <section class="section" id="faq" aria-labelledby="faq-heading">
     <h2 id="faq-heading">What Every Parent Must Know About 7-OH</h2>
     <p class="section-intro">
@@ -484,7 +515,7 @@
     </div>
   </section>
 
-  <!-- Gallery of products and ads - brutal, child-focused -->
+  <!-- Gallery of products and ads -->
   <section class="section" id="gallery" aria-labelledby="gallery-heading">
     <h2 id="gallery-heading">7-OH Products & Ads: Designed to Hook Kids</h2>
     <p class="section-intro">
@@ -492,7 +523,6 @@
     </p>
 
     <div class="gallery-grid">
-      <!-- 7oh1.jpeg - Method 7-Hydroxymitragynine 160mg -->
       <div class="gallery-card">
         <img src="/opioid/7oh1.jpeg" alt="Method 7-OH 160mg strawberry chewable tablets" loading="lazy">
         <div class="gallery-caption">
@@ -500,7 +530,6 @@
           Strawberry flavor, “chewable tablets.” 40mg per tablet. Looks like candy. No child-resistant packaging. Extreme overdose risk.
         </div>
       </div>
-      <!-- 7oh2.jpeg - Real Botanicals 7-Hydro 100mg -->
       <div class="gallery-card">
         <img src="/opioid/7oh2.jpeg" alt="Real Botanicals 7-Hydro 10mg per tablet" loading="lazy">
         <div class="gallery-caption">
@@ -508,7 +537,6 @@
           10 chewable tablets, 10mg each. “Premium kratom alkaloid” – deceptive labeling. Sold next to gummy vitamins.
         </div>
       </div>
-      <!-- 7oh3.jpeg - Ultra Potent Blue Razz 30mg per tablet -->
       <div class="gallery-card">
         <img src="/opioid/7oh3.jpeg" alt="Ultra potent 7-OH blue razz 30mg per tablet" loading="lazy">
         <div class="gallery-caption">
@@ -516,7 +544,6 @@
           “Extra strength formulation.” Blue raspberry flavor – directly appeals to children. 4 chewable tablets. No warning label.
         </div>
       </div>
-      <!-- 7oh4.jpeg - 7OF 14mg per tablet -->
       <div class="gallery-card">
         <img src="/opioid/7oh4.jpeg" alt="7OF 7-Hydroxymitragynine 14mg" loading="lazy">
         <div class="gallery-caption">
@@ -524,7 +551,6 @@
           “Amazing kratom alkaloids” – lies about safety. 15 tablets. Teen-focused branding.
         </div>
       </div>
-      <!-- 7oh5.jpeg - PURE7 18mg lemon flavor -->
       <div class="gallery-card">
         <img src="/opioid/7oh5.jpeg" alt="PURE7 7-Hydroxymitragynine lemon flavor" loading="lazy">
         <div class="gallery-caption">
@@ -532,7 +558,6 @@
           “Chromatographic purification” – sounds scientific, but hides opioid danger. 8 servings. Sold at gas station counters.
         </div>
       </div>
-      <!-- 7oh7.jpeg - 7OHMZ 100mg chewable tablets -->
       <div class="gallery-card">
         <img src="/opioid/7oh7.jpeg" alt="7OHMZ 100mg chewable tablets blue raspberry" loading="lazy">
         <div class="gallery-caption">
@@ -540,7 +565,6 @@
           “Chewable tablets” – looks like a candy pack. 100mg total (4 tablets). A child could eat the whole pack and die.
         </div>
       </div>
-      <!-- 7oh8.jpeg - HEAT 150mg per tab -->
       <div class="gallery-card">
         <img src="/opioid/7oh8.jpeg" alt="HEAT 7-Hydroxymitragynine 150mg per tablet" loading="lazy">
         <div class="gallery-caption">
@@ -548,7 +572,6 @@
           Blue razz flavor. Each single tablet contains 150mg of 7-OH – a lethal dose for a novice. Sold in blister packs like gum.
         </div>
       </div>
-      <!-- 7OHad1.png - SevenohPlus ad -->
       <div class="gallery-card">
         <img src="/opioid/7OHad1.png" alt="SevenohPlus ad big savings" loading="lazy">
         <div class="gallery-caption">
@@ -556,7 +579,6 @@
           “She knows what she’s taking / Confidence starts with control” – normalizes opioid use. Over 400,000 orders claimed. Direct social media marketing to young adults.
         </div>
       </div>
-      <!-- 7ohad2.png - Lab Nerd / Hydroxie ad -->
       <div class="gallery-card">
         <img src="/opioid/7ohad2.png" alt="Lab Nerd Hydroxie ad back in stock" loading="lazy">
         <div class="gallery-caption">
@@ -564,7 +586,6 @@
           Uses scarcity and “nerd” culture to appeal to gamers. Hides the fact that Hydroxie is a potent 7-OH product. No age gate.
         </div>
       </div>
-      <!-- 7ohad3.jpeg - Ultra Seven / Stacks BOGO ad -->
       <div class="gallery-card">
         <img src="/opioid/7ohad3.jpeg" alt="Ultra Seven stacks BOGO ad" loading="lazy">
         <div class="gallery-caption">
@@ -572,7 +593,6 @@
           Flavors: Cookies & Cream, Watermelon Fruit Punch, Lemon Berry, Mixed Berry. These are dessert and candy flavors – marketed directly to young people. “RESTOCKED” creates urgency.
         </div>
       </div>
-      <!-- 7ohad4.jpeg - Kultom Ultra arrival -->
       <div class="gallery-card">
         <img src="/opioid/7ohad4.jpeg" alt="Kultom Ultra 10mg BOGO free" loading="lazy">
         <div class="gallery-caption">
@@ -580,7 +600,6 @@
           “Arrival” hype. 10mg per tablet. Uses discount tactics to drive addiction. Bright, colorful design appeals to teens.
         </div>
       </div>
-      <!-- 7ohad5.jpeg - Kures.co STAX ad -->
       <div class="gallery-card">
         <img src="/opioid/7ohad5.jpeg" alt="Kures STAX 80mg per tab plus caffeine" loading="lazy">
         <div class="gallery-caption">
@@ -594,7 +613,7 @@
     </p>
   </section>
 
-  <!-- Action section - FTC complaint, no emojis -->
+  <!-- Action section -->
   <section class="section" id="action">
     <h2>Recognize <span style="color:var(--red)">7-OH products that target children</span></h2>
     <div class="two-col">
