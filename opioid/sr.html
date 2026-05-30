@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
+  <meta name="description" content="SR-17018 is a research chemical mu-opioid receptor agonist appearing on the gray market. Sold as '99%+ purity,' it has no human safety data and is being misused as an unregulated opioid." />
+  <title>SR-17018 | The Gray Market Opioid Agonist</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --red: #e21b23;
+      --dark: #050505;
+      --panel: #0d0d0f;
+      --line: #2a2a2f;
+      --text: #ffffff;
+      --muted: #b9bcc6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--red);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .alert-banner {
+      background: var(--red);
+      text-align: center;
+      padding: 10px 4vw;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      width: 100%;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5,5,5,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 6vw;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .nav-links a:hover { color: var(--red); }
+
+    .hero {
+      min-height: 82vh;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.50) 38%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.05) 100%),
+        url("/opioid/srhero.png") center center/cover no-repeat;
+      display: flex;
+      align-items: flex-start;
+      padding: 58px 6vw;
+      width: 100%;
+    }
+
+    .hero-text {
+      max-width: 700px;
+      margin-top: clamp(60px, 8vh, 110px);
+    }
+
+    h1 {
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+    }
+    h1 span { color: var(--red); }
+
+    .redline {
+      width: 92px;
+      height: 5px;
+      background: var(--red);
+      margin: 32px 0;
+    }
+
+    .hero-subtitle {
+      max-width: 590px;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.3;
+      color: #f0f0f0;
+      margin-bottom: 36px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary, .btn-secondary {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 6px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: 0.2s;
+    }
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #c5151c;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .section {
+      padding: 72px 6vw;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    .thesis {
+      background: #09090b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      max-width: 980px;
+    }
+
+    .section p, .section-intro {
+      max-width: 820px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+      width: 100%;
+    }
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px 28px;
+      width: 100%;
+    }
+    .faq-item h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--red);
+    }
+    .faq-item p, .faq-item ul {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+    .faq-item ul { margin-left: 1.5rem; }
+    .faq-item li { margin: 6px 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+      width: 100%;
+    }
+
+    .gallery-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #1a1a1f;
+    }
+    .gallery-caption {
+      padding: 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #0a0a0c;
+    }
+    .gallery-caption strong {
+      color: var(--red);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 36px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+    .warning-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+      flex: 1;
+      min-width: 260px;
+    }
+    .warning-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      color: var(--red);
+    }
+    .warning-card ul {
+      margin-left: 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .warning-card li { margin: 8px 0; }
+
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 32px;
+      align-items: center;
+    }
+    .action-buttons .btn-primary,
+    .action-buttons .btn-secondary {
+      margin: 0;
+    }
+
+    footer {
+      padding: 40px 6vw;
+      background: #000;
+      color: #8f93a0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      width: 100%;
+    }
+    .footer-mission { max-width: 440px; line-height: 1.6; }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-links a:hover { color: var(--red); }
+
+    @media (max-width: 1000px) {
+      .nav-links { gap: 16px; font-size: 0.88rem; }
+      .section { padding: 48px 5vw; }
+      .hero { padding: 36px 5vw; }
+      footer { padding: 32px 5vw; }
+    }
+
+    @media (max-width: 650px) {
+      body, html { 
+        overflow-x: hidden; 
+        width: 100%;
+      }
+      .hero {
+        min-height: 70vh;
+        padding: 36px 1.2rem;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.25) 100%),
+          url("/opioid/srhero.png") center center/cover no-repeat;
+        background-size: cover;
+        align-items: center;
+      }
+      .hero-text {
+        margin-top: 0;
+        padding-top: 20px;
+        max-width: 100%;
+      }
+      h1 { 
+        font-size: clamp(3.2rem, 12vw, 4.5rem);
+        line-height: 0.92;
+      }
+      .hero-subtitle { 
+        font-size: 1rem;
+        margin-bottom: 28px;
+      }
+      .nav-links { display: none; }
+      .btn-primary, .btn-secondary { 
+        padding: 12px 18px; 
+        font-size: 0.85rem;
+      }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .faq-item { padding: 18px; }
+      .faq-item h3 { font-size: 1.2rem; }
+      .section { padding: 40px 1.2rem; }
+      footer { flex-direction: column; padding: 32px 1.2rem; }
+      .warning-card { min-width: auto; }
+      .two-col { gap: 20px; }
+      .alert-banner { 
+        font-size: 0.75rem; 
+        padding: 8px 1rem;
+        line-height: 1.3;
+      }
+      nav { padding: 12px 1.2rem; }
+      .redline { margin: 24px 0; width: 70px; }
+      .hero-actions { gap: 10px; }
+      .action-buttons {
+        gap: 16px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .action-buttons .btn-primary,
+      .action-buttons .btn-secondary {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="alert-banner" role="alert">
+  SR-17018: A RESEARCH CHEMICAL MU-OPIOID RECEPTOR AGONIST APPEARING ON THE GRAY MARKET. SOLD AS "99%+ PURITY" — NO HUMAN SAFETY DATA. EXTREME RISK OF MISUSE AND OVERDOSE.
+</div>
+
+<nav aria-label="Main navigation">
+  <span class="nav-logo">GasStationHeroin.org</span>
+  <ul class="nav-links">
+    <li><a href="#risks">Risks</a></li>
+    <li><a href="#gallery">Products & Ads</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#action">Take Action</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+  <section class="hero" aria-label="Hero">
+    <div class="hero-text">
+      <h1>SR-17018<br /><span>The Gray Market Opioid Agonist</span></h1>
+      <div class="redline" aria-hidden="true"></div>
+      <p class="hero-subtitle">
+        SR-17018 is a research chemical that acts as a biased mu-opioid receptor agonist. It has never been tested in humans. Yet it is being sold online as a "high-purity research compound" — with vendors openly marketing it for human consumption. This is an unregulated, untested opioid. The risks are unknown and potentially fatal.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#gallery">See the Products</a>
+        <a class="btn-secondary" href="#faq">Learn the Risks</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
+    <h2 id="thesis-heading">SR-17018: A lab-made opioid with zero human safety data.</h2>
+    <p>
+      SR-17018 is a synthetic compound developed in academic research as a "biased" mu-opioid receptor agonist — meaning it preferentially activates certain signaling pathways (G-protein) over others (β-arrestin). The goal was to create an analgesic with fewer side effects. But this compound has never undergone clinical trials. There are no published human studies. No safe dose has been established. Despite this, it is now being sold on the gray market as a "research chemical" with claims of 99%+ purity, often priced for individual consumers. This is a ticking time bomb.
+    </p>
+  </section>
+
+  <!-- FAQ Section - emerging threat, research chemical -->
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">What You Need to Know About SR-17018</h2>
+    <p class="section-intro">
+      SR-17018 is not a supplement or a natural product. It is a potent synthetic opioid analog. Here are the facts based on available research and gray market surveillance.
+    </p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>What Is SR-17018?</h3>
+        <p><strong>What is this product?</strong> SR-17018 is a synthetic small molecule that acts as a mu-opioid receptor agonist. It was first described in scientific literature as a "biased" opioid — designed to produce analgesia without respiratory depression in animal models. However, this bias is not absolute, and respiratory depression is still possible, especially in overdose.</p>
+        <p><strong>What is it sold as?</strong> Sold as a "research chemical," "analytical standard," "advanced research compound." Vendors market it in milligram quantities (5mg, 10mg, 50mg) with claims of "99.7% purity" and "independently tested." Some listings suggest human consumption through coded language like "not for human consumption" — a well-known loophole.</p>
+        <p><strong>Is it a drug, supplement, or something else?</strong> It is an unapproved, illegal drug when sold for human consumption. It has no accepted medical use. The FDA has not evaluated it. It is not a dietary supplement.</p>
+        <p><strong>What are its chemical properties?</strong> Molecular formula: C17H16Cl3N3O. Molecular weight: 382.69 g/mol. CAS: 1379686-30-2. It is a potent agonist at the mu-opioid receptor with reported EC50 in the nanomolar range.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why Are People Using It?</h3>
+        <p><strong>What effects are they looking for?</strong> Euphoria, pain relief, sedation — typical opioid effects. Because it is sold as a "research chemical," some users mistakenly believe it is safer or legal. It is not.</p>
+        <p><strong>Is it marketed as a kratom alternative or opioid substitute?</strong> Yes. Some gray market vendors market SR-17018 to people seeking to self-treat opioid withdrawal or as a substitute for prescription opioids. This is extremely dangerous — the dosing is entirely guesswork.</p>
+        <p><strong>What are people saying online?</strong> On Reddit and other drug forums, users discuss SR-17018 as a "cleaner" opioid with less respiratory depression. This is based on animal data, not human evidence. Several reports describe unexpected overdose, prolonged sedation, and withdrawal symptoms. No medical oversight exists.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What Are the Concerns?</h3>
+        <p><strong>Why is this compound dangerous?</strong> There are zero human pharmacokinetic or pharmacodynamic studies. No one knows the correct dose, the half-life, the metabolic pathway, or the toxicity profile. The active dose could be micrograms; the lethal dose could be a few milligrams. Users are guessing.</p>
+        <p><strong>What about "biased agonism"?</strong> Animal studies suggest SR-17018 has less respiratory depression than morphine at equianalgesic doses. But "less" does not mean "none." At higher doses, respiratory depression is still likely. In humans, the therapeutic window is unknown.</p>
+        <p><strong>Has it been linked to deaths?</strong> Not yet confirmed, but as availability increases, fatalities are inevitable. Toxicological screens do not routinely test for SR-17018. Any death may be misattributed.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What Does It Do to the Body?</h3>
+        <p><strong>How does it affect the brain?</strong> SR-17018 is a mu-opioid receptor agonist. It activates the same receptor as morphine, heroin, and fentanyl. It produces analgesia, euphoria, sedation, constipation, and — at sufficient doses — respiratory depression and death.</p>
+        <p><strong>How quickly does it work?</strong> Unknown. In animal studies, effects appear within 15–30 minutes. Human data do not exist.</p>
+        <p><strong>How long do effects last?</strong> Unknown. Animal studies suggest a duration longer than morphine (several hours). Without human data, duration is a guess.</p>
+        <p><strong>Can it cause opioid-like effects?</strong> Yes. It is an opioid agonist. All the classic effects — including addiction and overdose — are possible.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What Are the Known Risks?</h3>
+        <p><strong>Can it cause addiction?</strong> Yes, definitely. Any mu-opioid agonist carries a high risk of physical dependence and addiction. Animal studies show SR-17018 produces tolerance and withdrawal.</p>
+        <p><strong>Can it cause overdose?</strong> Yes. The primary danger is respiratory depression. Because the dose-response curve is unknown, users can easily take too much. Overdose may not respond well to naloxone if the compound has unusual binding kinetics.</p>
+        <p><strong>Can it cause seizures?</strong> Unknown. Not reported in animal studies, but opioid-induced seizures are possible, especially with co-ingestants.</p>
+        <p><strong>Can it cause psychosis?</strong> Unknown. High-dose opioids can cause delirium and hallucinations.</p>
+        <p><strong>Can it cause heart problems?</strong> Unknown. No cardiovascular safety data exists.</p>
+        <p><strong>Can it cause liver injury?</strong> Unknown. No toxicity studies in humans.</p>
+        <p><strong>Has it been linked to deaths?</strong> No confirmed reports yet, but given the potency and lack of dosing guidelines, it is only a matter of time.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is It Legal?</h3>
+        <p><strong>Is it legal federally?</strong> SR-17018 is not explicitly scheduled in the U.S. However, it may be considered a controlled substance analogue under the Federal Analogue Act if intended for human consumption. Selling it for human use is illegal.</p>
+        <p><strong>Are there state restrictions?</strong> Some states have broad analogue laws that could apply. Most have no specific mention of SR-17018.</p>
+        <p><strong>Has the FDA taken action?</strong> Not yet, but the FDA has issued warnings about other research chemical opioids. As SR-17018 appears in the gray market, enforcement is likely.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery of SR-17018 products and ads -->
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">SR-17018 Products: Sold as "Research Chemicals" for Human Misuse</h2>
+    <p class="section-intro">
+      These are real product listings from online vendors. They claim "high purity," "independently tested," and use "research compound" as a legal shield. In practice, they are sold to individuals for self-administration.
+    </p>
+
+    <div class="gallery-grid">
+      <!-- sr1.jpeg - product listing front -->
+      <div class="gallery-card">
+        <img src="/opioid/sr1.jpeg" alt="SR-17018 99.9% purity product listing" loading="lazy">
+        <div class="gallery-caption">
+          <strong>SR-17018 99.9% Purity – Online Listing</strong>
+          Advertised with "99.9% purity" and priced at $79.99. No safety information. Sold as a "research chemical" but easily accessible to anyone.
+        </div>
+      </div>
+      <!-- sr2.jpeg - Advanced research compound label -->
+      <div class="gallery-card">
+        <img src="/opioid/sr2.jpeg" alt="SR-17018 advanced research compound 99.7% purity" loading="lazy">
+        <div class="gallery-caption">
+          <strong>"Advanced Research Compound" – 99.7% Purity</strong>
+          Packaging claims "every batch independently tested and certified." Markets the compound with "shop now" and "view lab results" — designed to look legitimate while enabling misuse.
+        </div>
+      </div>
+      <!-- sr3.jpeg - APExBIO laboratory label -->
+      <div class="gallery-card">
+        <img src="/opioid/sr3.jpeg" alt="SR17018 catalog label mu-type opioid receptor agonist" loading="lazy">
+        <div class="gallery-caption">
+          <strong>APExBIO – SR17018 (Catalog No. BA5640)</strong>
+          Labeled as a "mu-type opioid receptor agonist" for research. Sold as a 5mg vial. No warning about human toxicity. The same product is being resold to individuals.
+        </div>
+      </div>
+    </div>
+    <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
+      <strong>The emerging threat:</strong> SR-17018 is part of a new wave of "research chemical" opioids. These compounds are synthesized in labs, never tested in humans, and then sold online to anyone. Users rely on animal data and forum speculation to determine a dose. This is reckless and deadly. Until regulators act, every purchase of SR-17018 is a potentially fatal experiment.
+    </p>
+  </section>
+
+  <!-- Action section – for regulators and public health -->
+  <section class="section" id="action">
+    <h2>What Can Be Done About Gray Market Research Opioids?</h2>
+    <div class="two-col">
+      <div class="warning-card">
+        <h3>Red flags in the marketplace</h3>
+        <ul>
+          <li>Sold as "research chemical," "analytical standard," "not for human consumption" – transparent loophole</li>
+          <li>Claims of high purity (99%+) and "lab tested" – creates false sense of safety</li>
+          <li>No dosing information, no side effect profile, no human studies</li>
+          <li>Priced for individual purchase (milligram quantities, ~$80 per vial)</li>
+          <li>Marketing language that appeals to drug users ("advanced research compound," "biased agonist")</li>
+        </ul>
+      </div>
+      <div class="warning-card">
+        <h3>How to address the emerging threat</h3>
+        <ul>
+          <li>Educate consumers: "SR-17018 is a potent opioid with zero human safety data. Do not use."</li>
+          <li>Report any adverse events to FDA MedWatch – even if uncertain.</li>
+          <li>Advocate for state and federal scheduling of SR-17018 under analogue laws.</li>
+          <li>Encourage law enforcement to target vendors selling research chemicals for human consumption.</li>
+          <li>File a complaint with the FTC about deceptive marketing of "research chemicals" as safe: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="action-buttons">
+      <a class="btn-primary" href="#" style="background:var(--red);">Download Fact Sheet</a>
+      <a class="btn-secondary" href="#">Report a Product</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-mission">
+    <strong style="color:#fff;">GasStationHeroin.org</strong><br />
+    Monitoring emerging threats: SR-17018 and other gray market research opioids. These are not safe alternatives. They are unregulated, untested, and potentially deadly. No human safety data. No dosing guidelines. Extreme caution is advised — but the only safe choice is to avoid them entirely.
+  </div>
+  <div class="footer-links">
+    <a href="#risks">SR-17018 risks</a>
+    <a href="#gallery">Product gallery</a>
+    <a href="#faq">FAQ</a>
+    <a href="#action">Take action</a>
+  </div>
+</footer>
+
+</body>
+</html>
