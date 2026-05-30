@@ -195,7 +195,9 @@ h1 span{color:var(--red);}
   margin-top:36px;
 }
 
+/* Ensure each category item (div or anchor) behaves as a consistent block-level button */
 .category-btn{
+  display: block;
   background:linear-gradient(180deg,#17171b,#0d0d10);
   border:1px solid var(--line);
   color:#fff;
@@ -357,7 +359,11 @@ footer{
     smoke shops, gas stations, and convenience stores.
   </p>
   <div class="category-grid">
-    <div class="category-btn"><div>Opioids</div><span>Tianeptine, kratom extracts, 7-OH products</span></div>
+    <!-- Opioid button: now links to gasstationheroin.org/opioid.html. Preserves identical style, hover, block layout -->
+    <a href="https://gasstationheroin.org/opioid.html" class="category-btn">
+      <div>Opioids</div>
+      <span>Tianeptine, kratom extracts, 7-OH products</span>
+    </a>
     <div class="category-btn"><div>Sedatives</div><span>Phenibut, sleep shots, calming blends</span></div>
     <div class="category-btn"><div>Stimulants</div><span>Energy pills, focus shots, synthetic blends</span></div>
     <div class="category-btn"><div>Hallucinogens</div><span>Mushroom gummies, Amanita muscaria, psychedelic blends</span></div>
