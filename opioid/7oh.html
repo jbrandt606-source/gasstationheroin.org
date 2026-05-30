@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
-  <meta name="description" content="7-OH (7-Hydroxymitragynine) is kratom’s most potent alkaloid — concentrated into an opioid up to 13x stronger than morphine. Sold in gas stations as candy-flavored tablets. Brutal facts for parents." />
-  <title>7-OH | It Is Kratom — Concentrated and Deadly</title>
+  <meta name="description" content="7-OH is concentrated kratom sold in gas stations, vape shops, and online as candy-flavored tablets, gummies, and shots. A plain-English warning for communities." />
+  <title>7-OH | Concentrated Kratom Sold Like Candy</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --red: #e21b23;
@@ -41,10 +37,7 @@
       position: relative;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .skip-link {
       position: absolute;
@@ -59,9 +52,7 @@
       transition: top 0.2s;
     }
 
-    .skip-link:focus {
-      top: 1rem;
-    }
+    .skip-link:focus { top: 1rem; }
 
     .alert-banner {
       background: var(--red);
@@ -103,9 +94,7 @@
       font-weight: 600;
     }
 
-    .nav-links a:hover {
-      color: var(--red);
-    }
+    .nav-links a:hover { color: var(--red); }
 
     .hero {
       min-height: 82vh;
@@ -130,9 +119,7 @@
       font-weight: 900;
     }
 
-    h1 span {
-      color: var(--red);
-    }
+    h1 span { color: var(--red); }
 
     .redline {
       width: 92px;
@@ -218,6 +205,30 @@
       line-height: 1.6;
     }
 
+    .quick-list {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+    }
+
+    .quick-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--red);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
     .faq-grid {
       display: flex;
       flex-direction: column;
@@ -225,6 +236,7 @@
       margin-top: 40px;
       width: 100%;
     }
+
     .faq-item {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -232,23 +244,24 @@
       padding: 24px 28px;
       width: 100%;
     }
+
     .faq-item h3 {
       font-size: 1.5rem;
       font-weight: 800;
       margin-bottom: 12px;
       color: var(--red);
     }
-    .faq-item p, .faq-item ul {
+
+    .faq-item p,
+    .faq-item ul {
       color: var(--muted);
       line-height: 1.6;
       margin-top: 8px;
     }
-    .faq-item ul {
-      margin-left: 1.5rem;
-    }
-    .faq-item li {
-      margin: 6px 0;
-    }
+
+    .faq-item ul { margin-left: 1.5rem; }
+
+    .faq-item li { margin: 6px 0; }
 
     .gallery-grid {
       display: grid;
@@ -323,9 +336,7 @@
       line-height: 1.6;
     }
 
-    .warning-card li {
-      margin: 8px 0;
-    }
+    .warning-card li { margin: 8px 0; }
 
     footer {
       padding: 40px 6vw;
@@ -352,24 +363,19 @@
       gap: 8px;
     }
 
-    .footer-links a:hover {
-      color: var(--red);
-    }
+    .footer-links a:hover { color: var(--red); }
 
     @media (max-width: 1000px) {
       .nav-links {
         gap: 16px;
         font-size: 0.88rem;
       }
-      .section {
-        padding: 48px 5vw;
-      }
-      .hero {
-        padding: 36px 5vw;
-      }
-      footer {
-        padding: 32px 5vw;
-      }
+
+      .section { padding: 48px 5vw; }
+
+      .hero { padding: 36px 5vw; }
+
+      footer { padding: 32px 5vw; }
     }
 
     @media (max-width: 650px) {
@@ -377,6 +383,7 @@
         overflow-x: hidden;
         width: 100%;
       }
+
       .hero {
         min-height: 76vh;
         padding: 36px 1.2rem;
@@ -385,299 +392,380 @@
           url("/opioid/7ohhero.png") center center/cover no-repeat;
         background-size: cover;
       }
-      .hero-text {
-        margin-top: 50px;
-      }
-      h1 {
-        font-size: clamp(3.4rem, 15vw, 5.2rem);
-      }
-      .hero-subtitle {
-        font-size: 1rem;
-      }
-      .nav-links {
-        display: none;
-      }
+
+      .hero-text { margin-top: 50px; }
+
+      h1 { font-size: clamp(3.4rem, 15vw, 5.2rem); }
+
+      .hero-subtitle { font-size: 1rem; }
+
+      .nav-links { display: none; }
+
       .btn-primary,
       .btn-secondary {
         padding: 14px 20px;
         font-size: 0.85rem;
       }
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-      .faq-item {
-        padding: 20px;
-      }
-      .faq-item h3 {
-        font-size: 1.2rem;
-      }
-      .section {
-        padding: 48px 1.2rem;
-      }
+
+      .gallery-grid { grid-template-columns: 1fr; }
+
+      .faq-item { padding: 20px; }
+
+      .faq-item h3 { font-size: 1.2rem; }
+
+      .section { padding: 48px 1.2rem; }
+
       footer {
         flex-direction: column;
         padding: 32px 1.2rem;
       }
-      .warning-card {
-        min-width: auto;
-      }
-      .two-col {
-        gap: 20px;
-      }
+
+      .warning-card { min-width: auto; }
+
+      .two-col { gap: 20px; }
+
       .alert-banner {
         font-size: 0.8rem;
         padding: 8px 1rem;
       }
-      nav {
-        padding: 12px 1.2rem;
-      }
+
+      nav { padding: 12px 1.2rem; }
     }
   </style>
 </head>
+
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="alert-banner" role="alert">
-  7-OH IS KRATOM — CONCENTRATED TO 13X THE POTENCY OF MORPHINE. SOLD IN GAS STATIONS AS CANDY-FLAVORED TABLETS.
+  7-OH IS CONCENTRATED KRATOM — SOLD AS CANDY-FLAVORED TABLETS, GUMMIES, AND SHOTS IN ORDINARY STORES.
 </div>
 
 <nav aria-label="Main navigation">
   <span class="nav-logo">GasStationHeroin.org</span>
   <ul class="nav-links">
-    <li><a href="#risks">Risks</a></li>
-    <li><a href="#gallery">Products & Ads</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#risks">Why It Matters</a></li>
+    <li><a href="#gallery">Real Products</a></li>
+    <li><a href="#faq">Plain-English Facts</a></li>
     <li><a href="#action">Take Action</a></li>
   </ul>
 </nav>
 
 <main id="main">
+
   <section class="hero" aria-label="Hero">
     <div class="hero-text">
-      <h1>7-OH<br /><span>It Is Kratom. Concentrated. Deadly.</span></h1>
+      <h1>7-OH<br /><span>Concentrated Kratom</span></h1>
       <div class="redline" aria-hidden="true"></div>
       <p class="hero-subtitle">
-        7-Hydroxymitragynine (7-OH) is the most potent alkaloid naturally found in the kratom plant. Manufacturers now isolate and concentrate it into a semi-synthetic opioid — up to 13 times stronger than morphine. Sold in gas stations as blue raspberry gummies and lemon tablets. This is not something new. It is kratom, weaponized.
+        A powerful opioid-like kratom compound is being sold like candy, energy tabs, and wellness products. Most people walking past it have no idea what it is.
       </p>
       <div class="hero-actions">
-        <a class="btn-primary" href="#gallery">See the Products</a>
-        <a class="btn-secondary" href="#faq">Get the Brutal Facts</a>
+        <a class="btn-primary" href="#gallery">See Real Products</a>
+        <a class="btn-secondary" href="#faq">Get the Facts</a>
       </div>
     </div>
   </section>
 
   <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
-    <h2 id="thesis-heading">7-OH: The same alkaloid found in kratom — but weaponized.</h2>
+    <h2 id="thesis-heading">This is not a fringe internet drug. It is showing up in neighborhood stores.</h2>
     <p>
-      In traditional kratom leaf, 7-OH exists only in trace amounts (less than 2% of total alkaloids). But the body also converts some mitragynine into 7-OH after ingestion — meaning every dose of kratom naturally produces some 7-OH. Now, manufacturers have learned to extract, concentrate, and even semi-synthesize 7-OH into products that deliver a pure, potent opioid hit. The FDA has called this the next wave of the opioid crisis. Multiple states have already moved to ban 7-OH products. Yet they remain on gas station shelves nationwide — in blue raspberry, strawberry, and mixed berry flavors.
+      7-Hydroxymitragynine, called 7-OH, is a potent alkaloid connected to kratom. In ordinary kratom leaf, it exists only in small amounts. But manufacturers now isolate, concentrate, and sell it in tablets, gummies, shots, and flavored products that look harmless.
     </p>
-  </section>
+    <p>
+      That means a person can walk into a gas station or vape shop and buy a concentrated opioid-like kratom product in blue raspberry, strawberry, lemon, mixed berry, or cookies-and-cream packaging.
+    </p>
 
-  <!-- FAQ Section - "it is kratom" emphasis -->
-  <section class="section" id="faq" aria-labelledby="faq-heading">
-    <h2 id="faq-heading">What Every Parent Must Know About 7-OH</h2>
-    <p class="section-intro">
-      Based on FDA emergency warnings, CDC poison data, and state regulatory findings. This is not a new drug — it is kratom, concentrated and weaponized.
-    </p>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3>What Is It?</h3>
-        <p><strong>What is this product?</strong> It is kratom. Specifically, 7-Hydroxymitragynine (7-OH) is an alkaloid that naturally occurs in the kratom plant. In whole leaf kratom, it makes up less than 2% of alkaloids, but it is also a metabolite of mitragynine — the main alkaloid in kratom. That means when someone takes kratom, their body converts some mitragynine into 7-OH. Now, manufacturers isolate and concentrate 7-OH into products that are effectively semi-synthetic opioids. So yes: <strong>7-OH is kratom — just stripped down to its most dangerous component.</strong></p>
-        <p><strong>What is it sold as?</strong> Sold as “chewable tablets,” “gummies,” “shots,” “stacks,” “tabs.” Flavors: Blue Raspberry, Strawberry, Lemon, Cookies & Cream, Watermelon Fruit Punch, Mixed Berry.</p>
-        <p><strong>Is it a drug, supplement, vape, or something else?</strong> It is an unapproved, illegal drug when sold for human consumption. The FDA has declared 7-OH products adulterated. It has no accepted medical use. It is kratom — but concentrated to dangerous levels.</p>
-        <p><strong>Street names and brand names:</strong> “7-OH,” “7-Hydroxy,” “Hydroxie,” “7OH Plus,” “Ultra Seven,” “Stacks,” “Kures,” “Pure7,” “Method 7-OH,” “Real Botanicals 7-Hydro,” “7OF,” “HEAT,” “Simply Tabs,” “67”.</p>
+    <div class="quick-list">
+      <div class="quick-item">
+        <strong>It looks harmless.</strong>
+        Small tablets, gummies, bottles, and blister packs can look like candy, mints, or energy products.
       </div>
-      <div class="faq-item">
-        <h3>Where Do Kids Get It?</h3>
-        <p><strong>Can it be bought at gas stations?</strong> Yes. Same gas station checkout aisles as candy, energy drinks, and vapes. Sold openly.</p>
-        <p><strong>Is it sold in vape shops?</strong> Yes, prominently displayed alongside kratom and delta-8. Often called “kratom alkaloid” to hide the danger.</p>
-        <p><strong>Can it be purchased online?</strong> Yes. Dozens of websites ship 7-OH products with no age verification. Ads on social media target teens with “level up,” “big savings,” “back in stock.”</p>
-        <p><strong>Is there an age restriction?</strong> None federally. Some states have laws, but most retailers ignore ID checks. Packaging says “21+” in tiny fine print — never enforced.</p>
+      <div class="quick-item">
+        <strong>It is sold openly.</strong>
+        Gas stations, vape shops, smoke shops, CBD stores, and websites sell it like an ordinary retail item.
       </div>
-      <div class="faq-item">
-        <h3>Why Are Teens Using It?</h3>
-        <p><strong>What effects are they looking for?</strong> A strong, rapid opioid high — euphoria, sedation, “nodding off.” Because it’s cheap, legal, and easy to get. Many believe it’s “just strong kratom” — and they’re right, except it’s kratom concentrated to lethal levels.</p>
-        <p><strong>Is it being marketed as energy, relaxation, focus, pain relief, or a legal high?</strong> Ads use “confidence starts with control,” “big savings,” “premium botanical extracts,” “minimal ingredients. consistent results.” They hide the opioid truth behind “wellness” language.</p>
-        <p><strong>What are people saying about it on social media?</strong> Reddit communities like r/7ohm and r/quitting7oh show thousands of teens and young adults addicted, suffering withdrawal, and overdosing. TikTok and Instagram ads feature gamers and young women promoting “stacks” for focus — a lie. New ads use “6 7” and “brain explode” to attract young users.</p>
+      <div class="quick-item">
+        <strong>It hides behind kratom language.</strong>
+        Labels use words like “botanical,” “alkaloid,” “premium,” “wellness,” and “plant-based.”
       </div>
-      <div class="faq-item">
-        <h3>What Does It Do?</h3>
-        <p><strong>How does it affect the brain and body?</strong> 7-OH is a full mu-opioid receptor agonist — the same target as heroin and fentanyl. It produces intense euphoria, pain relief, sedation, respiratory depression, and constipation. At higher doses, it causes coma and death.</p>
-        <p><strong>How quickly does it work?</strong> Chewable tablets and sublingual shots work in 5–15 minutes. Faster than morphine.</p>
-        <p><strong>How long do the effects last?</strong> 3–6 hours, but withdrawal begins rapidly after repeated use.</p>
-        <p><strong>Does it act like an opioid, stimulant, sedative, hallucinogen, or something else?</strong> It is a potent opioid. No stimulant effects at typical doses. Overdose looks exactly like heroin or fentanyl overdose — pinpoint pupils, respiratory arrest.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What Are the Risks?</h3>
-        <p><strong>Can it cause addiction?</strong> Absolutely. One week of daily use can cause severe physical dependence. Withdrawal includes vomiting, diarrhea, muscle cramps, anxiety, insomnia — worse than many prescription opioids.</p>
-        <p><strong>Can it cause overdose?</strong> Yes. Because potency varies wildly (10mg to 150mg per tablet), users easily take too much. Respiratory depression kills.</p>
-        <p><strong>Can it cause seizures?</strong> Yes. Numerous poison center reports of seizures after 7-OH ingestion, especially in combination with other drugs.</p>
-        <p><strong>Can it cause psychosis or hallucinations?</strong> High doses can cause delirium, agitation, and psychotic episodes.</p>
-        <p><strong>Can it cause heart problems?</strong> Yes. QTc prolongation, arrhythmias, cardiac arrest — documented in case reports.</p>
-        <p><strong>Can it cause liver injury?</strong> Emerging evidence of hepatotoxicity similar to kratom but more severe due to higher potency.</p>
-        <p><strong>Has it been linked to deaths?</strong> Yes. The CDC and FDA confirm multiple single-substance 7-OH fatalities. Postmortem toxicology shows lethal blood concentrations of 7-OH alone.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is It Legal?</h3>
-        <p><strong>Is it legal federally?</strong> Not for human consumption. The FDA has issued import alerts and warning letters. In July 2025, FDA recommended Schedule I for 7-OH. But it remains sold as “research chemical” or “kratom alkaloid” in a gray market.</p>
-        <p><strong>Is it legal in my state?</strong> Multiple states have banned or restricted 7-OH products. Some have pending legislation. Check your local laws.</p>
-        <p><strong>Are there age restrictions?</strong> No federal. Some states 18+ or 21+ but rarely enforced.</p>
-        <p><strong>Has the FDA issued warnings?</strong> Yes. FDA Commissioner Dr. Martin Makary warned that 7-OH “could be the next wave of the opioid crisis.” Multiple FDA warning letters to manufacturers for illegal marketing.</p>
+      <div class="quick-item">
+        <strong>It can hook people fast.</strong>
+        Users report tolerance, cravings, withdrawal, and feeling trapped after repeated use.
       </div>
     </div>
   </section>
 
-  <!-- Gallery with all images including the new 7ohad5.png -->
-  <section class="section" id="gallery" aria-labelledby="gallery-heading">
-    <h2 id="gallery-heading">7-OH Products & Ads: Designed to Hook Kids</h2>
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">7-OH, explained in plain English</h2>
     <p class="section-intro">
-      These are real products sold in gas stations, vape shops, and online. Look at the flavors: Blue Raspberry, Strawberry, Mixed Berry, Cookies & Cream. Chewable tablets. Cartoonish branding. Even ads using “6 7” and “brain explode” to appeal to young people. This is a deliberate strategy to target minors.
+      You do not need a medical background to understand the problem. A concentrated opioid-like product should not be sold in candy flavors at the same places people buy soda, chips, vapes, and gas.
+    </p>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <h3>What is 7-OH?</h3>
+        <p>
+          7-OH is short for <strong>7-Hydroxymitragynine</strong>. It is one of the opioid-active compounds connected to kratom. It can interact with the body’s opioid receptor system, which is the same general system involved with drugs like morphine, oxycodone, and heroin.
+        </p>
+        <p>
+          The danger is concentration. Instead of someone using ordinary kratom leaf, companies are selling products built around one of kratom’s most potent opioid-like components.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why should regular people care?</h3>
+        <p>
+          Because these products are being sold in ordinary places to ordinary people who may not understand what they are buying.
+        </p>
+        <ul>
+          <li>A tired worker may buy it for energy.</li>
+          <li>A student may buy it for focus.</li>
+          <li>A person in pain may buy it for relief.</li>
+          <li>A person in recovery may buy it thinking it is “just kratom.”</li>
+          <li>A teen may see a colorful tablet pack and think it is harmless.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where is it sold?</h3>
+        <p>
+          7-OH products are sold in gas stations, vape shops, smoke shops, CBD stores, convenience stores, and online. Some are displayed near checkout counters or alongside kratom, vapes, energy shots, and candy.
+        </p>
+        <p>
+          The placement matters. When a product is sold like a snack, many people assume it has been proven safe. That assumption is wrong.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How is it marketed?</h3>
+        <p>
+          The marketing often avoids the truth. Instead of saying “potent opioid-like kratom compound,” companies use softer language:
+        </p>
+        <ul>
+          <li>“Premium kratom alkaloid”</li>
+          <li>“Botanical extract”</li>
+          <li>“Consistent results”</li>
+          <li>“Feel good”</li>
+          <li>“Control”</li>
+          <li>“Ultra potent”</li>
+          <li>“Blue razz,” “strawberry,” “mixed berry,” and other candy flavors</li>
+        </ul>
+        <p>
+          That language makes it feel modern, clean, and safe. But the packaging is not the danger. The substance inside is.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What can it do to the body?</h3>
+        <p>
+          7-OH can produce opioid-like effects such as euphoria, sedation, pain relief, slowed breathing, nausea, constipation, dependence, and withdrawal.
+        </p>
+        <p>
+          People have described severe withdrawal, anxiety, vomiting, diarrhea, insomnia, muscle pain, cravings, and feeling unable to stop.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why are tablets and gummies so alarming?</h3>
+        <p>
+          Because the product does not look like a drug. A tablet, gummy, or flavored pack can look like candy, mints, gum, or an energy supplement.
+        </p>
+        <p>
+          That makes it dangerous for children, teens, unsuspecting adults, people in recovery, and anyone who assumes “sold in a store” means “safe.”
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can 7-OH cause addiction?</h3>
+        <p>
+          Yes. People report rapid tolerance, strong cravings, and withdrawal after repeated use. Many describe trying it casually and then realizing they feel sick without it.
+        </p>
+        <p>
+          That is the part communities need to understand: the first purchase may feel casual. The consequences may not be.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is it legal?</h3>
+        <p>
+          The legal status is confusing and changing. Some states have moved to ban or restrict 7-OH. Other places still allow it to be sold openly. Federal and state regulators have raised serious concerns.
+        </p>
+        <p>
+          Confusion helps the industry. People see it on a shelf and assume someone must have checked it. In many cases, that is not true.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">This is what 7-OH looks like on shelves and online</h2>
+    <p class="section-intro">
+      These products do not look like dangerous opioid-like substances. They look like candy, mints, energy tabs, wellness supplements, or trendy internet products. That is why they are so alarming.
     </p>
 
     <div class="gallery-grid">
-      <!-- Existing product images -->
+
       <div class="gallery-card">
         <img src="/opioid/7oh1.jpeg" alt="Method 7-OH 160mg strawberry chewable tablets" loading="lazy">
         <div class="gallery-caption">
-          <strong>“Method” 7-OH – 160mg per container</strong>
-          Strawberry flavor, “chewable tablets.” 40mg per tablet. Looks like candy. No child-resistant packaging. Extreme overdose risk.
+          <strong>“Method” 7-OH</strong>
+          Strawberry chewable tablets. The format looks familiar and harmless, but the product is built around concentrated 7-OH.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/7oh2.jpeg" alt="Real Botanicals 7-Hydro 10mg per tablet" loading="lazy">
         <div class="gallery-caption">
           <strong>“Real Botanicals” 7-Hydro</strong>
-          10 chewable tablets, 10mg each. “Premium kratom alkaloid” – deceptive labeling. Sold next to gummy vitamins.
+          “Botanical” language makes the product sound clean and natural while hiding the opioid-like concern.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/7oh3.jpeg" alt="Ultra potent 7-OH blue razz 30mg per tablet" loading="lazy">
         <div class="gallery-caption">
-          <strong>“Ultra Potent” Blue Razz – 30mg per tablet</strong>
-          “Extra strength formulation.” Blue raspberry flavor – directly appeals to children. 4 chewable tablets. No warning label.
+          <strong>“Ultra Potent” Blue Razz</strong>
+          Candy-flavored, chewable, and labeled “ultra potent.” That combination should alarm any community.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/7oh4.jpeg" alt="7OF 7-Hydroxymitragynine 14mg" loading="lazy">
         <div class="gallery-caption">
-          <strong>“7OF” – 14mg per tablet</strong>
-          “Amazing kratom alkaloids” – lies about safety. 15 tablets. Teen-focused branding.
+          <strong>“7OF” 7-Hydroxymitragynine</strong>
+          Branded like a modern supplement, not a product tied to opioid-like effects and dependence.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/7oh5.jpeg" alt="PURE7 7-Hydroxymitragynine lemon flavor" loading="lazy">
         <div class="gallery-caption">
-          <strong>“PURE7” – Lemon flavor, 18mg per tablet</strong>
-          “Chromatographic purification” – sophisticated process hides opioid danger. 8 servings. Sold in gas station counters.
+          <strong>“PURE7” Lemon Flavor</strong>
+          Lemon flavor and clean packaging make this look like a wellness product instead of a concentrated kratom compound.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/7oh7.jpeg" alt="7OHMZ 100mg chewable tablets blue raspberry" loading="lazy">
         <div class="gallery-caption">
-          <strong>“7OHMZ” – 100mg per container, blue raspberry</strong>
-          “Chewable tablets” – looks like a candy pack. 100mg total (4 tablets). A child could eat the whole pack and die.
+          <strong>“7OHMZ” Blue Raspberry</strong>
+          Blue raspberry chewable tablets. This is the kind of packaging people associate with candy, not opioid-like risk.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/7oh8.jpeg" alt="HEAT 7-Hydroxymitragynine 150mg per tablet" loading="lazy">
         <div class="gallery-caption">
-          <strong>“HEAT” – 150mg per tablet, 600mg total</strong>
-          Blue razz flavor. Each single tablet contains 150mg of 7-OH – a lethal dose for a novice. Sold in blister packs like gum.
+          <strong>“HEAT” 7-Hydroxymitragynine</strong>
+          High-dose product in bright packaging. “Blue razz” flavor makes a dangerous product look casual.
         </div>
       </div>
-      <!-- Ad images -->
+
       <div class="gallery-card">
         <img src="/opioid/7OHad1.png" alt="SevenohPlus ad big savings" loading="lazy">
         <div class="gallery-caption">
-          <strong>SevenohPlus Ad – “Big Savings Alert”</strong>
-          “She knows what she’s taking / Confidence starts with control” – normalizes opioid use. Over 400,000 orders claimed. Direct social media marketing to young adults.
+          <strong>SevenohPlus Ad</strong>
+          Discount language and confidence messaging normalize use and make the product feel like a lifestyle purchase.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/7ohad2.png" alt="Lab Nerd Hydroxie ad back in stock" loading="lazy">
         <div class="gallery-caption">
-          <strong>Lab Nerd / Hydroxie Ad – “Back in Stock”</strong>
-          Uses scarcity and “nerd” culture to appeal to gamers. Hides the fact that Hydroxie is a potent 7-OH product. No age gate.
+          <strong>Lab Nerd / Hydroxie Ad</strong>
+          “Back in stock” hype and internet-culture branding make a risky product feel trendy and collectible.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/7ohad3.jpeg" alt="Ultra Seven stacks BOGO ad" loading="lazy">
         <div class="gallery-caption">
-          <strong>Ultra Seven / Stacks – “Buy 2 Get 1 Free”</strong>
-          Flavors: Cookies & Cream, Watermelon Fruit Punch, Lemon Berry, Mixed Berry. These are dessert and candy flavors – marketed directly to young people. “RESTOCKED” creates urgency.
+          <strong>Ultra Seven / Stacks</strong>
+          Dessert and fruit flavors, sale tactics, and bright visuals make concentrated 7-OH look like candy.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/7ohad4.jpeg" alt="Kultom Ultra 10mg BOGO free" loading="lazy">
         <div class="gallery-caption">
-          <strong>Kultom Ultra – “Buy 1 Get 1 FREE”</strong>
-          “Arrival” hype. 10mg per tablet. Uses discount tactics to drive addiction. Bright, colorful design appeals to teens.
+          <strong>Kultom Ultra</strong>
+          “Buy one, get one” promotions encourage repeat use of a product many people do not understand.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/7ohad5.jpeg" alt="Kures STAX 80mg per tab plus caffeine" loading="lazy">
         <div class="gallery-caption">
-          <strong>Kures STAX – 80mg 7-OH + 9mg caffeine per tablet</strong>
-          “Advanced stability tech” – pseudo-scientific marketing. Mixing opioid with stimulant increases heart attack risk. “Mixed Berry” flavor. 15 tablets per container. Insane danger.
+          <strong>Kures STAX</strong>
+          Mixed berry flavor, caffeine, and “advanced” language turn a potent product into a performance-style brand.
         </div>
       </div>
-      <!-- NEW: 7ohad5.png - Simply Tabs / 67 opioid ad -->
+
       <div class="gallery-card">
         <img src="/opioid/7ohad5.png" alt="Simply Tabs 67 opioid ad" loading="lazy">
         <div class="gallery-caption">
-          <strong>“Simply Tabs” / “6 7” Opioid Ad</strong>
-          “Minimal ingredients. Consistent results.” Uses code “TF50” for 50% off. Features “six-seveeeeen” and “6 7” alongside “brain explode” – deliberately cryptic marketing to evade filters and appeal to young users seeking a “legal” opioid high.
+          <strong>“Simply Tabs” / “6 7” Ad</strong>
+          Cryptic youth-style language, discounts, and meme-like branding make the product feel like internet culture instead of a public-health threat.
         </div>
       </div>
+
     </div>
+
     <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
-      <strong>The brutal truth:</strong> 7-OH is kratom — concentrated. While whole leaf kratom contains only trace 7-OH, these products deliver a pure opioid agonist. The FDA has issued multiple warning letters. Multiple states have banned 7-OH. Yet these products remain on gas station shelves nationwide, often next to bubble gum. Tablet strengths range from 10mg to 150mg. A fatal dose for a non-tolerant user can be as low as 50mg. These are death in a candy wrapper.
+      The disturbing part is not just that 7-OH exists. It is that concentrated kratom products are being dressed up as candy, energy, wellness, and internet culture while being sold in everyday places.
     </p>
   </section>
 
-  <!-- Action section -->
   <section class="section" id="action">
-    <h2>Recognize <span style="color:var(--red)">7-OH products that target children</span></h2>
+    <h2>What to look for in your neighborhood</h2>
+
     <div class="two-col">
       <div class="warning-card">
-        <h3>Red flags: child-friendly design</h3>
+        <h3>Red flags on shelves</h3>
         <ul>
-          <li>Flavors: Blue Raspberry, Strawberry, Mixed Berry, Cookies & Cream, Watermelon Fruit Punch</li>
-          <li>Chewable tablets, gummies, “stacks” – mimics candy</li>
-          <li>Bright neon packaging, cartoonish fonts, “ultra potent” hype language</li>
-          <li>No child-resistant closures – blister packs pop open easily</li>
-          <li>Sold right next to energy drinks, chips, and gum at gas station checkout</li>
-          <li>Social media ads using “level up,” “big savings,” “6 7,” “brain explode” – gaming and youth slang</li>
+          <li>Labels that say “7-OH,” “7-Hydroxy,” “Hydroxie,” “7OHMZ,” “Ultra Seven,” “Stacks,” or “Simply Tabs”</li>
+          <li>Chewable tablets, gummies, blister packs, shots, or small colorful containers</li>
+          <li>Flavors like blue raspberry, strawberry, mixed berry, lemon, cookies and cream, or watermelon fruit punch</li>
+          <li>Words like “botanical,” “alkaloid,” “ultra potent,” “premium,” “control,” or “consistent results”</li>
+          <li>Products placed near vapes, candy, energy drinks, kratom, gum, or checkout counters</li>
+          <li>Online ads using discounts, gaming culture, slang, memes, or “back in stock” urgency</li>
         </ul>
       </div>
+
       <div class="warning-card">
-        <h3>How parents can fight back</h3>
+        <h3>What communities can do</h3>
         <ul>
-          <li>Search backpacks for blister packs, small colorful boxes labeled “7-OH,” “Hydroxie,” “Ultra Seven,” “Simply Tabs,” “67”.</li>
-          <li>Talk to teens: “7-OH is kratom — concentrated. One tablet can kill you.”</li>
-          <li>Report gas stations and vape shops selling 7-OH to local health departments and police.</li>
-          <li>File a complaint with the Federal Trade Commission (FTC) about deceptive marketing to minors: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
-          <li>Advocate for state and federal Schedule I classification for 7-OH.</li>
+          <li>Ask local stores why concentrated kratom products are being sold near ordinary snacks and drinks.</li>
+          <li>Warn schools, recovery groups, churches, coaches, employers, and neighborhood organizations.</li>
+          <li>Report deceptive marketing to local health departments and consumer protection agencies.</li>
+          <li>Tell local and state officials that 7-OH should not be sold like candy.</li>
+          <li>File a complaint with the FTC about deceptive marketing: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
         </ul>
       </div>
     </div>
+
     <div style="margin-top: 24px;">
-      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Parent Alert</a>
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Community Alert</a>
       <a class="btn-secondary" href="#">Report a Store</a>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="footer-mission">
     <strong style="color:#fff;">GasStationHeroin.org</strong><br />
-    Exposing 7-OH — concentrated kratom turned into a gas station opioid. These are not natural supplements. They are chemical weapons in candy flavors. Protect your children. Know the names. Act now.
+    Exposing concentrated kratom and gas station opioids sold in plain sight. Helping communities recognize deceptive packaging, hidden risks, and products that should never be treated like candy.
   </div>
+
   <div class="footer-links">
-    <a href="#risks">7-OH risks</a>
+    <a href="#risks">Why it matters</a>
     <a href="#gallery">Product gallery</a>
-    <a href="#faq">FAQ</a>
+    <a href="#faq">Plain-English facts</a>
     <a href="#action">Take action</a>
   </div>
 </footer>
