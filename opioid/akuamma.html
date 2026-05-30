@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
+  <meta name="description" content="Akuamma (Picralima nitida) is an African seed sold as a 'natural' alternative to kratom and opioids. Concentrated extracts (20x, 100:1, resin) raise serious safety concerns due to unregulated potency and lack of human studies." />
+  <title>Akuamma | The Unregulated Kratom Alternative</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --red: #e21b23;
+      --dark: #050505;
+      --panel: #0d0d0f;
+      --line: #2a2a2f;
+      --text: #ffffff;
+      --muted: #b9bcc6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--red);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .alert-banner {
+      background: var(--red);
+      text-align: center;
+      padding: 10px 4vw;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      width: 100%;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5,5,5,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 6vw;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .nav-links a:hover { color: var(--red); }
+
+    .hero {
+      min-height: 82vh;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.50) 38%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.05) 100%),
+        url("/opioid/akuammahero.jpeg") center center/cover no-repeat;
+      display: flex;
+      align-items: flex-start;
+      padding: 58px 6vw;
+      width: 100%;
+    }
+
+    .hero-text {
+      max-width: 700px;
+      margin-top: clamp(60px, 8vh, 110px);
+    }
+
+    h1 {
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+    }
+    h1 span { color: var(--red); }
+
+    .redline {
+      width: 92px;
+      height: 5px;
+      background: var(--red);
+      margin: 32px 0;
+    }
+
+    .hero-subtitle {
+      max-width: 590px;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.3;
+      color: #f0f0f0;
+      margin-bottom: 36px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary, .btn-secondary {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 6px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: 0.2s;
+    }
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #c5151c;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .section {
+      padding: 72px 6vw;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    .thesis {
+      background: #09090b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      max-width: 980px;
+    }
+
+    .section p, .section-intro {
+      max-width: 820px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+      width: 100%;
+    }
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px 28px;
+      width: 100%;
+    }
+    .faq-item h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--red);
+    }
+    .faq-item p, .faq-item ul {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+    .faq-item ul { margin-left: 1.5rem; }
+    .faq-item li { margin: 6px 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+      width: 100%;
+    }
+
+    .gallery-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #1a1a1f;
+    }
+    .gallery-caption {
+      padding: 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #0a0a0c;
+    }
+    .gallery-caption strong {
+      color: var(--red);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 36px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+    .warning-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+      flex: 1;
+      min-width: 260px;
+    }
+    .warning-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      color: var(--red);
+    }
+    .warning-card ul {
+      margin-left: 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .warning-card li { margin: 8px 0; }
+
+    footer {
+      padding: 40px 6vw;
+      background: #000;
+      color: #8f93a0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      width: 100%;
+    }
+    .footer-mission { max-width: 440px; line-height: 1.6; }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-links a:hover { color: var(--red); }
+
+    @media (max-width: 1000px) {
+      .nav-links { gap: 16px; font-size: 0.88rem; }
+      .section { padding: 48px 5vw; }
+      .hero { padding: 36px 5vw; }
+      footer { padding: 32px 5vw; }
+    }
+
+    @media (max-width: 650px) {
+      body, html { 
+        overflow-x: hidden; 
+        width: 100%;
+      }
+      .hero {
+        min-height: 70vh;
+        padding: 36px 1.2rem;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.25) 100%),
+          url("/opioid/akuammahero.jpeg") center center/cover no-repeat;
+        background-size: cover;
+        align-items: center;
+      }
+      .hero-text {
+        margin-top: 0;
+        padding-top: 20px;
+        max-width: 100%;
+      }
+      h1 { 
+        font-size: clamp(3.2rem, 12vw, 4.5rem);
+        line-height: 0.92;
+      }
+      .hero-subtitle { 
+        font-size: 1rem;
+        margin-bottom: 28px;
+      }
+      .nav-links { display: none; }
+      .btn-primary, .btn-secondary { 
+        padding: 12px 18px; 
+        font-size: 0.85rem;
+      }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .faq-item { padding: 18px; }
+      .faq-item h3 { font-size: 1.2rem; }
+      .section { padding: 40px 1.2rem; }
+      footer { flex-direction: column; padding: 32px 1.2rem; }
+      .warning-card { min-width: auto; }
+      .two-col { gap: 20px; }
+      .alert-banner { 
+        font-size: 0.75rem; 
+        padding: 8px 1rem;
+        line-height: 1.3;
+      }
+      nav { padding: 12px 1.2rem; }
+      .redline { margin: 24px 0; width: 70px; }
+      .hero-actions { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="alert-banner" role="alert">
+  AKUAMMA (PICRALIMA NITIDA): AN AFRICAN SEED SOLD AS A "KRATOM ALTERNATIVE" — CONCENTRATED EXTRACTS (20X, 100:1, RESIN) POSE UNKNOWN SAFETY RISKS. NO REGULATION, NO HUMAN STUDIES.
+</div>
+
+<nav aria-label="Main navigation">
+  <span class="nav-logo">GasStationHeroin.org</span>
+  <ul class="nav-links">
+    <li><a href="#risks">Risks</a></li>
+    <li><a href="#gallery">Products & Extracts</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#action">Take Action</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+  <section class="hero" aria-label="Hero">
+    <div class="hero-text">
+      <h1>Akuamma<br /><span>The Unregulated Kratom Alternative</span></h1>
+      <div class="redline" aria-hidden="true"></div>
+      <p class="hero-subtitle">
+        Akuamma (Picralima nitida) seeds have been traditionally used in West Africa. Now they are being sold in the U.S. as a "natural" alternative to kratom and opioids. But concentrated extracts — 20x, 100:1, resin — are unstudied and unregulated. No one knows what dose causes addiction, liver damage, or overdose.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#gallery">See the Products</a>
+        <a class="btn-secondary" href="#faq">Learn About Extracts</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
+    <h2 id="thesis-heading">Akuamma: An emerging botanical with opioid-like alkaloids.</h2>
+    <p>
+      Akuamma seeds contain several alkaloids, including akuammine, akuammicine, and akuammigine, which have affinity for mu-opioid receptors. Traditional use involves chewing whole seeds for pain relief. But the products sold in U.S. smoke shops and online are not whole seeds — they are concentrated extracts: 20X, 100:1, resin, and standardized "62% extract" capsules. These extracts have never been studied for safety in humans. The FDA has not evaluated them. And sellers market them as "kratom alternatives" without any warning about potential dependence, respiratory depression, or interactions with other substances.
+    </p>
+  </section>
+
+  <!-- FAQ Section - focused on extracts and emerging concerns -->
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">What You Need to Know About Akuamma Extracts</h2>
+    <p class="section-intro">
+      Unlike whole seeds, concentrated extracts are a new, unregulated frontier. Here are the facts based on available pharmacology and toxicology data.
+    </p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>What Is Akuamma?</h3>
+        <p><strong>What is this product?</strong> Akuamma refers to the seeds of the Picralima nitida tree, native to West Africa. Traditional healers have used crushed seeds for pain, fever, and malaria. The primary alkaloids (akuammine, akuammicine) are structurally similar to yohimbine and have been shown in lab studies to bind to mu-opioid receptors — though with lower affinity than mitragynine.</p>
+        <p><strong>What is it sold as?</strong> Whole seeds, seed powder, capsules, liquid extracts, resin, and "enhanced" extracts labeled 20x, 50x, 100:1, or "62% extract". Also sold as "kratom alternative," "natural pain relief," "botanical discomfort relief."</p>
+        <p><strong>Is it a drug, supplement, or something else?</strong> It is marketed as a dietary supplement, but the FDA has not recognized it as safe. Concentrated extracts may be considered unapproved new drugs if intended for therapeutic use.</p>
+        <p><strong>What are the extract types?</strong> 20x extract means 20 grams of seed concentrated into 1 gram. 100:1 is even more potent. "Resin" is a gooey concentrate. "62% extract" refers to standardized alkaloid content. These are NOT traditional preparations – they are industrial products with unknown toxicity.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why Are People Using It?</h3>
+        <p><strong>What effects are they looking for?</strong> Pain relief, mild sedation, relaxation, or as a substitute for kratom or opioids. Some users report it helps with opioid withdrawal symptoms, though no clinical evidence supports this.</p>
+        <p><strong>Is it marketed as a kratom alternative?</strong> Yes. Many brands explicitly position akuamma as a legal alternative to kratom, especially in states where kratom is banned. Marketing claims "natural physical discomfort relief" without mentioning risks.</p>
+        <p><strong>What are people saying online?</strong> Forums like Reddit’s r/kratom and r/akuamma discuss using it for pain, tolerance breaks from kratom, or as a “milder” option. However, dosage is guesswork – some use 1-2 grams of powder, others use 50mg of extract. No standardization.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What Are the Concerns About Extracts?</h3>
+        <p><strong>Why are extracts dangerous?</strong> Concentrated extracts magnify potency unpredictably. A 100:1 extract is 100 times stronger than raw seed – but there are no dosing guidelines. Users can easily overdose on alkaloids, leading to severe respiratory depression, seizures, or coma.</p>
+        <p><strong>Have any studies been done?</strong> Very few. Most research is in vitro (test tubes) or animal models. No human clinical trials have been conducted on akuamma extracts. There are no established safe doses, no LD50 data in humans, and no long-term safety studies.</p>
+        <p><strong>What about the “62% extract”?</strong> Products labeled "62% extract" claim to have a standardized alkaloid content – but 62% of what? Without regulatory oversight, these numbers are unverified. Independent testing often reveals contamination, heavy metals, or synthetic adulterants.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What Does It Do to the Body?</h3>
+        <p><strong>How does it affect the brain?</strong> Akuammine and akuammicine are mu-opioid receptor agonists – the same receptors targeted by morphine and kratom. They also affect serotonin and adrenergic receptors, which can cause stimulant-like effects at low doses and sedation at higher doses.</p>
+        <p><strong>How quickly does it work?</strong> Whole seeds or powder take 45–90 minutes. Liquid extracts and resins are faster, 15–30 minutes.</p>
+        <p><strong>How long do effects last?</strong> 3–6 hours, depending on dose and extract potency.</p>
+        <p><strong>Can it cause opioid-like effects?</strong> Yes. At high doses or with potent extracts, users report euphoria, pain relief, sedation, nausea, constipation, and respiratory slowing. These are opioid effects.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What Are the Known Risks?</h3>
+        <p><strong>Can it cause addiction?</strong> Unknown but plausible. Mu-opioid agonists carry inherent dependence liability. Animal studies suggest akuammine has lower abuse potential than morphine, but extracts are not studied. Reports of withdrawal symptoms (anxiety, insomnia, diarrhea) appear in user forums.</p>
+        <p><strong>Can it cause overdose?</strong> Yes. Respiratory depression is the primary concern. Because extracts vary wildly, a user might take a dose that is 10x higher than intended. No naloxone studies exist – it may or may not reverse akuamma overdose.</p>
+        <p><strong>Can it cause seizures?</strong> In high doses, akuammicine is a convulsant in animal models. Human case reports are lacking, but risk exists, especially with concentrated extracts.</p>
+        <p><strong>Can it cause liver injury?</strong> Unknown. No studies. However, many unregulated botanicals have caused hepatotoxicity. Long-term use of akuamma extracts is a black box.</p>
+        <p><strong>Has it been linked to deaths?</strong> No confirmed deaths solely from akuamma, but it is an emerging product. Deaths may be misattributed when mixed with other substances. The FDA has not issued warnings yet, but that doesn’t mean it’s safe.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is It Legal?</h3>
+        <p><strong>Is it legal federally?</strong> Yes, currently. Akuamma is not scheduled under the Controlled Substances Act. However, the FDA considers concentrated extracts intended for human consumption as unapproved new drugs if marketed for therapeutic claims.</p>
+        <p><strong>Are there state restrictions?</strong> A few states have banned or restricted akuamma as part of broader kratom/synthetic opioid laws (e.g., Rhode Island). Most states have no specific laws.</p>
+        <p><strong>Has the FDA taken action?</strong> Not yet. But as akuamma extracts become more popular, the FDA may issue warning letters for unproven health claims or adulterated products.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery of akuamma products and extracts -->
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Akuamma Products: Whole Seeds, Powders, and Concentrated Extracts</h2>
+    <p class="section-intro">
+      These are real products sold online and in smoke shops. Notice the progression from whole seeds to 20x extract capsules to 100:1 concentrated resin. Each step increases potency – and risk.
+    </p>
+
+    <div class="gallery-grid">
+      <!-- akuamma1.jpeg - Sample pack whole seeds -->
+      <div class="gallery-card">
+        <img src="/opioid/akuamma1.jpeg" alt="Akuamma Seed Company sample pack whole seeds" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Akuamma Seed Company – Whole Seeds Sample</strong>
+          5 capsules, 20 grams. Whole seeds are the least processed form. Still lacks safety data. Marketed as a "natural" product.
+        </div>
+      </div>
+      <!-- akuamma2.jpeg - Extract Resin Seed -->
+      <div class="gallery-card">
+        <img src="/opioid/akuamma2.jpeg" alt="Akuamma extract resin" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Akuamma Extract Resin</strong>
+          Concentrated resin – gooey, potent, unstandardized. "Akua Extract Resin Seed" – no dosage instructions. Extremely high risk of accidental overdose.
+        </div>
+      </div>
+      <!-- akuamma6.jpeg - Kratora whole seeds -->
+      <div class="gallery-card">
+        <img src="/opioid/akuamma6.jpeg" alt="Kratora Akuamma Seeds 1oz" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Kratora – Akuamma Seeds (1oz)</strong>
+          Sold as whole seeds. Packaging resembles kratom products. No warning about opioid-like effects. Easy to grind into powder.
+        </div>
+      </div>
+      <!-- akuamma4.jpeg - Happy Hippo 20x Extract Capsules -->
+      <div class="gallery-card">
+        <img src="/opioid/akuamma4.jpeg" alt="Happy Hippo Akuamma 20x Extract Capsules" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Happy Hippo – Akuamma 20x Extract Capsules</strong>
+          "Super Picralima Nitida" – 20x concentration. Marketed as "kratom alternative" for "natural physical discomfort relief." No human safety studies on 20x extract.
+        </div>
+      </div>
+      <!-- akuamma7.jpeg - 62% extract -->
+      <div class="gallery-card">
+        <img src="/opioid/akuamma7.jpeg" alt="62% Akuamma extract" loading="lazy">
+        <div class="gallery-caption">
+          <strong>"62% Extract" – Standardized Akuamma</strong>
+          Claims 62% alkaloid content. Unverified. Industrial concentrate. Comparable to kratom shots but even less studied. High risk.
+        </div>
+      </div>
+      <!-- akuamma3.jpeg - 100:1 extract -->
+      <div class="gallery-card">
+        <img src="/opioid/akuamma3.jpeg" alt="Akwamma extract 100:1" loading="lazy">
+        <div class="gallery-caption">
+          <strong>"Akwamma extract 100:1"</strong>
+          100:1 concentration – one gram equals 100 grams of seed. Extremely potent. No dosing guidelines. Could easily cause severe opioid toxicity.
+        </div>
+      </div>
+    </div>
+    <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
+      <strong>The emerging concern:</strong> Akuamma is following the same trajectory as kratom – traditional use of whole plant material replaced by industrial-strength extracts (20x, 100:1, resin, 62% alkaloids). The difference: almost no scientific research exists on these concentrates. Sellers claim "natural" and "safe," but in reality, concentrated alkaloids from any plant with opioid activity can cause addiction, respiratory depression, and death. Akuamma extracts are a ticking time bomb.
+    </p>
+  </section>
+
+  <!-- Action section – for regulators and public health -->
+  <section class="section" id="action">
+    <h2>What Can Be Done About Unregulated Akuamma Extracts?</h2>
+    <div class="two-col">
+      <div class="warning-card">
+        <h3>Red flags in the marketplace</h3>
+        <ul>
+          <li>Claims of "kratom alternative" – implying safety without evidence</li>
+          <li>Concentrations like 20x, 100:1 – industrial extracts, not traditional</li>
+          <li>No dosage guidelines – users forced to guess</li>
+          <li>No child-resistant packaging, no warning labels</li>
+          <li>Sold alongside kratom, tianeptine, and other unregulated opioids</li>
+          <li>Misleading "natural" branding while using chemical extraction processes</li>
+        </ul>
+      </div>
+      <div class="warning-card">
+        <h3>How to address the emerging threat</h3>
+        <ul>
+          <li>Educate consumers: "Concentrated akuamma extracts are unstudied opioid agonists."</li>
+          <li>Report adverse events to FDA MedWatch – even if uncertain, document.</li>
+          <li>Advocate for state regulation of akuamma extracts under analog acts.</li>
+          <li>Support research into the pharmacology and toxicology of akuamma alkaloids.</li>
+          <li>File a complaint with the FTC about deceptive "safe alternative" marketing: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top: 24px;">
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Fact Sheet</a>
+      <a class="btn-secondary" href="#">Report a Product</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-mission">
+    <strong style="color:#fff;">GasStationHeroin.org</strong><br />
+    Monitoring emerging botanical opioids like akuamma. Whole seeds may have traditional use, but concentrated extracts (20x, 100:1, resin, 62%) are dangerous experiments. No regulation. No safety data. Proceed with extreme caution – or not at all.
+  </div>
+  <div class="footer-links">
+    <a href="#risks">Akuamma risks</a>
+    <a href="#gallery">Product gallery</a>
+    <a href="#faq">FAQ</a>
+    <a href="#action">Take action</a>
+  </div>
+</footer>
+
+</body>
+</html>
