@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
-  <meta name="description" content="Corydalis yanhusuo extracts (THP, 13-OH) are being blended with mitragynine/kratom alkaloids to create 'proprietary euphoric blends' — unstudied, unregulated, and potentially dangerous." />
-  <title>Corydalis | The New Ingredient in Gas Station Opioid Blends</title>
+  <meta name="description" content="Corydalis extracts are appearing in euphoric botanical blends and kratom-adjacent products. A plain-English warning about unregulated blends, hidden ingredients, and unknown safety risks." />
+  <title>Corydalis | Unregulated Botanical Blends</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --red: #e21b23;
@@ -41,6 +37,8 @@
       position: relative;
     }
 
+    a { color: inherit; text-decoration: none; }
+
     .skip-link {
       position: absolute;
       top: -100px;
@@ -53,6 +51,7 @@
       z-index: 9999;
       transition: top 0.2s;
     }
+
     .skip-link:focus { top: 1rem; }
 
     .alert-banner {
@@ -94,6 +93,7 @@
       font-size: 0.95rem;
       font-weight: 600;
     }
+
     .nav-links a:hover { color: var(--red); }
 
     .hero {
@@ -118,6 +118,7 @@
       letter-spacing: -0.065em;
       font-weight: 900;
     }
+
     h1 span { color: var(--red); }
 
     .redline {
@@ -152,18 +153,22 @@
       letter-spacing: 0.04em;
       transition: 0.2s;
     }
+
     .btn-primary {
       background: var(--red);
       color: #fff;
     }
+
     .btn-primary:hover {
       background: #c5151c;
       transform: translateY(-2px);
     }
+
     .btn-secondary {
       border: 2px solid #fff;
       color: #fff;
     }
+
     .btn-secondary:hover {
       border-color: var(--red);
       color: var(--red);
@@ -175,6 +180,7 @@
       max-width: 100%;
       overflow-x: hidden;
     }
+
     .thesis {
       background: #09090b;
       border-top: 1px solid var(--line);
@@ -197,6 +203,30 @@
       line-height: 1.6;
     }
 
+    .quick-list {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+    }
+
+    .quick-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--red);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
     .faq-grid {
       display: flex;
       flex-direction: column;
@@ -204,6 +234,7 @@
       margin-top: 40px;
       width: 100%;
     }
+
     .faq-item {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -211,18 +242,22 @@
       padding: 24px 28px;
       width: 100%;
     }
+
     .faq-item h3 {
       font-size: 1.5rem;
       font-weight: 800;
       margin-bottom: 12px;
       color: var(--red);
     }
+
     .faq-item p, .faq-item ul {
       color: var(--muted);
       line-height: 1.6;
       margin-top: 8px;
     }
+
     .faq-item ul { margin-left: 1.5rem; }
+
     .faq-item li { margin: 6px 0; }
 
     .gallery-grid {
@@ -240,16 +275,19 @@
       overflow: hidden;
       transition: transform 0.2s, border-color 0.2s;
     }
+
     .gallery-card:hover {
       transform: translateY(-4px);
       border-color: var(--red);
     }
+
     .gallery-card img {
       width: 100%;
       height: auto;
       display: block;
       background: #1a1a1f;
     }
+
     .gallery-caption {
       padding: 16px;
       font-size: 0.85rem;
@@ -257,6 +295,7 @@
       border-top: 1px solid var(--line);
       background: #0a0a0c;
     }
+
     .gallery-caption strong {
       color: var(--red);
       display: block;
@@ -271,6 +310,7 @@
       margin-bottom: 24px;
       width: 100%;
     }
+
     .warning-card {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -279,17 +319,20 @@
       flex: 1;
       min-width: 260px;
     }
+
     .warning-card h3 {
       font-size: 1.35rem;
       margin-bottom: 16px;
       font-weight: 800;
       color: var(--red);
     }
+
     .warning-card ul {
       margin-left: 1.2rem;
       color: var(--muted);
       line-height: 1.6;
     }
+
     .warning-card li { margin: 8px 0; }
 
     .action-buttons {
@@ -299,6 +342,7 @@
       margin-top: 32px;
       align-items: center;
     }
+
     .action-buttons .btn-primary,
     .action-buttons .btn-secondary {
       margin: 0;
@@ -317,12 +361,15 @@
       font-size: 0.92rem;
       width: 100%;
     }
+
     .footer-mission { max-width: 440px; line-height: 1.6; }
+
     .footer-links {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
+
     .footer-links a:hover { color: var(--red); }
 
     @media (max-width: 1000px) {
@@ -333,10 +380,11 @@
     }
 
     @media (max-width: 650px) {
-      body, html { 
-        overflow-x: hidden; 
+      body, html {
+        overflow-x: hidden;
         width: 100%;
       }
+
       .hero {
         min-height: 70vh;
         padding: 36px 1.2rem;
@@ -346,44 +394,62 @@
         background-size: cover;
         align-items: center;
       }
+
       .hero-text {
         margin-top: 0;
         padding-top: 20px;
         max-width: 100%;
       }
-      h1 { 
+
+      h1 {
         font-size: clamp(3.2rem, 12vw, 4.5rem);
         line-height: 0.92;
       }
-      .hero-subtitle { 
+
+      .hero-subtitle {
         font-size: 1rem;
         margin-bottom: 28px;
       }
+
       .nav-links { display: none; }
-      .btn-primary, .btn-secondary { 
-        padding: 12px 18px; 
+
+      .btn-primary, .btn-secondary {
+        padding: 12px 18px;
         font-size: 0.85rem;
       }
+
       .gallery-grid { grid-template-columns: 1fr; }
+
       .faq-item { padding: 18px; }
+
       .faq-item h3 { font-size: 1.2rem; }
+
       .section { padding: 40px 1.2rem; }
+
       footer { flex-direction: column; padding: 32px 1.2rem; }
+
       .warning-card { min-width: auto; }
+
       .two-col { gap: 20px; }
-      .alert-banner { 
-        font-size: 0.75rem; 
+
+      .alert-banner {
+        font-size: 0.75rem;
         padding: 8px 1rem;
         line-height: 1.3;
       }
+
       nav { padding: 12px 1.2rem; }
+
       .redline { margin: 24px 0; width: 70px; }
+
       .hero-actions { gap: 10px; }
+
       .action-buttons {
         gap: 16px;
         flex-direction: column;
         align-items: stretch;
       }
+
       .action-buttons .btn-primary,
       .action-buttons .btn-secondary {
         text-align: center;
@@ -391,175 +457,259 @@
     }
   </style>
 </head>
+
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="alert-banner" role="alert">
-  CORYDALIS (13-OH, THP): A TRADITIONAL HERB NOW BLENDED WITH MITRAGYNINE IN "PROPRIETARY EUPHORIC BLENDS" — UNSTUDIED, UNREGULATED, AND POTENTIALLY LETHAL.
+  CORYDALIS EXTRACTS ARE APPEARING IN “EUPHORIC BOTANICAL BLENDS” AND KRATOM-ADJACENT PRODUCTS — WITH HIDDEN INGREDIENTS, UNCLEAR DOSES, AND LITTLE SAFETY DATA.
 </div>
 
 <nav aria-label="Main navigation">
   <span class="nav-logo">GasStationHeroin.org</span>
   <ul class="nav-links">
-    <li><a href="#risks">Risks</a></li>
-    <li><a href="#gallery">Products & Blends</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#risks">Why It Matters</a></li>
+    <li><a href="#gallery">Real Products</a></li>
+    <li><a href="#faq">Plain-English Facts</a></li>
     <li><a href="#action">Take Action</a></li>
   </ul>
 </nav>
 
 <main id="main">
+
   <section class="hero" aria-label="Hero">
     <div class="hero-text">
-      <h1>Corydalis<br /><span>The New Ingredient in Opioid Blends</span></h1>
+      <h1>Corydalis<br /><span>Hidden Blend Ingredient</span></h1>
       <div class="redline" aria-hidden="true"></div>
       <p class="hero-subtitle">
-        Corydalis yanhusuo extracts (tetrahydropalmatine/THP, 13-OH) have been used in traditional Chinese medicine for pain. Now they are being combined with mitragynine (kratom) in "proprietary euphoric blends" — products with no safety data, no dosing guidelines, and unknown interactions.
+        A traditional herb is now being repackaged into “euphoric” tablets, extracts, and kratom-adjacent blends. The labels sound botanical. The real concern is hidden combinations, unclear dosing, and unknown interactions.
       </p>
       <div class="hero-actions">
-        <a class="btn-primary" href="#gallery">See the Products</a>
-        <a class="btn-secondary" href="#faq">Learn About Blends</a>
+        <a class="btn-primary" href="#gallery">See Real Products</a>
+        <a class="btn-secondary" href="#faq">Get the Facts</a>
       </div>
     </div>
   </section>
 
   <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
-    <h2 id="thesis-heading">Corydalis: From herbal sedative to gas station opioid booster.</h2>
+    <h2 id="thesis-heading">This is how herbal products become unregulated drug experiments.</h2>
     <p>
-      Corydalis yanhusuo contains tetrahydropalmatine (THP) and other alkaloids that act on dopamine receptors (D1/D2 antagonists) and, at higher doses, may have opioid-like effects via the 13-OH metabolite. Traditionally used for menstrual pain and as a sedative, it is now being extracted, concentrated, and blended with mitragynine (kratom's main alkaloid) in products sold as "proprietary euphoric blends." These combinations have never been studied in humans. No one knows how corydalis extracts interact with mu-opioid agonists like mitragynine. The result is an unregulated pharmacological experiment.
+      Corydalis yanhusuo has a history of traditional herbal use. But the concern today is not a simple traditional preparation. It is concentrated extracts, tablets, “euphoric botanical blends,” and products that combine corydalis-related compounds with kratom alkaloids or other unregulated ingredients.
     </p>
-  </section>
+    <p>
+      The average shopper may see words like botanical, euphoric, relaxation, proprietary blend, or 13-hydroxy and assume the product is safe. But these blends can hide the actual ingredient amounts, the pharmacology, and the interaction risks.
+    </p>
 
-  <!-- FAQ Section - emerging threat, blends, extracts -->
-  <section class="section" id="faq" aria-labelledby="faq-heading">
-    <h2 id="faq-heading">What You Need to Know About Corydalis Extracts & Blends</h2>
-    <p class="section-intro">
-      Corydalis is appearing as an ingredient in "enhanced" kratom products and standalone extracts. The concern is not the herb itself, but the concentrated forms and unpredictable combinations.
-    </p>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3>What Is Corydalis?</h3>
-        <p><strong>What is this product?</strong> Corydalis refers to the tuber of Corydalis yanhusuo, a plant used in traditional Chinese medicine. Its primary alkaloid, tetrahydropalmatine (THP), has sedative, analgesic, and dopamine-blocking effects. A related compound, 13-OH (13-hydroxycorydaline), is being studied for opioid receptor activity.</p>
-        <p><strong>What is it sold as?</strong> Whole herb powder, capsules, liquid extracts, and as an ingredient in "proprietary blends" with kratom/mitragynine. Labels often say "Corydalis extract," "THP," "13-OH," or "proprietary euphoric blend."</p>
-        <p><strong>Is it a drug, supplement, or something else?</strong> It is marketed as a dietary supplement, but concentrated extracts and blends may be considered unapproved new drugs. The FDA has not evaluated safety or efficacy.</p>
-        <p><strong>What are the active compounds?</strong> Tetrahydropalmatine (THP) is the best known – it blocks dopamine D1/D2 receptors and binds to the GABA system. 13-OH is a related alkaloid that may have mu-opioid agonist properties. Neither has been approved for human use in concentrated form.</p>
+    <div class="quick-list">
+      <div class="quick-item">
+        <strong>It sounds natural.</strong>
+        Words like “botanical,” “herbal,” “traditional,” and “plant extract” make the product feel safe.
       </div>
-      <div class="faq-item">
-        <h3>Why Are People Using It?</h3>
-        <p><strong>What effects are they looking for?</strong> Sedation, relaxation, pain relief, mood elevation, and as a "potentiator" for kratom. Some users report that corydalis enhances the euphoric effects of mitragynine or reduces opioid tolerance.</p>
-        <p><strong>What are "proprietary euphoric blends"?</strong> These are undisclosed mixtures of corydalis extract, mitragynine, and sometimes other botanicals (akuamma, kava, etc.). Sellers claim "synergistic" effects without providing any evidence. The term "proprietary" masks exact ingredients and ratios.</p>
-        <p><strong>What are people saying online?</strong> Forums like Reddit discuss "corydalis + kratom" as a way to get a stronger high or to manage withdrawal. Some report dangerous sedation, difficulty waking up, and intense nausea. There is no medical guidance.</p>
+      <div class="quick-item">
+        <strong>It is being modernized.</strong>
+        Traditional herbs are being turned into tablets, extracts, and branded euphoric products.
       </div>
-      <div class="faq-item">
-        <h3>What Are the Concerns About Blends?</h3>
-        <p><strong>Why are combinations dangerous?</strong> Corydalis alkaloids can cause respiratory depression when combined with mu-opioid agonists (like mitragynine). THP also causes dopamine blockade, which can lead to Parkinson-like symptoms, hormone changes, and sedation. The interactions are completely unstudied.</p>
-        <p><strong>Has any research been done?</strong> Very little. Most studies on corydalis are isolated alkaloid studies in animals. No human trials have examined concentrated extracts or combinations with kratom. There are no established safe doses, no LD50 data, and no long-term safety studies.</p>
-        <p><strong>What about "13-OH"?</strong> 13-OH is a semisynthetic derivative being marketed as a "cleaner" alternative. It has no human safety data. Preliminary reports suggest it may have higher affinity for mu-opioid receptors than THP, raising overdose risk.</p>
+      <div class="quick-item">
+        <strong>Blends hide the risk.</strong>
+        “Proprietary blend” can mean consumers do not know exactly what they are taking.
       </div>
-      <div class="faq-item">
-        <h3>What Does It Do to the Body?</h3>
-        <p><strong>How does it affect the brain?</strong> THP is primarily a dopamine antagonist – it blocks the reward pathway, which is the opposite of typical opioids. This can cause sedation, anhedonia (lack of pleasure), and movement disorders. 13-OH may act as an opioid agonist. The net effect of a blend is unpredictable.</p>
-        <p><strong>How quickly does it work?</strong> Extracts and blends take 30–60 minutes to take effect, depending on formulation.</p>
-        <p><strong>How long do effects last?</strong> 2–6 hours. THP has a long half-life (over 6 hours), so repeated daily use can lead to accumulation.</p>
-        <p><strong>Can it cause opioid-like effects?</strong> The combination with mitragynine can cause opioid effects: euphoria, respiratory depression, constipation. Pure corydalis extract is more sedating and dysphoric.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What Are the Known Risks?</h3>
-        <p><strong>Can it cause addiction?</strong> THP itself is not considered addictive because it blocks dopamine. However, the euphoric blends with mitragynine are addictive due to the opioid component. Withdrawal from such blends may include both opioid and dopamine-related symptoms.</p>
-        <p><strong>Can it cause overdose?</strong> Yes. Respiratory depression is possible when corydalis is combined with mu-opioid agonists. Overdose may not respond fully to naloxone if THP contributes to sedation.</p>
-        <p><strong>Can it cause movement disorders?</strong> Dopamine antagonists like THP can cause parkinsonism (tremor, rigidity, bradykinesia) and tardive dyskinesia with long-term use.</p>
-        <p><strong>Can it cause liver injury?</strong> Unknown. No studies. Botanical extracts often contain hepatotoxic contaminants.</p>
-        <p><strong>Has it been linked to deaths?</strong> No direct deaths solely from corydalis, but blends with kratom or other opioids may contribute to polysubstance fatalities. Toxicological screens often don't test for corydalis alkaloids.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is It Legal?</h3>
-        <p><strong>Is it legal federally?</strong> Yes, currently. Corydalis extracts are not scheduled. However, when marketed for euphoria or as a drug, they may violate FDA regulations against unapproved new drugs.</p>
-        <p><strong>Are there state restrictions?</strong> None specific to corydalis. However, some states have "analog" laws that could apply to 13-OH if it is structurally similar to a controlled substance.</p>
-        <p><strong>Has the FDA taken action?</strong> Not yet, but as "proprietary euphoric blends" proliferate, warning letters are likely. The FDA has previously targeted brands selling kratom-corydalis combinations for unproven claims.</p>
+      <div class="quick-item">
+        <strong>The combinations are the danger.</strong>
+        Corydalis plus kratom alkaloids or other substances may create effects no one has properly studied.
       </div>
     </div>
   </section>
 
-  <!-- Gallery with corrected images (corydalis1.jpeg, corydalis2.jpeg, corydalis3.jpeg) -->
-  <section class="section" id="gallery" aria-labelledby="gallery-heading">
-    <h2 id="gallery-heading">Corydalis Products: Extracts, Capsules, and "Euphoric Blends"</h2>
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Corydalis blends, explained in plain English</h2>
     <p class="section-intro">
-      These are real products sold online and in smoke shops. They range from basic corydalis extract to complex "proprietary" formulas that hide dangerous interactions.
+      You do not need a medical background to understand the problem. A product can be plant-derived and still be risky, especially when it is concentrated, blended, renamed, and sold without clear safety data.
+    </p>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <h3>What is corydalis?</h3>
+        <p>
+          Corydalis yanhusuo is an herb used in traditional Chinese medicine. It contains alkaloids, including tetrahydropalmatine, often shortened to THP, that may affect the nervous system.
+        </p>
+        <p>
+          Traditional use is one thing. Modern concentrated tablets and proprietary blends sold in the same market as kratom and gas station opioids are another.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why should regular people care?</h3>
+        <p>
+          Because corydalis is being used as another “natural” ingredient in the unregulated legal-high and kratom-adjacent marketplace.
+        </p>
+        <ul>
+          <li>A person may buy it for relaxation or sleep.</li>
+          <li>A person may buy it for pain relief.</li>
+          <li>A person may buy it because the label says “euphoric.”</li>
+          <li>A person in recovery may think it is a safer plant product.</li>
+          <li>A store owner may stock it without understanding the interaction risks.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where is it sold?</h3>
+        <p>
+          Corydalis extracts and blends may be sold online, in smoke shops, vape shops, CBD shops, kratom retailers, and botanical supplement markets. Some products are sold as standalone corydalis. Others appear in formulas mixed with mitragynine, 13-hydroxy compounds, or other botanicals.
+        </p>
+        <p>
+          Its placement matters. When it is sold beside kratom, 7-OH, tianeptine, and other unregulated products, it becomes part of the same risky retail pipeline.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How is it marketed?</h3>
+        <p>
+          The marketing often uses language that makes the product sound calm, clean, or exciting:
+        </p>
+        <ul>
+          <li>“Euphoric botanical blend”</li>
+          <li>“Relaxation”</li>
+          <li>“Tranquilizing”</li>
+          <li>“Proprietary blend”</li>
+          <li>“13-hydroxy”</li>
+          <li>“Biomedical”</li>
+          <li>“Natural” or “plant extract”</li>
+        </ul>
+        <p>
+          Those words can hide the real issue: what is in the product, how much is in it, and what happens when it is mixed with kratom-like compounds?
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why are blends the concern?</h3>
+        <p>
+          A blend combines ingredients. When those ingredients affect the brain, mood, sedation, pain perception, or opioid-related pathways, the risk can become unpredictable.
+        </p>
+        <p>
+          “Proprietary” may sound sophisticated, but for consumers it often means less transparency. People may not know what dose they took or what interaction they are experiencing.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What can it do to the body?</h3>
+        <p>
+          Corydalis-related compounds may have sedating and nervous-system effects. Users may seek relaxation, pain relief, sleep, or mood effects.
+        </p>
+        <p>
+          The major concern is interaction: sedation, dizziness, nausea, impaired coordination, and dangerous effects may be more likely when combined with kratom alkaloids, alcohol, opioids, benzodiazepines, sleep aids, or other depressants.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can corydalis blends cause harm?</h3>
+        <p>
+          The safety profile of many modern corydalis blends is not well established. Lack of large human studies does not mean safety. It means uncertainty.
+        </p>
+        <p>
+          Communities should be especially concerned about products that use corydalis in combination with mitragynine, 13-hydroxy compounds, or “euphoric” formulas.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is it legal?</h3>
+        <p>
+          Corydalis itself is not federally scheduled. But legality does not equal safety. Products marketed for euphoria, pain, sleep, or drug-like effects may raise regulatory concerns.
+        </p>
+        <p>
+          The legal gray area is exactly why these blends can spread before communities understand what they are seeing.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">This is what corydalis blends look like online and in stores</h2>
+    <p class="section-intro">
+      These products do not look like risky drug combinations. They look like wellness tablets, botanical blends, or trendy supplement products. That is what makes them so easy to overlook.
     </p>
 
     <div class="gallery-grid">
-      <!-- corydalis1.jpeg - ketaMIND euphoric botanical blend -->
+
       <div class="gallery-card">
         <img src="/opioid/corydalis1.jpeg" alt="ketaMIND euphoric botanical blend" loading="lazy">
         <div class="gallery-caption">
-          <strong>ketaMIND – "Euphoric Botanical Blend"</strong>
-          Markets itself as a euphoric blend of Rhizoma Corydalis Extract. "Helps promote tranquillizing relaxation." 675mg total, 3 tablets. No disclosure of dopamine-blocking effects or interactions with other substances.
+          <strong>ketaMIND “Euphoric Botanical Blend”</strong>
+          “Euphoric” and “relaxation” language turns a nervous-system-active botanical into a lifestyle product.
         </div>
       </div>
-      <!-- corydalis2.jpeg - K-Whole Rhizoma Corydalis Extract -->
+
       <div class="gallery-card">
         <img src="/opioid/corydalis2.jpeg" alt="K-Whole Rhizoma Corydalis Extract" loading="lazy">
         <div class="gallery-caption">
-          <strong>K-Whole – Rhizoma Corydalis Extract</strong>
-          5-count, 225mg tablets, 1125mg total. Simple packaging, no warning about dopamine antagonism. Sold alongside kratom as a "natural" product despite lack of human safety data.
+          <strong>K-Whole Rhizoma Corydalis Extract</strong>
+          Simple packaging can make concentrated extract tablets look ordinary, even when safety questions remain.
         </div>
       </div>
-      <!-- corydalis3.jpeg - UFORIA 13-HYDROXY (MIT + 13-OH) -->
+
       <div class="gallery-card">
         <img src="/opioid/corydalis3.jpeg" alt="UFORIA 13-HYDROXY mitragynine plus 13-OH" loading="lazy">
         <div class="gallery-caption">
-          <strong>UFORIA – 13-HYDROXY (Mitragynine + 13-OH)</strong>
-          Combines mitragynine (kratom alkaloid) with 13-hydroxycorydaline. "13X swallow tablets" – 4500mg per bottle. Markets as a "biomedical" product. No human studies on this combination. High risk of severe opioid effects.
+          <strong>UFORIA 13-HYDROXY</strong>
+          Combines mitragynine with a 13-hydroxy ingredient in a product that sounds scientific but raises serious interaction concerns.
         </div>
       </div>
+
     </div>
+
     <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
-      <strong>The emerging threat:</strong> Corydalis extracts, especially 13-OH, are being added to gas station opioid products as "potentiators." Products like "UFORIA 13-HYDROXY" directly combine mitragynine with 13-OH – a completely unstudied mixture. Others like "ketaMIND" market "euphoric" effects without any safety data. These blends are not traditional herbal remedies; they are designer drug combinations. Until regulatory action is taken, consumers are guinea pigs in a dangerous experiment.
+      The disturbing pattern is familiar: a traditional herb is extracted, concentrated, renamed, and blended into products marketed for euphoria, relaxation, or enhanced effects. The packaging says botanical. The reality is an unregulated experiment with unclear dosing and unknown interaction risks.
     </p>
   </section>
 
-  <!-- Action section – for regulators and public health -->
   <section class="section" id="action">
-    <h2>What Can Be Done About Unregulated Corydalis Blends?</h2>
+    <h2>What to look for in your neighborhood</h2>
+
     <div class="two-col">
       <div class="warning-card">
-        <h3>Red flags in the marketplace</h3>
+        <h3>Red flags on shelves</h3>
         <ul>
-          <li>Claims of "euphoric," "proprietary blend," "synergistic" – code for unstudied drug combinations</li>
-          <li>Products that directly combine corydalis with kratom/mitragynine extracts (e.g., UFORIA 13-HYDROXY)</li>
-          <li>No warning labels about dopamine antagonism or respiratory depression</li>
-          <li>Concentrated extracts with no dosage guidelines</li>
-          <li>Marketing to people seeking "legal highs" or opioid alternatives</li>
+          <li>Labels that say “corydalis,” “Rhizoma Corydalis,” “THP,” “13-OH,” “13-hydroxy,” or “proprietary blend”</li>
+          <li>Products marketed as “euphoric,” “tranquilizing,” “relaxing,” “synergistic,” or “enhanced”</li>
+          <li>Products combining corydalis with mitragynine, kratom extracts, or other botanicals</li>
+          <li>Unclear ingredient amounts, vague blend labels, or no meaningful warning language</li>
+          <li>Products sold beside kratom, 7-OH, tianeptine, akuamma, kava, hemp, vapes, or other unregulated products</li>
+          <li>Claims that make a drug-like effect sound like wellness</li>
         </ul>
       </div>
+
       <div class="warning-card">
-        <h3>How to address the emerging threat</h3>
+        <h3>What communities can do</h3>
         <ul>
-          <li>Educate consumers: "Corydalis extracts with mitragynine are unstudied drug combinations."</li>
-          <li>Report adverse events (sedation, breathing difficulty, movement disorders) to FDA MedWatch.</li>
-          <li>Advocate for state regulation of "proprietary euphoric blends" under analog acts.</li>
-          <li>Support research into the pharmacology of 13-OH and THP-opioid interactions.</li>
-          <li>File a complaint with the FTC about deceptive marketing of unproven "blends": <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
+          <li>Ask stores why euphoric botanical blends are being sold without clear ingredient transparency.</li>
+          <li>Warn schools, recovery groups, churches, health departments, employers, and neighborhood organizations.</li>
+          <li>Report adverse events such as heavy sedation, breathing problems, confusion, dizziness, or movement symptoms to FDA MedWatch.</li>
+          <li>Report deceptive “safe botanical blend” marketing to consumer protection agencies.</li>
+          <li>File a complaint with the FTC about deceptive marketing: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
         </ul>
       </div>
     </div>
+
     <div class="action-buttons">
-      <a class="btn-primary" href="#" style="background:var(--red);">Download Fact Sheet</a>
+      <a class="btn-primary" href="#" style="background:var(--red);">Download Community Alert</a>
       <a class="btn-secondary" href="#">Report a Product</a>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="footer-mission">
     <strong style="color:#fff;">GasStationHeroin.org</strong><br />
-    Monitoring emerging threats: corydalis extracts, 13-OH, and "proprietary euphoric blends" with mitragynine. These are not safe supplements. They are unregulated pharmacological experiments. No safety data. No dosing guidelines. Extreme caution is advised.
+    Monitoring corydalis extracts, 13-hydroxy blends, and emerging botanical products sold in the same marketplace as kratom and gas station opioids. Helping communities recognize hidden blends, vague labels, and unregulated drug-like products.
   </div>
+
   <div class="footer-links">
-    <a href="#risks">Corydalis risks</a>
+    <a href="#risks">Why it matters</a>
     <a href="#gallery">Product gallery</a>
-    <a href="#faq">FAQ</a>
+    <a href="#faq">Plain-English facts</a>
     <a href="#action">Take action</a>
   </div>
 </footer>
