@@ -87,12 +87,12 @@ nav{
   letter-spacing:.02em;
 }
 
-/* ── Hero ── */
+/* ── Hero (using hero3.jpeg as requested) ── */
 .hero{
   min-height:82vh;
   background:
     linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.78) 38%,rgba(0,0,0,.16) 72%,rgba(0,0,0,.02) 100%),
-    url("hero2.png") center center/cover no-repeat;
+    url("hero3.jpeg") center center/cover no-repeat;
   display:flex;
   align-items:flex-start;
   padding:58px 6vw;
@@ -276,7 +276,7 @@ footer{
 .footer-links{display:flex;flex-direction:column;gap:8px;}
 .footer-links a:hover{color:var(--red);}
 
-/* ── Responsive ── */
+/* ── Responsive adjustments (mobile also uses hero3.jpeg) ── */
 @media(max-width:1000px){
   .category-grid{grid-template-columns:repeat(2,1fr);}
   .cards{grid-template-columns:1fr 1fr;}
@@ -289,7 +289,7 @@ footer{
     padding:36px 18px;
     background:
       linear-gradient(180deg,rgba(0,0,0,.97) 0%,rgba(0,0,0,.82) 60%,rgba(0,0,0,.2) 100%),
-      url("hero2.png") center center/cover no-repeat;
+      url("hero3.jpeg") center center/cover no-repeat;
   }
   .hero-text{margin-top:50px;}
   h1{font-size:clamp(3.4rem,15vw,5.2rem);}
@@ -322,7 +322,7 @@ footer{
   </ul>
 </nav>
 
-<!-- Hero -->
+<!-- Hero with updated background: hero3.jpeg (real storefront showing smoke/vape/kratom) -->
 <main id="main">
 <section class="hero" aria-label="Hero">
   <div class="hero-text">
