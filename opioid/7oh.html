@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="7-OH (7-Hydroxymitragynine): A natural metabolite of kratom's main alkaloid, now concentrated into a semi-synthetic opioid up to 13x more potent than morphine. Sold in gas stations as gummies and tablets. Brutal facts for parents." />
-  <title>7-OH | The Hidden Danger Inside Kratom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
+  <meta name="description" content="7-OH (7-Hydroxymitragynine) is kratom’s most potent alkaloid — concentrated into an opioid up to 13x stronger than morphine. Sold in gas stations as candy-flavored tablets. Brutal facts for parents." />
+  <title>7-OH | It Is Kratom — Concentrated and Deadly</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
@@ -27,6 +27,7 @@
     html {
       scroll-behavior: smooth;
       overflow-x: hidden;
+      width: 100%;
     }
 
     body {
@@ -35,7 +36,9 @@
       color: var(--text);
       line-height: 1.5;
       overflow-x: hidden;
+      width: 100%;
       max-width: 100%;
+      position: relative;
     }
 
     a {
@@ -82,6 +85,7 @@
       justify-content: space-between;
       padding: 14px 6vw;
       width: 100%;
+      flex-wrap: wrap;
     }
 
     .nav-logo {
@@ -103,11 +107,11 @@
       color: var(--red);
     }
 
-    /* Hero section — brighter gradient (less dark) */
+    /* Hero section — brighter gradient */
     .hero {
       min-height: 82vh;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 38%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.05) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.50) 38%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.05) 100%),
         url("/opioid/7ohhero.png") center center/cover no-repeat;
       display: flex;
       align-items: flex-start;
@@ -121,7 +125,7 @@
     }
 
     h1 {
-      font-size: clamp(4.3rem, 9.6vw, 8.6rem);
+      font-size: clamp(4rem, 9vw, 8rem);
       line-height: 0.88;
       letter-spacing: -0.065em;
       font-weight: 900;
@@ -144,7 +148,7 @@
       line-height: 1.3;
       color: #f0f0f0;
       margin-bottom: 36px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
     }
 
     .hero-actions {
@@ -186,8 +190,10 @@
     }
 
     .section {
-      padding: 72px 7vw;
+      padding: 72px 6vw;
       width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
     }
 
     .thesis {
@@ -305,7 +311,7 @@
       border-radius: 12px;
       padding: 28px;
       flex: 1;
-      min-width: 280px;
+      min-width: 260px;
     }
 
     .warning-card h3 {
@@ -326,7 +332,7 @@
     }
 
     footer {
-      padding: 40px 7vw;
+      padding: 40px 6vw;
       background: #000;
       color: #8f93a0;
       border-top: 1px solid var(--line);
@@ -354,27 +360,35 @@
       color: var(--red);
     }
 
-    /* Mobile fixes - prevent horizontal scroll */
+    /* Mobile fixes - prevent any horizontal scroll */
     @media (max-width: 1000px) {
       .nav-links {
         gap: 16px;
         font-size: 0.88rem;
       }
       .section {
-        padding: 48px 1.5rem;
+        padding: 48px 5vw;
       }
       .hero {
-        padding: 36px 1.5rem;
+        padding: 36px 5vw;
+      }
+      footer {
+        padding: 32px 5vw;
       }
     }
 
     @media (max-width: 650px) {
+      body, html {
+        overflow-x: hidden;
+        width: 100%;
+      }
       .hero {
         min-height: 76vh;
         padding: 36px 1.2rem;
         background:
-          linear-gradient(180deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.60) 60%, rgba(0,0,0,.25) 100%),
+          linear-gradient(180deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.25) 100%),
           url("/opioid/7ohhero.png") center center/cover no-repeat;
+        background-size: cover;
       }
       .hero-text {
         margin-top: 50px;
@@ -383,7 +397,7 @@
         font-size: clamp(3.4rem, 15vw, 5.2rem);
       }
       .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
       .nav-links {
         display: none;
@@ -391,7 +405,7 @@
       .btn-primary,
       .btn-secondary {
         padding: 14px 20px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
       .gallery-grid {
         grid-template-columns: 1fr;
@@ -415,8 +429,12 @@
       .two-col {
         gap: 20px;
       }
-      body, html {
-        overflow-x: hidden;
+      .alert-banner {
+        font-size: 0.8rem;
+        padding: 8px 1rem;
+      }
+      nav {
+        padding: 12px 1.2rem;
       }
     }
   </style>
@@ -426,7 +444,7 @@
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="alert-banner" role="alert">
-  7-OH: A NATURAL METABOLITE OF KRATOM’S MAIN ALKALOID — NOW CONCENTRATED INTO A SEMI-SYNTHETIC OPIOID 13X STRONGER THAN MORPHINE. SOLD IN GAS STATIONS AS CANDY-FLAVORED TABLETS.
+  7-OH IS KRATOM — CONCENTRATED TO 13X THE POTENCY OF MORPHINE. SOLD IN GAS STATIONS AS CANDY-FLAVORED TABLETS.
 </div>
 
 <nav aria-label="Main navigation">
@@ -442,10 +460,10 @@
 <main id="main">
   <section class="hero" aria-label="Hero">
     <div class="hero-text">
-      <h1>7-OH<br /><span>The Hidden Danger Inside Kratom</span></h1>
+      <h1>7-OH<br /><span>It Is Kratom. Concentrated. Deadly.</span></h1>
       <div class="redline" aria-hidden="true"></div>
       <p class="hero-subtitle">
-        7-Hydroxymitragynine (7-OH) is a natural metabolite of kratom's main alkaloid, mitragynine. In whole leaf kratom, it makes up less than 2% of alkaloids. But manufacturers now isolate and concentrate it into a semi-synthetic opioid — up to 13 times more potent than morphine. Sold in gas stations as blue raspberry gummies and lemon tablets.
+        7-Hydroxymitragynine (7-OH) is the most potent alkaloid naturally found in the kratom plant. Manufacturers now isolate and concentrate it into a semi-synthetic opioid — up to 13 times stronger than morphine. Sold in gas stations as blue raspberry gummies and lemon tablets. This is not something new. It is kratom, weaponized.
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="#gallery">See the Products</a>
@@ -457,22 +475,22 @@
   <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
     <h2 id="thesis-heading">7-OH: The same alkaloid found in kratom — but weaponized.</h2>
     <p>
-      In traditional kratom leaf, 7-OH exists only in trace amounts (less than 2% of total alkaloids). But the body also converts some mitragynine into 7-OH after ingestion. Now, manufacturers have learned to extract, concentrate, and even semi-synthesize 7-OH into products that deliver a pure, potent opioid hit. The FDA has called this the next wave of the opioid crisis. Ohio, Connecticut, and Utah have already moved to ban 7-OH products. Yet they remain on gas station shelves nationwide — in blue raspberry, strawberry, and mixed berry flavors.
+      In traditional kratom leaf, 7-OH exists only in trace amounts (less than 2% of total alkaloids). But the body also converts some mitragynine into 7-OH after ingestion — meaning every dose of kratom naturally produces some 7-OH. Now, manufacturers have learned to extract, concentrate, and even semi-synthesize 7-OH into products that deliver a pure, potent opioid hit. The FDA has called this the next wave of the opioid crisis. Multiple states have already moved to ban 7-OH products. Yet they remain on gas station shelves nationwide — in blue raspberry, strawberry, and mixed berry flavors.
     </p>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- FAQ Section - updated to emphasize "it is kratom" -->
   <section class="section" id="faq" aria-labelledby="faq-heading">
     <h2 id="faq-heading">What Every Parent Must Know About 7-OH</h2>
     <p class="section-intro">
-      Based on FDA emergency warnings, CDC poison data, and state regulatory findings. This is not a supplement. This is a concentrated alkaloid from kratom, turned into a deadly opioid.
+      Based on FDA emergency warnings, CDC poison data, and state regulatory findings. This is not a new drug — it is kratom, concentrated and weaponized.
     </p>
     <div class="faq-grid">
       <div class="faq-item">
         <h3>What Is It?</h3>
-        <p><strong>What is this product?</strong> 7-Hydroxymitragynine (7-OH) is an alkaloid that naturally occurs in the kratom plant, but only in tiny amounts (less than 2% of total alkaloids). It is also a metabolite of mitragynine, kratom's main alkaloid — meaning when someone takes kratom, their body converts some mitragynine into 7-OH. Now, manufacturers isolate and concentrate 7-OH into products that are effectively semi-synthetic opioids.</p>
+        <p><strong>What is this product?</strong> It is kratom. Specifically, 7-Hydroxymitragynine (7-OH) is an alkaloid that naturally occurs in the kratom plant. In whole leaf kratom, it makes up less than 2% of alkaloids, but it is also a metabolite of mitragynine — the main alkaloid in kratom. That means when someone takes kratom, their body converts some mitragynine into 7-OH. Now, manufacturers isolate and concentrate 7-OH into products that are effectively semi-synthetic opioids. So yes: <strong>7-OH is kratom — just stripped down to its most dangerous component.</strong></p>
         <p><strong>What is it sold as?</strong> Sold as “chewable tablets,” “gummies,” “shots,” “stacks,” “tabs.” Flavors: Blue Raspberry, Strawberry, Lemon, Cookies & Cream, Watermelon Fruit Punch, Mixed Berry.</p>
-        <p><strong>Is it a drug, supplement, vape, or something else?</strong> It is an unapproved, illegal drug when sold for human consumption. The FDA has declared 7-OH products adulterated and has issued warning letters. It has no accepted medical use.</p>
+        <p><strong>Is it a drug, supplement, vape, or something else?</strong> It is an unapproved, illegal drug when sold for human consumption. The FDA has declared 7-OH products adulterated. It has no accepted medical use. It is kratom — but concentrated to dangerous levels.</p>
         <p><strong>Street names and brand names:</strong> “7-OH,” “7-Hydroxy,” “Hydroxie,” “7OH Plus,” “Ultra Seven,” “Stacks,” “Kures,” “Pure7,” “Method 7-OH,” “Real Botanicals 7-Hydro,” “7OF,” “HEAT.”</p>
       </div>
       <div class="faq-item">
@@ -480,12 +498,12 @@
         <p><strong>Can it be bought at gas stations?</strong> Yes. Same gas station checkout aisles as candy, energy drinks, and vapes. Sold openly.</p>
         <p><strong>Is it sold in vape shops?</strong> Yes, prominently displayed alongside kratom and delta-8. Often called “kratom alkaloid” to hide the danger.</p>
         <p><strong>Can it be purchased online?</strong> Yes. Dozens of websites ship 7-OH products with no age verification. Ads on social media target teens with “level up,” “big savings,” “back in stock.”</p>
-        <p><strong>Is there an age restriction?</strong> None federally. Some states are banning it, but most retailers ignore ID checks. Packaging says “21+” in tiny fine print — never enforced.</p>
+        <p><strong>Is there an age restriction?</strong> None federally. Some states have laws, but most retailers ignore ID checks. Packaging says “21+” in tiny fine print — never enforced.</p>
       </div>
       <div class="faq-item">
         <h3>Why Are Teens Using It?</h3>
-        <p><strong>What effects are they looking for?</strong> A strong, rapid opioid high — euphoria, sedation, “nodding off.” Because it’s cheap, legal, and easy to get. Some mistakenly believe it’s “just strong kratom.”</p>
-        <p><strong>Is it being marketed as energy, relaxation, focus, pain relief, or a legal high?</strong> Ads use “confidence starts with control,” “big savings,” “unbeatable prices,” “premium botanical extracts.” They hide the opioid truth behind “wellness” language.</p>
+        <p><strong>What effects are they looking for?</strong> A strong, rapid opioid high — euphoria, sedation, “nodding off.” Because it’s cheap, legal, and easy to get. Many believe it’s “just strong kratom” — and they’re right, except it’s kratom concentrated to lethal levels.</p>
+        <p><strong>Is it being marketed as energy, relaxation, focus, pain relief, or a legal high?</strong> Ads use “confidence starts with control,” “big savings,” “premium botanical extracts.” They hide the opioid truth behind “wellness” language.</p>
         <p><strong>What are people saying about it on social media?</strong> Reddit communities like r/7ohm and r/quitting7oh show thousands of teens and young adults addicted, suffering withdrawal, and overdosing. TikTok and Instagram ads feature gamers and young women promoting “stacks” for focus — a lie.</p>
       </div>
       <div class="faq-item">
@@ -508,7 +526,7 @@
       <div class="faq-item">
         <h3>Is It Legal?</h3>
         <p><strong>Is it legal federally?</strong> Not for human consumption. The FDA has issued import alerts and warning letters. In July 2025, FDA recommended Schedule I for 7-OH. But it remains sold as “research chemical” or “kratom alkaloid” in a gray market.</p>
-        <p><strong>Is it legal in my state?</strong> Ohio banned 7-OH in December 2025 (emergency rule). Connecticut and Utah have moved to ban. Most states have no law — yet. Check local regulations.</p>
+        <p><strong>Is it legal in my state?</strong> Multiple states have banned or restricted 7-OH products. Some have pending legislation. Check your local laws.</p>
         <p><strong>Are there age restrictions?</strong> No federal. Some states 18+ or 21+ but rarely enforced.</p>
         <p><strong>Has the FDA issued warnings?</strong> Yes. FDA Commissioner Dr. Martin Makary warned that 7-OH “could be the next wave of the opioid crisis.” Multiple FDA warning letters to manufacturers for illegal marketing.</p>
       </div>
@@ -555,7 +573,7 @@
         <img src="/opioid/7oh5.jpeg" alt="PURE7 7-Hydroxymitragynine lemon flavor" loading="lazy">
         <div class="gallery-caption">
           <strong>“PURE7” – Lemon flavor, 18mg per tablet</strong>
-          “Chromatographic purification” – sounds scientific, but hides opioid danger. 8 servings. Sold at gas station counters.
+          “Chromatographic purification” – sophisticated process hides opioid danger. 8 servings. Sold in gas station counters.
         </div>
       </div>
       <div class="gallery-card">
@@ -609,7 +627,7 @@
       </div>
     </div>
     <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
-      <strong>The brutal truth:</strong> 7-OH is not your parent’s kratom. While whole leaf kratom contains only trace 7-OH, these concentrated products deliver a pure opioid agonist. The FDA has issued multiple warning letters. Ohio banned 7-OH in December 2025. Yet these products remain on gas station shelves nationwide, often next to bubble gum. Tablet strengths range from 10mg to 150mg. A fatal dose for a non-tolerant user can be as low as 50mg. These are death in a candy wrapper.
+      <strong>The brutal truth:</strong> 7-OH is kratom — concentrated. While whole leaf kratom contains only trace 7-OH, these products deliver a pure opioid agonist. The FDA has issued multiple warning letters. Multiple states have banned 7-OH. Yet these products remain on gas station shelves nationwide, often next to bubble gum. Tablet strengths range from 10mg to 150mg. A fatal dose for a non-tolerant user can be as low as 50mg. These are death in a candy wrapper.
     </p>
   </section>
 
@@ -632,7 +650,7 @@
         <h3>How parents can fight back</h3>
         <ul>
           <li>Search backpacks for blister packs, small colorful boxes labeled “7-OH,” “Hydroxie,” “Ultra Seven.”</li>
-          <li>Talk to teens: “7-OH is a concentrated alkaloid from kratom. One tablet can kill you.”</li>
+          <li>Talk to teens: “7-OH is kratom — concentrated. One tablet can kill you.”</li>
           <li>Report gas stations and vape shops selling 7-OH to local health departments and police.</li>
           <li>File a complaint with the Federal Trade Commission (FTC) about deceptive marketing to minors: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
           <li>Advocate for state and federal Schedule I classification for 7-OH.</li>
@@ -649,7 +667,7 @@
 <footer>
   <div class="footer-mission">
     <strong style="color:#fff;">GasStationHeroin.org</strong><br />
-    Exposing 7-OH — the concentrated kratom alkaloid turned into a gas station opioid. These are not natural supplements. They are chemical weapons in candy flavors. Protect your children. Know the names. Act now.
+    Exposing 7-OH — concentrated kratom turned into a gas station opioid. These are not natural supplements. They are chemical weapons in candy flavors. Protect your children. Know the names. Act now.
   </div>
   <div class="footer-links">
     <a href="#risks">7-OH risks</a>
