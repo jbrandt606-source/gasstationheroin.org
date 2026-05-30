@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
-  <meta name="description" content="MGM-15 is a semi-synthetic opioid derived from kratom’s alkaloids — up to 10x more potent than morphine. Sold in gas stations as candy-flavored chewable tablets. Brutal facts for parents." />
-  <title>MGM-15 | The New Kratom-Derived Opioid</title>
+  <meta name="description" content="MGM-15 is a kratom-derived semi-synthetic opioid sold in gas stations, vape shops, and online as flavored chewable tablets. A plain-English warning for communities." />
+  <title>MGM-15 | Kratom-Derived Opioid Sold Like Candy</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --red: #e21b23;
@@ -40,6 +36,8 @@
       max-width: 100%;
       position: relative;
     }
+
+    a { color: inherit; text-decoration: none; }
 
     .skip-link {
       position: absolute;
@@ -160,14 +158,17 @@
       background: var(--red);
       color: #fff;
     }
+
     .btn-primary:hover {
       background: #c5151c;
       transform: translateY(-2px);
     }
+
     .btn-secondary {
       border: 2px solid #fff;
       color: #fff;
     }
+
     .btn-secondary:hover {
       border-color: var(--red);
       color: var(--red);
@@ -202,6 +203,30 @@
       line-height: 1.6;
     }
 
+    .quick-list {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+    }
+
+    .quick-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--red);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
     .faq-grid {
       display: flex;
       flex-direction: column;
@@ -209,6 +234,7 @@
       margin-top: 40px;
       width: 100%;
     }
+
     .faq-item {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -216,18 +242,22 @@
       padding: 24px 28px;
       width: 100%;
     }
+
     .faq-item h3 {
       font-size: 1.5rem;
       font-weight: 800;
       margin-bottom: 12px;
       color: var(--red);
     }
+
     .faq-item p, .faq-item ul {
       color: var(--muted);
       line-height: 1.6;
       margin-top: 8px;
     }
+
     .faq-item ul { margin-left: 1.5rem; }
+
     .faq-item li { margin: 6px 0; }
 
     .gallery-grid {
@@ -245,16 +275,19 @@
       overflow: hidden;
       transition: transform 0.2s, border-color 0.2s;
     }
+
     .gallery-card:hover {
       transform: translateY(-4px);
       border-color: var(--red);
     }
+
     .gallery-card img {
       width: 100%;
       height: auto;
       display: block;
       background: #1a1a1f;
     }
+
     .gallery-caption {
       padding: 16px;
       font-size: 0.85rem;
@@ -262,6 +295,7 @@
       border-top: 1px solid var(--line);
       background: #0a0a0c;
     }
+
     .gallery-caption strong {
       color: var(--red);
       display: block;
@@ -276,6 +310,7 @@
       margin-bottom: 24px;
       width: 100%;
     }
+
     .warning-card {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -284,17 +319,20 @@
       flex: 1;
       min-width: 260px;
     }
+
     .warning-card h3 {
       font-size: 1.35rem;
       margin-bottom: 16px;
       font-weight: 800;
       color: var(--red);
     }
+
     .warning-card ul {
       margin-left: 1.2rem;
       color: var(--muted);
       line-height: 1.6;
     }
+
     .warning-card li { margin: 8px 0; }
 
     footer {
@@ -310,12 +348,15 @@
       font-size: 0.92rem;
       width: 100%;
     }
+
     .footer-mission { max-width: 440px; line-height: 1.6; }
+
     .footer-links {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
+
     .footer-links a:hover { color: var(--red); }
 
     @media (max-width: 1000px) {
@@ -327,6 +368,7 @@
 
     @media (max-width: 650px) {
       body, html { overflow-x: hidden; width: 100%; }
+
       .hero {
         min-height: 76vh;
         padding: 36px 1.2rem;
@@ -335,245 +377,347 @@
           url("/opioid/mgmhero.png") center center/cover no-repeat;
         background-size: cover;
       }
+
       .hero-text { margin-top: 50px; }
+
       h1 { font-size: clamp(3.4rem, 15vw, 5.2rem); }
+
       .hero-subtitle { font-size: 1rem; }
+
       .nav-links { display: none; }
-      .btn-primary, .btn-secondary { padding: 14px 20px; font-size: 0.85rem; }
+
+      .btn-primary, .btn-secondary {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+      }
+
       .gallery-grid { grid-template-columns: 1fr; }
+
       .faq-item { padding: 20px; }
+
       .faq-item h3 { font-size: 1.2rem; }
+
       .section { padding: 48px 1.2rem; }
-      footer { flex-direction: column; padding: 32px 1.2rem; }
+
+      footer {
+        flex-direction: column;
+        padding: 32px 1.2rem;
+      }
+
       .warning-card { min-width: auto; }
+
       .two-col { gap: 20px; }
-      .alert-banner { font-size: 0.8rem; padding: 8px 1rem; }
+
+      .alert-banner {
+        font-size: 0.8rem;
+        padding: 8px 1rem;
+      }
+
       nav { padding: 12px 1.2rem; }
     }
   </style>
 </head>
+
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="alert-banner" role="alert">
-  MGM-15: A SEMI-SYNTHETIC OPIOID DERIVED FROM KRATOM — UP TO 10X STRONGER THAN MORPHINE. SOLD IN GAS STATIONS AS CHEWABLE TABLETS.
+  MGM-15 IS A KRATOM-DERIVED SEMI-SYNTHETIC OPIOID — SOLD AS FLAVORED CHEWABLE TABLETS IN ORDINARY STORES.
 </div>
 
 <nav aria-label="Main navigation">
   <span class="nav-logo">GasStationHeroin.org</span>
   <ul class="nav-links">
-    <li><a href="#risks">Risks</a></li>
-    <li><a href="#gallery">Products & Ads</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#risks">Why It Matters</a></li>
+    <li><a href="#gallery">Real Products</a></li>
+    <li><a href="#faq">Plain-English Facts</a></li>
     <li><a href="#action">Take Action</a></li>
   </ul>
 </nav>
 
 <main id="main">
+
   <section class="hero" aria-label="Hero">
     <div class="hero-text">
-      <h1>MGM-15<br /><span>The New Kratom-Derived Opioid</span></h1>
+      <h1>MGM-15<br /><span>Kratom-Derived Opioid</span></h1>
       <div class="redline" aria-hidden="true"></div>
       <p class="hero-subtitle">
-        MGM-15 (dihydro-7-hydroxymitragynine) is a semi-synthetic opioid created from kratom’s alkaloids — a potent analog of 7-OH. It is not natural. It is a chemical weapon engineered for potency, sold in gas stations as candy-flavored chewable tablets. Parents, this is kratom on steroids.
+        A chemically altered kratom compound is being sold as flavored chewable tablets, “rapid-release” extracts, and boosted products. Most people walking past it have no idea what it is.
       </p>
       <div class="hero-actions">
-        <a class="btn-primary" href="#gallery">See the Products</a>
-        <a class="btn-secondary" href="#faq">Get the Brutal Facts</a>
+        <a class="btn-primary" href="#gallery">See Real Products</a>
+        <a class="btn-secondary" href="#faq">Get the Facts</a>
       </div>
     </div>
   </section>
 
   <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
-    <h2 id="thesis-heading">MGM-15: A kratom alkaloid turned into a weapon.</h2>
+    <h2 id="thesis-heading">This is not a normal supplement. It is chemistry moving faster than the law.</h2>
     <p>
-      MGM-15 (dihydro-7-hydroxymitragynine) is a semi-synthetic opioid first described in 2014. It is derived from 7-hydroxymitragynine — which itself comes from kratom’s main alkaloid, mitragynine. In plain language: MGM-15 is a chemically modified version of kratom’s most dangerous component. It has never been studied in humans, yet it is sold openly in gas stations and smoke shops. The FDA has identified MGM-15 in commercially available tablets, and multiple states are moving to ban it. But right now, it sits on shelves next to candy.
+      MGM-15, also called dihydro-7-hydroxymitragynine, is described as a semi-synthetic opioid made from kratom-related alkaloids. In plain English: it is a chemically modified kratom-derived compound being sold in retail products before most communities even know its name.
     </p>
-  </section>
+    <p>
+      It is showing up in chewable tablets, flavored products, “rapid-release” formulas, and combination products with 7-OH. The labels may say kratom, botanical, extract, or alternative. But the concern is simple: powerful opioid-like products are being sold in gas stations and vape shops like ordinary impulse buys.
+    </p>
 
-  <!-- FAQ Section - "it is kratom-derived" -->
-  <section class="section" id="faq" aria-labelledby="faq-heading">
-    <h2 id="faq-heading">What Every Parent Must Know About MGM-15</h2>
-    <p class="section-intro">
-      Based on FDA warnings, forensic lab data, and emerging public health threats. MGM-15 is not a supplement. It is a semi-synthetic opioid made from kratom.
-    </p>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3>What Is It?</h3>
-        <p><strong>What is this product?</strong> MGM-15 (dihydro-7-hydroxymitragynine) is a semi-synthetic opioid. It is made by chemically modifying 7-hydroxymitragynine — which itself is a metabolite of mitragynine, the main alkaloid in kratom. So MGM-15 is a <strong>kratom-derived synthetic opioid</strong>, engineered to be even more potent than 7-OH. It has never been approved for human use.</p>
-        <p><strong>What is it sold as?</strong> Sold as “chewable tablets,” “MGM tablets,” “boosted chewables,” “rapid-release kratom extract,” “MGM 15.” Flavors: Fuji Apple, Razz, Grape Wrath, Neon Berry.</p>
-        <p><strong>Is it a drug, supplement, vape, or something else?</strong> It is an unapproved, illegal drug when sold for human consumption. The FDA has identified MGM-15 in commercial products and considers it a dangerous opioid. It has no medical use.</p>
-        <p><strong>Street names and brand names:</strong> “MGM,” “MGM-15,” “MGM 15,” “OHEWZ,” “PUFFR,” “Sevn,” “Arctic Ice,” “Roxy 7XR,” “Oxonol,” “DOM Tablets,” “Apex Alternatives.”</p>
+    <div class="quick-list">
+      <div class="quick-item">
+        <strong>It sounds technical.</strong>
+        MGM-15, dihydro-7-hydroxymitragynine, and “alkaloid extract” language can confuse regular shoppers.
       </div>
-      <div class="faq-item">
-        <h3>Where Do Kids Get It?</h3>
-        <p><strong>Can it be bought at gas stations?</strong> Yes. Same gas station checkout aisles as candy, energy drinks, and vapes. Sold openly.</p>
-        <p><strong>Is it sold in vape shops?</strong> Yes, often alongside kratom, 7-OH, and delta-8. Displays are bright and colorful.</p>
-        <p><strong>Can it be purchased online?</strong> Yes. Multiple online vendors sell MGM-15 tablets with no age verification. Social media ads promote “rapid-release” and “boosted” formulations.</p>
-        <p><strong>Is there an age restriction?</strong> None federally. Some states have laws, but rarely enforced. Tiny “21+” fine print is ignored.</p>
+      <div class="quick-item">
+        <strong>It looks casual.</strong>
+        Fruit flavors, chewable tablets, bright labels, and small containers make it look harmless.
       </div>
-      <div class="faq-item">
-        <h3>Why Are Teens Using It?</h3>
-        <p><strong>What effects are they looking for?</strong> A powerful opioid high — euphoria, sedation, pain relief. Because it’s marketed as “kratom extract” or “alkaloid,” teens think it’s natural and safe. It is neither.</p>
-        <p><strong>Is it being marketed as energy, relaxation, focus, pain relief, or a legal high?</strong> Ads use phrases like “rapid-release,” “boosted,” “comfort and balance,” “game-changer.” Reviews claim it gives energy while also being “similar to 7OH” — a deadly combination of misinformation.</p>
-        <p><strong>What are people saying about it on social media?</strong> Reddit and Facebook groups show users seeking “MGM-15” as a stronger alternative to 7-OH. Influencers and fake reviews promote it as a “functional” product for focus and mood. In reality, it causes rapid addiction and overdose.</p>
+      <div class="quick-item">
+        <strong>It is sold openly.</strong>
+        Gas stations, vape shops, smoke shops, CBD stores, and websites can carry these products.
       </div>
-      <div class="faq-item">
-        <h3>What Does It Do?</h3>
-        <p><strong>How does it affect the brain and body?</strong> MGM-15 is a potent mu-opioid receptor agonist — the same mechanism as heroin and fentanyl. It produces intense euphoria, sedation, respiratory depression, and constipation. It is estimated to be up to 10 times more potent than morphine.</p>
-        <p><strong>How quickly does it work?</strong> Chewable tablets are designed for rapid release, taking effect in 10–20 minutes.</p>
-        <p><strong>How long do the effects last?</strong> 4–8 hours, but tolerance builds extremely fast.</p>
-        <p><strong>Does it act like an opioid, stimulant, sedative, hallucinogen, or something else?</strong> It is a pure opioid. No stimulant effects. Overdose causes respiratory arrest.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What Are the Risks?</h3>
-        <p><strong>Can it cause addiction?</strong> Yes. Extremely addictive. Withdrawal symptoms within days of regular use — vomiting, diarrhea, muscle pain, anxiety, insomnia.</p>
-        <p><strong>Can it cause overdose?</strong> Yes. Potency varies wildly. Some tablets contain 100mg or more. A fatal dose for a non-tolerant user may be as low as 50mg.</p>
-        <p><strong>Can it cause seizures?</strong> Yes. Reported in poison center cases involving MGM-15 and related compounds.</p>
-        <p><strong>Can it cause psychosis or hallucinations?</strong> High doses can cause delirium, agitation, and psychotic symptoms.</p>
-        <p><strong>Can it cause heart problems?</strong> Yes. Opioid-induced QTc prolongation and arrhythmias are risks.</p>
-        <p><strong>Can it cause liver injury?</strong> Unknown but likely similar to kratom hepatotoxicity, possibly worse.</p>
-        <p><strong>Has it been linked to deaths?</strong> Yes. The CDC and FDA are tracking MGM-15 in fatal overdoses. Because it is so new, many deaths are initially classified as “unknown synthetic opioid.”</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is It Legal?</h3>
-        <p><strong>Is it legal federally?</strong> Not for human consumption. The FDA has issued warnings about MGM-15 as an unapproved drug. In Ohio and other states, MGM-15 is specifically banned as a controlled substance analog.</p>
-        <p><strong>Is it legal in my state?</strong> Multiple states have banned MGM-15 under analog acts or specific legislation. However, many gas stations still sell it. Check local laws.</p>
-        <p><strong>Are there age restrictions?</strong> No federal. Some states have age limits, rarely enforced.</p>
-        <p><strong>Has the FDA issued warnings?</strong> Yes. The FDA has identified MGM-15 in commercial tablets and issued warning letters. The agency has called for scheduling of semi-synthetic kratom alkaloids.</p>
+      <div class="quick-item">
+        <strong>It targets vulnerability.</strong>
+        People seeking pain relief, energy, mood support, or withdrawal relief may be pulled in.
       </div>
     </div>
   </section>
 
-  <!-- Gallery with all MGM-15 product and ad images -->
-  <section class="section" id="gallery" aria-labelledby="gallery-heading">
-    <h2 id="gallery-heading">MGM-15 Products & Ads: Designed to Hook Kids</h2>
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">MGM-15, explained in plain English</h2>
     <p class="section-intro">
-      These are real products sold in gas stations, vape shops, and online. Look at the flavors: Fuji Apple, Razz, Grape Wrath, Neon Berry. Chewable tablets. “Rapid-release” formulas. This is a deliberate strategy to target young users.
+      You do not need a chemistry degree to understand the problem. A kratom-derived opioid-like product should not be sold like candy, energy tablets, or wellness supplements.
+    </p>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <h3>What is MGM-15?</h3>
+        <p>
+          MGM-15 is another name used for <strong>dihydro-7-hydroxymitragynine</strong>, a semi-synthetic compound tied to kratom chemistry. It is related to 7-OH, one of kratom’s most opioid-active alkaloids.
+        </p>
+        <p>
+          The danger is that companies can take kratom-related chemistry and turn it into stronger, more concentrated retail products before the public understands what is being sold.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why should regular people care?</h3>
+        <p>
+          Because these products are not hidden in a laboratory. They are appearing in everyday retail spaces.
+        </p>
+        <ul>
+          <li>A tired worker may buy it for energy or mood.</li>
+          <li>A person in pain may buy it for relief.</li>
+          <li>A person in recovery may buy it thinking it is “just kratom.”</li>
+          <li>A teen may see fruit flavors and chewable tablets and think it is harmless.</li>
+          <li>A store owner may sell it without understanding the liability or danger.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where is it sold?</h3>
+        <p>
+          MGM-15 products may be found in gas stations, vape shops, smoke shops, CBD stores, convenience stores, and online. They are often sold near kratom, 7-OH, vapes, energy shots, and other high-margin checkout products.
+        </p>
+        <p>
+          That shelf placement sends a dangerous message: if it is sold like gum or an energy shot, people assume it must be safe.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How is it marketed?</h3>
+        <p>
+          The marketing often uses language that makes the product sound clean, modern, or functional:
+        </p>
+        <ul>
+          <li>“Rapid-release”</li>
+          <li>“Boosted”</li>
+          <li>“Alternative”</li>
+          <li>“Botanical extract”</li>
+          <li>“Comfort and balance”</li>
+          <li>“Game-changer”</li>
+          <li>Fruit flavors like Fuji Apple, Razz, Grape Wrath, and Neon Berry</li>
+        </ul>
+        <p>
+          That is the point. The product is made to feel less like an opioid-like drug and more like a trendy supplement.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What can it do to the body?</h3>
+        <p>
+          MGM-15 is promoted as a kratom-derived opioid-like compound. Products tied to this class raise concerns about sedation, euphoria, slowed breathing, nausea, dependence, withdrawal, and overdose risk.
+        </p>
+        <p>
+          The most frightening part is how little the average shopper knows. A person can take a chewable tablet without understanding that it may act nothing like an ordinary supplement.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why are chewable tablets so alarming?</h3>
+        <p>
+          Because chewable tablets are familiar. They look like candy, mints, energy tabs, or supplements. They do not look like something that could create opioid-like effects.
+        </p>
+        <p>
+          That makes these products especially dangerous around children, teens, people in recovery, and adults who assume “legal” means “safe.”
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can MGM-15 cause addiction?</h3>
+        <p>
+          Products in this kratom-derived opioid-like category raise serious addiction concerns. Users of concentrated kratom alkaloids report tolerance, cravings, withdrawal, and difficulty stopping.
+        </p>
+        <p>
+          The pattern is familiar: the first purchase feels casual. Then the body starts expecting the product.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is it legal?</h3>
+        <p>
+          The legal status is confusing and changing. Some states are moving against semi-synthetic kratom alkaloids and related compounds. Other places still have products on shelves.
+        </p>
+        <p>
+          That confusion benefits sellers. Communities should not wait until everyone knows the chemistry to ask why these products are being sold like snacks.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">This is what MGM-15 looks like on shelves and online</h2>
+    <p class="section-intro">
+      These products do not look like dangerous opioid-like substances. They look like candy, energy tablets, supplements, or trendy internet products. That is what makes them so disturbing.
     </p>
 
     <div class="gallery-grid">
-      <!-- mgm1.png - OHEWZ MGM-15 -->
+
       <div class="gallery-card">
         <img src="/opioid/Mgm1.png" alt="OHEWZ MGM-15 Fuji Apple 80mg per tablet" loading="lazy">
         <div class="gallery-caption">
-          <strong>“OHEWZ” MGM-15 – Fuji Apple</strong>
-          80mg per tablet, 15 tablets per bottle. Fruit flavor, chewable. No child-resistant packaging. Extreme overdose risk.
+          <strong>“OHEWZ” MGM-15</strong>
+          Fuji Apple flavor, chewable format, and bright retail packaging make a serious drug-like product look casual.
         </div>
       </div>
-      <!-- mgm2.png - Arctic Ice MGM -->
+
       <div class="gallery-card">
         <img src="/opioid/Mgm2.png" alt="Arctic Ice MGM rapid-release 100mg" loading="lazy">
         <div class="gallery-caption">
-          <strong>“Arctic Ice” MGM – 100mg per tablet</strong>
-          “Rapid-release kratom extract” – deceptive labeling. 100mg MGM per tab, 20mg per serving. 5 tablets. Lethal dose in one pill.
+          <strong>“Arctic Ice” MGM</strong>
+          “Rapid-release kratom extract” language hides the concern behind a supplement-style label.
         </div>
       </div>
-      <!-- mgm3.jpeg - Chewable 7-OH + MGM Tablets -->
+
       <div class="gallery-card">
         <img src="/opioid/mgm3.jpeg" alt="Chewable 7-OH + MGM tablets boosted" loading="lazy">
         <div class="gallery-caption">
-          <strong>“Chewable 7-OH + MGM Tablets” – Boosted</strong>
-          500mg per jar, 300mg MGM. “Available now” – combines two synthetic opioids. 35mg 7-OH + 15mg MGM per tab. Insane danger.
+          <strong>7-OH + MGM Tablets</strong>
+          Combination products should alarm communities because they stack powerful kratom-derived compounds together.
         </div>
       </div>
-      <!-- mgm4.jpeg - DOM Tablets MGM -->
+
       <div class="gallery-card">
         <img src="/opioid/mgm4.jpeg" alt="DOM Tablets MGM Kratom 15g" loading="lazy">
         <div class="gallery-caption">
-          <strong>“DOM Tablets” – MGM</strong>
-          “Overseas Organix” branding. 15g container. MGM + kratom – deceptive combo. 10 count. No warning label.
+          <strong>“DOM Tablets” MGM</strong>
+          Kratom branding and tablet format make the product look familiar while hiding the synthetic-opioid concern.
         </div>
       </div>
-      <!-- mgm5.jpeg - Roxy 7XR MGM-15 -->
+
       <div class="gallery-card">
         <img src="/opioid/mgm5.jpeg" alt="Roxy 7XR 7-Hydroxy + MGM-15 ultra potent" loading="lazy">
         <div class="gallery-caption">
-          <strong>“Roxy 7XR” – 7-Hydroxy + MGM-15</strong>
-          “Ultra potent.” 600mg per package, 200mg per tablet. Extended release, neon berry flavor. 3 blue raspberry chewable tablets. Death in a pack.
+          <strong>“Roxy 7XR”</strong>
+          “Ultra potent,” bright color, and flavored chewables turn high-risk chemistry into a convenience-store product.
         </div>
       </div>
-      <!-- mgm6.jpeg - Sevn Alternative / Arctic Ice variants -->
+
       <div class="gallery-card">
         <img src="/opioid/mgm6.jpeg" alt="Sevn Alternative MGM rapid-release" loading="lazy">
         <div class="gallery-caption">
-          <strong>“Sevn Alternative” / “Arctic Ice” – MGM</strong>
-          “Rapid-release kratom extract.” Naynay Whip and Grape Wrath flavors. 20mg MGM + 100mg MGM per tab. Multiple potencies in one package – overdose trap.
+          <strong>“Sevn Alternative” / “Arctic Ice”</strong>
+          “Alternative” branding makes a powerful kratom-derived product sound safer than it is.
         </div>
       </div>
-      <!-- mgm7.jpeg - PUFFR MGM rapid release -->
+
       <div class="gallery-card">
         <img src="/opioid/mgm7.jpeg" alt="PUFFR MGM rapid release formula" loading="lazy">
         <div class="gallery-caption">
-          <strong>“PUFFR” – MGM Rapid Release</strong>
-          “Available now.” 100mg and 20mg variants. Apex Alternatives branding. Sold as “alternatives” – hiding the fact it’s a synthetic opioid.
+          <strong>“PUFFR” MGM Rapid Release</strong>
+          “Rapid release” and “available now” language push urgency, repeat use, and casual buying.
         </div>
       </div>
-      <!-- mgm8.jpeg - PUFFR MGM Razz Reef -->
+
       <div class="gallery-card">
         <img src="/opioid/mgm8.jpeg" alt="PUFFR MGM Razz Reef 100mg" loading="lazy">
         <div class="gallery-caption">
-          <strong>“PUFFR” – Razz Reef MGM</strong>
-          100mg per pack, 20mg per tablet. “Rapid release formula.” Flavored like candy. No warning label. Sold next to real candy.
+          <strong>“PUFFR” Razz Reef</strong>
+          Candy-style flavoring makes a serious opioid-like product feel like a flavored novelty.
         </div>
       </div>
-      <!-- Mgm15ad.jpeg - Oxonol / Real Botanicals ad -->
+
       <div class="gallery-card">
         <img src="/opioid/Mgm15ad.jpeg" alt="Oxonol enhanced alkaloid extract ad" loading="lazy">
         <div class="gallery-caption">
-          <strong>“Oxonol” Enhanced Alkaloid Extract – Real Botanicals Ad</strong>
-          “Say goodbye to transition troubles!” – markets as comfort/balance. Reviews compare to 7-OH but with “energy” – a deadly lie. Strawberry chewable tablets. Free shipping over $75.
+          <strong>“Oxonol” Enhanced Alkaloid Extract</strong>
+          “Comfort,” “balance,” and review-style marketing make the product sound therapeutic instead of dangerous.
         </div>
       </div>
+
     </div>
+
     <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
-      <strong>The brutal truth:</strong> MGM-15 is not natural kratom. It is a semi-synthetic opioid created by chemically modifying 7-OH, which comes from kratom. It has never been tested for safety in humans. Yet it is sold in gas stations nationwide, often in flavors like Fuji Apple and Grape Wrath. Tablet strengths range from 20mg to 200mg. A fatal dose for a non-tolerant user is unknown but likely under 100mg. These are death in a fruit-flavored chewable tablet.
+      The disturbing part is not just that MGM-15 exists. It is that kratom-derived opioid-like chemistry is being dressed up as fruit-flavored chewables, rapid-release extracts, and wellness alternatives while being sold in ordinary places.
     </p>
   </section>
 
-  <!-- Action section -->
   <section class="section" id="action">
-    <h2>Recognize <span style="color:var(--red)">MGM-15 products that target children</span></h2>
+    <h2>What to look for in your neighborhood</h2>
+
     <div class="two-col">
       <div class="warning-card">
-        <h3>Red flags: child-friendly design</h3>
+        <h3>Red flags on shelves</h3>
         <ul>
-          <li>Flavors: Fuji Apple, Razz, Grape Wrath, Neon Berry, Blue Raspberry</li>
-          <li>Chewable tablets, “rapid-release,” “boosted” – mimics candy or energy products</li>
-          <li>Bright neon packaging, cartoonish fonts, “alternatives” branding</li>
-          <li>No child-resistant closures – bottles and blister packs open easily</li>
-          <li>Sold right next to energy drinks, chips, and gum at gas station checkout</li>
-          <li>Social media ads using “game-changer,” “rapid support,” “comfort and balance” – wellness washing</li>
+          <li>Labels that say “MGM,” “MGM-15,” “dihydro-7-hydroxymitragynine,” “OHEWZ,” “PUFFR,” “Sevn,” or “Roxy 7XR”</li>
+          <li>Chewable tablets, rapid-release formulas, boosted products, or small colorful containers</li>
+          <li>Flavors like Fuji Apple, Razz, Grape Wrath, Neon Berry, or Blue Raspberry</li>
+          <li>Words like “alternative,” “botanical,” “extract,” “rapid release,” “boosted,” “comfort,” or “balance”</li>
+          <li>Products displayed near kratom, 7-OH, vapes, candy, energy drinks, or checkout counters</li>
+          <li>Online ads using wellness language, discount codes, hype phrases, or fake-review style marketing</li>
         </ul>
       </div>
+
       <div class="warning-card">
-        <h3>How parents can fight back</h3>
+        <h3>What communities can do</h3>
         <ul>
-          <li>Search backpacks for bottles or blister packs labeled “MGM,” “MGM-15,” “OHEWZ,” “PUFFR,” “Sevn,” “Roxy 7XR.”</li>
-          <li>Talk to teens: “MGM-15 is a synthetic opioid made from kratom. One tablet can kill you.”</li>
-          <li>Report gas stations and vape shops selling MGM-15 to local health departments and police.</li>
-          <li>File a complaint with the Federal Trade Commission (FTC) about deceptive marketing: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
-          <li>Advocate for state and federal bans on all semi-synthetic kratom alkaloids, including MGM-15.</li>
+          <li>Ask local stores why kratom-derived semi-synthetic products are being sold near ordinary snacks and drinks.</li>
+          <li>Warn schools, recovery groups, churches, coaches, employers, and neighborhood organizations.</li>
+          <li>Report deceptive marketing to local health departments and consumer protection agencies.</li>
+          <li>Tell local and state officials that MGM-15 and related products should not be sold like candy.</li>
+          <li>File a complaint with the FTC about deceptive marketing: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
         </ul>
       </div>
     </div>
+
     <div style="margin-top: 24px;">
-      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Parent Alert</a>
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Community Alert</a>
       <a class="btn-secondary" href="#">Report a Store</a>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="footer-mission">
     <strong style="color:#fff;">GasStationHeroin.org</strong><br />
-    Exposing MGM-15 — a semi-synthetic opioid derived from kratom. These are not natural supplements. They are chemical weapons in candy flavors. Protect your children. Know the names. Act now.
+    Exposing MGM-15 and kratom-derived gas station opioids sold in plain sight. Helping communities recognize deceptive packaging, hidden risks, and products that should never be treated like candy.
   </div>
+
   <div class="footer-links">
-    <a href="#risks">MGM-15 risks</a>
+    <a href="#risks">Why it matters</a>
     <a href="#gallery">Product gallery</a>
-    <a href="#faq">FAQ</a>
+    <a href="#faq">Plain-English facts</a>
     <a href="#action">Take action</a>
   </div>
 </footer>
