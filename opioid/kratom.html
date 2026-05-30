@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Kratom: unregulated opioid sold in gas stations, smoke shops, and online. Learn about extracts, deceptive marketing, and risks. Protect your family." />
+  <meta name="description" content="Kratom: an unregulated opioid-like product sold in gas stations, smoke shops, vape shops, and online. Learn what it is, how it is marketed, and why communities should be alarmed." />
   <title>Gas Station Kratom | Hidden Opioid Risks</title>
 
   <style>
@@ -204,38 +204,66 @@
       line-height: 1.6;
     }
 
-    /* FAQ styling - professional without red shadow */
+    .quick-list {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+    }
+
+    .quick-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--red);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
     .faq-grid {
       display: flex;
       flex-direction: column;
       gap: 24px;
       margin-top: 40px;
     }
+
     .faq-item {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 12px;
       padding: 24px 28px;
     }
+
     .faq-item h3 {
       font-size: 1.5rem;
       font-weight: 800;
       margin-bottom: 12px;
       color: var(--red);
     }
-    .faq-item p, .faq-item ul {
+
+    .faq-item p,
+    .faq-item ul {
       color: var(--muted);
       line-height: 1.6;
       margin-top: 8px;
     }
+
     .faq-item ul {
       margin-left: 1.5rem;
     }
+
     .faq-item li {
       margin: 6px 0;
     }
 
-    /* Gallery */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -277,7 +305,6 @@
       margin-bottom: 6px;
     }
 
-    /* Stats row - clean */
     .stats-row {
       background: #0a0a0c;
       border-top: 1px solid var(--line);
@@ -314,7 +341,6 @@
       font-size: 0.9rem;
     }
 
-    /* Two column callout boxes - professional, no red shadow */
     .two-col {
       display: flex;
       flex-wrap: wrap;
@@ -392,69 +418,82 @@
           linear-gradient(180deg, rgba(0,0,0,.97) 0%, rgba(0,0,0,.82) 60%, rgba(0,0,0,.2) 100%),
           url("/opioid/kratomhero.png") center center/cover no-repeat;
       }
+
       .hero-text {
         margin-top: 50px;
       }
+
       h1 {
         font-size: clamp(3.4rem, 15vw, 5.2rem);
       }
+
       .hero-subtitle {
         font-size: 1.1rem;
       }
+
       .section {
         padding: 48px 1.5rem;
       }
+
       .stats-row {
         padding: 36px 1.5rem;
       }
+
       .nav-links {
         display: none;
       }
+
       .btn-primary,
       .btn-secondary {
         padding: 14px 20px;
         font-size: 0.9rem;
       }
+
       footer {
         flex-direction: column;
       }
+
       .gallery-grid {
         grid-template-columns: 1fr;
       }
+
       .faq-item {
         padding: 20px;
       }
+
       .faq-item h3 {
         font-size: 1.2rem;
       }
     }
   </style>
 </head>
+
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="alert-banner" role="alert">
-  KRATOM: Unregulated opioid sold in gas stations and online — products designed like candy, energy drinks, and wellness shots. Parents, recognize the packaging.
+  KRATOM IS BEING SOLD IN ORDINARY NEIGHBORHOOD STORES — PACKAGED LIKE CANDY, ENERGY SHOTS, TEA, GUMMIES, AND WELLNESS PRODUCTS.
 </div>
 
 <nav aria-label="Main navigation">
   <span class="nav-logo">GasStationHeroin.org</span>
   <ul class="nav-links">
-    <li><a href="#risks">Risks</a></li>
-    <li><a href="#gallery">Products and Ads</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#risks">Why It Matters</a></li>
+    <li><a href="#gallery">Real Products</a></li>
+    <li><a href="#faq">Plain-English Facts</a></li>
     <li><a href="#action">Take Action</a></li>
   </ul>
 </nav>
 
 <main id="main">
+
   <section class="hero" aria-label="Hero">
     <div class="hero-text">
       <h1>Gas Station<br /><span>Kratom</span></h1>
       <div class="redline" aria-hidden="true"></div>
       <p class="hero-subtitle">
-        Marketed as “herbal supplement” — but kratom acts on opioid receptors, causing addiction, seizures, liver failure, and death. Sold legally beside candy and energy drinks. Parents have no idea.
+        An opioid-like drug is being sold beside candy, soda, vapes, and energy drinks. Most people walking past it have no idea what it is.
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="#gallery">See Real Products</a>
@@ -464,217 +503,301 @@
   </section>
 
   <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
-    <h2 id="thesis-heading">Kratom: a hidden opioid crisis inside gas stations and vape shops.</h2>
+    <h2 id="thesis-heading">This is not just a “parent issue.” This is a neighborhood issue.</h2>
     <p>
-      According to the CDC’s National Poison Data System, kratom-related exposure reports increased by <strong>1,200%</strong> from 2015 to 2025 — reaching a record 3,434 reports in 2025 alone. The FDA warns of liver toxicity, seizures, substance use disorder, and neonatal abstinence syndrome. In Ohio, 202 deaths from 2019–2024 listed kratom as a cause. Most deaths involve multiple substances, but kratom alone has caused fatal respiratory depression.
+      Kratom is sold as a harmless plant, a wellness drink, a focus booster, a relaxation aid, or a natural energy product. But kratom contains compounds that act on opioid receptors in the body. People have reported addiction, withdrawal, seizures, liver injury, emergency-room visits, and deaths linked to kratom products.
     </p>
-  </section>
 
-  <!-- FAQ Section answering all questions - professional styling, no emojis -->
-  <section class="section" id="faq" aria-labelledby="faq-heading">
-    <h2 id="faq-heading">What Every Parent Needs to Know About Kratom</h2>
-    <p class="section-intro">
-      Based on FDA, CDC, and state health data, here are the facts about this unregulated opioid sold in gas stations.
-    </p>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3>What Is It?</h3>
-        <p><strong>What is this product?</strong> Kratom (Mitragyna speciosa) is a tropical tree leaf that contains mitragynine, an alkaloid that acts on mu-opioid receptors — same as morphine and oxycodone.</p>
-        <p><strong>What is it sold as?</strong> Sold as “herbal supplement,” “plant-based wellness,” “energy shot,” “kratom powder,” capsules, gummies, shots, seltzers, and tea.</p>
-        <p><strong>Is it a drug, supplement, vape, or something else?</strong> It is an unregulated psychoactive substance. The FDA says it is NOT a lawful dietary supplement or food additive. It is a drug with opioid effects.</p>
-        <p><strong>Street names and brand names:</strong> “Kratom,” “Mit,” “Herbal Speedball,” “Ketum,” “Thom.” Brand names: Happy Hippo, Feel Free (kratom shot), Mitra-9, OPMS, Super Speciosa, 1836 Kratom, Kratom Cummies, FUZZY.</p>
+    <div class="quick-list">
+      <div class="quick-item">
+        <strong>It looks normal.</strong>
+        Bottles, gummies, powders, and seltzers are packaged like everyday convenience-store products.
       </div>
-      <div class="faq-item">
-        <h3>Where Do Kids Get It?</h3>
-        <p><strong>Can it be bought at gas stations?</strong> Yes. Widespread in gas stations, often at checkout counters next to candy and energy drinks.</p>
-        <p><strong>Is it sold in vape shops?</strong> Yes. Vape shops, smoke shops, and CBD stores are primary retail locations.</p>
-        <p><strong>Can it be purchased online?</strong> Yes, easily from dozens of websites with no age verification; shipped discreetly.</p>
-        <p><strong>Is there an age restriction?</strong> Some states have 18+ or 21+ laws, but many retailers do not check ID. No federal age restriction. Products often have small “21+” fine print on the back, ignored in practice.</p>
+      <div class="quick-item">
+        <strong>It is sold in plain sight.</strong>
+        Gas stations, vape shops, smoke shops, CBD stores, and websites sell it openly.
       </div>
-      <div class="faq-item">
-        <h3>Why Are Teens Using It?</h3>
-        <p><strong>What effects are they looking for?</strong> Euphoria, energy, focus, relaxation, pain relief, or a “legal high.”</p>
-        <p><strong>Is it being marketed as energy, relaxation, focus, pain relief, or a legal high?</strong> Yes — ads claim “Calm. Focus. Energy.” “Feel good,” “microgreen,” “plant-based wellness.” Social media influencers promote “kratom energy shots” for studying or gaming.</p>
-        <p><strong>What are people saying about it on social media?</strong> Reddit has 52,000 members in “Quitting Kratom” subreddit. TikTok/Instagram show “kratom cocktails” and “product hauls.” Teens share that it gives a “mild opioid buzz” and is easy to buy.</p>
+      <div class="quick-item">
+        <strong>It is marketed as safe.</strong>
+        Labels use words like “natural,” “wellness,” “energy,” “focus,” and “feel good.”
       </div>
-      <div class="faq-item">
-        <h3>What Does It Do?</h3>
-        <p><strong>How does it affect the brain and body?</strong> Mitragynine binds to mu-opioid receptors, causing sedation, pain relief, euphoria at high doses; stimulant-like effects at low doses (alertness, sociability).</p>
-        <p><strong>How quickly does it work?</strong> Within 15–30 minutes when consumed as liquid shot or tea; 30–60 minutes for capsules/powder.</p>
-        <p><strong>How long do the effects last?</strong> 2 to 6 hours, depending on dose and form.</p>
-        <p><strong>Does it act like an opioid, stimulant, sedative, hallucinogen, or something else?</strong> Primarily an opioid (mu-receptor agonist) with additional stimulant effects at low doses. It is not a hallucinogen.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What Are the Risks?</h3>
-        <p><strong>Can it cause addiction?</strong> Yes. The FDA reports kratom-related substance use disorder (SUD) including tolerance, cravings, and withdrawal. Ohio’s Board of Pharmacy cites case reports of severe dependence.</p>
-        <p><strong>Can it cause overdose?</strong> Yes. Respiratory depression can occur, especially with high-potency extracts or mixing with other depressants. Naloxone may work but not always.</p>
-        <p><strong>Can it cause seizures?</strong> Yes. Seizures are a known adverse event from kratom use, per FDA and poison center data.</p>
-        <p><strong>Can it cause psychosis or hallucinations?</strong> Rare, but high doses have been linked to agitation, confusion, and psychotic-like symptoms.</p>
-        <p><strong>Can it cause heart problems?</strong> Yes. Kratom can prolong QTc interval, leading to torsades de pointes arrhythmia and sudden cardiac death. Mixing with certain medications increases risk.</p>
-        <p><strong>Can it cause liver injury?</strong> Yes. The World Health Organization has documented at least 92 cases of liver toxicity from kratom, including jaundice and acute liver failure.</p>
-        <p><strong>Has it been linked to deaths?</strong> Yes. CDC: 233 kratom-associated deaths (2015-2025). Ohio: 202 deaths (2019-2024). Most involve polysubstance, but single-substance fatal overdoses have occurred.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is It Legal?</h3>
-        <p><strong>Is it legal federally?</strong> Kratom is not federally controlled, but the FDA has declared it unlawful as a dietary supplement or food additive.</p>
-        <p><strong>Is it legal in my state?</strong> Banned in Alabama, Arkansas, Indiana, Rhode Island, Vermont, Wisconsin. Banned or restricted in many others. Ohio is moving to Schedule I for mitragynine (as of 2026 proposed rule). Connecticut and Utah also pending bans. Check your state.</p>
-        <p><strong>Are there age restrictions?</strong> Some states have 18+ or 21+, but no federal law. Many retailers ignore it.</p>
-        <p><strong>Has the FDA issued warnings?</strong> Yes. Repeated FDA warnings about liver toxicity, seizures, addiction, and death. FDA also warned about heavy metal contamination (lead, nickel) and Salmonella outbreaks.</p>
+      <div class="quick-item">
+        <strong>It can hook people.</strong>
+        Users report tolerance, cravings, withdrawal, and feeling trapped after repeated use.
       </div>
     </div>
   </section>
 
-  <!-- Gallery with corrected captions, no emojis -->
-  <section class="section" id="gallery" aria-labelledby="gallery-heading">
-    <h2 id="gallery-heading">How Kratom is marketed to look harmless — appealing to kids and teens</h2>
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Kratom, explained in plain English</h2>
     <p class="section-intro">
-      These products use bright colors, candy-like shapes, fruit flavors, and “energy” branding. They are sold next to real candy and energy drinks, often without child-resistant packaging. See how easily a child could mistake them for regular treats.
+      You do not need a medical degree to understand the danger. If a product can affect opioid receptors, cause dependence, trigger withdrawal, and send people to the hospital, it should not be sitting next to candy at the corner store.
+    </p>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <h3>What is kratom?</h3>
+        <p>
+          Kratom is made from the leaves of a tropical tree called <strong>Mitragyna speciosa</strong>. Its main chemical, mitragynine, can act on the same opioid receptor system involved with drugs like morphine and oxycodone.
+        </p>
+        <p>
+          That does not mean every kratom product looks like a drug. Many look like tea, gummies, shots, capsules, soda, or wellness powder.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why should regular people care?</h3>
+        <p>
+          Because this is being sold in regular stores, in regular towns, to regular people who may have no idea what they are buying.
+        </p>
+        <ul>
+          <li>A tired worker may buy it for energy.</li>
+          <li>A student may buy it for focus.</li>
+          <li>A person in pain may buy it instead of seeking care.</li>
+          <li>Someone in recovery may buy it thinking it is “just herbal.”</li>
+          <li>A teen may see a gummy, shot, or colorful pouch and think it is harmless.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where is it sold?</h3>
+        <p>
+          Kratom is sold in gas stations, vape shops, smoke shops, CBD stores, convenience stores, and online. Some products are displayed near checkout counters, coolers, candy, energy drinks, and other impulse-buy items.
+        </p>
+        <p>
+          In many places, a person can walk in and buy a substance with opioid-like effects as casually as buying a soda.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How is it marketed?</h3>
+        <p>
+          Kratom companies often avoid scary language. Instead, they use soft, friendly words:
+        </p>
+        <ul>
+          <li>“Plant-based”</li>
+          <li>“Natural”</li>
+          <li>“Feel good”</li>
+          <li>“Focus”</li>
+          <li>“Energy”</li>
+          <li>“Relaxation”</li>
+          <li>“Wellness”</li>
+        </ul>
+        <p>
+          That language makes the product feel safe. But a pleasant label does not change what the substance can do inside the body.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What can kratom do to the body?</h3>
+        <p>
+          Kratom can affect mood, alertness, pain, sedation, and breathing. People use it for energy, relaxation, pain relief, or a “legal high.” Some people become dependent and experience withdrawal when they stop.
+        </p>
+        <p>
+          Reported problems include nausea, vomiting, confusion, agitation, seizures, liver injury, heart rhythm concerns, respiratory depression, addiction, withdrawal, and death.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why are extracts and shots especially alarming?</h3>
+        <p>
+          Traditional leaf powder is one thing. Concentrated extracts, shots, gummies, and enhanced products are another. These products can deliver much stronger doses in a small bottle, pouch, or candy-like form.
+        </p>
+        <p>
+          A person may not understand how much they are taking. A small bottle can look harmless while containing a powerful dose.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can kratom cause addiction?</h3>
+        <p>
+          Yes. People report needing more over time, feeling sick without it, craving it, hiding use, spending large amounts of money on it, and struggling to quit.
+        </p>
+        <p>
+          Many people discover the danger only after they try to stop.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is it legal?</h3>
+        <p>
+          Kratom is not federally scheduled, but that does not mean it is safe. Some states ban it. Others restrict it. Many communities still allow it to be sold openly.
+        </p>
+        <p>
+          The legal status is confusing, and that confusion helps the industry. Many shoppers assume that if it is sold at a gas station, it must have been proven safe. That is not true.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">This is what people are seeing in stores and online</h2>
+    <p class="section-intro">
+      These products do not look like dangerous drugs. They look like snacks, drinks, wellness products, gaming products, or trendy supplements. That is exactly why communities should be alarmed.
     </p>
 
     <div class="gallery-grid">
+
       <div class="gallery-card">
         <img src="/opioid/Kratom.jpeg" alt="Happy Hippo Kratom powder package" loading="lazy">
         <div class="gallery-caption">
           <strong>“Happy Hippo” Kratom Powder</strong>
-          Cartoon animal name, colorful “LIVE HAPPY” branding — looks like a health food product. No child-resistant cap. Sold at eye level next to candy.
+          Friendly name, cartoon-style branding, and “LIVE HAPPY” messaging make this look more like a wellness product than an opioid-like substance.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/Kratom2.jpeg" alt="GoLeafy Green Sumatra Kratom" loading="lazy">
         <div class="gallery-caption">
           <strong>GoLeafy “Green Sumatra”</strong>
-          Sleek, modern pouch with “ALL NATURAL” — mimics tea or superfood packaging. No warning about opioid effects. Kids see “natural” and assume safe.
+          Sleek pouch, “all natural” language, and tea-like packaging can make a drug-like product appear harmless.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/Kratom6.jpeg" alt="Kratom gummies 400mg per package" loading="lazy">
         <div class="gallery-caption">
-          <strong>“Kratom Cummies” – Gummies</strong>
-          Bright, candy-colored gummies shaped like ordinary fruit chews. <strong>Each package contains 400mg total (not per piece).</strong> A child could easily eat the whole bag, leading to severe overdose.
+          <strong>“Kratom Cummies” Gummies</strong>
+          Candy-like gummies with bright packaging. Products like this blur the line between a drug and a treat.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/kratom8.jpeg" alt="Jubi Kratom Energy Shot Cherry" loading="lazy">
         <div class="gallery-caption">
-          <strong>Jubi Kratom Energy Shot – Cherry</strong>
-          Looks exactly like a 5-Hour Energy or kids’ juice shot. Bright red, small bottle, cherry flavor. Placed at checkout counters where children grab snacks.
+          <strong>Jubi Kratom Energy Shot</strong>
+          Looks like an energy shot or flavored drink. A small bottle can hide a much bigger risk.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/Kratomad5.jpeg" alt="Happy Hippo back-to-school ad" loading="lazy">
         <div class="gallery-caption">
-          <strong>Social Media Ad – Happy Hippo “Back to School”</strong>
-          Targets students and parents with “back to school” imagery — laptops, notebooks, pencils. Markets kratom as a study aid (“focus”, “energy”), normalizing opioid use for school performance.
+          <strong>“Back to School” Marketing</strong>
+          School imagery makes kratom feel normal, useful, and routine instead of risky.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/Kratomad2.jpeg" alt="Mitra-9 level up gaming culture ad" loading="lazy">
         <div class="gallery-caption">
-          <strong>Mitra-9 “Level Up” Ad – Gaming Culture</strong>
-          “READY TO LEVEL UP?” uses video game controller and neon gamer aesthetics. Directly appeals to young gamers, implying kratom will enhance gameplay. No disclosure of opioid risks.
+          <strong>Mitra-9 “Level Up” Ad</strong>
+          Gaming language and neon visuals target a culture where energy, focus, and performance are easy selling points.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/Kratomad3.jpeg" alt="Mitra-9 functional seltzer" loading="lazy">
         <div class="gallery-caption">
           <strong>Mitra-9 “Functional Seltzer”</strong>
-          “Where to find beer near me? … A functional, feel-good alternative.” Sits next to beer in coolers. Bright tangerine can looks like soda – easy for a minor to grab.
+          Looks like a sparkling drink. “Feel-good alternative” language hides the opioid-like concern.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/Kratomad4.jpeg" alt="Mitra-9 secret ingredient ad" loading="lazy">
         <div class="gallery-caption">
-          <strong>Mitra-9 “Secret Ingredient” Ad</strong>
-          Mysterious “secret ingredient” – no disclosure that it’s an opioid. Fast delivery, no age verification online. Child could order with prepaid card.
+          <strong>“Secret Ingredient” Advertising</strong>
+          Mysterious marketing makes the product seem exciting, not dangerous.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/kratom7.jpeg" alt="FUZZY Enhanced Mitragynine" loading="lazy">
         <div class="gallery-caption">
           <strong>“FUZZY” Enhanced Mitragynine</strong>
-          Name and font like a plush toy. “WARNING 21+ ONLY” in tiny fine print, but no child-resistant cap. Looks like a candy box – highly attractive to kids.
+          Soft, playful branding on a product containing enhanced mitragynine. The name sounds harmless. The risk is not.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/kratomad6.png" alt="Lab Nerd Kratom ad" loading="lazy">
         <div class="gallery-caption">
-          <strong>Lab Nerd Merch – “Fan favorite”</strong>
-          Uses “nerd” culture and scarcity (“back in stock”) to appeal to young gamers. Colorful “feel free” branding – mimics a sports drink. No warning for parents.
+          <strong>Lab Nerd Merch</strong>
+          Youthful culture, product hype, and “fan favorite” language turn a risky substance into a lifestyle brand.
         </div>
       </div>
+
       <div class="gallery-card">
         <img src="/opioid/Kratomad1.jpeg" alt="Happy Hippo mascot surrounded by kratom packages" loading="lazy">
         <div class="gallery-caption">
-          <strong>“Best Kratom Ever” – Happy Hippo Mascot</strong>
-          The Happy Hippo cartoon mascot sits surrounded by stacks of kratom product packages (capsules, powders). Uses a cute, child-like character to sell an opioid — similar to cereal box marketing.
+          <strong>“Best Kratom Ever” Mascot</strong>
+          Cute mascot branding should never be used to sell a substance with opioid-like effects.
         </div>
       </div>
+
     </div>
+
     <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
-      <strong>Feel Free</strong> is a popular kratom shot (often sold at 7-Eleven) that has led to lawsuits and severe addiction. According to the FDA, kratom products have been linked to <strong>liver toxicity, seizures, substance use disorder, and deaths</strong>. The CDC reports 233 kratom-associated deaths (2015-2025). In Ohio alone, 202 deaths listed kratom as a cause (2019-2024). Many products contain heavy metals (lead, nickel) and have caused Salmonella outbreaks affecting children.
+      The most disturbing part is not just that kratom exists. It is that these products are dressed up to look ordinary, friendly, and safe while being sold in everyday places where families, workers, students, and people in recovery shop.
     </p>
   </section>
 
-  <!-- Statistics row -->
   <div class="stats-row" aria-label="Kratom statistics">
     <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-number">1,200%</div>
-        <p>Increase in kratom-related poison center reports (2015-2025) – CDC NPDS data. 3,434 reports in 2025 alone.</p>
+        <p>Reported increase in kratom-related poison center exposure reports from 2015 to 2025.</p>
       </div>
       <div class="stat-card">
         <div class="stat-number">233</div>
-        <p>Deaths associated with kratom (2015-2025). 79% involved multiple substances, but single-substance fatal overdoses have occurred.</p>
+        <p>Kratom-associated deaths reported in CDC poison-center data from 2015 to 2025.</p>
       </div>
       <div class="stat-card">
         <div class="stat-number">202</div>
-        <p>Ohio deaths where kratom was listed as a cause of death (2019-2024). Plus heavy metal contamination and Salmonella outbreaks.</p>
+        <p>Ohio deaths from 2019 to 2024 where kratom was listed as a cause.</p>
       </div>
     </div>
   </div>
 
-  <!-- Action section - professional, no emojis, FTC complaint form -->
   <section class="section" id="action">
-    <h2>Recognize <span style="color:var(--red)">kratom packaging that appeals to children</span></h2>
+    <h2>What to look for in your neighborhood</h2>
+
     <div class="two-col">
       <div class="warning-card">
-        <h3>Red flags: child-friendly design</h3>
+        <h3>Red flags on shelves</h3>
         <ul>
-          <li>Gummy shapes, fruit flavors, bright neon colors</li>
-          <li>Names like “Happy Hippo,” “Cummies,” “FUZZY,” “Feel Free”</li>
-          <li>Cartoon animals, emojis, “microgreen” health claims</li>
-          <li>No child-resistant packaging – bottles pop open easily</li>
-          <li>Placed next to real candy, energy drinks, and juice shots at checkout</li>
-          <li>Marketing on TikTok and Instagram using hashtags like #kratomenergy</li>
+          <li>Small bottles that look like energy shots</li>
+          <li>Gummies, fruit flavors, and candy-like packaging</li>
+          <li>Words like “natural,” “focus,” “energy,” “calm,” or “feel good”</li>
+          <li>Cartoon mascots, playful names, or youth-style branding</li>
+          <li>Products placed near candy, drinks, vapes, or checkout counters</li>
+          <li>Fine-print warnings that most shoppers will never read</li>
         </ul>
       </div>
+
       <div class="warning-card">
-        <h3>How parents can protect kids</h3>
+        <h3>What communities can do</h3>
         <ul>
-          <li>Check backpacks for small colorful bottles, pouches, or gummy packs</li>
-          <li>Talk to teens: “Kratom is an unregulated opioid – it’s not a supplement.”</li>
-          <li>Report stores that sell kratom near candy to local health departments</li>
-          <li>Advocate for state bans (Ohio, Utah, Connecticut moving to Schedule I)</li>
-          <li>File a complaint with the Federal Trade Commission (FTC) about deceptive marketing of kratom products aimed at minors: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
+          <li>Ask local stores why opioid-like products are being sold near candy and drinks.</li>
+          <li>Warn neighbors, schools, coaches, churches, and recovery groups.</li>
+          <li>Report deceptive marketing to local health departments and consumer protection agencies.</li>
+          <li>Tell city councils and state lawmakers that kratom should not be sold like soda.</li>
+          <li>File a complaint with the FTC about deceptive marketing: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
         </ul>
       </div>
     </div>
+
     <div style="margin-top: 24px;">
-      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Parent Guide</a>
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Community Guide</a>
       <a class="btn-secondary" href="#">Report a Store</a>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="footer-mission">
     <strong style="color:#fff;">GasStationHeroin.org</strong><br />
-    Exposing unregulated kratom and gas station opioids. Protecting families from deceptive, child-friendly packaging. Know the names. Recognize the candy-like traps. Act before it becomes a crisis.
+    Exposing unregulated kratom and gas station opioids. Helping communities recognize deceptive packaging, hidden risks, and opioid-like products sold in plain sight.
   </div>
+
   <div class="footer-links">
-    <a href="#risks">Kratom risks</a>
+    <a href="#risks">Why it matters</a>
     <a href="#gallery">Product gallery</a>
-    <a href="#faq">FAQ</a>
+    <a href="#faq">Plain-English facts</a>
     <a href="#action">Take action</a>
   </div>
 </footer>
