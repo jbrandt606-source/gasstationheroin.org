@@ -98,7 +98,6 @@
       color: var(--red);
     }
 
-    /* Hero section using kratomhero.png */
     .hero {
       min-height: 82vh;
       background:
@@ -178,7 +177,6 @@
       color: var(--red);
     }
 
-    /* Sections */
     .section {
       padding: 72px 7vw;
     }
@@ -206,7 +204,37 @@
       line-height: 1.6;
     }
 
-    /* Product & Ad Gallery Grid */
+    /* FAQ styling */
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .faq-item {
+      background: var(--panel);
+      border-left: 5px solid var(--red);
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+    .faq-item h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--red);
+    }
+    .faq-item p, .faq-item ul {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+    .faq-item ul {
+      margin-left: 1.5rem;
+    }
+    .faq-item li {
+      margin: 6px 0;
+    }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -248,7 +276,6 @@
       margin-bottom: 6px;
     }
 
-    /* Stats row */
     .stats-row {
       background: #0a0a0c;
       border-top: 1px solid var(--line);
@@ -285,7 +312,6 @@
       font-size: 0.9rem;
     }
 
-    /* Two column info */
     .two-col {
       display: flex;
       flex-wrap: wrap;
@@ -392,6 +418,12 @@
       .gallery-grid {
         grid-template-columns: 1fr;
       }
+      .faq-item {
+        padding: 20px;
+      }
+      .faq-item h3 {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
@@ -408,12 +440,12 @@
   <ul class="nav-links">
     <li><a href="#risks">Risks</a></li>
     <li><a href="#gallery">Products & Ads</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#action">Take Action</a></li>
   </ul>
 </nav>
 
 <main id="main">
-  <!-- Hero with kratomhero.png -->
   <section class="hero" aria-label="Hero">
     <div class="hero-text">
       <h1>Gas Station<br /><span>Kratom</span></h1>
@@ -423,12 +455,11 @@
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="#gallery">See Real Products</a>
-        <a class="btn-secondary" href="#action">Protect Your Family</a>
+        <a class="btn-secondary" href="#faq">Get the Facts</a>
       </div>
     </div>
   </section>
 
-  <!-- Thesis / intro with updated CDC/FDA stats -->
   <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
     <h2 id="thesis-heading">Kratom: a hidden opioid crisis inside gas stations and vape shops.</h2>
     <p>
@@ -436,7 +467,61 @@
     </p>
   </section>
 
-  <!-- Real products & social media advertising gallery with child-friendly focus -->
+  <!-- FAQ Section answering all questions -->
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">What Every Parent Needs to Know About Kratom</h2>
+    <p class="section-intro">
+      Based on FDA, CDC, and state health data, here are the facts about this unregulated opioid sold in gas stations.
+    </p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>📦 What Is It?</h3>
+        <p><strong>What is this product?</strong> Kratom (Mitragyna speciosa) is a tropical tree leaf that contains mitragynine, an alkaloid that acts on mu-opioid receptors — same as morphine and oxycodone.</p>
+        <p><strong>What is it sold as?</strong> Sold as “herbal supplement,” “plant-based wellness,” “energy shot,” “kratom powder,” capsules, gummies, shots, seltzers, and tea.</p>
+        <p><strong>Is it a drug, supplement, vape, or something else?</strong> It is an unregulated psychoactive substance. The FDA says it is NOT a lawful dietary supplement or food additive. It is a drug with opioid effects.</p>
+        <p><strong>Street names and brand names:</strong> “Kratom,” “Mit,” “Herbal Speedball,” “Ketum,” “Thom.” Brand names: Happy Hippo, Feel Free (kratom shot), Mitra-9, OPMS, Super Speciosa, 1836 Kratom, Kratom Cummies, FUZZY.</p>
+      </div>
+      <div class="faq-item">
+        <h3>📍 Where Do Kids Get It?</h3>
+        <p><strong>Can it be bought at gas stations?</strong> Yes. Widespread in gas stations, often at checkout counters next to candy and energy drinks.</p>
+        <p><strong>Is it sold in vape shops?</strong> Yes. Vape shops, smoke shops, and CBD stores are primary retail locations.</p>
+        <p><strong>Can it be purchased online?</strong> Yes, easily from dozens of websites with no age verification; shipped discreetly.</p>
+        <p><strong>Is there an age restriction?</strong> Some states have 18+ or 21+ laws, but many retailers do not check ID. No federal age restriction. Products often have small “21+” fine print on the back, ignored in practice.</p>
+      </div>
+      <div class="faq-item">
+        <h3>🧠 Why Are Teens Using It?</h3>
+        <p><strong>What effects are they looking for?</strong> Euphoria, energy, focus, relaxation, pain relief, or a “legal high.”</p>
+        <p><strong>Is it being marketed as energy, relaxation, focus, pain relief, or a legal high?</strong> Yes — ads claim “Calm. Focus. Energy.” “Feel good,” “microgreen,” “plant-based wellness.” Social media influencers promote “kratom energy shots” for studying or gaming.</p>
+        <p><strong>What are people saying about it on social media?</strong> Reddit has 52,000 members in “Quitting Kratom” subreddit. TikTok/Instagram show “kratom cocktails” and “product hauls.” Teens share that it gives a “mild opioid buzz” and is easy to buy.</p>
+      </div>
+      <div class="faq-item">
+        <h3>⚡ What Does It Do?</h3>
+        <p><strong>How does it affect the brain and body?</strong> Mitragynine binds to mu-opioid receptors, causing sedation, pain relief, euphoria at high doses; stimulant-like effects at low doses (alertness, sociability).</p>
+        <p><strong>How quickly does it work?</strong> Within 15–30 minutes when consumed as liquid shot or tea; 30–60 minutes for capsules/powder.</p>
+        <p><strong>How long do the effects last?</strong> 2 to 6 hours, depending on dose and form.</p>
+        <p><strong>Does it act like an opioid, stimulant, sedative, hallucinogen, or something else?</strong> Primarily an opioid (mu-receptor agonist) with additional stimulant effects at low doses. It is not a hallucinogen.</p>
+      </div>
+      <div class="faq-item">
+        <h3>⚠️ What Are the Risks?</h3>
+        <p><strong>Can it cause addiction?</strong> Yes. The FDA reports kratom-related substance use disorder (SUD) including tolerance, cravings, and withdrawal. Ohio’s Board of Pharmacy cites case reports of severe dependence.</p>
+        <p><strong>Can it cause overdose?</strong> Yes. Respiratory depression can occur, especially with high-potency extracts or mixing with other depressants. Naloxone may work but not always.</p>
+        <p><strong>Can it cause seizures?</strong> Yes. Seizures are a known adverse event from kratom use, per FDA and poison center data.</p>
+        <p><strong>Can it cause psychosis or hallucinations?</strong> Rare, but high doses have been linked to agitation, confusion, and psychotic-like symptoms.</p>
+        <p><strong>Can it cause heart problems?</strong> Yes. Kratom can prolong QTc interval, leading to torsades de pointes arrhythmia and sudden cardiac death. Mixing with certain medications increases risk.</p>
+        <p><strong>Can it cause liver injury?</strong> Yes. The World Health Organization has documented at least 92 cases of liver toxicity from kratom, including jaundice and acute liver failure.</p>
+        <p><strong>Has it been linked to deaths?</strong> Yes. CDC: 233 kratom-associated deaths (2015-2025). Ohio: 202 deaths (2019-2024). Most involve polysubstance, but single-substance fatal overdoses have occurred.</p>
+      </div>
+      <div class="faq-item">
+        <h3>⚖️ Is It Legal?</h3>
+        <p><strong>Is it legal federally?</strong> Kratom is not federally controlled, but the FDA has declared it unlawful as a dietary supplement or food additive. The FDA has recommended Schedule I for 7‑OH (a semi-synthetic derivative), but not for whole kratom leaf.</p>
+        <p><strong>Is it legal in my state?</strong> Banned in Alabama, Arkansas, Indiana, Rhode Island, Vermont, Wisconsin. Banned or restricted in many others. Ohio is moving to Schedule I for mitragynine (as of 2026 proposed rule). Connecticut and Utah also pending bans. Check your state.</p>
+        <p><strong>Are there age restrictions?</strong> Some states have 18+ or 21+, but no federal law. Many retailers ignore it.</p>
+        <p><strong>Has the FDA issued warnings?</strong> Yes. Repeated FDA warnings about liver toxicity, seizures, addiction, and death. FDA has issued warning letters to companies selling 7‑OH and kratom with false health claims. FDA also warned about heavy metal contamination (lead, nickel) and Salmonella outbreaks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery with corrected captions -->
   <section class="section" id="gallery" aria-labelledby="gallery-heading">
     <h2 id="gallery-heading">How Kratom is marketed to look harmless — appealing to kids and teens</h2>
     <p class="section-intro">
@@ -444,7 +529,6 @@
     </p>
 
     <div class="gallery-grid">
-      <!-- product: Kratom.jpeg (Happy Hippo powder) -->
       <div class="gallery-card">
         <img src="/opioid/Kratom.jpeg" alt="Happy Hippo Kratom powder package" loading="lazy">
         <div class="gallery-caption">
@@ -452,7 +536,6 @@
           Cartoon animal name, colorful “LIVE HAPPY” branding — looks like a health food product. No child-resistant cap. Sold at eye level next to candy.
         </div>
       </div>
-      <!-- product: Kratom2.jpeg (GoLeafy) -->
       <div class="gallery-card">
         <img src="/opioid/Kratom2.jpeg" alt="GoLeafy Green Sumatra Kratom" loading="lazy">
         <div class="gallery-caption">
@@ -460,15 +543,13 @@
           Sleek, modern pouch with “ALL NATURAL” — mimics tea or superfood packaging. No warning about opioid effects. Kids see “natural” and assume safe.
         </div>
       </div>
-      <!-- product: Kratom6.jpeg (gummies) -->
       <div class="gallery-card">
-        <img src="/opioid/Kratom6.jpeg" alt="Kratom gummies 400mg per piece" loading="lazy">
+        <img src="/opioid/Kratom6.jpeg" alt="Kratom gummies 400mg per package" loading="lazy">
         <div class="gallery-caption">
           <strong>“Kratom Cummies” – Gummies</strong>
-          Bright, candy-colored gummies shaped like ordinary fruit chews. Each piece contains a massive 400mg. A child could easily eat several, leading to overdose.
+          Bright, candy-colored gummies shaped like ordinary fruit chews. <strong>Each package contains 400mg total (not per piece).</strong> A child could easily eat the whole bag, leading to severe overdose.
         </div>
       </div>
-      <!-- product: kratom8.jpeg (Jubi energy shot) -->
       <div class="gallery-card">
         <img src="/opioid/kratom8.jpeg" alt="Jubi Kratom Energy Shot Cherry" loading="lazy">
         <div class="gallery-caption">
@@ -476,31 +557,27 @@
           Looks exactly like a 5-Hour Energy or kids’ juice shot. Bright red, small bottle, cherry flavor. Placed at checkout counters where children grab snacks.
         </div>
       </div>
-      <!-- ad: Kratomad5.jpeg (Happy Hippo back-to-school ad) -->
       <div class="gallery-card">
-        <img src="/opioid/Kratomad5.jpeg" alt="Happy Hippo Instagram ad 30% off" loading="lazy">
+        <img src="/opioid/Kratomad5.jpeg" alt="Happy Hippo back-to-school ad" loading="lazy">
         <div class="gallery-caption">
           <strong>Social Media Ad – Happy Hippo “Back to School”</strong>
           Targets students and parents with “back to school” imagery — laptops, notebooks, pencils. Markets kratom as a study aid (“focus”, “energy”), normalizing opioid use for school performance.
         </div>
       </div>
-      <!-- ad: Kratomad2.jpeg (Mitra-9 level up gaming culture) -->
       <div class="gallery-card">
-        <img src="/opioid/Kratomad2.jpeg" alt="Mitra-9 Kratom seltzer ad" loading="lazy">
+        <img src="/opioid/Kratomad2.jpeg" alt="Mitra-9 level up gaming culture ad" loading="lazy">
         <div class="gallery-caption">
           <strong>Mitra-9 “Level Up” Ad – Gaming Culture</strong>
           “READY TO LEVEL UP?” uses video game controller and neon gamer aesthetics. Directly appeals to young gamers, implying kratom will enhance gameplay. No disclosure of opioid risks.
         </div>
       </div>
-      <!-- ad: Kratomad3.jpeg (Mitra-9 beer alternative) -->
       <div class="gallery-card">
-        <img src="/opioid/Kratomad3.jpeg" alt="Mitra-9 functional seltzer Tangerine" loading="lazy">
+        <img src="/opioid/Kratomad3.jpeg" alt="Mitra-9 functional seltzer" loading="lazy">
         <div class="gallery-caption">
           <strong>Mitra-9 “Functional Seltzer”</strong>
           “Where to find beer near me? … A functional, feel-good alternative.” Sits next to beer in coolers. Bright tangerine can looks like soda – easy for a minor to grab.
         </div>
       </div>
-      <!-- ad: Kratomad4.jpeg (Mitra-9 secret ingredient) -->
       <div class="gallery-card">
         <img src="/opioid/Kratomad4.jpeg" alt="Mitra-9 secret ingredient ad" loading="lazy">
         <div class="gallery-caption">
@@ -508,15 +585,13 @@
           Mysterious “secret ingredient” – no disclosure that it’s an opioid. Fast delivery, no age verification online. Child could order with prepaid card.
         </div>
       </div>
-      <!-- product: kratom7.jpeg (FUZZY enhanced mitragynine) -->
       <div class="gallery-card">
-        <img src="/opioid/kratom7.jpeg" alt="FUZZY Enhanced Mitragynine supplement" loading="lazy">
+        <img src="/opioid/kratom7.jpeg" alt="FUZZY Enhanced Mitragynine" loading="lazy">
         <div class="gallery-caption">
           <strong>“FUZZY” Enhanced Mitragynine</strong>
           Name and font like a plush toy. “WARNING 21+ ONLY” in tiny fine print, but no child-resistant cap. Looks like a candy box – highly attractive to kids.
         </div>
       </div>
-      <!-- ad: kratomad6.png (Lab Nerd Merch ad) -->
       <div class="gallery-card">
         <img src="/opioid/kratomad6.png" alt="Lab Nerd Kratom ad" loading="lazy">
         <div class="gallery-caption">
@@ -524,9 +599,8 @@
           Uses “nerd” culture and scarcity (“back in stock”) to appeal to young gamers. Colorful “feel free” branding – mimics a sports drink. No warning for parents.
         </div>
       </div>
-      <!-- ad: Kratomad1.jpeg (cartoon pink hippo lying in kratom) -->
       <div class="gallery-card">
-        <img src="/opioid/Kratomad1.jpeg" alt="BEST KRATOM EVER cartoon hippo" loading="lazy">
+        <img src="/opioid/Kratomad1.jpeg" alt="Cartoon pink hippo in kratom" loading="lazy">
         <div class="gallery-caption">
           <strong>“Best Kratom Ever” – Cartoon Pink Hippo</strong>
           A smiling, cartoon pink hippo lying in a pile of green kratom powder. Uses cute, child-like mascot to sell an opioid. Mirrors cereal box characters – highly attractive to young children.
@@ -534,11 +608,11 @@
       </div>
     </div>
     <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
-      ⚠️ According to the FDA, kratom products have been linked to <strong>liver toxicity, seizures, substance use disorder, and deaths</strong>. The CDC reports that from 2015-2025 there were 233 kratom-associated deaths, 79% involving multiple substances. In Ohio alone, 202 deaths listed kratom as a cause (2019-2024). Many products contain heavy metals (lead, nickel) and have caused Salmonella outbreaks affecting children.
+      ⚠️ <strong>Feel Free</strong> is a popular kratom shot (often sold at 7-Eleven) that has led to lawsuits and severe addiction. According to the FDA, kratom products have been linked to <strong>liver toxicity, seizures, substance use disorder, and deaths</strong>. The CDC reports 233 kratom-associated deaths (2015-2025). In Ohio alone, 202 deaths listed kratom as a cause (2019-2024). Many products contain heavy metals (lead, nickel) and have caused Salmonella outbreaks affecting children.
     </p>
   </section>
 
-  <!-- Statistics / key facts updated from CDC/FDA/Ohio documents -->
+  <!-- Statistics row -->
   <div class="stats-row" aria-label="Kratom statistics">
     <div class="stats-grid">
       <div class="stat-card">
@@ -556,7 +630,7 @@
     </div>
   </div>
 
-  <!-- Warning signs + how to fight back (child-focused) -->
+  <!-- Action section -->
   <section class="section" id="action">
     <h2>Recognize <span style="color:var(--red)">kratom packaging that appeals to children</span></h2>
     <div class="two-col">
@@ -588,7 +662,7 @@
     </div>
   </section>
 
-  <!-- Actionable resources: 7-OH separate warning -->
+  <!-- 7-OH separate warning -->
   <section class="section" style="background: #0b0b0e; border-top: 1px solid var(--line);">
     <h2>Separate warning: <span style="color:var(--red)">7‑OH (7‑Hydroxymitragynine)</span> is NOT kratom leaf</h2>
     <div class="two-col" style="margin-top: 24px;">
@@ -622,6 +696,7 @@
   <div class="footer-links">
     <a href="#risks">Kratom risks</a>
     <a href="#gallery">Product gallery</a>
+    <a href="#faq">FAQ</a>
     <a href="#action">Take action</a>
   </div>
 </footer>
