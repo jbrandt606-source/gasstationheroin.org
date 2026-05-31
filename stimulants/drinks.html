@@ -1,1 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
+  <meta name="description" content="Energy drinks with sky-high caffeine, undisclosed stimulants, and youth-targeted marketing are sold in every gas station — often next to alcohol and candy. A plain-English warning for families." />
+  <title>Energy Drinks | Hidden Stimulants & Extreme Caffeine</title>
 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #e21b23;
+      --dark: #050505;
+      --panel: #0d0d0f;
+      --line: #2a2a2f;
+      --text: #ffffff;
+      --muted: #b9bcc6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--red);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    .alert-banner {
+      background: var(--red);
+      text-align: center;
+      padding: 10px 4vw;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      width: 100%;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 5, 5, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 6vw;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    .hero {
+      min-height: 82vh;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.50) 38%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.05) 100%),
+        url("/stimulants/drinkhero.jpeg") center center/cover no-repeat;
+      display: flex;
+      align-items: flex-start;
+      padding: 58px 6vw;
+      width: 100%;
+    }
+
+    .hero-text {
+      max-width: 700px;
+      margin-top: clamp(60px, 8vh, 110px);
+    }
+
+    h1 {
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+    }
+
+    h1 span { color: var(--red); }
+
+    .redline {
+      width: 92px;
+      height: 5px;
+      background: var(--red);
+      margin: 32px 0;
+    }
+
+    .hero-subtitle {
+      max-width: 590px;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.3;
+      color: #f0f0f0;
+      margin-bottom: 36px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 6px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #c5151c;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .section {
+      padding: 72px 6vw;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .thesis {
+      background: #09090b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      max-width: 980px;
+    }
+
+    .section p,
+    .section-intro {
+      max-width: 820px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .quick-list {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+    }
+
+    .quick-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--red);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px 28px;
+      width: 100%;
+    }
+
+    .faq-item h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--red);
+    }
+
+    .faq-item p,
+    .faq-item ul {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .faq-item ul { margin-left: 1.5rem; }
+
+    .faq-item li { margin: 6px 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+      width: 100%;
+    }
+
+    .gallery-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #1a1a1f;
+    }
+
+    .gallery-caption {
+      padding: 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #0a0a0c;
+    }
+
+    .gallery-caption strong {
+      color: var(--red);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 36px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+
+    .warning-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .warning-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      color: var(--red);
+    }
+
+    .warning-card ul {
+      margin-left: 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .warning-card li { margin: 8px 0; }
+
+    footer {
+      padding: 40px 6vw;
+      background: #000;
+      color: #8f93a0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      width: 100%;
+    }
+
+    .footer-mission {
+      max-width: 440px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a:hover { color: var(--red); }
+
+    @media (max-width: 1000px) {
+      .nav-links {
+        gap: 16px;
+        font-size: 0.88rem;
+      }
+
+      .section { padding: 48px 5vw; }
+
+      .hero { padding: 36px 5vw; }
+
+      footer { padding: 32px 5vw; }
+    }
+
+    @media (max-width: 650px) {
+      body, html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      .hero {
+        min-height: 76vh;
+        padding: 36px 1.2rem;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.25) 100%),
+          url("/stimulants/drinkhero.jpeg") center center/cover no-repeat;
+        background-size: cover;
+      }
+
+      .hero-text { margin-top: 50px; }
+
+      h1 { font-size: clamp(3.4rem, 15vw, 5.2rem); }
+
+      .hero-subtitle { font-size: 1rem; }
+
+      .nav-links { display: none; }
+
+      .btn-primary,
+      .btn-secondary {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+      }
+
+      .gallery-grid { grid-template-columns: 1fr; }
+
+      .faq-item { padding: 20px; }
+
+      .faq-item h3 { font-size: 1.2rem; }
+
+      .section { padding: 48px 1.2rem; }
+
+      footer {
+        flex-direction: column;
+        padding: 32px 1.2rem;
+      }
+
+      .warning-card { min-width: auto; }
+
+      .two-col { gap: 20px; }
+
+      .alert-banner {
+        font-size: 0.8rem;
+        padding: 8px 1rem;
+      }
+
+      nav { padding: 12px 1.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="alert-banner" role="alert">
+  ENERGY DRINKS WITH EXTREME CAFFEINE, HIDDEN STIMULANTS, AND YOUTH MARKETING ARE SOLD IN EVERY GAS STATION — OFTEN NEXT TO ALCOHOL AND CANDY.
+</div>
+
+<nav aria-label="Main navigation">
+  <span class="nav-logo">GasStationHeroin.org</span>
+  <ul class="nav-links">
+    <li><a href="#risks">Why It Matters</a></li>
+    <li><a href="#gallery">Real Products</a></li>
+    <li><a href="#faq">Plain-English Facts</a></li>
+    <li><a href="#action">Take Action</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+  <section class="hero" aria-label="Hero">
+    <div class="hero-text">
+      <h1>Energy<br /><span>Drinks</span></h1>
+      <div class="redline" aria-hidden="true"></div>
+      <p class="hero-subtitle">
+        Extreme caffeine, undisclosed stimulants, and dangerous additives — all sold as “energy supplements” to teens and young adults in gas stations, convenience stores, and vape shops.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#gallery">See the Products</a>
+        <a class="btn-secondary" href="#faq">Get the Facts</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
+    <h2 id="thesis-heading">Energy drinks are not just caffeine — they often contain undisclosed stimulants, synthetic compounds, and dangerous additives.</h2>
+    <p>
+      Walk into any gas station and you will see entire walls of energy drinks — “Full Throttl,” “Reign,” “Cocaine,” “Warrior,” “Airl,” “Star Rock’d,” “Hawaiian Shaved Ice,” and dozens more. Many contain caffeine levels far above a standard cup of coffee, plus added stimulants like taurine, L-carnitine, D-ribose, and sometimes hidden amphetamine-like compounds.
+    </p>
+    <p>
+      The most dangerous are products like “Cocaine” energy drink — named after an illegal drug, marketed to thrill-seekers and teens. Others use names like “Full Throttl” or “Warrior” to project masculinity and risk-taking. Some even combine energy drinks with alcohol or are sold next to alcohol in coolers, encouraging dangerous mixing.
+    </p>
+
+    <div class="quick-list">
+      <div class="quick-item">
+        <strong>Extreme caffeine levels.</strong>
+        Many energy drinks pack 200–300mg per can (equivalent to 2–3 cups of coffee) — enough to cause heart palpitations, anxiety, and insomnia in sensitive individuals.
+      </div>
+      <div class="quick-item">
+        <strong>Hidden stimulants.</strong>
+        “Proprietary blends” often hide synthetic caffeine, yohimbine, synephrine, or DMAA-like compounds — unlabeled and unregulated.
+      </div>
+      <div class="quick-item">
+        <strong>Targeted at youth.</strong>
+        Bright colors, candy flavors, extreme sports branding, and even drug references (“Cocaine”) appeal directly to teens and young adults.
+      </div>
+      <div class="quick-item">
+        <strong>Dangerous with alcohol.</strong>
+        Mixing energy drinks with alcohol masks intoxication, leading to higher alcohol consumption, risk-taking, and alcohol poisoning.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Energy drinks, explained in plain English</h2>
+    <p class="section-intro">
+      No biochemistry degree needed. These are highly caffeinated beverages with added stimulants, sold like soft drinks — but the health risks for teens and young adults are real.
+    </p>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <h3>What makes energy drinks different from coffee or soda?</h3>
+        <p>
+          Coffee and soda typically contain 80–150mg of caffeine per serving. Many energy drinks contain <strong>200–300mg or more</strong> per can, plus a “proprietary blend” of other stimulants like taurine, guarana, L-carnitine, ginseng, and sometimes synthetic compounds like DMAA (banned in many countries but still found in some gas station products).
+        </p>
+        <p>
+          The combination of high caffeine and unlisted stimulants can cause heart palpitations, high blood pressure, seizures, and even cardiac arrest — especially in adolescents or people with underlying conditions.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why should parents be concerned about energy drinks?</h3>
+        <p>
+          Because energy drinks are marketed to kids and teens using bright colors, extreme sports imagery, and even drug references. They are sold in every gas station and convenience store, often at eye level for younger shoppers.
+        </p>
+        <ul>
+          <li><strong>Heart risks:</strong> Emergency room visits linked to energy drinks have skyrocketed, with symptoms including chest pain, arrhythmias, and cardiac arrest.</li>
+          <li><strong>Mental health effects:</strong> High caffeine intake in adolescents is linked to anxiety, panic attacks, sleep disorders, and mood swings.</li>
+          <li><strong>Mixing with alcohol:</strong> Energy drinks mask the sedative effects of alcohol, leading people to drink more than intended — increasing risk of alcohol poisoning, impaired driving, and risky behavior.</li>
+          <li><strong>Withdrawal & dependence:</strong> Regular users experience headaches, fatigue, irritability, and difficulty concentrating when they stop.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where are these sold?</h3>
+        <p>
+          Every gas station, convenience store, bodega, grocery store, vape shop, and even school vending machines. Brands like “Full Throttl,” “Reign,” “Cocaine,” “Warrior,” “Airl,” “Star Rock’d,” and “Hawaiian Shaved Ice” are displayed in coolers near checkout counters, often right next to candy, chips, and alcohol.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is “Cocaine” energy drink?</h3>
+        <p>
+          “Cocaine” is a brand of energy drink that deliberately references an illegal drug. It was previously ordered by the FDA to change its marketing, but similar products still appear in gas stations. The name alone normalizes drug culture and encourages risky associations in young people.
+        </p>
+        <p>
+          Products like this exploit youth curiosity about drugs — and parents may not even notice the name on a cooler full of colorful cans.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What about “proprietary blends”?</h3>
+        <p>
+          Many energy drinks list “proprietary blend” or “energy blend” without disclosing exact amounts of each ingredient. This allows manufacturers to hide high levels of synthetic caffeine, yohimbine (a stimulant that can cause panic attacks and high blood pressure), synephrine (similar to ephedrine), or even DMAA (banned by the FDA but still found in some gas station products).
+        </p>
+        <p>
+          Parents cannot know what is actually in the can — and neither can the person drinking it.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How much caffeine is too much?</h3>
+        <p>
+          The American Academy of Pediatrics recommends that adolescents consume <strong>no more than 100mg of caffeine per day</strong> (about one cup of coffee). A single energy drink can contain 200–300mg — sometimes in a 12oz can that looks like soda.
+        </p>
+        <p>
+          Consuming multiple energy drinks in a day (common among teens) can push caffeine intake into dangerous territory, causing seizures, heart arrhythmias, and even death in rare cases.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are “natural” or “clean” energy drinks safer?</h3>
+        <p>
+          Not necessarily. “Natural” caffeine from guarana or green tea is still caffeine. Some “clean” energy drinks still contain 200mg+ per can. The word “natural” does not mean safe — it is a marketing term.
+        </p>
+        <p>
+          Always check the label for total caffeine content, and be suspicious of “proprietary blends” that hide the actual amounts.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What about combining energy drinks with alcohol?</h3>
+        <p>
+          This is extremely dangerous. Caffeine makes you feel more alert and less drunk, so you may drink more alcohol than your body can handle. You are also more likely to engage in risky behaviors like drunk driving, unprotected sex, or violence.
+        </p>
+        <p>
+          Pre-mixed energy drink + alcohol products (like Four Loko originally) have been banned in several states, but people still mix Red Bull with vodka or buy similar gas station products.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Energy drinks on gas station shelves</h2>
+    <p class="section-intro">
+      These products do not look like dangerous stimulants. They look like fun, colorful sodas or sports drinks — but the caffeine and hidden ingredients can cause serious harm.
+    </p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="/stimulants/drink1.jpeg" alt="Cocaine energy drink can" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Cocaine — Energy Drink</strong>
+          Named after an illegal drug. Marketed for thrill-seekers and teens. The FDA has previously objected to this branding.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/drink2.jpeg" alt="BCAA Aminos Reign energy drink" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Reign — BCAA Aminos</strong>
+          Markets itself as a fitness drink but contains high caffeine and stimulants. Sold next to candy and soda in gas stations.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/drink3.jpeg" alt="Airl energy drink" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Airl — Energy Drink</strong>
+          Sleek, modern packaging that appeals to young adults. Ingredients often hidden behind “proprietary blend.”
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/drink4.jpeg" alt="Warrior extreme supplement drink" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Warrior — Extreme Supplement</strong>
+          “Extreme” branding encourages risk-taking. Often contains undisclosed stimulant blends.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/drink5.jpeg" alt="Full Throttl original citrus" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Full Throttl — Original Citrus</strong>
+          Popular gas station energy drink. High caffeine content, brightly colored, marketed to young men.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/drink6.jpeg" alt="Star Rock'd fruit punch energy" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Star Rock'd — Fruit Punch</strong>
+          “Sustains mind-body energy” — vague claims, no caffeine disclosure. Contains undisclosed stimulant blend.
+        </div>
+      </div>
+
+    </div>
+
+    <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
+      The packaging is designed to look fun, extreme, or healthy — but the high caffeine and hidden stimulants can cause heart palpitations, anxiety, seizures, and dangerous interactions with alcohol. Selling these products next to candy and soda normalizes risky consumption, especially for teenagers.
+    </p>
+  </section>
+
+  <section class="section" id="action">
+    <h2>What to look for in your neighborhood</h2>
+
+    <div class="two-col">
+      <div class="warning-card">
+        <h3>Red flags on shelves</h3>
+        <ul>
+          <li>Energy drinks with names that reference drugs (“Cocaine”), violence (“Warrior”), or risky behavior (“Full Throttl,” “Star Rock’d”)</li>
+          <li>Cans with “proprietary blend” or “energy blend” — no disclosure of individual stimulant amounts</li>
+          <li>Products with 200mg+ caffeine per can (check the label — many gas station brands hide it)</li>
+          <li>Energy drinks sold next to alcohol in coolers (encourages dangerous mixing)</li>
+          <li>Bright colors, extreme sports imagery, or candy-like flavors (fruit punch, citrus, hawaiian shaved ice)</li>
+          <li>Marketing claims like “extreme,” “mind-body energy,” “sustains,” “BCAA” — hiding high stimulant content</li>
+        </ul>
+      </div>
+
+      <div class="warning-card">
+        <h3>What communities can do</h3>
+        <ul>
+          <li>Ask local gas stations: “Do you know how much caffeine is in that energy drink? Is it labeled clearly?”</li>
+          <li>Warn schools, parent groups, sports coaches, and youth organizations about extreme caffeine risks.</li>
+          <li>Report deceptive marketing (e.g., “Cocaine” brand name, hidden stimulants) to the FTC: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
+          <li>Advocate for labeling laws that require total caffeine disclosure and warning labels for minors.</li>
+          <li>Talk to teens about the real risks of energy drinks — heart problems, anxiety, and dangerous mixing with alcohol.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Community Alert</a>
+      <a class="btn-secondary" href="#">Report a Store</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-mission">
+    <strong style="color:#fff;">GasStationHeroin.org</strong><br />
+    Exposing extreme caffeine and hidden stimulants in gas station energy drinks. Helping families recognize dangerous products that look like soda but can cause real harm — especially for teens.
+  </div>
+
+  <div class="footer-links">
+    <a href="#risks">Why it matters</a>
+    <a href="#gallery">Product gallery</a>
+    <a href="#faq">Plain-English facts</a>
+    <a href="#action">Take action</a>
+  </div>
+</footer>
+
+</body>
+</html>
