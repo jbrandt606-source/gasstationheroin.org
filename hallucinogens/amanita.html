@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
+  <meta name="description" content="Amanita muscaria mushroom products are being sold as gummies, vapes, shots, chocolates, and infused products. A plain-English warning for families and communities." />
+  <title>Amanita Muscaria | Mushroom Gummies, Vapes & Edibles</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #e21b23;
+      --dark: #050505;
+      --panel: #0d0d0f;
+      --line: #2a2a2f;
+      --text: #ffffff;
+      --muted: #b9bcc6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--red);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    .alert-banner {
+      background: var(--red);
+      text-align: center;
+      padding: 10px 4vw;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      width: 100%;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 5, 5, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 6vw;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    .hero {
+      min-height: 82vh;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.50) 38%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.05) 100%),
+        url("/hallucinogens/amanitahero.jpeg") center center/cover no-repeat;
+      display: flex;
+      align-items: flex-start;
+      padding: 58px 6vw;
+      width: 100%;
+    }
+
+    .hero-text {
+      max-width: 700px;
+      margin-top: clamp(60px, 8vh, 110px);
+    }
+
+    h1 {
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+    }
+
+    h1 span { color: var(--red); }
+
+    .redline {
+      width: 92px;
+      height: 5px;
+      background: var(--red);
+      margin: 32px 0;
+    }
+
+    .hero-subtitle {
+      max-width: 590px;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.3;
+      color: #f0f0f0;
+      margin-bottom: 36px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 6px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #c5151c;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .section {
+      padding: 72px 6vw;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .thesis {
+      background: #09090b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      max-width: 980px;
+    }
+
+    .section p,
+    .section-intro {
+      max-width: 820px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .quick-list {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+    }
+
+    .quick-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--red);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px 28px;
+      width: 100%;
+    }
+
+    .faq-item h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--red);
+    }
+
+    .faq-item p,
+    .faq-item ul {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .faq-item ul { margin-left: 1.5rem; }
+
+    .faq-item li { margin: 6px 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+      width: 100%;
+    }
+
+    .gallery-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #1a1a1f;
+    }
+
+    .gallery-caption {
+      padding: 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #0a0a0c;
+    }
+
+    .gallery-caption strong {
+      color: var(--red);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 36px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+
+    .warning-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .warning-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      color: var(--red);
+    }
+
+    .warning-card ul {
+      margin-left: 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .warning-card li { margin: 8px 0; }
+
+    footer {
+      padding: 40px 6vw;
+      background: #000;
+      color: #8f93a0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      width: 100%;
+    }
+
+    .footer-mission {
+      max-width: 440px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a:hover { color: var(--red); }
+
+    @media (max-width: 1000px) {
+      .nav-links {
+        gap: 16px;
+        font-size: 0.88rem;
+      }
+
+      .section { padding: 48px 5vw; }
+
+      .hero { padding: 36px 5vw; }
+
+      footer { padding: 32px 5vw; }
+    }
+
+    @media (max-width: 650px) {
+      body, html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      .hero {
+        min-height: 76vh;
+        padding: 36px 1.2rem;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.25) 100%),
+          url("/hallucinogens/amanitahero.jpeg") center center/cover no-repeat;
+        background-size: cover;
+      }
+
+      .hero-text { margin-top: 50px; }
+
+      h1 { font-size: clamp(3.4rem, 15vw, 5.2rem); }
+
+      .hero-subtitle { font-size: 1rem; }
+
+      .nav-links { display: none; }
+
+      .btn-primary,
+      .btn-secondary {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+      }
+
+      .gallery-grid { grid-template-columns: 1fr; }
+
+      .faq-item { padding: 20px; }
+
+      .faq-item h3 { font-size: 1.2rem; }
+
+      .section { padding: 48px 1.2rem; }
+
+      footer {
+        flex-direction: column;
+        padding: 32px 1.2rem;
+      }
+
+      .warning-card { min-width: auto; }
+
+      .two-col { gap: 20px; }
+
+      .alert-banner {
+        font-size: 0.8rem;
+        padding: 8px 1rem;
+      }
+
+      nav { padding: 12px 1.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="alert-banner" role="alert">
+  AMANITA MUSCARIA PRODUCTS ARE BEING SOLD AS GUMMIES, VAPES, SHOTS, CHOCOLATES, AND INFUSED PRODUCTS WITH LITTLE CONSUMER WARNING.
+</div>
+
+<nav aria-label="Main navigation">
+  <span class="nav-logo">GasStationHeroin.org</span>
+  <ul class="nav-links">
+    <li><a href="#risks">Why It Matters</a></li>
+    <li><a href="#gallery">Real Products</a></li>
+    <li><a href="#faq">Plain-English Facts</a></li>
+    <li><a href="#action">Take Action</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+  <section class="hero" aria-label="Hero">
+    <div class="hero-text">
+      <h1>Amanita<br /><span>Muscaria</span></h1>
+      <div class="redline" aria-hidden="true"></div>
+      <p class="hero-subtitle">
+        Amanita muscaria mushroom products are being sold in gas stations, vape shops, smoke shops, and online as gummies, vapes, chocolates, shots, and “legal mushroom” products. Many consumers do not realize these products can cause poisoning and severe reactions.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#gallery">See Real Products</a>
+        <a class="btn-secondary" href="#faq">Get the Facts</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
+    <h2 id="thesis-heading">Amanita muscaria is being repackaged as gummies, vapes, chocolates, and “legal psychedelic” products.</h2>
+    <p>
+      Amanita muscaria, also called fly agaric, is the red-and-white mushroom commonly seen in fairy-tale imagery. It is not the same as psilocybin mushrooms. Its main psychoactive compounds include muscimol and ibotenic acid, which can affect the brain in unpredictable ways.
+    </p>
+    <p>
+      Modern retail products are not the same as traditional mushroom use. Concentrated gummies, vapes, shots, chocolates, and blended “mushroom” products may contain unclear doses, undisclosed ingredients, or additional psychoactive substances. FDA has stated that Amanita muscaria, its extracts, and certain constituents such as muscimol, ibotenic acid, and muscarine are not authorized for use in conventional food.
+    </p>
+
+    <div class="quick-list">
+      <div class="quick-item">
+        <strong>It can look playful.</strong>
+        Gummies, chocolates, shots, and vapes may use colorful mushroom graphics, fruit flavors, and cartoon-style packaging.
+      </div>
+      <div class="quick-item">
+        <strong>It is not psilocybin.</strong>
+        Amanita muscaria works differently from psilocybin mushrooms and can cause poisoning, delirium, sedation, or seizures.
+      </div>
+      <div class="quick-item">
+        <strong>Dosing is uncertain.</strong>
+        Milligram claims may not tell consumers how much muscimol, ibotenic acid, or other active compounds are present.
+      </div>
+      <div class="quick-item">
+        <strong>Products may be adulterated.</strong>
+        CDC testing of some mushroom gummies found undisclosed controlled substances in products marketed as mushroom or nootropic gummies.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Amanita muscaria, explained in plain English</h2>
+    <p class="section-intro">
+      This is a psychoactive and potentially toxic mushroom being sold in modern retail forms. The concern is concentrated, poorly labeled, or blended products that may cause intoxication, poisoning, panic, seizures, or emergency department visits.
+    </p>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <h3>What is Amanita muscaria?</h3>
+        <p>
+          Amanita muscaria is a mushroom commonly known as fly agaric. It contains psychoactive compounds including muscimol and ibotenic acid. These chemicals can cause altered perception, confusion, drowsiness, agitation, nausea, vomiting, and other toxic effects.
+        </p>
+        <p>
+          It should not be confused with psilocybin mushrooms. Psilocybin and muscimol act differently in the body and carry different risks.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why should families and communities be concerned?</h3>
+        <p>
+          The concern is not just that Amanita muscaria is a mushroom. The concern is that concentrated retail products may be sold with bright packaging, sweet flavors, unclear dosing, recreational branding, and little transparency about what is actually inside.
+        </p>
+        <ul>
+          <li><strong>Misleading forms:</strong> Gummies, chocolates, shots, and vapes can make psychoactive products appear routine or low-risk.</li>
+          <li><strong>Unclear dosing:</strong> A label may say “25 mg muscimol” or “3000 mg mushroom,” but consumers cannot easily verify potency or dose.</li>
+          <li><strong>Undisclosed ingredients:</strong> Some products marketed as mushroom gummies have been found to contain substances not listed on the label.</li>
+          <li><strong>Emergency reactions:</strong> Reported symptoms include nausea, vomiting, agitation, confusion, hallucinations, abnormal heart rate, seizures, and loss of consciousness.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where are Amanita products sold?</h3>
+        <p>
+          Amanita muscaria products may be sold in gas stations, vape shops, smoke shops, CBD stores, head shops, convenience stores, and online. Products may appear near kratom, kava, hemp-derived cannabinoids, blue lotus, nitrous products, or other psychoactive botanicals.
+        </p>
+        <p>
+          Look for the words “Amanita,” “Amanita muscaria,” “muscimol,” “fly agaric,” “legal mushroom,” “mushroom gummies,” “shroom,” or “magic mushroom” on packaging.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How is it marketed to look safe?</h3>
+        <p>
+          Products often use playful, wellness, candy, or psychedelic-style branding that can make the risks look smaller than they are.
+        </p>
+        <ul>
+          <li>“Legal mushroom”</li>
+          <li>“Magic gummies”</li>
+          <li>“Microdose” or “mega dose”</li>
+          <li>“Pure shroom”</li>
+          <li>“Lab tested” or “made in the USA” claims that do not prove safety</li>
+        </ul>
+        <p>
+          A product can look polished, colorful, or professional and still carry real poisoning risks.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What are the effects and risks?</h3>
+        <p>
+          Effects may include sleepiness, dizziness, confusion, altered perception, euphoria, agitation, hallucinations, nausea, vomiting, sweating, fast or irregular heartbeat, and poor coordination.
+        </p>
+        <p>
+          More serious reactions can include seizures, loss of consciousness, severe agitation, breathing problems, and hospitalization. Driving, working, caregiving, or operating machinery after use can be dangerous.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What happened with Diamond Shruumz?</h3>
+        <p>
+          CDC and FDA investigated severe illnesses linked to Diamond Shruumz brand chocolate bars, cones, and gummies. As of October 31, 2024, 180 illnesses, 73 hospitalizations, and three potentially associated deaths were reported. The products were recalled and should no longer be sold.
+        </p>
+        <p>
+          Testing of some products identified multiple substances, including muscimol, and in some cases other psychoactive substances. This is a warning sign for the broader “mushroom edible” market: the label may not tell the full story.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is Amanita muscaria legal?</h3>
+        <p>
+          Amanita muscaria is not federally scheduled as a controlled substance in the same way psilocybin is. However, legality can vary by state, product type, food law, institutional policy, and product contents.
+        </p>
+        <p>
+          FDA has stated that Amanita muscaria, its extracts, and certain constituents are not authorized for use in conventional food. Legal availability does not mean a product has been reviewed for safety, purity, potency, or accurate labeling.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are Amanita vapes especially concerning?</h3>
+        <p>
+          Yes. Vaping delivers substances directly to the lungs, and the safety of inhaling Amanita muscaria extracts or muscimol-like products is not well established.
+        </p>
+        <p>
+          Vape products also raise a separate concern: labels may not reliably disclose all ingredients, dose, solvents, additives, or contaminants.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Amanita muscaria products on retail shelves and online</h2>
+    <p class="section-intro">
+      These products may look like gummies, vapes, chocolates, shots, or novelty items. The appearance can make the risk easy to miss.
+    </p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="/hallucinogens/amanita1.jpeg" alt="Shroom Puff extreme mushroom vape disposable" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Shroom Puff — Extreme Mushroom Vape</strong>
+          A disposable vape using mushroom-themed branding and a 3000 mg claim. Inhaled products raise special safety concerns.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/hallucinogens/amanita2.jpeg" alt="Alpine's Shroom Amanita muscaria gummies" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Alpine’s Shroom Gummies</strong>
+          Gummies labeled with Amanita muscaria. Edible products can make psychoactive mushroom ingredients appear casual or low-risk.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/hallucinogens/amanita3.jpeg" alt="Euphoria Magic Amanita muscaria gummies" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Euphoria Magic Amanita Gummies</strong>
+          “Euphoria,” “magic,” and cartoon mushroom graphics signal recreational use while giving little safety information.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/hallucinogens/amanita4.jpeg" alt="PolkaDot mushroom magic blend bars" loading="lazy">
+        <div class="gallery-caption">
+          <strong>PolkaDot Mushroom Blend Products</strong>
+          Mushroom-themed bars may use psychedelic-style branding and unclear “blend” language.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/hallucinogens/amanita5.jpeg" alt="Caps Amanita mushroom D9 nano shot" loading="lazy">
+        <div class="gallery-caption">
+          <strong>CAPS Amanita Mushroom + D9 Nano Shot</strong>
+          Combination products are especially concerning because effects may be stronger or less predictable.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/hallucinogens/amanita6.jpeg" alt="Stoned Amanita muscaria mushroom milk chocolate" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Stoned Amanita Mushroom Chocolate</strong>
+          Chocolate packaging can make a psychoactive mushroom product look like a regular edible treat.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/hallucinogens/amanita8.jpeg" alt="Uteya Amanita mushroom gummies" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Uteya Amanita Mushroom Gummies</strong>
+          Fruit-flavored gummies with mushroom graphics can appeal to people who may not understand the poisoning risk.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/hallucinogens/amanita9.jpeg" alt="Exhale Amanita muscaria mushroom gummies" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Exhale Amanita Muscaria Gummies</strong>
+          “Mushroom gummies” branding may conceal uncertainty about dose, active compounds, and other ingredients.
+        </div>
+      </div>
+
+    </div>
+
+    <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
+      Packaging can make these products look harmless, trendy, or fun. Community members should focus on the ingredient, product form, claims, dose, and whether the label clearly warns about poisoning, impairment, interactions, and emergency symptoms.
+    </p>
+  </section>
+
+  <section class="section" id="action">
+    <h2>What to look for in your neighborhood</h2>
+
+    <div class="two-col">
+      <div class="warning-card">
+        <h3>Red flags on shelves</h3>
+        <ul>
+          <li>Products labeled “Amanita,” “Amanita muscaria,” “muscimol,” “fly agaric,” “magic mushroom,” “legal mushroom,” or “shroom.”</li>
+          <li>Gummies, vapes, shots, chocolates, powders, or infused edibles with psychoactive or psychedelic-style claims.</li>
+          <li>Branding that uses words such as “stoned,” “magic,” “euphoria,” “microdose,” “mega dose,” “mushroom blend,” or “pure shroom.”</li>
+          <li>Large milligram claims without clear active-ingredient testing or safety warnings.</li>
+          <li>Products combining Amanita with delta-8, delta-9, kava, kratom, blue lotus, caffeine, or other psychoactive ingredients.</li>
+          <li>Labels that do not clearly warn about poisoning, impaired driving, seizures, loss of consciousness, or emergency symptoms.</li>
+        </ul>
+      </div>
+
+      <div class="warning-card">
+        <h3>What communities can do</h3>
+        <ul>
+          <li>Take clear photos of the front label, ingredient panel, warnings, lot number, and shelf display.</li>
+          <li>Warn schools, parent groups, prevention coalitions, and community organizations about Amanita gummies, vapes, shots, and chocolates.</li>
+          <li>For immediate symptoms or accidental exposure, call Poison Control at 1-800-222-1222.</li>
+          <li>Call 911 for seizures, loss of consciousness, trouble breathing, severe confusion, chest pain, or severe agitation.</li>
+          <li>Report deceptive marketing to the FTC: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
+          <li>Report serious adverse events to FDA MedWatch and share concerns with local health departments.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Community Alert</a>
+      <a class="btn-secondary" href="#">Report a Product</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-mission">
+    <strong style="color:#fff;">GasStationHeroin.org</strong><br />
+    Exposing unregulated psychoactive mushroom products sold in plain sight. Helping families, schools, and communities recognize risky gummies, vapes, shots, chocolates, and deceptive mushroom branding.
+  </div>
+
+  <div class="footer-links">
+    <a href="#risks">Why it matters</a>
+    <a href="#gallery">Product gallery</a>
+    <a href="#faq">Plain-English facts</a>
+    <a href="#action">Take action</a>
+  </div>
+</footer>
+
+</body>
+</html>
