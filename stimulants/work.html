@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
+  <meta name="description" content="High-stim pre-workout supplements contain dangerous ingredients like DMAA, DMHA, yohimbine, and undisclosed stimulants — sold in gas stations and supplement shops as 'extreme training aids.' A plain-English warning for families." />
+  <title>High-Stim Pre-Workout | Dangerous Stimulants Sold as Supplements</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #e21b23;
+      --dark: #050505;
+      --panel: #0d0d0f;
+      --line: #2a2a2f;
+      --text: #ffffff;
+      --muted: #b9bcc6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--red);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    .alert-banner {
+      background: var(--red);
+      text-align: center;
+      padding: 10px 4vw;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      width: 100%;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 5, 5, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 6vw;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    .hero {
+      min-height: 82vh;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.50) 38%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.05) 100%),
+        url("/stimulants/workhero.png") center center/cover no-repeat;
+      display: flex;
+      align-items: flex-start;
+      padding: 58px 6vw;
+      width: 100%;
+    }
+
+    .hero-text {
+      max-width: 700px;
+      margin-top: clamp(60px, 8vh, 110px);
+    }
+
+    h1 {
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+    }
+
+    h1 span { color: var(--red); }
+
+    .redline {
+      width: 92px;
+      height: 5px;
+      background: var(--red);
+      margin: 32px 0;
+    }
+
+    .hero-subtitle {
+      max-width: 590px;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.3;
+      color: #f0f0f0;
+      margin-bottom: 36px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 6px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #c5151c;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .section {
+      padding: 72px 6vw;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .thesis {
+      background: #09090b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      max-width: 980px;
+    }
+
+    .section p,
+    .section-intro {
+      max-width: 820px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .quick-list {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+    }
+
+    .quick-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--red);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px 28px;
+      width: 100%;
+    }
+
+    .faq-item h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--red);
+    }
+
+    .faq-item p,
+    .faq-item ul {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .faq-item ul { margin-left: 1.5rem; }
+
+    .faq-item li { margin: 6px 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+      width: 100%;
+    }
+
+    .gallery-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #1a1a1f;
+    }
+
+    .gallery-caption {
+      padding: 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #0a0a0c;
+    }
+
+    .gallery-caption strong {
+      color: var(--red);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 36px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+
+    .warning-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .warning-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      color: var(--red);
+    }
+
+    .warning-card ul {
+      margin-left: 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .warning-card li { margin: 8px 0; }
+
+    footer {
+      padding: 40px 6vw;
+      background: #000;
+      color: #8f93a0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      width: 100%;
+    }
+
+    .footer-mission {
+      max-width: 440px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a:hover { color: var(--red); }
+
+    @media (max-width: 1000px) {
+      .nav-links {
+        gap: 16px;
+        font-size: 0.88rem;
+      }
+
+      .section { padding: 48px 5vw; }
+
+      .hero { padding: 36px 5vw; }
+
+      footer { padding: 32px 5vw; }
+    }
+
+    @media (max-width: 650px) {
+      body, html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      .hero {
+        min-height: 76vh;
+        padding: 36px 1.2rem;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.25) 100%),
+          url("/stimulants/workhero.png") center center/cover no-repeat;
+        background-size: cover;
+      }
+
+      .hero-text { margin-top: 50px; }
+
+      h1 { font-size: clamp(3.4rem, 15vw, 5.2rem); }
+
+      .hero-subtitle { font-size: 1rem; }
+
+      .nav-links { display: none; }
+
+      .btn-primary,
+      .btn-secondary {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+      }
+
+      .gallery-grid { grid-template-columns: 1fr; }
+
+      .faq-item { padding: 20px; }
+
+      .faq-item h3 { font-size: 1.2rem; }
+
+      .section { padding: 48px 1.2rem; }
+
+      footer {
+        flex-direction: column;
+        padding: 32px 1.2rem;
+      }
+
+      .warning-card { min-width: auto; }
+
+      .two-col { gap: 20px; }
+
+      .alert-banner {
+        font-size: 0.8rem;
+        padding: 8px 1rem;
+      }
+
+      nav { padding: 12px 1.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="alert-banner" role="alert">
+  HIGH-STIM PRE-WORKOUT SUPPLEMENTS CONTAIN DANGEROUS INGREDIENTS LIKE DMAA, DMHA, AND YOHIMBINE — SOLD IN GAS STATIONS AND SUPPLEMENT SHOPS AS “EXTREME TRAINING AIDS.”
+</div>
+
+<nav aria-label="Main navigation">
+  <span class="nav-logo">GasStationHeroin.org</span>
+  <ul class="nav-links">
+    <li><a href="#risks">Why It Matters</a></li>
+    <li><a href="#gallery">Real Products</a></li>
+    <li><a href="#faq">Plain-English Facts</a></li>
+    <li><a href="#action">Take Action</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+  <section class="hero" aria-label="Hero">
+    <div class="hero-text">
+      <h1>High-Stim<br /><span>Pre-Workout</span></h1>
+      <div class="redline" aria-hidden="true"></div>
+      <p class="hero-subtitle">
+        “Extreme training aids” containing DMAA, DMHA, yohimbine, and other dangerous stimulants — sold in gas stations, supplement shops, and online to young athletes, often without age restrictions.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#gallery">See the Products</a>
+        <a class="btn-secondary" href="#faq">Get the Facts</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
+    <h2 id="thesis-heading">High-stim pre-workout is not just caffeine — it is a cocktail of unregulated amphetamine-like stimulants.</h2>
+    <p>
+      Products with names like “Jack3d,” “Crack,” “Condemned,” “Hellboy,” “Addall,” and “Lipodrene Extreme” promise intense energy, focus, and endurance. But the ingredients list often includes DMAA (1,3-dimethylamylamine), DMHA (2-aminoisoheptane), yohimbine, synephrine, and other stimulants that have been banned by the FDA in dietary supplements — yet they still appear in gas stations and online.
+    </p>
+    <p>
+      These products are marketed to young athletes, bodybuilders, and fitness enthusiasts. A single scoop can contain as much stimulant as multiple cups of coffee plus amphetamine-like compounds. The result: heart attacks, strokes, seizures, and even death — especially in teenagers and young adults.
+    </p>
+
+    <div class="quick-list">
+      <div class="quick-item">
+        <strong>DMAA / DMHA.</strong>
+        Amphetamine-like stimulants banned by the FDA. Linked to hemorrhagic strokes, heart attacks, and sudden death.
+      </div>
+      <div class="quick-item">
+        <strong>Yohimbine & synephrine.</strong>
+        Dangerously raise blood pressure and heart rate, especially when combined with caffeine.
+      </div>
+      <div class="quick-item">
+        <strong>Targeted at young men.</strong>
+        “Extreme,” “condemned,” “crack,” “hellboy” — branding that appeals to risk-taking teenage athletes.
+      </div>
+      <div class="quick-item">
+        <strong>No medical oversight.</strong>
+        Sold as “dietary supplements” — no FDA approval, no safety testing, no age verification.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">High-stim pre-workout, explained in plain English</h2>
+    <p class="section-intro">
+      No chemistry degree needed. These are industrial-strength stimulants sold as workout supplements — and they have sent young people to emergency rooms and morgues.
+    </p>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <h3>What are DMAA and DMHA?</h3>
+        <p>
+          DMAA (1,3-dimethylamylamine) and DMHA (2-aminoisoheptane) are synthetic stimulants that act like amphetamines. They were originally developed as nasal decongestants, not as workout aids. DMAA was banned by the FDA in 2013 after being linked to numerous deaths, heart attacks, and hemorrhagic strokes — but it still appears in gas station and online pre-workout products under names like “geranium extract” or “methylhexanamine.”
+        </p>
+        <p>
+          DMHA is a chemical cousin of DMAA and is similarly dangerous. The FDA has issued warning letters about DMHA, but enforcement is slow, and products remain on shelves.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why should parents be concerned?</h3>
+        <p>
+          Because high-stim pre-workout products are sold in gas stations, vape shops, and supplement stores — often to teenagers who walk in without ID. A 16-year-old athlete can buy a tub of “Crack” or “Jack3d” and take a full scoop without understanding the risks.
+        </p>
+        <ul>
+          <li><strong>Heart attacks in teens:</strong> There are documented cases of young, healthy people suffering cardiac arrest after taking DMAA-containing pre-workout.</li>
+          <li><strong>Strokes:</strong> DMAA is known to cause hemorrhagic (bleeding) strokes by spiking blood pressure.</li>
+          <li><strong>Seizures:</strong> High doses of stimulants can trigger seizures, even in people with no history.</li>
+          <li><strong>Mixing with other drugs:</strong> Teens often combine pre-workout with energy drinks, caffeine pills, or even ADHD medications — a recipe for stimulant overdose.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where are these sold?</h3>
+        <p>
+          Gas stations, vape shops, smoke shops, supplement stores (GNC, Vitamin Shoppe), online retailers (Amazon, eBay, independent sites), and even some grocery stores. Brands like “Jack3d,” “Crack” (Dark Labs), “Condemned,” “Hellboy” (Insane Labz), “Addall,” and “Lipodrene Extreme” are easy to find.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is “Crack” pre-workout?</h3>
+        <p>
+          “Crack” by Dark Labs is an infamous high-stim pre-workout that contains DMAA and other banned stimulants. The name alone is a red flag — it normalizes drug culture and appeals to thrill-seekers. The product has been linked to hospitalizations and has received FDA warning letters, but it is still available in some gas stations and online.
+        </p>
+        <p>
+          Parents should be alarmed by any product named after an illegal drug, sold as a “dietary supplement.”
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is “Addall”?</h3>
+        <p>
+          “Addall” is a product that mimics the name of the prescription ADHD medication Adderall. It often contains DMHA, yohimbine, and high-dose caffeine — sold in gas stations as a “dietary supplement.” The branding is intentionally deceptive, suggesting it will provide the same focus and energy as prescription amphetamines.
+        </p>
+        <p>
+          Taking “Addall” could cause severe anxiety, heart palpitations, and dangerous interactions with real ADHD medications.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What are the signs of stimulant overdose?</h3>
+        <p>
+          Symptoms include racing heartbeat, chest pain, shortness of breath, severe headache, confusion, agitation, hallucinations, seizures, and loss of consciousness. If someone has taken high-stim pre-workout and shows these signs, call 911 immediately.
+        </p>
+        <p>
+          Many young athletes take more than the recommended dose because they want stronger effects. This dramatically increases the risk of overdose.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are these products legal?</h3>
+        <p>
+          The FDA has banned DMAA as a dietary ingredient, but some manufacturers still sell it by labeling it as something else (“geranium extract” or “methylhexanamine”). DMHA has received FDA warning letters but is not explicitly banned in all cases. Enforcement is inconsistent, so dangerous products remain on shelves.
+        </p>
+        <p>
+          The legal gray area means parents cannot assume that a product on a gas station shelf has been tested or approved for safety.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What about “Lipodrene Extreme” and weight loss stimulants?</h3>
+        <p>
+          “Lipodrene Extreme” and similar “extreme weight loss” products are often high-stim pre-workout formulas repackaged. They contain yohimbine, synephrine, caffeine, and sometimes DMAA or DMHA. The marketing claims “extreme weight loss” and “energy aid” — but the cardiovascular risks are significant.
+        </p>
+        <p>
+          Teens and young adults looking to lose weight quickly are especially vulnerable to these dangerous products.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How can parents spot these products?</h3>
+        <p>
+          Look for tubs or bottles with aggressive, extreme branding — words like “crack,” “condemned,” “hellboy,” “jack3d,” “extreme,” “ultra concentrated,” “high stim.” Ingredients to watch for: DMAA, DMHA, 1,3-dimethylamylamine, 2-aminoisoheptane, geranium extract, yohimbine, synephrine, and undisclosed “proprietary stimulant blends.”
+        </p>
+        <p>
+          If you see these in a gas station or your teen’s room, treat it as a potential health emergency.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">High-stim pre-workout on gas station and supplement shop shelves</h2>
+    <p class="section-intro">
+      These products look like serious athletic supplements — but they contain amphetamine-like stimulants that have killed young people.
+    </p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="/stimulants/work1.jpeg" alt="Jack3d pre-workout with DMAA" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Jack3d — The Original DMAA Pre-Workout</strong>
+          “Intense training aid enhanced with geranium” — geranium extract is a euphemism for DMAA. Banned by the FDA but still found in gas stations.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/work2.jpeg" alt="Condemned high stim pre-workout" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Condemned — High Stim Pre-Workout</strong>
+          Aggressive branding targeting risk-taking young athletes. Contains undisclosed stimulant blends.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/work3.jpeg" alt="Lipodrene Extreme weight loss stimulant" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Lipodrene Extreme — Extreme Weight Loss & Energy Aid</strong>
+          Marketed for weight loss but contains yohimbine, synephrine, and high-dose caffeine. Can cause heart palpitations and blood pressure spikes.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/work4.jpeg" alt="Crack by Dark Labs pre-workout" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Crack — Dark Labs</strong>
+          Named after an illegal drug. Contains DMAA and other dangerous stimulants. Has received FDA warning letters but remains available.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/work5.jpeg" alt="Insane Labz Hellboy pre-workout" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Insane Labz — Hellboy High Stim Pre-Workout</strong>
+          “Energy, focus, endurance” — contains undisclosed stimulant blends. Fruit Punch flavor appeals to younger users.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/work6.jpeg" alt="Addall 750mg capsules" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Addall — XR Capsules</strong>
+          Name mimics Adderall. Contains DMHA and other stimulants. Sold as a dietary supplement — extremely dangerous for teens with ADHD prescriptions.
+        </div>
+      </div>
+
+    </div>
+
+    <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
+      The packaging is designed to look extreme, powerful, and appealing to young athletes — but the ingredients inside can cause heart attacks, strokes, and sudden death. Selling these products in gas stations without age restrictions is a public health crisis.
+    </p>
+  </section>
+
+  <section class="section" id="action">
+    <h2>What to look for in your neighborhood</h2>
+
+    <div class="two-col">
+      <div class="warning-card">
+        <h3>Red flags on shelves</h3>
+        <ul>
+          <li>Tubs or bottles labeled “high stim,” “extreme,” “ultra concentrated,” “pre-workout”</li>
+          <li>Names like “Crack,” “Jack3d,” “Condemned,” “Hellboy,” “Addall,” “Lipodrene Extreme”</li>
+          <li>Ingredients: DMAA, DMHA, 1,3-dimethylamylamine, 2-aminoisoheptane, geranium extract, yohimbine, synephrine</li>
+          <li>“Proprietary stimulant blend” — hiding the actual ingredients and amounts</li>
+          <li>Warnings that say “use only as directed” or “not for use by people with medical conditions” — a sign of danger</li>
+          <li>Sold next to gas station candy, energy shots, and vapes</li>
+        </ul>
+      </div>
+
+      <div class="warning-card">
+        <h3>What communities can do</h3>
+        <ul>
+          <li>Ask gas station owners: “Do you know that DMAA is banned by the FDA and can cause heart attacks in young people?”</li>
+          <li>Warn schools, athletic coaches, parents, and youth sports organizations about high-stim pre-workout dangers.</li>
+          <li>Report products containing DMAA or DMHA to the FDA MedWatch and the FTC.</li>
+          <li>Take photos of products on shelves — documentation helps regulators and law enforcement.</li>
+          <li>Contact state legislators and health departments to ban gas station sales of high-stim pre-workout.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Community Alert</a>
+      <a class="btn-secondary" href="#">Report a Store</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-mission">
+    <strong style="color:#fff;">GasStationHeroin.org</strong><br />
+    Exposing dangerous high-stim pre-workout supplements sold in gas stations and supplement shops. Helping families recognize amphetamine-like stimulants disguised as “training aids.”
+  </div>
+
+  <div class="footer-links">
+    <a href="#risks">Why it matters</a>
+    <a href="#gallery">Product gallery</a>
+    <a href="#faq">Plain-English facts</a>
+    <a href="#action">Take action</a>
+  </div>
+</footer>
+
+</body>
+</html>
