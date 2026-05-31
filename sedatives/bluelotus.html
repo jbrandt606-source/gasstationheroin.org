@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
+  <meta name="description" content="Blue Lotus is being sold in gas stations, vape shops, and online as gummies, vapes, and infused products — often with misleading claims. A plain-English warning for families." />
+  <title>Blue Lotus | Psychoactive Plant Sold Like Candy in Gas Stations</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #e21b23;
+      --dark: #050505;
+      --panel: #0d0d0f;
+      --line: #2a2a2f;
+      --text: #ffffff;
+      --muted: #b9bcc6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--red);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    .alert-banner {
+      background: var(--red);
+      text-align: center;
+      padding: 10px 4vw;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      width: 100%;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 5, 5, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 6vw;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    .hero {
+      min-height: 82vh;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.50) 38%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.05) 100%),
+        url("/sedatives/lotushero.png") center center/cover no-repeat;
+      display: flex;
+      align-items: flex-start;
+      padding: 58px 6vw;
+      width: 100%;
+    }
+
+    .hero-text {
+      max-width: 700px;
+      margin-top: clamp(60px, 8vh, 110px);
+    }
+
+    h1 {
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+    }
+
+    h1 span { color: var(--red); }
+
+    .redline {
+      width: 92px;
+      height: 5px;
+      background: var(--red);
+      margin: 32px 0;
+    }
+
+    .hero-subtitle {
+      max-width: 590px;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.3;
+      color: #f0f0f0;
+      margin-bottom: 36px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 6px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #c5151c;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .section {
+      padding: 72px 6vw;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .thesis {
+      background: #09090b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      max-width: 980px;
+    }
+
+    .section p,
+    .section-intro {
+      max-width: 820px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .quick-list {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+    }
+
+    .quick-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--red);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px 28px;
+      width: 100%;
+    }
+
+    .faq-item h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--red);
+    }
+
+    .faq-item p,
+    .faq-item ul {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .faq-item ul { margin-left: 1.5rem; }
+
+    .faq-item li { margin: 6px 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+      width: 100%;
+    }
+
+    .gallery-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #1a1a1f;
+    }
+
+    .gallery-caption {
+      padding: 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #0a0a0c;
+    }
+
+    .gallery-caption strong {
+      color: var(--red);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 36px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+
+    .warning-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .warning-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      color: var(--red);
+    }
+
+    .warning-card ul {
+      margin-left: 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .warning-card li { margin: 8px 0; }
+
+    footer {
+      padding: 40px 6vw;
+      background: #000;
+      color: #8f93a0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      width: 100%;
+    }
+
+    .footer-mission {
+      max-width: 440px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a:hover { color: var(--red); }
+
+    @media (max-width: 1000px) {
+      .nav-links {
+        gap: 16px;
+        font-size: 0.88rem;
+      }
+
+      .section { padding: 48px 5vw; }
+
+      .hero { padding: 36px 5vw; }
+
+      footer { padding: 32px 5vw; }
+    }
+
+    @media (max-width: 650px) {
+      body, html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      .hero {
+        min-height: 76vh;
+        padding: 36px 1.2rem;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.25) 100%),
+          url("/sedatives/lotushero.png") center center/cover no-repeat;
+        background-size: cover;
+      }
+
+      .hero-text { margin-top: 50px; }
+
+      h1 { font-size: clamp(3.4rem, 15vw, 5.2rem); }
+
+      .hero-subtitle { font-size: 1rem; }
+
+      .nav-links { display: none; }
+
+      .btn-primary,
+      .btn-secondary {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+      }
+
+      .gallery-grid { grid-template-columns: 1fr; }
+
+      .faq-item { padding: 20px; }
+
+      .faq-item h3 { font-size: 1.2rem; }
+
+      .section { padding: 48px 1.2rem; }
+
+      footer {
+        flex-direction: column;
+        padding: 32px 1.2rem;
+      }
+
+      .warning-card { min-width: auto; }
+
+      .two-col { gap: 20px; }
+
+      .alert-banner {
+        font-size: 0.8rem;
+        padding: 8px 1rem;
+      }
+
+      nav { padding: 12px 1.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="alert-banner" role="alert">
+  BLUE LOTUS IS BEING SOLD AS GUMMIES, VAPES, AND INFUSED PRODUCTS IN GAS STATIONS — OFTEN WITH MISLEADING CLAIMS AND NO WARNINGS.
+</div>
+
+<nav aria-label="Main navigation">
+  <span class="nav-logo">GasStationHeroin.org</span>
+  <ul class="nav-links">
+    <li><a href="#risks">Why It Matters</a></li>
+    <li><a href="#gallery">Real Products</a></li>
+    <li><a href="#faq">Plain-English Facts</a></li>
+    <li><a href="#action">Take Action</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+  <section class="hero" aria-label="Hero">
+    <div class="hero-text">
+      <h1>Blue Lotus<br /><span>Psychoactive Plant</span></h1>
+      <div class="redline" aria-hidden="true"></div>
+      <p class="hero-subtitle">
+        An ancient psychoactive plant is now being sold in gas stations, vape shops, and online — in gummies, vape pens, and “infused” products. Most people have no idea what they are buying.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#gallery">See Real Products</a>
+        <a class="btn-secondary" href="#faq">Get the Facts</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
+    <h2 id="thesis-heading">Blue lotus is being repackaged as candy, vapes, and “plant medicine” — sold beside energy drinks and chips.</h2>
+    <p>
+      Blue lotus (Nymphaea caerulea) has been used historically for its mild psychoactive effects. Today, extract manufacturers concentrate it into gummies, disposable vapes, infused products, and high-dose edibles. The packaging looks like candy, wellness gummies, or trendy vape gear.
+    </p>
+    <p>
+      Walk into any gas station or vape shop and you might see “Stoned” gummies, “Blue Lotus” vapes, “Lotus Kush,” or “Super Goji” products. They claim “sleep, good dreams,” “plant medicine,” or “100% profit to charity” — but rarely warn about sedation, impaired driving, or the lack of regulation.
+    </p>
+
+    <div class="quick-list">
+      <div class="quick-item">
+        <strong>It looks like candy or a vape.</strong>
+        Gummies in bright packaging, disposable vape pens, and “infused” products look harmless and fun.
+      </div>
+      <div class="quick-item">
+        <strong>It is sold everywhere.</strong>
+        Gas stations, vape shops, convenience stores, smoke shops, and online — often next to kratom, CBD, and energy shots.
+      </div>
+      <div class="quick-item">
+        <strong>It hides behind ancient/wellness branding.</strong>
+        “Plant medicine,” “blue lotus,” “good dreams” — sounds natural, but the effects can be intoxicating.
+      </div>
+      <div class="quick-item">
+        <strong>Doses are unregulated.</strong>
+        Some gummies claim 500mg, 1000mg, even 6000mg per package — with no safety oversight.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Blue lotus, explained in plain English</h2>
+    <p class="section-intro">
+      No botanical knowledge required. This is a plant with psychoactive effects that is being sold in gas stations in forms that look like candy and vapes — with no warnings, age checks, or safety standards.
+    </p>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <h3>What is blue lotus?</h3>
+        <p>
+          Blue lotus (Nymphaea caerulea) is a water lily historically used in Egyptian rituals for its mild calming and euphoric effects. It contains compounds like apomorphine and nuciferine, which can act on dopamine and serotonin receptors.
+        </p>
+        <p>
+          In recent years, companies have started selling concentrated extracts in gas stations and vape shops — not as a tea or ceremonial herb, but as <strong>high-dose gummies, disposable vapes, and “infused” edibles</strong> marketed to a young, recreational audience.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why should parents and communities be concerned?</h3>
+        <p>
+          Because blue lotus products are being sold in the same places as candy, soda, and vapes. The packaging is often colorful, youthful, and enticing.
+        </p>
+        <ul>
+          <li><strong>Misleading forms:</strong> Gummies labeled “Stoned,” “Blueberry,” “18+” — they look like regular candy but contain psychoactive plant extracts.</li>
+          <li><strong>No age restrictions in many states:</strong> A teenager can walk in and buy a disposable blue lotus vape or a 6000mg bag of gummies.</li>
+          <li><strong>Deceptive wellness claims:</strong> “Plant medicine,” “100% profit to charity,” “sleep, good dreams” — none of this guarantees safety.</li>
+          <li><strong>Unknown drug interactions:</strong> Blue lotus can cause sedation, dizziness, confusion, and impaired driving — especially when mixed with alcohol or other drugs.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where is blue lotus sold?</h3>
+        <p>
+          Gas stations, vape shops, smoke shops, CBD stores, head shops, convenience stores, and hundreds of online retailers. You will see brands like “Stoned,” “Blue Lotus,” “Super Goji,” “Lotus Kush,” “Psyched,” “Jolly Green Oil,” and “CannaStick.”
+        </p>
+        <p>
+          Products can be found near the register, on spinning racks, or next to kratom, delta-8, and other gas station drugs.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How is it marketed to look safe?</h3>
+        <p>
+          The marketing uses “natural,” “ancient,” and “wellness” language to hide risks:
+        </p>
+        <ul>
+          <li>“Plant Medicine”</li>
+          <li>“Sleep, Good Dreams”</li>
+          <li>“Vegan, Gluten Free”</li>
+          <li>“100% Profit to Charity”</li>
+          <li>“Blue Lotus” — sounds exotic and harmless</li>
+        </ul>
+        <p>
+          Some brands even use the word “Stoned” openly, targeting recreational users without disclosing side effects, withdrawal, or overdose potential.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What are the effects and risks?</h3>
+        <p>
+          Blue lotus can produce mild euphoria, relaxation, dream-like states, and sedation. At higher doses (especially in concentrated extracts), users report dizziness, confusion, nausea, and significant drowsiness. Driving or operating machinery after use is dangerous.
+        </p>
+        <p>
+          Because there is no federal regulation, actual potency varies wildly — some gummies claim 500mg, 1000mg, or even 6000mg per package. Consumers have no way to know what they are actually ingesting.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is it legal?</h3>
+        <p>
+          Blue lotus is not a controlled substance at the federal level in the U.S. However, several states (like Louisiana, Indiana, and others) have banned or restricted it. It is also illegal in some European countries. But in most of America, it remains completely unregulated — you can buy it in a gas station at any age.
+        </p>
+        <p>
+          The lack of regulation means no dosage standards, no safety warnings, no child-proof packaging, and no testing for contaminants.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are the vapes especially dangerous?</h3>
+        <p>
+          Yes. Disposable blue lotus vapes (like “Stoned Blue Lotus Boomg Vape” or “Super Goji” pens) deliver an unknown amount of concentrated extract directly to the lungs. The long-term effects of vaping blue lotus are completely unknown. Teens may mistake them for nicotine or CBD vapes.
+        </p>
+        <p>
+          The vape products often use bright colors, candy flavors like strawberry, and sleek hardware that appeals to young people.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What about “Lotus Kush” or “Psyched” products?</h3>
+        <p>
+          Names like “Lotus Kush” mimic cannabis branding. “Psyched” implies a psychedelic experience. These are marketing tactics to attract people looking for a legal high. But the actual effects, safety, and ingredients are not reviewed by any health authority.
+        </p>
+        <p>
+          Some products combine blue lotus with other unregulated herbs (kratom, kava, phenibut, or synthetic cannabinoids) — increasing the risk of dangerous interactions.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Blue lotus on gas station shelves and online</h2>
+    <p class="section-intro">
+      These products do not look like psychoactive substances. They look like candy, wellness gummies, vape pens, or “plant medicine.” That is exactly the problem.
+    </p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="/sedatives/lotus1.jpeg" alt="Blue Lotus disposable vape device Super Goji" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Blue Lotus Disposable Vape</strong>
+          “Super Goji” — a disposable vape pen with blue lotus extract. Bright colors and sleek design appeal to younger users.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/sedatives/lotus2.jpeg" alt="Stoned Blue Lotus Boomg vape strawberry" loading="lazy">
+        <div class="gallery-caption">
+          <strong>“Stoned” Blue Lotus Boomg Vape</strong>
+          Strawberry flavor. The word “Stoned” openly markets psychoactive effects. Sold in gas stations next to candy.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/sedatives/lotus4.jpeg" alt="Psyched Blue Lotus 500mg gummies and Lotus Kush" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Psyched Blue Lotus + Lotus Kush</strong>
+          “Pure Gummy 500mg” and “Lotus Kush 2g” — cannabis-style branding for an unregulated plant extract.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/sedatives/lotus5.jpeg" alt="Stoned Blue Lotus gummies 6000mg per package" loading="lazy">
+        <div class="gallery-caption">
+          <strong>“Stoned” Blue Lotus Gummies</strong>
+          Blueberry flavor, 1000mg per gummy, 6000mg per package. No warning about sedation or impaired driving.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/sedatives/lotus6.jpeg" alt="Jolly Green Oil Blue Lotus infused gummies" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Jolly Green Oil — Blue Lotus Infused Gummies</strong>
+          “Plant Medicine” branding. 30 gummies per container. Looks like a health product, contains psychoactive extract.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/sedatives/lotus7.jpeg" alt="Blue Lotus gummies sleep good dreams" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Blue Lotus Gummies — “Sleep, Good Dreams”</strong>
+          Vegan, gluten free, “100% profit to charity” — feels responsible, but still an unregulated psychoactive edible.
+        </div>
+      </div>
+
+      <!-- Additional image: lotushero.png is already used as hero, not needed in gallery -->
+    </div>
+
+    <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
+      The packaging is designed to look harmless or even beneficial. But selling an unregulated psychoactive plant as gummies, vapes, and candy-like products in gas stations is a recipe for accidental overuse, impaired driving, and teen experimentation.
+    </p>
+  </section>
+
+  <section class="section" id="action">
+    <h2>What to look for in your neighborhood</h2>
+
+    <div class="two-col">
+      <div class="warning-card">
+        <h3>Red flags on shelves</h3>
+        <ul>
+          <li>Products labeled “Blue Lotus,” “Stoned,” “Lotus Kush,” “Psyched,” “Super Goji,” or “Jolly Green Oil”</li>
+          <li>Gummies in bright packaging with fruit flavors (blueberry, strawberry) — often with “18+” in small print</li>
+          <li>Disposable vape pens or cartridges claiming “blue lotus” or “plant medicine”</li>
+          <li>Packages with dosage claims like 500mg, 1000mg, or 6000mg — no regulation means those numbers are not verified</li>
+          <li>Products sold near kratom, delta-8, candy, energy drinks, or checkout counters in gas stations and vape shops</li>
+          <li>Wellness language like “sleep, good dreams,” “100% profit to charity,” “vegan, gluten free” — used to distract from psychoactive effects</li>
+        </ul>
+      </div>
+
+      <div class="warning-card">
+        <h3>What communities can do</h3>
+        <ul>
+          <li>Ask local gas stations and vape shops: “Do you know blue lotus can cause sedation and is not regulated for safety?”</li>
+          <li>Warn schools, parent groups, sports leagues, and community organizations about blue lotus gummies and vapes.</li>
+          <li>Take photos of products and shelf displays — documentation helps local news and lawmakers act.</li>
+          <li>Report misleading or deceptive marketing to the FTC: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
+          <li>Contact state legislators and local health departments to restrict gas-station sales of psychoactive botanicals.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Community Alert</a>
+      <a class="btn-secondary" href="#">Report a Store</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-mission">
+    <strong style="color:#fff;">GasStationHeroin.org</strong><br />
+    Exposing unregulated psychoactive products like blue lotus sold in plain sight. Helping families recognize candy-like packaging, vape pens, and deceptive “wellness” branding.
+  </div>
+
+  <div class="footer-links">
+    <a href="#risks">Why it matters</a>
+    <a href="#gallery">Product gallery</a>
+    <a href="#faq">Plain-English facts</a>
+    <a href="#action">Take action</a>
+  </div>
+</footer>
+
+</body>
+</html>
