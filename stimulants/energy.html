@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
+  <meta name="description" content="Energy shots with extreme caffeine, herbal stimulants, and hidden ingredients are sold in every gas station — often marketed as safe 'dietary supplements.' A plain-English warning for families." />
+  <title>Energy Shots | Extreme Caffeine & Hidden Stimulants</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #e21b23;
+      --dark: #050505;
+      --panel: #0d0d0f;
+      --line: #2a2a2f;
+      --text: #ffffff;
+      --muted: #b9bcc6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--red);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    .alert-banner {
+      background: var(--red);
+      text-align: center;
+      padding: 10px 4vw;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      width: 100%;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 5, 5, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 6vw;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    .hero {
+      min-height: 82vh;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.50) 38%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.05) 100%),
+        url("/stimulants/energyhero.png") center center/cover no-repeat;
+      display: flex;
+      align-items: flex-start;
+      padding: 58px 6vw;
+      width: 100%;
+    }
+
+    .hero-text {
+      max-width: 700px;
+      margin-top: clamp(60px, 8vh, 110px);
+    }
+
+    h1 {
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+    }
+
+    h1 span { color: var(--red); }
+
+    .redline {
+      width: 92px;
+      height: 5px;
+      background: var(--red);
+      margin: 32px 0;
+    }
+
+    .hero-subtitle {
+      max-width: 590px;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.3;
+      color: #f0f0f0;
+      margin-bottom: 36px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 6px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #c5151c;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .section {
+      padding: 72px 6vw;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .thesis {
+      background: #09090b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      max-width: 980px;
+    }
+
+    .section p,
+    .section-intro {
+      max-width: 820px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .quick-list {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+    }
+
+    .quick-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--red);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px 28px;
+      width: 100%;
+    }
+
+    .faq-item h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--red);
+    }
+
+    .faq-item p,
+    .faq-item ul {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .faq-item ul { margin-left: 1.5rem; }
+
+    .faq-item li { margin: 6px 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+      width: 100%;
+    }
+
+    .gallery-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #1a1a1f;
+    }
+
+    .gallery-caption {
+      padding: 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #0a0a0c;
+    }
+
+    .gallery-caption strong {
+      color: var(--red);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 36px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+
+    .warning-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .warning-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      color: var(--red);
+    }
+
+    .warning-card ul {
+      margin-left: 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .warning-card li { margin: 8px 0; }
+
+    footer {
+      padding: 40px 6vw;
+      background: #000;
+      color: #8f93a0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      width: 100%;
+    }
+
+    .footer-mission {
+      max-width: 440px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a:hover { color: var(--red); }
+
+    @media (max-width: 1000px) {
+      .nav-links {
+        gap: 16px;
+        font-size: 0.88rem;
+      }
+
+      .section { padding: 48px 5vw; }
+
+      .hero { padding: 36px 5vw; }
+
+      footer { padding: 32px 5vw; }
+    }
+
+    @media (max-width: 650px) {
+      body, html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      .hero {
+        min-height: 76vh;
+        padding: 36px 1.2rem;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.25) 100%),
+          url("/stimulants/energyhero.png") center center/cover no-repeat;
+        background-size: cover;
+      }
+
+      .hero-text { margin-top: 50px; }
+
+      h1 { font-size: clamp(3.4rem, 15vw, 5.2rem); }
+
+      .hero-subtitle { font-size: 1rem; }
+
+      .nav-links { display: none; }
+
+      .btn-primary,
+      .btn-secondary {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+      }
+
+      .gallery-grid { grid-template-columns: 1fr; }
+
+      .faq-item { padding: 20px; }
+
+      .faq-item h3 { font-size: 1.2rem; }
+
+      .section { padding: 48px 1.2rem; }
+
+      footer {
+        flex-direction: column;
+        padding: 32px 1.2rem;
+      }
+
+      .warning-card { min-width: auto; }
+
+      .two-col { gap: 20px; }
+
+      .alert-banner {
+        font-size: 0.8rem;
+        padding: 8px 1rem;
+      }
+
+      nav { padding: 12px 1.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="alert-banner" role="alert">
+  ENERGY SHOTS WITH EXTREME CAFFEINE, HERBAL STIMULANTS, AND HIDDEN INGREDIENTS ARE SOLD IN EVERY GAS STATION — OFTEN MARKETED AS SAFE “DIETARY SUPPLEMENTS.”
+</div>
+
+<nav aria-label="Main navigation">
+  <span class="nav-logo">GasStationHeroin.org</span>
+  <ul class="nav-links">
+    <li><a href="#risks">Why It Matters</a></li>
+    <li><a href="#gallery">Real Products</a></li>
+    <li><a href="#faq">Plain-English Facts</a></li>
+    <li><a href="#action">Take Action</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+  <section class="hero" aria-label="Hero">
+    <div class="hero-text">
+      <h1>Energy<br /><span>Shots</span></h1>
+      <div class="redline" aria-hidden="true"></div>
+      <p class="hero-subtitle">
+        Tiny bottles with massive caffeine — 200–300mg per shot — plus herbal stimulants, B-vitamins, and undisclosed “proprietary blends.” Sold at every gas station checkout counter, often to teens.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#gallery">See the Products</a>
+        <a class="btn-secondary" href="#faq">Get the Facts</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section thesis" id="risks" aria-labelledby="thesis-heading">
+    <h2 id="thesis-heading">Energy shots are not just strong coffee — they are unregulated stimulant cocktails marketed as “dietary supplements.”</h2>
+    <p>
+      Walk into any gas station and you will see them at the checkout counter: 2-ounce bottles promising “hours of energy,” “fixes tired fast,” “extreme strength.” Brands like 5-Hour Energy, Herbal Energy Shot, Bombsicle, Tweaker Shot, and dozens of generic copies.
+    </p>
+    <p>
+      A single shot often contains <strong>200–300mg of caffeine</strong> — equivalent to 2-3 cups of coffee — plus taurine, B-vitamins, and herbal stimulants like guarana, yerba mate, or yohimbine. Because they are sold as “dietary supplements,” the FDA does not review them for safety before they hit shelves. Some even use names like “Tweaker Shot” — a direct reference to methamphetamine abuse.
+    </p>
+
+    <div class="quick-list">
+      <div class="quick-item">
+        <strong>Extreme caffeine concentration.</strong>
+        A 2oz shot can have more caffeine than a 16oz energy drink. The small size makes it easy to consume multiple shots quickly.
+      </div>
+      <div class="quick-item">
+        <strong>Hidden herbal stimulants.</strong>
+        “Proprietary blends” hide exact amounts of yohimbine, synephrine, or DMBA — unregulated and potentially dangerous.
+      </div>
+      <div class="quick-item">
+        <strong>Targeted at tired workers & teens.</strong>
+        Placed at every checkout counter. Marketing promises “fixes tired fast” without mentioning heart risks or caffeine overdose.
+      </div>
+      <div class="quick-item">
+        <strong>No age restrictions.</strong>
+        A 14-year-old can buy an energy shot at any gas station — no ID required. Some brands even use candy-like flavors.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Energy shots, explained in plain English</h2>
+    <p class="section-intro">
+      No chemistry degree needed. These tiny bottles pack a massive stimulant punch — and because they are sold as supplements, you have no idea what is really inside.
+    </p>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <h3>What is in an energy shot?</h3>
+        <p>
+          Most energy shots contain <strong>200–300mg of caffeine</strong> (sometimes labeled as “caffeine from herbs” like guarana or yerba mate), plus taurine, B-vitamins (B6, B12), and a “proprietary energy blend” that can include L-tyrosine, L-carnitine, glucuronolactone, and herbal stimulants like yohimbine or synephrine.
+        </p>
+        <p>
+          The problem: “proprietary blend” means the manufacturer does not have to tell you how much of each ingredient is in the shot. You could be getting a dangerous amount of yohimbine (linked to panic attacks and high blood pressure) without knowing it.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why should parents be concerned?</h3>
+        <p>
+          Energy shots are sold at every gas station checkout counter — at eye level for kids and teens. They are small, cheap ($2–4), and come in flavors like “tropical berry,” “raspberry,” “blue,” and “herbal.”
+        </p>
+        <ul>
+          <li><strong>Easy to overdose:</strong> The small size makes it easy to drink multiple shots quickly. Some brands even sell “extra strength” with 230mg+ caffeine.</li>
+          <li><strong>Heart risks:</strong> Emergency rooms have seen teens with heart palpitations, seizures, and cardiac arrest after energy shots.</li>
+          <li><strong>Mixing with alcohol:</strong> Some people mix energy shots with alcohol — extremely dangerous because the stimulant masks intoxication.</li>
+          <li><strong>Withdrawal:</strong> Regular users experience headaches, fatigue, irritability, and difficulty concentrating when they stop.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where are energy shots sold?</h3>
+        <p>
+          Every gas station, convenience store, truck stop, grocery store checkout line, vape shop, and online. Look for 2oz bottles near the register — brands like 5-Hour Energy, Herbal Energy Shot, Bombsicle, Tweaker Shot, Frozen Performance, Burst, and generic store brands.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is “Tweaker Shot”?</h3>
+        <p>
+          “Tweaker” is a slang term for methamphetamine users. Naming a product “Tweaker Shot” is deliberately provocative — it normalizes drug culture and appeals to thrill-seekers. The FDA has previously objected to similar drug-reference branding, but products like this still appear in gas stations.
+        </p>
+        <p>
+          Parents should be especially alarmed by any energy product that makes light of hard drug use.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How much caffeine is too much?</h3>
+        <p>
+          The FDA says healthy adults should limit caffeine to 400mg per day (about 4 cups of coffee). But a single energy shot can contain <strong>200–300mg</strong> — half to three-quarters of the daily limit in one tiny bottle.
+        </p>
+        <p>
+          For adolescents, the American Academy of Pediatrics recommends <strong>no more than 100mg per day</strong>. One energy shot can exceed that by 2–3 times. Drinking two shots could put a teenager into dangerous caffeine overdose territory — heart palpitations, seizures, even cardiac arrest.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is “natural caffeine” or “caffeine from herbs”?</h3>
+        <p>
+          Caffeine is caffeine, whether it comes from coffee beans, guarana, yerba mate, or green tea. “Natural caffeine” is a marketing term — it does not mean safer or healthier.
+        </p>
+        <p>
+          Some products claim “clean energy” or “caffeine from herbs” to sound healthier, but the stimulant effect and risks are the same as synthetic caffeine.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are B-vitamins in energy shots helpful?</h3>
+        <p>
+          B-vitamins are essential nutrients, but adding them to an energy shot does not make it healthy. Most people get plenty of B-vitamins from food. The “energy” from an energy shot comes almost entirely from caffeine and stimulants — not from vitamins.
+        </p>
+        <p>
+          Some brands market “sugar free” or “zero calories” to seem healthy, but the stimulant risks remain unchanged.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What are the signs of caffeine overdose?</h3>
+        <p>
+          Symptoms include rapid or irregular heartbeat, nausea, vomiting, diarrhea, chest pain, confusion, hallucinations, seizures, and loss of consciousness. If someone has consumed multiple energy shots and shows these signs, seek emergency medical help immediately.
+        </p>
+        <p>
+          Because energy shots are small, people often underestimate how much they have consumed. “I only had two little bottles” — but those two bottles could contain 400–600mg of caffeine, plus other stimulants.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Energy shots on gas station checkout counters</h2>
+    <p class="section-intro">
+      These tiny bottles look harmless — but they pack massive caffeine and undisclosed stimulants. They are sold at every gas station register, often to teens and young adults.
+    </p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="/stimulants/energy1.jpeg" alt="5-Hour Energy extra strength variety" loading="lazy">
+        <div class="gallery-caption">
+          <strong>5-Hour Energy — Extra Strength</strong>
+          230mg caffeine per 2oz shot. “Fixes Tired Fast” — but also fixes heart palpitations and anxiety in some users.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/energy3.jpeg" alt="Frozen Performance energy shot" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Frozen Performance</strong>
+          Marketed for athletes and active people. Contains undisclosed stimulant blend. Sold at gas station registers.
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="/stimulants/energy4.jpeg" alt="Herbal Energy Shot natural caffeine" loading="lazy">
+        <div class="gallery-caption">
+          <strong>Herbal Energy Shot — Natural Caffeine</strong>
+          “Clean energy” — still delivers a massive stimulant punch. No age verification required.
+        </div>
+      </div>
+
+    </div>
+
+    <p style="margin-top: 32px; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--red); padding-left: 16px;">
+      The packaging is designed to look small, harmless, and convenient — but the stimulant content is anything but harmless. Selling these at checkout counters, often to minors, without any warning labels or age restrictions is a public health failure.
+    </p>
+  </section>
+
+  <section class="section" id="action">
+    <h2>What to look for in your neighborhood</h2>
+
+    <div class="two-col">
+      <div class="warning-card">
+        <h3>Red flags on shelves</h3>
+        <ul>
+          <li>2oz bottles at checkout counters — often right next to candy and gum</li>
+          <li>Labels like “extra strength,” “extreme,” “fixes tired fast,” “clean energy”</li>
+          <li>Drug-reference names: “Tweaker Shot,” “Cocaine” (energy drink), etc.</li>
+          <li>“Proprietary blend” or “energy blend” — hiding exact stimulant amounts</li>
+          <li>Flavors like tropical berry, raspberry, blue, herbal — appealing to younger buyers</li>
+          <li>Claims of “natural caffeine” or “caffeine from herbs” — same risks, different source</li>
+        </ul>
+      </div>
+
+      <div class="warning-card">
+        <h3>What communities can do</h3>
+        <ul>
+          <li>Ask gas station owners: “Do you sell energy shots to minors? Do you know the caffeine content?”</li>
+          <li>Warn schools, parent groups, sports coaches, and youth organizations about energy shot risks.</li>
+          <li>Report deceptive marketing (e.g., “Tweaker Shot,” undisclosed stimulants) to the FTC: <a href="https://reportfraud.ftc.gov" target="_blank" style="color:var(--red); text-decoration:underline;">reportfraud.ftc.gov</a></li>
+          <li>Advocate for age restrictions on energy shots and clear caffeine labeling.</li>
+          <li>Talk to teens: one tiny bottle can have as much caffeine as three cups of coffee — and unknown stimulants.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <a class="btn-primary" href="#" style="background:var(--red); margin-right: 16px;">Download Community Alert</a>
+      <a class="btn-secondary" href="#">Report a Store</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-mission">
+    <strong style="color:#fff;">GasStationHeroin.org</strong><br />
+    Exposing extreme caffeine and hidden stimulants in gas station energy shots. Helping families recognize tiny bottles with massive risks — especially for teens and young adults.
+  </div>
+
+  <div class="footer-links">
+    <a href="#risks">Why it matters</a>
+    <a href="#gallery">Product gallery</a>
+    <a href="#faq">Plain-English facts</a>
+    <a href="#action">Take action</a>
+  </div>
+</footer>
+
+</body>
+</html>
