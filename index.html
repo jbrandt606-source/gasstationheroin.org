@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="description" content="Gas Station Heroin helps parents recognize drug-like products sold in vape shops, smoke shops, and gas stations — before it becomes a crisis." />
+<meta name="description" content="Gas Station Heroin helps parents recognize drug-like products sold in vape shops, smoke shops, and gas stations before it becomes a crisis." />
 <title>Gas Station Heroin — Protecting Families</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
@@ -43,13 +43,12 @@ a{color:inherit;text-decoration:none;}
   padding:10px 4vw;
   font-size:.95rem;
   font-weight:800;
-  letter-spacing:.02em;
 }
 nav{
   position:sticky;
   top:0;
   z-index:100;
-  background:rgba(5,5,5,.92);
+  background:rgba(5,5,5,.94);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
   display:flex;
@@ -110,10 +109,9 @@ h1 span{color:var(--red);}
   flex-wrap:wrap;
   gap:14px;
 }
-.btn-primary{
+.btn-primary,
+.btn-secondary{
   display:inline-block;
-  background:var(--red);
-  color:#fff;
   padding:16px 28px;
   border-radius:6px;
   font-weight:900;
@@ -122,18 +120,14 @@ h1 span{color:var(--red);}
   letter-spacing:.04em;
   transition:.2s;
 }
+.btn-primary{
+  background:var(--red);
+  color:#fff;
+}
 .btn-primary:hover{background:#c5151c;transform:translateY(-2px);}
 .btn-secondary{
-  display:inline-block;
   border:2px solid #fff;
   color:#fff;
-  padding:16px 28px;
-  border-radius:6px;
-  font-weight:800;
-  font-size:1rem;
-  text-transform:uppercase;
-  letter-spacing:.04em;
-  transition:.2s;
 }
 .btn-secondary:hover{border-color:var(--red);color:var(--red);}
 /* STAT STRIP */
@@ -185,6 +179,7 @@ h1 span{color:var(--red);}
   letter-spacing:.055em;
   line-height:1.25;
 }
+/* SECTIONS */
 .section{padding:72px 7vw;}
 .thesis{
   background:#09090b;
@@ -221,8 +216,6 @@ h1 span{color:var(--red);}
   font-weight:900;
   text-transform:uppercase;
   letter-spacing:.04em;
-  text-align:left;
-  cursor:pointer;
   transition:.2s;
 }
 .category-btn:hover{
@@ -252,9 +245,9 @@ h1 span{color:var(--red);}
   padding:28px;
   border-radius:12px;
 }
-.card h3{font-size:1.25rem;margin-bottom:10px;}
-.card p{color:var(--muted);font-size:.97rem;line-height:1.6;}
-.resources{background:#0b0b0e;}
+.card h3{font-size:1.25rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.97rem;line-height:1.6}
+.resources{background:#0b0b0e}
 .get-involved{
   background:#111114;
   border-top:1px solid var(--line);
@@ -277,57 +270,64 @@ footer{
   align-items:flex-start;
   font-size:.92rem;
 }
-.footer-mission{max-width:440px;line-height:1.6;}
-.footer-links{display:flex;flex-direction:column;gap:8px;}
-.footer-links a:hover{color:var(--red);}
+.footer-mission{max-width:440px;line-height:1.6}
+.footer-links{display:flex;flex-direction:column;gap:8px}
+.footer-links a:hover{color:var(--red)}
 @media(max-width:1000px){
-  .category-grid{grid-template-columns:repeat(2,1fr);}
-  .cards{grid-template-columns:1fr 1fr;}
-  .nav-links{gap:16px;font-size:.88rem;}
+  .category-grid{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:1fr 1fr}
+  .nav-links{gap:16px;font-size:.88rem}
 }
+/* MOBILE PORTRAIT: LANDSCAPE-STYLE HERO */
 @media(max-width:650px){
   .alert-banner{
     font-size:.82rem;
-    padding:9px 5vw;
+    padding:9px 6vw;
   }
   nav{
-    padding:14px 6vw;
+    padding:16px 6vw;
   }
-  .nav-links{display:none;}
+  .nav-links{display:none}
   .hero{
-    min-height:78vh;
-    padding:32px 6vw;
+    min-height:560px;
     background:
-      linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.72) 48%,rgba(0,0,0,.18) 100%),
-      url("hero3.jpeg") 62% center/cover no-repeat;
+      linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.82) 34%,rgba(0,0,0,.36) 68%,rgba(0,0,0,.1) 100%),
+      linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.3) 72%,rgba(0,0,0,.98) 100%),
+      url("hero3.jpeg") center top/100% auto no-repeat;
+    background-color:#000;
+    padding:34px 6vw 28px;
+    align-items:flex-start;
   }
   .hero-text{
-    max-width:92%;
-    margin-top:38px;
+    max-width:58%;
+    margin-top:34px;
   }
   h1{
-    font-size:clamp(4rem,18vw,5.8rem);
-    line-height:.88;
+    font-size:clamp(2.7rem,12.5vw,4.2rem);
+    line-height:.9;
+    letter-spacing:-.06em;
   }
   .redline{
-    margin:24px 0;
-    width:86px;
+    width:76px;
     height:5px;
+    margin:20px 0;
   }
   .hero-subtitle{
-    max-width:94%;
-    font-size:1.18rem;
-    line-height:1.32;
-    margin-bottom:28px;
+    max-width:100%;
+    font-size:.98rem;
+    line-height:1.35;
+    margin-bottom:22px;
   }
   .hero-actions{
-    max-width:350px;
+    max-width:250px;
+    gap:12px;
   }
   .btn-primary,
   .btn-secondary{
     width:100%;
     text-align:center;
-    padding:15px 20px;
+    padding:14px 16px;
+    font-size:.86rem;
   }
   .stats-strip{
     grid-template-columns:repeat(2,1fr);
@@ -335,9 +335,7 @@ footer{
   .stat{
     padding:17px 8px;
   }
-  .stat:nth-child(2){
-    border-right:none;
-  }
+  .stat:nth-child(2){border-right:none}
   .stat:nth-child(1),
   .stat:nth-child(2){
     border-bottom:1px solid #242428;
@@ -360,9 +358,9 @@ footer{
   .section{
     padding:54px 6vw;
   }
-  .cards{grid-template-columns:1fr;}
-  .category-grid{grid-template-columns:1fr 1fr;}
-  footer{flex-direction:column;}
+  .cards{grid-template-columns:1fr}
+  .category-grid{grid-template-columns:1fr 1fr}
+  footer{flex-direction:column}
 }
 </style>
 </head>
@@ -382,11 +380,10 @@ footer{
 <main id="main">
 <section class="hero" aria-label="Hero">
   <div class="hero-text">
-    <h1>Gas Station<br /><span>Heroin</span></h1>
+    <h1>Gas Station<br><span>Heroin</span></h1>
     <div class="redline" aria-hidden="true"></div>
     <p class="hero-subtitle">
-      Addictive, drug-like products are being sold legally beside energy drinks and vapes — 
-      before most parents even know they exist.
+      Addictive, drug-like products are being sold legally beside energy drinks and vapes before most parents even know they exist.
     </p>
     <div class="hero-actions">
       <a class="btn-primary" href="#products">See the Products</a>
@@ -397,43 +394,28 @@ footer{
 <section class="stats-strip" aria-label="Key statistics">
   <div class="stat">
     <div class="stat-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 5.5c0 8 6.5 14.5 14.5 14.5" />
-        <path d="M7.5 5.5h-3v5h3l2-2v-1z" />
-        <path d="M18.5 16.5l-2-2h-1l-2 2v3h5z" />
-      </svg>
+      <svg viewBox="0 0 24 24"><path d="M4 5.5c0 8 6.5 14.5 14.5 14.5"/><path d="M7.5 5.5h-3v5h3l2-2v-1z"/><path d="M18.5 16.5l-2-2h-1l-2 2v3h5z"/></svg>
     </div>
     <div class="stat-number">14,449+</div>
     <div class="stat-label">Poison Center<br>Exposures</div>
   </div>
   <div class="stat">
     <div class="stat-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 3l9 16H3z" />
-        <path d="M12 8v5" />
-        <path d="M12 17h.01" />
-      </svg>
+      <svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 8v5"/><path d="M12 17h.01"/></svg>
     </div>
     <div class="stat-number">1,151</div>
-    <div class="stat-label">Deaths With<br>Mitragynine Detected<br>(2023)</div>
+    <div class="stat-label">Deaths With<br>Mitragynine Detected<br>2023</div>
   </div>
   <div class="stat">
     <div class="stat-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M8 3h8" />
-        <path d="M9 3v4l-3 4v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8l-3-4V3" />
-        <path d="M8 12h8" />
-      </svg>
+      <svg viewBox="0 0 24 24"><path d="M8 3h8"/><path d="M9 3v4l-3 4v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8l-3-4V3"/><path d="M8 12h8"/></svg>
     </div>
     <div class="stat-number">304</div>
     <div class="stat-label">Commercial<br>7-OH Products<br>Identified</div>
   </div>
   <div class="stat">
     <div class="stat-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <circle cx="12" cy="8" r="4" />
-        <path d="M8.5 11.5L5 18l4-1 3 4 3-4 4 1-3.5-6.5" />
-      </svg>
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M8.5 11.5L5 18l4-1 3 4 3-4 4 1-3.5-6.5"/></svg>
     </div>
     <div class="stat-number">80</div>
     <div class="stat-label">Child-Appealing<br>Products Found</div>
@@ -442,16 +424,13 @@ footer{
 <section class="section thesis" aria-labelledby="thesis-heading">
   <h2 id="thesis-heading">Retail shelves are normalizing addiction.</h2>
   <p>
-    GasStationHeroin.org helps families recognize the products, packaging, store placement, 
-    and warning signs behind substances now sold beside vapes, energy drinks, CBD, 
-    and ordinary convenience-store items. Know the names before your kids do.
+    GasStationHeroin.org helps families recognize the products, packaging, store placement, and warning signs behind substances now sold beside vapes, energy drinks, CBD, and ordinary convenience-store items. Know the names before your kids do.
   </p>
 </section>
 <section class="section" id="products" aria-labelledby="products-heading">
   <h2 id="products-heading">Product Categories</h2>
   <p class="section-intro">
-    These are the categories parents should recognize when walking into vape shops, 
-    smoke shops, gas stations, and convenience stores.
+    These are the categories parents should recognize when walking into vape shops, smoke shops, gas stations, and convenience stores.
   </p>
   <div class="category-grid">
     <a href="/opioid/index.html" class="category-btn">
@@ -483,8 +462,7 @@ footer{
 <section class="section resources" id="resources" aria-labelledby="resources-heading">
   <h2 id="resources-heading">Resources for Parents</h2>
   <p class="section-intro">
-    Simple tools to help families understand what these products look like, where they are sold, 
-    and how to talk about them before exposure becomes a crisis.
+    Simple tools to help families understand what these products look like, where they are sold, and how to talk about them before exposure becomes a crisis.
   </p>
   <div class="cards">
     <div class="card">
@@ -497,15 +475,14 @@ footer{
     </div>
     <div class="card">
       <h3>Warning Signs</h3>
-      <p>What to look for at home — in backpacks, receipts, product bottles, vape devices, and browser history.</p>
+      <p>What to look for at home in backpacks, receipts, product bottles, vape devices, and browser history.</p>
     </div>
   </div>
 </section>
 <section class="section get-involved" id="involved" aria-labelledby="involved-heading">
   <h2 id="involved-heading">Get Involved</h2>
   <p class="section-intro">
-    Parents can change what communities tolerate. Document what's being sold, 
-    alert other families, and ask local leaders why addictive products are treated like ordinary retail goods.
+    Parents can change what communities tolerate. Document what's being sold, alert other families, and ask local leaders why addictive products are treated like ordinary retail goods.
   </p>
   <div class="cards">
     <div class="card">
@@ -529,9 +506,8 @@ footer{
 </main>
 <footer>
   <div class="footer-mission">
-    <strong style="color:#fff;">GasStationHeroin.org</strong><br />
-    Protecting families from drug-like products sold in vape shops, smoke shops, and gas stations. 
-    Know the names. Recognize the packaging. Act before it becomes a crisis.
+    <strong style="color:#fff;">GasStationHeroin.org</strong><br>
+    Protecting families from drug-like products sold in vape shops, smoke shops, and gas stations. Know the names. Recognize the packaging. Act before it becomes a crisis.
   </div>
   <div class="footer-links">
     <a href="#products">Product Categories</a>
