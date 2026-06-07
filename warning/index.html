@@ -12,10 +12,12 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   min-height: 100%;
-  background: #000;
+  background: #000 !important;
+  overflow-x: hidden;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -28,67 +30,89 @@ body {
   width: 100%;
   max-width: 1024px;
   background: #000;
-  overflow: hidden;
+  line-height: 0;
 }
 
 img {
   display: block;
   width: 100%;
   height: auto;
+  border: 0;
+  vertical-align: bottom;
 }
 
-/* TOP HERO: title panel left, teen image right */
+/* HERO: one clean horizontal strip */
 .hero-row {
   display: grid;
-  grid-template-columns: 65% 35%;
-  gap: 0;
+  grid-template-columns: 50% 50%;
+  width: 100%;
   background: #000;
+  line-height: 0;
 }
 
-.hero-left,
-.hero-right {
-  min-width: 0;
+.hero-row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* WARNING CARDS */
+/* WARNING GRID */
 .warnings-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+  grid-template-columns: 50% 50%;
+  width: 100%;
   background: #000;
+  line-height: 0;
 }
 
-/* FOOTER */
 .footer-img {
+  width: 100%;
   background: #000;
+  line-height: 0;
 }
 
-/* Mobile: keep poster layout intact */
-@media (max-width: 700px) {
-  .page {
-    width: 100%;
-  }
-
+/* PHONE PORTRAIT */
+@media (max-width: 700px) and (orientation: portrait) {
   .hero-row {
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 1fr;
   }
 
   .warnings-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* PHONE LANDSCAPE / HORIZONTAL VIEW */
+@media (max-width: 950px) and (orientation: landscape) {
+  body {
+    align-items: flex-start;
+  }
+
+  .page {
+    max-width: 100vw;
+  }
+
+  .hero-row {
+    grid-template-columns: 50% 50%;
+  }
+
+  .warnings-grid {
+    grid-template-columns: 50% 50%;
   }
 }
 </style>
 </head>
 
 <body>
-<div class="page">
 
-  <div class="hero-row">
-    <img src="/warning/warningheroleft.jpeg" alt="Warning Signs of Teen Substance Use">
+<main class="page">
+
+  <section class="hero-row">
+    <img src="/warning/warningheroleft.jpeg" alt="Warning signs of teen substance use">
     <img src="/warning/warningheroright.jpeg" alt="Teen sitting alone">
-  </div>
+  </section>
 
-  <div class="warnings-grid">
+  <section class="warnings-grid">
     <img src="/warning/warning1.jpeg" alt="Mood changes">
     <img src="/warning/warning2.jpeg" alt="Sleep changes">
 
@@ -100,12 +124,13 @@ img {
 
     <img src="/warning/warning7.jpeg" alt="Physical changes">
     <img src="/warning/warning8.jpeg" alt="Signs to look for">
-  </div>
+  </section>
 
-  <div class="footer-img">
-    <img src="/warning/footer.jpeg" alt="Emergency resources and support">
-  </div>
+  <section class="footer-img">
+    <img src="/warning/footer.jpeg" alt="Emergency resources">
+  </section>
 
-</div>
+</main>
+
 </body>
 </html>
