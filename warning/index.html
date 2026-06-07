@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Warning signs of teen substance use — changes in mood, behavior, school, sleep, and social life. Free resources and crisis helplines.">
-  <title>Warning Signs of Teen Substance Use | Parent Resource</title>
+  <meta name="description" content="Warning signs of teen substance use: changes in mood, behavior, school, sleep, and social life. Free resources and crisis helplines.">
+  <title>Warning Signs of Teen Substance Use | Gas Station Heroin</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -13,282 +15,359 @@
     }
 
     body {
-      background: #fefaf5;   /* soft cream background similar to original handout */
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-      line-height: 1.4;
-      color: #1f2937;
+      background: #050505;      /* gasstationheroin dark background */
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #ffffff;
+      line-height: 1.5;
     }
 
-    /* main container – mimics the layout of IMG_8119.png */
-    .handout {
+    /* main container – dark card style similar to homepage panels */
+    .warning-container {
       max-width: 1280px;
-      margin: 0 auto;
-      padding: 2rem 1.8rem 3rem;
-      background: #ffffff;
-      box-shadow: 0 0 0 1px #ede6dd, 0 12px 28px -8px rgba(0, 0, 0, 0.05);
+      margin: 2rem auto;
+      background: #0d0d0f;
+      border-radius: 2rem;
+      padding: 2rem 2rem 2.5rem;
+      border: 1px solid #2a2a2f;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
     }
 
-    /* hero row: left text image + right photo */
+    /* ===== HERO ROW (text + photo) ===== */
     .hero-row {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
-      margin-bottom: 2.2rem;
+      margin-bottom: 2.5rem;
       align-items: center;
-      background: transparent;
+      background: #0a0a0c;
+      border-radius: 1.8rem;
+      padding: 1.5rem;
+      border: 1px solid #222226;
     }
 
-    .hero-text-img {
+    .hero-text {
       flex: 1.2;
-      min-width: 240px;
     }
 
-    .hero-photo-img {
+    .hero-text h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .hero-text .red-accent {
+      color: #e21b23;
+      border-bottom: 3px solid #e21b23;
+      display: inline-block;
+      padding-bottom: 2px;
+    }
+
+    .hero-text .subhead {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      font-weight: 600;
+      border-left: 4px solid #e21b23;
+      padding-left: 1rem;
+      background: rgba(226, 27, 35, 0.08);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .hero-text p {
+      margin-top: 1rem;
+      color: #b9bcc6;
+      font-size: 0.95rem;
+    }
+
+    .hero-photo {
       flex: 0.9;
-      min-width: 200px;
     }
 
-    .hero-text-img img,
-    .hero-photo-img img {
+    .hero-photo img {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.08);
-      background: #fff;
+      border-radius: 1.5rem;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.4);
+      border: 1px solid #2a2a2f;
     }
 
-    /* Warning cards grid – exactly 2 columns, matching the original handout structure */
+    /* ===== TWO‑COLUMN WARNING GRID (exact match to IMG_8119.png sections) ===== */
     .warnings-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.8rem;
-      margin: 2rem 0 2rem 0;
+      margin: 2rem 0 2rem;
     }
 
-    /* each warning card wraps the .jpeg image to preserve original typography & look */
     .warning-card {
-      background: #ffffff;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.03);
-      border: 1px solid #f0e5da;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: #0d0d10;
+      border: 1px solid #26262c;
+      border-left: 5px solid #e21b23;
+      border-radius: 1.5rem;
+      padding: 1.5rem 1.6rem;
+      transition: transform 0.2s ease, border-color 0.2s, box-shadow 0.2s;
     }
 
     .warning-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 26px -12px rgba(0, 0, 0, 0.12);
-      border-color: #e0cfbf;
+      transform: translateY(-4px);
+      border-color: #e21b23;
+      box-shadow: 0 12px 24px -12px rgba(226, 27, 35, 0.3);
+      background: #0f0f13;
     }
 
-    .warning-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      background: #fffdfa;
+    .warning-card h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
     }
 
-    /* footer resource image (emergency contacts) */
-    .resource-footer {
-      margin: 2.2rem 0 1.2rem 0;
-      border-radius: 32px;
+    .warning-card h2::before {
+      content: "⚠️";
+      font-size: 1.3rem;
+      font-weight: normal;
+    }
+
+    .warning-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .warning-card li {
+      margin-bottom: 0.65rem;
+      padding-left: 1.3rem;
+      position: relative;
+      color: #cbd0db;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .warning-card li::before {
+      content: "•";
+      color: #e21b23;
+      font-weight: 900;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    /* special highlight for "SIGNS TO LOOK FOR" */
+    .special-card {
+      background: #111114;
+      border-left-width: 6px;
+      border-left-color: #e21b23;
+    }
+
+    /* emergency resource image + extra text */
+    .emergency-section {
+      margin: 2rem 0 1.5rem;
+      background: #08080a;
+      border-radius: 1.8rem;
+      border: 1px solid #2a2a2f;
       overflow: hidden;
-      background: #f7efe7;
-      box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.08);
-      border: 1px solid #f0e2d4;
     }
 
-    .resource-footer img {
+    .emergency-section img {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    /* extra text elements from original PNG (exact match for missing phrases) */
-    .support-early {
+    .support-message {
       text-align: center;
-      margin: 1.8rem 0 1rem;
-      padding: 1rem 1rem;
-      background: #fffaf5;
-      border-radius: 64px;
+      margin: 1.5rem 0 1rem;
+      background: #111114;
+      padding: 1.2rem;
+      border-radius: 2rem;
       font-weight: 600;
-      font-size: 1.05rem;
-      color: #2f2e2a;
-      border: 1px solid #f0e0d2;
+      font-size: 1rem;
+      border-left: 3px solid #e21b23;
+      border-right: 3px solid #e21b23;
     }
 
-    .support-early strong {
-      color: #bb2e3a;
+    .support-message strong {
+      color: #e21b23;
     }
 
     .talk-line {
       text-align: center;
       font-weight: 800;
       font-size: 1.2rem;
-      letter-spacing: -0.2px;
-      padding: 1rem 1.2rem;
-      background: #fff3ec;
-      border-radius: 60px;
-      margin: 1rem 0 0.8rem;
-      color: #2c241e;
-      border-left: 5px solid #c12b2f;
-      border-right: 5px solid #c12b2f;
+      letter-spacing: -0.3px;
+      padding: 1rem;
+      background: #111114;
+      border-radius: 3rem;
+      margin: 1rem 0 0.5rem;
+      color: #ffffff;
+      border: 1px solid #2a2a2f;
     }
 
     .talk-line span {
-      color: #c12b2f;
-      font-weight: 900;
+      color: #e21b23;
     }
 
-    /* additional small note for consistency with original "Edit / Share" not required but keeps layout clean */
-    .attribution-note {
+    .footer-note {
       text-align: center;
-      font-size: 0.7rem;
-      color: #a0907e;
+      font-size: 0.75rem;
+      color: #6b6f7e;
       margin-top: 2rem;
-      border-top: 1px dashed #e9dfd3;
-      padding-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #222226;
     }
 
-    /* responsive: switch to single column on tablets/mobile */
-    @media (max-width: 780px) {
-      .handout {
-        padding: 1.5rem;
+    @media (max-width: 800px) {
+      .warning-container {
+        margin: 1rem;
+        padding: 1.2rem;
       }
       .warnings-grid {
         grid-template-columns: 1fr;
-        gap: 1.4rem;
+        gap: 1.2rem;
       }
       .hero-row {
         flex-direction: column;
-        gap: 1.2rem;
       }
-      .hero-text-img, .hero-photo-img {
-        flex: auto;
-      }
-      .talk-line {
-        font-size: 1rem;
-        padding: 0.8rem;
+      .warning-card h2 {
+        font-size: 1.4rem;
       }
     }
 
     @media (max-width: 500px) {
-      .handout {
+      .warning-card {
         padding: 1rem;
       }
-      .support-early {
-        font-size: 0.9rem;
-      }
-    }
-
-    /* subtle print optimization */
-    @media print {
-      body {
-        background: white;
-      }
-      .handout {
-        box-shadow: none;
-        padding: 0.2in;
-      }
-      .warning-card {
-        break-inside: avoid;
-        box-shadow: none;
+      .talk-line {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-<div class="handout">
+<div class="warning-container">
   
-  <!-- HERO SECTION: Left text image (warningheroleft.jpeg) + right teenager image (warningheroright.jpeg) -->
+  <!-- HERO: left text from original IMG_8119 (exact wording) + right photo (warningheroright.jpeg) -->
   <div class="hero-row">
-    <div class="hero-text-img">
-      <img src="/warning/warningheroleft.jpeg" 
-           alt="Warning signs of teen substance use: changes in behavior, mood, habits — start a conversation."
-           loading="eager">
+    <div class="hero-text">
+      <h1>WARNING SIGNS <br>OF <span class="red-accent">TEEN SUBSTANCE USE</span></h1>
+      <div class="subhead">
+        Changes in behavior, mood, and habits could be signs your teen is using alcohol or drugs.
+      </div>
+      <p>Look for these warning signs and start a conversation. Early awareness can save a life.<br>
+      <strong style="color:#e21b23;">👪 You are not alone — support is available 24/7.</strong></p>
     </div>
-    <div class="hero-photo-img">
-      <img src="/warning/warningheroright.jpeg" 
-           alt="Teen portrait — awareness and early support can save a life"
-           loading="eager">
+    <div class="hero-photo">
+      <!-- warningheroright.jpeg as the photo of the teen (exactly as in IMG_8119) -->
+      <img src="/warning/warningheroright.jpeg" alt="Teenager looking thoughtful – awareness and support can help" loading="eager">
     </div>
   </div>
 
-  <!-- WARNING SIGNS GRID: images exactly matching the original categories (8 images in correct order) 
-       Order follows IMG_8119.png: 
-       1. Mood Changes (warning1.jpeg)
-       2. School & Activity Changes (warning3.jpeg)
-       3. Secretive Behavior (warning5.jpeg)
-       4. Physical Changes (warning7.jpeg)
-       5. Sleep Changes (warning2.jpeg)
-       6. Social Changes (warning4.jpeg)
-       7. Risky or Unusual Behavior (warning6.jpeg)
-       8. Signs to Look For (warning8.jpeg)
-  -->
+  <!-- WARNING SIGNS GRID (content exactly as IMG_8119.png) -->
   <div class="warnings-grid">
-    <!-- mood changes: warning1.jpeg -->
+    <!-- MOOD CHANGES -->
     <div class="warning-card">
-      <img src="/warning/warning1.jpeg" 
-           alt="Mood changes: irritable, mood swings, sad or anxious, loss of interest in activities"
-           loading="lazy">
+      <h2>MOOD CHANGES</h2>
+      <ul>
+        <li>Irritable, angry, or quick to argue</li>
+        <li>Sudden mood swings</li>
+        <li>Feeling sad, anxious, or “down”</li>
+        <li>Loss of interest in activities they used to enjoy</li>
+      </ul>
     </div>
-    <!-- school & activity changes: warning3.jpeg -->
+
+    <!-- SCHOOL & ACTIVITY CHANGES -->
     <div class="warning-card">
-      <img src="/warning/warning3.jpeg" 
-           alt="School and activity changes: drop in grades, missing school, loss of motivation, incomplete assignments, losing interest in sports or clubs"
-           loading="lazy">
+      <h2>SCHOOL & ACTIVITY CHANGES</h2>
+      <ul>
+        <li>Drop in grades or missing school</li>
+        <li>Loss of motivation or not trying</li>
+        <li>Not completing assignments</li>
+        <li>Losing interest in sports, clubs, or hobbies</li>
+      </ul>
     </div>
-    <!-- secretive behavior: warning5.jpeg -->
+
+    <!-- SECRETIVE BEHAVIOR -->
     <div class="warning-card">
-      <img src="/warning/warning5.jpeg" 
-           alt="Secretive behavior: more private or defensive, lying about plans, hiding things, excessive phone or social media use"
-           loading="lazy">
+      <h2>SECRETIVE BEHAVIOR</h2>
+      <ul>
+        <li>More private or defensive</li>
+        <li>Lying about plans or whereabouts</li>
+        <li>Hiding things or being vague</li>
+        <li>Excessive phone, text, or social media use</li>
+      </ul>
     </div>
-    <!-- physical changes: warning7.jpeg -->
+
+    <!-- PHYSICAL CHANGES -->
     <div class="warning-card">
-      <img src="/warning/warning7.jpeg" 
-           alt="Physical changes: bloodshot eyes or dilated pupils, weight change, appetite changes, poor hygiene, frequent colds"
-           loading="lazy">
+      <h2>PHYSICAL CHANGES</h2>
+      <ul>
+        <li>Bloodshot eyes or dilated pupils</li>
+        <li>Sudden weight loss or gain</li>
+        <li>Changes in appetite</li>
+        <li>Poor hygiene or disheveled appearance</li>
+        <li>Frequent colds or unexplained health issues</li>
+      </ul>
     </div>
-    <!-- sleep changes: warning2.jpeg -->
+
+    <!-- SLEEP CHANGES -->
     <div class="warning-card">
-      <img src="/warning/warning2.jpeg" 
-           alt="Sleep changes: trouble falling or staying asleep, sleeping much more, tired or sluggish, odd sleep schedule"
-           loading="lazy">
+      <h2>SLEEP CHANGES</h2>
+      <ul>
+        <li>Trouble falling or staying asleep</li>
+        <li>Sleeping much more than usual</li>
+        <li>Tired, sluggish, or low energy</li>
+        <li>Odd sleep schedule or staying up all night</li>
+      </ul>
     </div>
-    <!-- social changes: warning4.jpeg -->
+
+    <!-- SOCIAL CHANGES -->
     <div class="warning-card">
-      <img src="/warning/warning4.jpeg" 
-           alt="Social changes: withdrawing from family and friends, new peer group, secretive about whereabouts, changes in online activity"
-           loading="lazy">
+      <h2>SOCIAL CHANGES</h2>
+      <ul>
+        <li>Withdrawing from family and friends</li>
+        <li>Spending time with a new group</li>
+        <li>Secretive about where they go or who they’re with</li>
+        <li>Changes in online activity or phone use</li>
+      </ul>
     </div>
-    <!-- risky or unusual behavior: warning6.jpeg -->
+
+    <!-- RISKY OR UNUSUAL BEHAVIOR -->
     <div class="warning-card">
-      <img src="/warning/warning6.jpeg" 
-           alt="Risky or unusual behavior: taking unnecessary risks, decline in judgment, trouble at school or with law, unexplained need for money"
-           loading="lazy">
+      <h2>RISKY OR UNUSUAL BEHAVIOR</h2>
+      <ul>
+        <li>Taking unnecessary risks</li>
+        <li>Decline in judgment</li>
+        <li>Getting into trouble at school or with the law</li>
+        <li>Unexplained need for money</li>
+      </ul>
     </div>
-    <!-- signs to look for: warning8.jpeg -->
-    <div class="warning-card">
-      <img src="/warning/warning8.jpeg" 
-           alt="Signs to look for: alcohol, vape or drug smell, possession of alcohol or drugs or paraphernalia, missing items or money, evidence like vapes, edibles, pills, rolling papers"
-           loading="lazy">
+
+    <!-- SIGNS TO LOOK FOR (special card) -->
+    <div class="warning-card special-card">
+      <h2>SIGNS TO LOOK FOR</h2>
+      <ul>
+        <li>Alcohol, vape, or drug smell</li>
+        <li>Possession of alcohol, drugs, or paraphernalia</li>
+        <li>Missing items or money</li>
+        <li>Evidence of drug use (vapes, edibles, pills, rolling papers, etc.)</li>
+      </ul>
     </div>
   </div>
 
-  <!-- EMERGENCY RESOURCES & HELPLINES (footer.jpeg) 
-       This image contains: Poison Control, SAMHSA, Crisis Text Line, 988 Lifeline, and "You are not alone" messaging -->
-  <div class="resource-footer">
-    <img src="/warning/footer.jpeg" 
-         alt="Emergency resources: Poison Control 1-800-222-1222, SAMHSA National Helpline 1-800-662-HELP, Crisis Text Line text HOME to 741741, 988 Suicide & Crisis Lifeline — free 24/7 support. You are not alone."
-         loading="lazy">
+  <!-- EMERGENCY RESOURCES: footer.jpeg image (contains Poison Control, SAMHSA, Crisis Text Line, 988) -->
+  <div class="emergency-section">
+    <img src="/warning/footer.jpeg" alt="Emergency resources: Poison Control 1-800-222-1222, SAMHSA 1-800-662-HELP, Crisis Text Line HOME to 741741, 988 Suicide & Crisis Lifeline. Free 24/7 support." loading="lazy">
   </div>
 
-  <!-- EXTRA TEXT to exactly match the original IMG_8119.png content (since footer.jpeg includes similar but not identical phrasing) 
-       Original handout includes "YOU ARE NOT ALONE. Early conversations and support can make a big difference. Reach out for help." 
-       and "TALK. LISTEN. SUPPORT. It could save a life." -->
-  <div class="support-early">
+  <!-- Extra text to match the original IMG_8119 footer exactly -->
+  <div class="support-message">
     💙 <strong>YOU ARE NOT ALONE.</strong> Early conversations and support can make a big difference.<br>
     Reach out for help — you have the power to protect and guide.
   </div>
@@ -297,9 +376,8 @@
     🗣️ <span>TALK. LISTEN. SUPPORT.</span> It could save a life.
   </div>
 
-  <!-- subtle credit / footnote (no "Edit/Share" to keep clean but respects original aesthetic) -->
-  <div class="attribution-note">
-    ⚠️ Know the signs • Start the conversation • Help is 24/7
+  <div class="footer-note">
+    Know the signs • Start the conversation • Help is available 24/7
   </div>
 </div>
 </body>
