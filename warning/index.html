@@ -42,7 +42,7 @@ img {
   vertical-align: bottom;
 }
 
-/* ----- NEW HEADER ----- */
+/* ----- HEADER (gasstationheroin.org) ----- */
 .site-header {
   background: #000;
   padding: 1rem 1.5rem;
@@ -80,7 +80,7 @@ img {
   color: #e21b23;
 }
 
-/* HERO: two columns side by side */
+/* HERO: two columns side by side (unchanged) */
 .hero-row {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -95,7 +95,7 @@ img {
   object-fit: cover;
 }
 
-/* WARNING GRID – two columns */
+/* WARNING GRID – two columns (unchanged) */
 .warnings-grid {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -104,8 +104,8 @@ img {
   line-height: 0;
 }
 
-/* ----- NEW INFO SECTION (no emojis, plain text) ----- */
-.info-section {
+/* ----- EMERGENCY RESOURCES SECTION (exactly from IMG_8122.jpeg, no emojis) ----- */
+.emergency-section {
   background: #000;
   line-height: 1.5;
   padding: 2rem 1.5rem;
@@ -113,56 +113,56 @@ img {
   border-top: 1px solid #1f1f1f;
 }
 
-.info-section h2 {
+.emergency-section h2 {
   font-size: 1.6rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   letter-spacing: -0.3px;
 }
 
-.info-section p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  max-width: 85%;
+.resource-list {
+  margin-bottom: 1.8rem;
 }
 
-.info-section ul {
-  margin: 1rem 0 1rem 1.5rem;
+.resource-item {
+  margin-bottom: 1.2rem;
 }
 
-.info-section li {
-  margin-bottom: 0.5rem;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.info-card {
-  background: #0a0a0a;
-  padding: 1.2rem;
-  border-radius: 1rem;
-  border-left: 3px solid #e21b23;
-}
-
-.info-card h3 {
+.resource-item strong {
   color: #fff;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 700;
+  display: inline-block;
+  min-width: 180px;
 }
 
-.info-card p {
-  font-size: 0.9rem;
-  margin-bottom: 0;
+.resource-item .phone {
+  font-family: monospace;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.resource-desc {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.you-are-not-alone {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #2a2a2a;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.you-are-not-alone p {
+  margin: 0.2rem 0;
 }
 
 /* reset any extra spacing */
-body, .page, .warnings-grid, .hero-row, .info-section {
+body, .page, .warnings-grid, .hero-row, .emergency-section {
   margin: 0;
   padding: 0;
 }
@@ -183,11 +183,12 @@ body, .page, .warnings-grid, .hero-row, .info-section {
   .nav-links {
     gap: 1.2rem;
   }
-  .info-section p {
-    max-width: 100%;
-  }
-  .info-section {
+  .emergency-section {
     padding: 1.5rem;
+  }
+  .resource-item strong {
+    display: block;
+    margin-bottom: 0.2rem;
   }
 }
 
@@ -222,7 +223,7 @@ body, .page, .warnings-grid, .hero-row, .info-section {
 <body>
 
 <main class="page">
-  <!-- NEW HEADER (no emojis) -->
+  <!-- HEADER (gasstationheroin.org main page) -->
   <header class="site-header">
     <a href="/" class="logo">GasStationHeroin.org</a>
     <ul class="nav-links">
@@ -253,32 +254,35 @@ body, .page, .warnings-grid, .hero-row, .info-section {
     <img src="/warning/warning8.jpeg" alt="Signs to look for">
   </section>
 
-  <!-- NEW INFORMATION SECTION (replaces old footer, no emojis) -->
-  <div class="info-section">
-    <h2>What is Gas Station Heroin?</h2>
-    <p>Gas station heroin is a term for dangerous, unregulated drug‑like products sold legally in vape shops, smoke shops, and convenience stores. These products often contain kratom, tianeptine, or synthetic cannabinoids and are marketed with bright packaging next to candy and energy drinks.</p>
-    
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>14,449+ Exposures</h3>
-        <p>Reported to U.S. poison centers in recent years involving these products.</p>
+  <!-- EMERGENCY RESOURCES SECTION (exactly as in IMG_8122.jpeg, no emojis) -->
+  <div class="emergency-section">
+    <h2>EMERGENCY RESOURCES</h2>
+    <div class="resource-list">
+      <div class="resource-item">
+        <strong>POISON CONTROL</strong><br>
+        <span class="phone">1-800-222-1222</span>
+        <div class="resource-desc">24/7 help for poison emergencies.</div>
       </div>
-      <div class="info-card">
-        <h3>1,151 Deaths</h3>
-        <p>With mitragynine (kratom) detected in 2023 alone.</p>
+      <div class="resource-item">
+        <strong>SAMHSA NATIONAL HELPLINE</strong><br>
+        <span class="phone">1-800-662-HELP (4357)</span>
+        <div class="resource-desc">Free, confidential treatment referral and information.</div>
       </div>
-      <div class="info-card">
-        <h3>304 Commercial Products</h3>
-        <p>7‑OH products identified on shelves targeting unaware consumers.</p>
+      <div class="resource-item">
+        <strong>CRISIS TEXT LINE</strong><br>
+        <span class="phone">Text HOME to 741741</span>
+        <div class="resource-desc">Free, 24/7 support for any crisis.</div>
       </div>
-      <div class="info-card">
-        <h3>Child‑Appealing Packaging</h3>
-        <p>Over 80 products found with bright colors, cartoons, or candy‑like names.</p>
+      <div class="resource-item">
+        <strong>988 SUICIDE & CRISIS LIFELINE</strong><br>
+        <span class="phone">Call or text 988</span>
+        <div class="resource-desc">Free, 24/7 support for emotional distress.</div>
       </div>
     </div>
-
-    <p style="margin-top: 1.5rem;"><strong>How to protect your family:</strong> Learn the names, recognize the packaging, talk to your teens, and report local stores. Early conversation saves lives.</p>
-    <p>For immediate help, call Poison Control (1-800-222-1222) or text HOME to 741741.</p>
+    <div class="you-are-not-alone">
+      <p>YOU ARE NOT ALONE.</p>
+      <p>There is help. There is hope. You can make a difference.</p>
+    </div>
   </div>
 </main>
 
