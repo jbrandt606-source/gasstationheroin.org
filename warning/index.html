@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Warning signs of teen substance use: recognize changes in mood, behavior, sleep, school, and social life. Free parent resources and crisis helplines.">
+  <title>Warning Signs of Teen Substance Use | Gas Station Heroin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fefcf7;   /* soft paper background similar to original handout */
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      color: #1a1e2b;
+      line-height: 1.45;
+    }
+
+    /* red accent color — matches typical warning signage */
+    :root {
+      --warning-red: #c22a2f;
+      --warning-red-dark: #9e1e22;
+      --soft-gray: #f6f4f0;
+      --border-light: #e9e5de;
+      --card-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.03);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== HERO / TWO-COLUMN SECTION ===== */
+    .hero-split {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      padding: 48px 0 40px 0;
+      border-bottom: 2px solid #f0eae2;
+    }
+
+    .hero-left {
+      flex: 1.1;
+    }
+
+    .hero-left h1 {
+      font-size: clamp(2.4rem, 7vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #131826;
+    }
+
+    .hero-left .red-flag {
+      color: var(--warning-red);
+      display: inline-block;
+      border-bottom: 3px solid var(--warning-red);
+      padding-bottom: 2px;
+    }
+
+    .hero-left .intro-text {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #2d3446;
+      font-weight: 500;
+      border-left: 4px solid var(--warning-red);
+      padding-left: 18px;
+      background: #fffaf5;
+      border-radius: 0 12px 12px 0;
+      line-height: 1.4;
+    }
+
+    .hero-left p {
+      margin-top: 18px;
+      color: #3b4256;
+      font-size: 1rem;
+    }
+
+    .hero-right {
+      flex: 0.9;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+      background: #f9f3ec;
+    }
+
+    .hero-right img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+      transition: transform 0.2s ease;
+    }
+
+    /* ===== warning sign grid ===== */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 56px 0 20px 0;
+      letter-spacing: -0.01em;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 70px;
+      height: 3px;
+      background: var(--warning-red);
+      border-radius: 4px;
+    }
+
+    .warning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin: 32px 0 48px 0;
+    }
+
+    .warning-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-light);
+      transition: all 0.2s;
+      border-left: 6px solid var(--warning-red);
+    }
+
+    .warning-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 28px -12px rgba(0, 0, 0, 0.12);
+      border-color: #e2dbd1;
+    }
+
+    .warning-card h2 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 1rem;
+      color: #1e2638;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .warning-card h2::before {
+      content: "⚠️";
+      font-size: 1.3rem;
+      font-weight: normal;
+    }
+
+    .warning-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .warning-card li {
+      margin-bottom: 0.65rem;
+      padding-left: 1.3rem;
+      position: relative;
+      font-size: 0.98rem;
+      color: #262e42;
+      line-height: 1.4;
+    }
+
+    .warning-card li::before {
+      content: "•";
+      color: var(--warning-red);
+      font-weight: 900;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 0;
+      top: -1px;
+    }
+
+    /* specific styling for "signs to look for" maybe more prominent */
+    .special-card {
+      border-left-width: 8px;
+      background: #fffbf8;
+      border-color: var(--warning-red);
+    }
+
+    /* emergency & help section  (footer style) */
+    .help-section {
+      background: #1e2638;
+      border-radius: 36px;
+      margin: 48px 0 40px 0;
+      padding: 2.2rem 2rem;
+      color: white;
+      box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.3);
+    }
+
+    .help-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .help-block {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .help-block h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.2px;
+      border-left: 3px solid var(--warning-red);
+      padding-left: 12px;
+    }
+
+    .help-block p, .help-block a {
+      font-size: 1rem;
+      margin: 6px 0;
+      color: #e9eef5;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .help-block a {
+      display: inline-block;
+      background: rgba(255,255,240,0.1);
+      padding: 6px 12px;
+      border-radius: 40px;
+      transition: 0.2s;
+    }
+
+    .help-block a:hover {
+      background: var(--warning-red);
+      color: white;
+    }
+
+    .hotline-number {
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0.3px;
+      font-family: monospace;
+    }
+
+    .quote-support {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,240,0.2);
+      padding-top: 26px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+
+    .quote-support span {
+      color: var(--warning-red);
+      font-weight: 800;
+    }
+
+    .talk-line {
+      background: #fff3ed;
+      text-align: center;
+      padding: 20px;
+      border-radius: 80px;
+      margin: 30px 0 50px 0;
+      font-weight: 800;
+      font-size: 1.3rem;
+      letter-spacing: -0.3px;
+      color: #2f2a24;
+      border: 1px solid #f0e0d4;
+    }
+
+    .talk-line strong {
+      color: var(--warning-red);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 32px 0 40px;
+      border-top: 1px solid #e2dbd1;
+      color: #6f6f7a;
+    }
+
+    @media (max-width: 820px) {
+      .container {
+        padding: 0 20px;
+      }
+      .warning-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .hero-split {
+        flex-direction: column;
+        gap: 28px;
+        padding: 28px 0 20px;
+      }
+      .hero-left .intro-text {
+        font-size: 1rem;
+      }
+      .help-flex {
+        flex-direction: column;
+      }
+      .talk-line {
+        font-size: 1rem;
+        padding: 16px;
+      }
+      .warning-card {
+        padding: 1.2rem 1.4rem;
+      }
+      .warning-card h2 {
+        font-size: 1.35rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .warning-card li {
+        font-size: 0.9rem;
+      }
+      .section-title {
+        font-size: 1.7rem;
+      }
+    }
+
+    /* subtle print-friendly */
+    @media print {
+      body {
+        background: white;
+      }
+      .hero-right, .talk-line, .help-section {
+        break-inside: avoid;
+      }
+      .warning-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  
+  <!-- HERO section: left text from warningheroleft.jpeg / right image from warningheroright.jpeg -->
+  <div class="hero-split">
+    <div class="hero-left">
+      <h1>WARNING SIGNS <br>OF <span class="red-flag">TEEN SUBSTANCE USE</span></h1>
+      <div class="intro-text">
+        Changes in behavior, mood, and habits could be signs your teen is using alcohol or drugs.
+      </div>
+      <p>Look for these warning signs and start a conversation. Early awareness can prevent crisis.<br> 
+      <strong style="color:#c22a2f;">👪 You are not alone — support is available.</strong></p>
+    </div>
+    <div class="hero-right">
+      <!-- warningheroright.jpeg from /warning/ folder: picture of teenager (as in IMG_8119.png) -->
+      <img src="/warning/warningheroright.jpeg" alt="Teen looking thoughtful — awareness and support" loading="eager">
+    </div>
+  </div>
+
+  <!-- main warning signs grid (two columns) using content from provided images -->
+  <div>
+    <div class="section-title">Recognize the signs</div>
+    <div class="warning-grid">
+      
+      <!-- Mood Changes (warning1.jpeg) -->
+      <div class="warning-card">
+        <h2>MOOD CHANGES</h2>
+        <ul>
+          <li>Irritable, angry, or quick to argue</li>
+          <li>Sudden mood swings</li>
+          <li>Feeling sad, anxious, or “down”</li>
+          <li>Loss of interest in activities they used to enjoy</li>
+        </ul>
+      </div>
+
+      <!-- School & Activity Changes (warning3.jpeg) -->
+      <div class="warning-card">
+        <h2>SCHOOL & ACTIVITY CHANGES</h2>
+        <ul>
+          <li>Drop in grades or missing school</li>
+          <li>Loss of motivation or not trying</li>
+          <li>Not completing assignments</li>
+          <li>Losing interest in sports, clubs, or hobbies</li>
+        </ul>
+      </div>
+
+      <!-- Secretive Behavior (warning5.jpeg) -->
+      <div class="warning-card">
+        <h2>SECRETIVE BEHAVIOR</h2>
+        <ul>
+          <li>More private or defensive</li>
+          <li>Lying about plans or whereabouts</li>
+          <li>Hiding things or being vague</li>
+          <li>Excessive phone, text, or social media use</li>
+        </ul>
+      </div>
+
+      <!-- Physical Changes (warning7.jpeg) -->
+      <div class="warning-card">
+        <h2>PHYSICAL CHANGES</h2>
+        <ul>
+          <li>Bloodshot eyes or dilated pupils</li>
+          <li>Sudden weight loss or gain</li>
+          <li>Changes in appetite</li>
+          <li>Poor hygiene or disheveled appearance</li>
+          <li>Frequent colds or unexplained health issues</li>
+        </ul>
+      </div>
+
+      <!-- Sleep Changes (warning2.jpeg) -->
+      <div class="warning-card">
+        <h2>SLEEP CHANGES</h2>
+        <ul>
+          <li>Trouble falling or staying asleep</li>
+          <li>Sleeping much more than usual</li>
+          <li>Tired, sluggish, or low energy</li>
+          <li>Odd sleep schedule or staying up all night</li>
+        </ul>
+      </div>
+
+      <!-- Social Changes (warning4.jpeg) -->
+      <div class="warning-card">
+        <h2>SOCIAL CHANGES</h2>
+        <ul>
+          <li>Withdrawing from family and friends</li>
+          <li>Spending time with a new group</li>
+          <li>Secretive about where they go or who they’re with</li>
+          <li>Changes in online activity or phone use</li>
+        </ul>
+      </div>
+
+      <!-- Risky or Unusual Behavior (warning6.jpeg) -->
+      <div class="warning-card">
+        <h2>RISKY OR UNUSUAL BEHAVIOR</h2>
+        <ul>
+          <li>Taking unnecessary risks</li>
+          <li>Decline in judgment</li>
+          <li>Getting into trouble at school or with the law</li>
+          <li>Unexplained need for money</li>
+        </ul>
+      </div>
+
+      <!-- Signs to Look For (warning8.jpeg) extra emphasis -->
+      <div class="warning-card special-card">
+        <h2>SIGNS TO LOOK FOR</h2>
+        <ul>
+          <li>Alcohol, vape, or drug smell</li>
+          <li>Possession of alcohol, drugs, or paraphernalia</li>
+          <li>Missing items or money</li>
+          <li>Evidence of drug use (vapes, edibles, pills, rolling papers, etc.)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMERGENCY & HELPLINE SECTION (based on footer.jpeg + extra poison / samhsa / crisis) -->
+  <div class="help-section">
+    <div class="help-flex">
+      <div class="help-block">
+        <h3>☠️ POISON CONTROL</h3>
+        <p>Free, expert advice 24/7</p>
+        <a href="tel:18002221222" class="hotline-number">1-800-222-1222</a>
+      </div>
+      <div class="help-block">
+        <h3>🧭 SAMHSA NATIONAL HELPLINE</h3>
+        <p>Confidential treatment referral & information</p>
+        <a href="tel:18006624357" class="hotline-number">1-800-662-HELP (4357)</a>
+      </div>
+      <div class="help-block">
+        <h3>💬 CRISIS TEXT LINE</h3>
+        <p>Text with a trained crisis counselor</p>
+        <a href="sms:741741&body=HOME"><strong>Text HOME to 741741</strong></a>
+        <p style="margin-top: 8px;">Free • 24/7 • Confidential</p>
+      </div>
+      <div class="help-block">
+        <h3>🆘 988 SUICIDE & CRISIS LIFELINE</h3>
+        <p>Call or text 988 — emotional support, any crisis</p>
+        <a href="tel:988">📞 988 (call or text)</a>
+      </div>
+    </div>
+    <div class="quote-support">
+      ⚡ YOU ARE NOT ALONE. <span>There is help.</span> There is hope. You can make a difference.
+    </div>
+  </div>
+
+  <!-- TALK. LISTEN. SUPPORT banner (from IMG_8119 footer style) -->
+  <div class="talk-line">
+    🗣️ <strong>TALK. LISTEN. SUPPORT.</strong> It could save a life. 💙
+  </div>
+
+  <!-- additional small note: early conversations make difference (as shown on original image) -->
+  <div style="text-align: center; margin: 20px 0 20px; background: #f9f2ea; padding: 18px; border-radius: 36px;">
+    <p style="font-weight: 600; font-size: 0.95rem;">🧡 Early conversations and support can make a big difference. 
+    <br>Reach out for help — you are never alone.</p>
+  </div>
+
+  <!-- subtle disclaimer + attribution to resources from images -->
+  <footer>
+    <p>© Gas Station Heroin — Awareness initiative. Signs adapted from SAMHSA & pediatric resources. 
+    <br>If you suspect substance use, talk openly and without judgment. Professional help is available 24/7.</p>
+  </footer>
+</div>
+</body>
+</html>
