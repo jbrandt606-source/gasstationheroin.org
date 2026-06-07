@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Warning Signs of Teen Substance Use</title>
+<title>Gas Station Heroin — Protecting Families from Drug‑Like Products</title>
 
 <style>
 * {
@@ -26,34 +26,6 @@ body {
   justify-content: center;
 }
 
-/* back button – improved for landscape */
-.back-link {
-  position: sticky;
-  top: 16px;
-  left: 16px;
-  z-index: 100;
-  display: inline-block;
-  margin: 16px 0 0 16px;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(8px);
-  padding: 8px 18px;
-  border-radius: 40px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.3);
-  transition: 0.2s ease;
-  width: fit-content;
-  letter-spacing: -0.2px;
-}
-
-.back-link:hover {
-  background: #e21b23;
-  border-color: #e21b23;
-  color: white;
-}
-
 .page {
   width: 100%;
   max-width: 1024px;
@@ -68,6 +40,44 @@ img {
   height: auto;
   border: 0;
   vertical-align: bottom;
+}
+
+/* ----- NEW HEADER ----- */
+.site-header {
+  background: #000;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #222;
+  line-height: 1.2;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #e21b23;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #e21b23;
 }
 
 /* HERO: two columns side by side */
@@ -94,21 +104,70 @@ img {
   line-height: 0;
 }
 
-.footer-img {
-  width: 100%;
+/* ----- NEW INFO SECTION (no emojis, plain text) ----- */
+.info-section {
   background: #000;
-  line-height: 0;
-  margin: 0;
-  padding: 0;
+  line-height: 1.5;
+  padding: 2rem 1.5rem;
+  color: #ddd;
+  border-top: 1px solid #1f1f1f;
+}
+
+.info-section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.3px;
+}
+
+.info-section p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  max-width: 85%;
+}
+
+.info-section ul {
+  margin: 1rem 0 1rem 1.5rem;
+}
+
+.info-section li {
+  margin-bottom: 0.5rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.info-card {
+  background: #0a0a0a;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  border-left: 3px solid #e21b23;
+}
+
+.info-card h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.info-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
 }
 
 /* reset any extra spacing */
-body, .page, .footer-img, .warnings-grid, .hero-row {
+body, .page, .warnings-grid, .hero-row, .info-section {
   margin: 0;
   padding: 0;
 }
 
-/* Portrait phones: stack hero and warnings */
+/* Portrait phones */
 @media (max-width: 700px) and (orientation: portrait) {
   .hero-row {
     grid-template-columns: 1fr;
@@ -116,15 +175,23 @@ body, .page, .footer-img, .warnings-grid, .hero-row {
   .warnings-grid {
     grid-template-columns: 1fr;
   }
-  .back-link {
-    top: 10px;
-    left: 10px;
-    font-size: 0.8rem;
-    padding: 6px 14px;
+  .site-header {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+  .nav-links {
+    gap: 1.2rem;
+  }
+  .info-section p {
+    max-width: 100%;
+  }
+  .info-section {
+    padding: 1.5rem;
   }
 }
 
-/* Landscape view fix for phones and small tablets */
+/* Landscape view fix */
 @media (max-width: 950px) and (orientation: landscape) {
   html, body {
     overflow-x: auto;
@@ -136,29 +203,15 @@ body, .page, .footer-img, .warnings-grid, .hero-row {
     max-width: 100%;
     width: 100%;
   }
-  /* keep hero side by side (50/50) */
   .hero-row {
     grid-template-columns: 50% 50%;
   }
-  /* warnings stay two columns – looks great in landscape */
   .warnings-grid {
     grid-template-columns: 50% 50%;
   }
-  /* back button slightly smaller but still accessible */
-  .back-link {
-    top: 12px;
-    left: 12px;
-    font-size: 0.75rem;
-    padding: 6px 12px;
-  }
 }
 
-/* Extra small landscape (like 480px height) - ensure no clipping */
 @media (max-height: 450px) and (orientation: landscape) {
-  .back-link {
-    position: sticky;
-    margin: 8px 0 0 12px;
-  }
   .hero-row img, .warnings-grid img {
     max-height: 70vh;
     object-fit: contain;
@@ -169,13 +222,23 @@ body, .page, .footer-img, .warnings-grid, .hero-row {
 <body>
 
 <main class="page">
-  <a href="parents.html" class="back-link">← Back to Parents</a>
+  <!-- NEW HEADER (no emojis) -->
+  <header class="site-header">
+    <a href="/" class="logo">GasStationHeroin.org</a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Get Involved</a></li>
+    </ul>
+  </header>
 
+  <!-- Hero section (unchanged) -->
   <section class="hero-row">
     <img src="/warning/warningheroleft.jpeg" alt="Warning signs of teen substance use">
     <img src="/warning/warningheroright.jpeg" alt="Teen sitting alone">
   </section>
 
+  <!-- Warning cards grid (unchanged) -->
   <section class="warnings-grid">
     <img src="/warning/warning1.jpeg" alt="Mood changes">
     <img src="/warning/warning2.jpeg" alt="Sleep changes">
@@ -190,9 +253,33 @@ body, .page, .footer-img, .warnings-grid, .hero-row {
     <img src="/warning/warning8.jpeg" alt="Signs to look for">
   </section>
 
-  <section class="footer-img">
-    <img src="/warning/footer.jpeg" alt="Emergency resources">
-  </section>
+  <!-- NEW INFORMATION SECTION (replaces old footer, no emojis) -->
+  <div class="info-section">
+    <h2>What is Gas Station Heroin?</h2>
+    <p>Gas station heroin is a term for dangerous, unregulated drug‑like products sold legally in vape shops, smoke shops, and convenience stores. These products often contain kratom, tianeptine, or synthetic cannabinoids and are marketed with bright packaging next to candy and energy drinks.</p>
+    
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>14,449+ Exposures</h3>
+        <p>Reported to U.S. poison centers in recent years involving these products.</p>
+      </div>
+      <div class="info-card">
+        <h3>1,151 Deaths</h3>
+        <p>With mitragynine (kratom) detected in 2023 alone.</p>
+      </div>
+      <div class="info-card">
+        <h3>304 Commercial Products</h3>
+        <p>7‑OH products identified on shelves targeting unaware consumers.</p>
+      </div>
+      <div class="info-card">
+        <h3>Child‑Appealing Packaging</h3>
+        <p>Over 80 products found with bright colors, cartoons, or candy‑like names.</p>
+      </div>
+    </div>
+
+    <p style="margin-top: 1.5rem;"><strong>How to protect your family:</strong> Learn the names, recognize the packaging, talk to your teens, and report local stores. Early conversation saves lives.</p>
+    <p>For immediate help, call Poison Control (1-800-222-1222) or text HOME to 741741.</p>
+  </div>
 </main>
 
 </body>
