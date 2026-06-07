@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Warning Signs of Teen Substance Use</title>
   <style>
     * {
@@ -13,43 +13,36 @@
 
     body {
       background: white;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.4;
-      color: #111;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     }
 
-    /* simple container, no frames, no shadows */
+    /* clean container – no frames, no extra backgrounds */
     .page {
       max-width: 1000px;
       margin: 0 auto;
       padding: 20px;
-      background: white;
     }
 
-    /* images are just images — no borders, no frames, no extra styling */
+    /* images have no borders, no shadows */
     img {
       display: block;
-      max-width: 100%;
+      width: 100%;
       height: auto;
     }
 
-    /* two‑column hero row (left text image + right photo) */
+    /* hero row: two images side by side, touching (no gap) */
     .hero-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+      flex-wrap: nowrap;
+      gap: 0;           /* no gap — they blend into one visual */
       margin-bottom: 30px;
     }
 
-    .hero-left {
-      flex: 1.2;
+    .hero-left, .hero-right {
+      flex: 1;
     }
 
-    .hero-right {
-      flex: 0.9;
-    }
-
-    /* warning signs grid: exactly two columns, plain images */
+    /* warning grid: two columns */
     .warnings-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -57,55 +50,35 @@
       margin: 30px 0;
     }
 
-    /* footer image area */
+    /* footer image */
     .footer-img {
-      margin: 30px 0 20px;
+      margin: 30px 0 0;
     }
 
-    /* plain text sections to match the original PNG content */
-    .you-are-not-alone {
-      text-align: center;
-      margin: 30px 0 20px;
-      font-size: 1.1rem;
-    }
-
-    .helplines {
-      text-align: center;
-      margin: 20px 0;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .helplines strong {
-      font-weight: 700;
-    }
-
-    .talk-line {
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.2rem;
-      margin: 30px 0 20px;
-    }
-
-    .edit-share {
-      text-align: center;
-      color: #666;
-      font-size: 0.8rem;
-      margin-top: 30px;
-      padding-top: 15px;
-      border-top: 1px solid #eee;
-    }
-
+    /* mobile: hero stacks like your homepage hero */
     @media (max-width: 700px) {
-      .warnings-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+      .page {
+        padding: 12px;
       }
       .hero-row {
-        flex-direction: column;
+        flex-direction: column;   /* stack vertically on mobile */
+        gap: 0;
       }
+      .hero-left, .hero-right {
+        width: 100%;
+      }
+      .warnings-grid {
+        gap: 12px;
+      }
+    }
+
+    /* extra small screens */
+    @media (max-width: 480px) {
       .page {
-        padding: 16px;
+        padding: 8px;
+      }
+      .warnings-grid {
+        gap: 8px;
       }
     }
   </style>
@@ -113,7 +86,7 @@
 <body>
 <div class="page">
 
-  <!-- Hero row: left text image (warningheroleft.jpeg) + right teen photo (warningheroright.jpeg) -->
+  <!-- Hero section: left text image + right photo, no gap, blending visually -->
   <div class="hero-row">
     <div class="hero-left">
       <img src="/warning/warningheroleft.jpeg" alt="Warning signs of teen substance use">
@@ -123,7 +96,7 @@
     </div>
   </div>
 
-  <!-- Warning signs grid – images exactly as you saved them -->
+  <!-- Warning signs grid (exactly the 8 images) -->
   <div class="warnings-grid">
     <img src="/warning/warning1.jpeg" alt="Mood changes">
     <img src="/warning/warning3.jpeg" alt="School and activity changes">
@@ -135,33 +108,9 @@
     <img src="/warning/warning8.jpeg" alt="Signs to look for">
   </div>
 
-  <!-- Footer emergency image (footer.jpeg) -->
+  <!-- Footer image (contains all helplines, "YOU ARE NOT ALONE", etc.) -->
   <div class="footer-img">
     <img src="/warning/footer.jpeg" alt="Emergency resources: Poison Control, SAMHSA, Crisis Text Line, 988 Lifeline">
-  </div>
-
-  <!-- Additional text to exactly match the original IMG_8119.png content -->
-  <div class="you-are-not-alone">
-    <strong>YOU ARE NOT ALONE.</strong><br>
-    Early conversations and support can make a big difference.<br>
-    Reach out for help.
-  </div>
-
-  <div class="helplines">
-    <strong>Poison Control</strong><br>
-    1-800-222-1222<br><br>
-    <strong>SAMHSA National Helpline</strong><br>
-    1-800-662-HELP (4357)<br><br>
-    <strong>Crisis Text Line</strong><br>
-    Text HOME to 741741
-  </div>
-
-  <div class="talk-line">
-    TALK. LISTEN. SUPPORT. It could save a life.
-  </div>
-
-  <div class="edit-share">
-    Edit &nbsp;|&nbsp; Share
   </div>
 
 </div>
