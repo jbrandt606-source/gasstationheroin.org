@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>How to Talk With Your Teen | Gas Station Heroin</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --blue:#1197ff;
+  --blue2:#4db8ff;
+  --red:#e31b23;
+  --dark:#050505;
+  --panel:#0b1118;
+  --line:#263241;
+  --text:#fff;
+  --muted:#c9d2dc;
+}
+
+html,body{
+  background:#000;
+  color:var(--text);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
+}
+
+body{
+  background:
+    linear-gradient(rgba(0,0,0,.76),rgba(0,0,0,.9)),
+    url("dark-panel-bg.jpeg") center/cover fixed no-repeat;
+}
+
+.page{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+  background:#050505;
+}
+
+/* HERO */
+.hero{
+  min-height:300px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  background:
+    linear-gradient(90deg,#050505 0%,#050505 45%,rgba(0,0,0,.25) 100%),
+    url("talk-teen-bg.jpeg") right center/cover no-repeat;
+  border-bottom:2px solid var(--blue);
+}
+
+.hero-copy{
+  padding:34px 26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.kicker{
+  color:var(--blue2);
+  text-transform:uppercase;
+  font-weight:900;
+  letter-spacing:.08em;
+  font-size:15px;
+  margin-bottom:10px;
+}
+
+h1{
+  text-transform:uppercase;
+  font-size:48px;
+  line-height:.95;
+  font-weight:950;
+  letter-spacing:-1px;
+}
+
+h1 span{
+  color:var(--blue);
+  display:block;
+}
+
+.hero p{
+  margin-top:20px;
+  max-width:540px;
+  font-size:20px;
+  line-height:1.35;
+  color:#f1f5f9;
+}
+
+/* INTRO PHOTO */
+.photo-strip{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:0;
+  border-bottom:1px solid var(--line);
+  background:#050505;
+}
+
+.photo-strip img{
+  width:100%;
+  height:100%;
+  min-height:230px;
+  object-fit:cover;
+}
+
+.photo-copy{
+  padding:28px 24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:linear-gradient(145deg,#06111c,#090909);
+}
+
+.photo-copy h2{
+  font-size:30px;
+  text-transform:uppercase;
+  line-height:1;
+  color:#fff;
+  margin-bottom:12px;
+}
+
+.photo-copy p{
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.45;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.card{
+  display:grid;
+  grid-template-columns:82px 1fr;
+  gap:18px;
+  padding:24px 20px;
+  border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);
+  background:
+    linear-gradient(145deg,rgba(8,14,22,.96),rgba(3,5,8,.98)),
+    url("dark-panel-bg.jpeg") center/cover no-repeat;
+}
+
+.step{
+  width:66px;
+  height:66px;
+  border:3px solid var(--blue);
+  border-radius:50%;
+  color:var(--blue2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  font-weight:950;
+}
+
+.card h2{
+  font-size:23px;
+  line-height:1.05;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.card ul{
+  margin-left:18px;
+}
+
+.card li{
+  margin:7px 0;
+  font-size:16.5px;
+  line-height:1.3;
+  color:#edf3f8;
+}
+
+.card li::marker{
+  color:var(--blue);
+}
+
+.script{
+  margin-top:12px;
+  padding:12px 13px;
+  border-left:4px solid var(--blue);
+  background:rgba(17,151,255,.09);
+  color:#fff;
+  font-size:16.5px;
+  line-height:1.35;
+}
+
+/* SOURCE LINKS */
+.learn{
+  margin:18px;
+  border:1px solid var(--blue);
+  border-radius:12px;
+  padding:22px;
+  background:
+    linear-gradient(90deg,rgba(0,45,85,.9),rgba(5,5,5,.98)),
+    url("dark-panel-bg.jpeg") center/cover no-repeat;
+}
+
+.learn h2{
+  color:var(--blue2);
+  text-transform:uppercase;
+  font-size:26px;
+  margin-bottom:8px;
+}
+
+.learn p{
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.4;
+  margin-bottom:18px;
+}
+
+.link-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.link-card{
+  display:block;
+  min-height:150px;
+  padding:16px;
+  border:1px solid #2e4154;
+  border-radius:10px;
+  background:rgba(0,0,0,.45);
+  color:#fff;
+  text-decoration:none;
+}
+
+.link-card strong{
+  display:block;
+  color:#fff;
+  text-transform:uppercase;
+  font-size:15px;
+  margin-bottom:8px;
+}
+
+.link-card span{
+  display:block;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.3;
+}
+
+.link-card em{
+  display:block;
+  margin-top:12px;
+  color:var(--blue2);
+  font-style:normal;
+  font-weight:800;
+}
+
+/* WARNING */
+.warning-box{
+  margin:18px;
+  border:1px solid var(--red);
+  border-radius:12px;
+  padding:20px;
+  background:linear-gradient(90deg,#1b0000,#050505);
+}
+
+.warning-box h2{
+  color:var(--red);
+  text-transform:uppercase;
+  font-size:25px;
+  margin-bottom:8px;
+}
+
+.warning-box p{
+  color:#f2f2f2;
+  font-size:17px;
+  line-height:1.45;
+}
+
+/* RESOURCES */
+.resources{
+  margin:18px;
+  border:1px solid #334155;
+  border-radius:12px;
+  padding:20px;
+  background:linear-gradient(90deg,#07111b,#050505);
+}
+
+.resources h2{
+  text-transform:uppercase;
+  font-size:25px;
+  margin-bottom:16px;
+}
+
+.resource-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.resource{
+  border-left:1px solid #334155;
+  padding-left:12px;
+  font-size:14px;
+  line-height:1.35;
+  color:#dce6ef;
+}
+
+.resource strong{
+  display:block;
+  text-transform:uppercase;
+  color:#fff;
+  margin-bottom:5px;
+}
+
+.bottom{
+  margin:18px;
+  border:1px solid var(--blue);
+  border-radius:10px;
+  padding:15px;
+  text-align:center;
+  font-size:18px;
+  color:#eaf4ff;
+}
+
+.bottom strong{
+  color:var(--blue2);
+  text-transform:uppercase;
+}
+
+/* MOBILE */
+@media(max-width:760px){
+  .page{
+    max-width:100%;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    min-height:270px;
+    background:
+      linear-gradient(180deg,#050505 0%,rgba(0,0,0,.7) 58%,#050505 100%),
+      url("talk-teen-bg.jpeg") center/cover no-repeat;
+  }
+
+  .hero-copy{
+    padding:24px 18px;
+  }
+
+  h1{
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .photo-strip{
+    grid-template-columns:1fr;
+  }
+
+  .photo-copy{
+    padding:22px 18px;
+  }
+
+  .photo-copy h2{
+    font-size:25px;
+  }
+
+  .photo-copy p{
+    font-size:16px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    grid-template-columns:68px 1fr;
+    padding:20px 16px;
+  }
+
+  .step{
+    width:54px;
+    height:54px;
+    font-size:25px;
+  }
+
+  .card h2{
+    font-size:21px;
+  }
+
+  .card li,
+  .script{
+    font-size:15.5px;
+  }
+
+  .link-grid,
+  .resource-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="kicker">Parent Resource</div>
+    <h1><span>How To Talk</span>With Your Teen</h1>
+    <p>Start the conversation before there is a crisis. Stay calm, ask direct questions, listen carefully, and keep the door open.</p>
+  </div>
+</section>
+
+<section class="photo-strip">
+  <img src="parent-teen-conversation.jpeg" alt="Parent and teen having a serious conversation at a kitchen table">
+  <div class="photo-copy">
+    <h2>One calm conversation can change everything.</h2>
+    <p>Talking about substance use is not one speech. It is an ongoing conversation. Your goal is not to win an argument. Your goal is to understand what is happening, keep your child safe, and get help when needed.</p>
+  </div>
+</section>
+
+<section class="grid">
+
+<div class="card">
+  <div class="step">1</div>
+  <div>
+    <h2>Start Calm</h2>
+    <ul>
+      <li>Do not begin with anger or accusations</li>
+      <li>Choose a private time when nobody feels rushed</li>
+      <li>Keep your voice steady and your body language open</li>
+    </ul>
+    <div class="script">“I’m not here to attack you. I’m here because I care about you.”</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="step">2</div>
+  <div>
+    <h2>Say What You Noticed</h2>
+    <ul>
+      <li>Use specific examples</li>
+      <li>Focus on behavior, not character</li>
+      <li>Avoid exaggerating or calling names</li>
+    </ul>
+    <div class="script">“I noticed you’ve been sleeping more, pulling away, and hiding packages.”</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="step">3</div>
+  <div>
+    <h2>Ask Open Questions</h2>
+    <ul>
+      <li>Let them explain in their own words</li>
+      <li>Ask what they think the product does</li>
+      <li>Do not interrupt every answer</li>
+    </ul>
+    <div class="script">“Can you help me understand what this is and why you’re using it?”</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="step">4</div>
+  <div>
+    <h2>Listen First</h2>
+    <ul>
+      <li>Let silence happen</li>
+      <li>Repeat back what you heard</li>
+      <li>Listen for fear, shame, cravings, or withdrawal symptoms</li>
+    </ul>
+    <div class="script">“I hear you saying you didn’t think it was dangerous.”</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="step">5</div>
+  <div>
+    <h2>Set Clear Boundaries</h2>
+    <ul>
+      <li>Be firm without humiliating them</li>
+      <li>Explain safety rules clearly</li>
+      <li>Do not ignore missing money, packages, or drug items</li>
+    </ul>
+    <div class="script">“I love you too much to pretend this is safe.”</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="step">6</div>
+  <div>
+    <h2>Do Not Debate Online Claims</h2>
+    <ul>
+      <li>Avoid getting trapped in internet arguments</li>
+      <li>Focus on your child’s health and behavior</li>
+      <li>Bring in a medical professional when needed</li>
+    </ul>
+    <div class="script">“We can look at information together, but your safety comes first.”</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="step">7</div>
+  <div>
+    <h2>Watch For Withdrawal</h2>
+    <ul>
+      <li>Nausea, sweating, shaking, anxiety, or insomnia</li>
+      <li>Strong cravings or panic when the product is removed</li>
+      <li>Anger or desperation around access to the product</li>
+    </ul>
+    <div class="script">“If stopping makes you feel sick, we need help. You do not have to handle this alone.”</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="step">8</div>
+  <div>
+    <h2>Make A Plan</h2>
+    <ul>
+      <li>Call a pediatrician, counselor, or treatment line</li>
+      <li>Save the package or take photos</li>
+      <li>Follow up after the first conversation</li>
+    </ul>
+    <div class="script">“Tonight we are going to make a plan. Tomorrow we are going to get help.”</div>
+  </div>
+</div>
+
+</section>
+
+<section class="learn">
+  <h2>Additional Parent Resources</h2>
+  <p>These resources offer practical guidance for talking with teens about drugs, alcohol, risk, safety, and ongoing communication.</p>
+
+  <div class="link-grid">
+    <a class="link-card" href="https://magazine.medlineplus.gov/article/8-tips-for-talking-and-listening-to-your-teens-about-drugs-and-alcohol" target="_blank" rel="noopener">
+      <strong>MedlinePlus</strong>
+      <span>8 tips for talking and listening to your teens about drugs and alcohol.</span>
+      <em>Read Article →</em>
+    </a>
+
+    <a class="link-card" href="https://www.healthychildren.org/English/ages-stages/teen/substance-abuse/Pages/Talk-to-Your-Teen-About-Drugs-And-Keep-Talking.aspx" target="_blank" rel="noopener">
+      <strong>HealthyChildren.org</strong>
+      <span>American Academy of Pediatrics guidance on talking to teens about drugs and keeping the conversation going.</span>
+      <em>Read Guidance →</em>
+    </a>
+
+    <a class="link-card" href="https://nida.nih.gov/research-topics/parents-educators/conversation-starters" target="_blank" rel="noopener">
+      <strong>NIDA</strong>
+      <span>Conversation starters for parents and educators from the National Institute on Drug Abuse.</span>
+      <em>View Starters →</em>
+    </a>
+  </div>
+</section>
+
+<section class="warning-box">
+  <h2>When To Get Immediate Help</h2>
+  <p>Call 911 or seek emergency care if your teen is unconscious, cannot be awakened, has slowed breathing, has a seizure, is severely confused, is hallucinating, has chest pain, or talks about harming themselves or others.</p>
+</section>
+
+<section class="resources">
+  <h2>Help Is Available</h2>
+  <div class="resource-grid">
+    <div class="resource">
+      <strong>Poison Control</strong>
+      1-800-222-1222<br>
+      24/7 help for poison emergencies.
+    </div>
+
+    <div class="resource">
+      <strong>SAMHSA National Helpline</strong>
+      1-800-662-HELP (4357)<br>
+      Free, confidential treatment referral and information.
+    </div>
+
+    <div class="resource">
+      <strong>Crisis Text Line</strong>
+      Text HOME to 741741<br>
+      Free, 24/7 support for any crisis.
+    </div>
+
+    <div class="resource">
+      <strong>988 Suicide & Crisis Lifeline</strong>
+      Call or text 988<br>
+      Free, 24/7 emotional distress support.
+    </div>
+  </div>
+</section>
+
+<div class="bottom">
+  <strong>Talk. Listen. Stay Present.</strong> One calm conversation can open the door.
+</div>
+
+</main>
+</body>
+</html>
