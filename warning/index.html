@@ -1,116 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Warning Signs of Teen Substance Use</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Warning Signs of Teen Substance Use</title>
 
-    body {
-      background: white;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* clean container – no frames, no extra backgrounds */
-    .page {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
 
-    /* images have no borders, no shadows */
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+body {
+  display: flex;
+  justify-content: center;
+}
 
-    /* hero row: two images side by side, touching (no gap) */
-    .hero-row {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 0;           /* no gap — they blend into one visual */
-      margin-bottom: 30px;
-    }
+.page {
+  width: 100%;
+  max-width: 1024px;
+  background: #000;
+  overflow: hidden;
+}
 
-    .hero-left, .hero-right {
-      flex: 1;
-    }
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-    /* warning grid: two columns */
-    .warnings-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin: 30px 0;
-    }
+/* TOP HERO: title panel left, teen image right */
+.hero-row {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  gap: 0;
+  background: #000;
+}
 
-    /* footer image */
-    .footer-img {
-      margin: 30px 0 0;
-    }
+.hero-left,
+.hero-right {
+  min-width: 0;
+}
 
-    /* mobile: hero stacks like your homepage hero */
-    @media (max-width: 700px) {
-      .page {
-        padding: 12px;
-      }
-      .hero-row {
-        flex-direction: column;   /* stack vertically on mobile */
-        gap: 0;
-      }
-      .hero-left, .hero-right {
-        width: 100%;
-      }
-      .warnings-grid {
-        gap: 12px;
-      }
-    }
+/* WARNING CARDS */
+.warnings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: #000;
+}
 
-    /* extra small screens */
-    @media (max-width: 480px) {
-      .page {
-        padding: 8px;
-      }
-      .warnings-grid {
-        gap: 8px;
-      }
-    }
-  </style>
+/* FOOTER */
+.footer-img {
+  background: #000;
+}
+
+/* Mobile: keep poster layout intact */
+@media (max-width: 700px) {
+  .page {
+    width: 100%;
+  }
+
+  .hero-row {
+    grid-template-columns: 65% 35%;
+  }
+
+  .warnings-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
 </head>
+
 <body>
 <div class="page">
 
-  <!-- Hero section: left text image + right photo, no gap, blending visually -->
   <div class="hero-row">
-    <div class="hero-left">
-      <img src="/warning/warningheroleft.jpeg" alt="Warning signs of teen substance use">
-    </div>
-    <div class="hero-right">
-      <img src="/warning/warningheroright.jpeg" alt="Teen portrait">
-    </div>
+    <img src="/warning/warningheroleft.jpeg" alt="Warning Signs of Teen Substance Use">
+    <img src="/warning/warningheroright.jpeg" alt="Teen sitting alone">
   </div>
 
-  <!-- Warning signs grid (exactly the 8 images) -->
   <div class="warnings-grid">
     <img src="/warning/warning1.jpeg" alt="Mood changes">
-    <img src="/warning/warning3.jpeg" alt="School and activity changes">
-    <img src="/warning/warning5.jpeg" alt="Secretive behavior">
-    <img src="/warning/warning7.jpeg" alt="Physical changes">
     <img src="/warning/warning2.jpeg" alt="Sleep changes">
+
+    <img src="/warning/warning3.jpeg" alt="School and activity changes">
     <img src="/warning/warning4.jpeg" alt="Social changes">
+
+    <img src="/warning/warning5.jpeg" alt="Secretive behavior">
     <img src="/warning/warning6.jpeg" alt="Risky or unusual behavior">
+
+    <img src="/warning/warning7.jpeg" alt="Physical changes">
     <img src="/warning/warning8.jpeg" alt="Signs to look for">
   </div>
 
-  <!-- Footer image (contains all helplines, "YOU ARE NOT ALONE", etc.) -->
   <div class="footer-img">
-    <img src="/warning/footer.jpeg" alt="Emergency resources: Poison Control, SAMHSA, Crisis Text Line, 988 Lifeline">
+    <img src="/warning/footer.jpeg" alt="Emergency resources and support">
   </div>
 
 </div>
