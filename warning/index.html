@@ -1,290 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Gas Station Heroin — Protecting Families from Drug‑Like Products</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Warning Signs of Teen Substance Use | Gas Station Heroin</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --red:#e31b23;
+  --red2:#ff3b42;
+  --dark:#050505;
+  --panel:#120809;
+  --line:#3a2224;
+  --text:#fff;
+  --muted:#d6d6d6;
 }
 
-html,
-body {
-  width: 100%;
-  min-height: 100%;
-  background: #000 !important;
-  overflow-x: hidden;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+html,body{
+  background:#000;
+  color:var(--text);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
 }
 
-body {
-  display: flex;
-  justify-content: center;
+body{
+  background:
+    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.92)),
+    url("dark-panel-bg.jpeg") center/cover fixed no-repeat;
 }
 
-.page {
-  width: 100%;
-  max-width: 1024px;
-  background: #000;
-  line-height: 0;
-  position: relative;
+.page{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+  background:#050505;
 }
 
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 0;
-  vertical-align: bottom;
+/* HERO */
+.hero{
+  min-height:300px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  background:
+    linear-gradient(90deg,#050505 0%,#050505 45%,rgba(0,0,0,.25) 100%),
+    url("warning-hero-bg.jpeg") right center/cover no-repeat;
+  border-bottom:2px solid var(--red);
 }
 
-/* ----- HEADER (gasstationheroin.org) ----- */
-.site-header {
-  background: #000;
-  padding: 1rem 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #222;
-  line-height: 1.2;
+.hero-copy{
+  padding:34px 26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
-.logo {
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.3px;
-  color: #e21b23;
-  text-decoration: none;
+.kicker{
+  color:var(--red2);
+  text-transform:uppercase;
+  font-weight:900;
+  letter-spacing:.08em;
+  font-size:15px;
+  margin-bottom:10px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1.8rem;
-  list-style: none;
+h1{
+  text-transform:uppercase;
+  font-size:48px;
+  line-height:.95;
+  font-weight:950;
+  letter-spacing:-1px;
 }
 
-.nav-links a {
-  color: #eee;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color 0.2s;
+h1 span{
+  color:var(--red);
+  display:block;
 }
 
-.nav-links a:hover {
-  color: #e21b23;
+.hero p{
+  margin-top:20px;
+  max-width:540px;
+  font-size:20px;
+  line-height:1.35;
+  color:#f1f1f1;
 }
 
-/* HERO: two columns side by side (unchanged) */
-.hero-row {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  width: 100%;
-  background: #000;
-  line-height: 0;
+/* INTRO PHOTO */
+.photo-strip{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:0;
+  border-bottom:1px solid var(--line);
+  background:#050505;
 }
 
-.hero-row img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.photo-strip img{
+  width:100%;
+  height:100%;
+  min-height:230px;
+  object-fit:cover;
 }
 
-/* WARNING GRID – two columns (unchanged) */
-.warnings-grid {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  width: 100%;
-  background: #000;
-  line-height: 0;
+.photo-copy{
+  padding:28px 24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:linear-gradient(145deg,#15090a,#090909);
 }
 
-/* ----- EMERGENCY RESOURCES SECTION (exactly from IMG_8122.jpeg, no emojis) ----- */
-.emergency-section {
-  background: #000;
-  line-height: 1.5;
-  padding: 2rem 1.5rem;
-  color: #ddd;
-  border-top: 1px solid #1f1f1f;
+.photo-copy h2{
+  font-size:30px;
+  text-transform:uppercase;
+  line-height:1;
+  color:#fff;
+  margin-bottom:12px;
 }
 
-.emergency-section h2 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.3px;
+.photo-copy p{
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.45;
 }
 
-.resource-list {
-  margin-bottom: 1.8rem;
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
 }
 
-.resource-item {
-  margin-bottom: 1.2rem;
+.card{
+  display:grid;
+  grid-template-columns:82px 1fr;
+  gap:18px;
+  padding:24px 20px;
+  border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);
+  background:
+    linear-gradient(145deg,rgba(18,8,9,.97),rgba(3,3,3,.99)),
+    url("dark-panel-bg.jpeg") center/cover no-repeat;
 }
 
-.resource-item strong {
-  color: #fff;
-  font-weight: 700;
-  display: inline-block;
-  min-width: 180px;
+.step{
+  width:66px;
+  height:66px;
+  border:3px solid var(--red);
+  border-radius:50%;
+  color:var(--red2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  font-weight:950;
 }
 
-.resource-item .phone {
-  font-family: monospace;
-  font-size: 1rem;
-  letter-spacing: 0.3px;
+.card h2{
+  font-size:23px;
+  line-height:1.05;
+  text-transform:uppercase;
+  margin-bottom:10px;
 }
 
-.resource-desc {
-  color: #aaa;
-  font-size: 0.85rem;
-  margin-top: 2px;
+.card ul{
+  margin-left:18px;
 }
 
-.you-are-not-alone {
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid #2a2a2a;
-  font-weight: 600;
-  color: #fff;
-  font-size: 1rem;
+.card li{
+  margin:7px 0;
+  font-size:16.5px;
+  line-height:1.3;
+  color:#f1f1f1;
 }
 
-.you-are-not-alone p {
-  margin: 0.2rem 0;
+.card li::marker{
+  color:var(--red);
 }
 
-/* reset any extra spacing */
-body, .page, .warnings-grid, .hero-row, .emergency-section {
-  margin: 0;
-  padding: 0;
+.note{
+  margin-top:12px;
+  padding:12px 13px;
+  border-left:4px solid var(--red);
+  background:rgba(227,27,35,.09);
+  color:#fff;
+  font-size:16.5px;
+  line-height:1.35;
 }
 
-/* Portrait phones */
-@media (max-width: 700px) and (orientation: portrait) {
-  .hero-row {
-    grid-template-columns: 1fr;
+/* WHAT TO DO */
+.action{
+  margin:18px;
+  border:1px solid var(--red);
+  border-radius:12px;
+  padding:22px;
+  background:
+    linear-gradient(90deg,rgba(55,0,0,.9),rgba(5,5,5,.98)),
+    url("dark-panel-bg.jpeg") center/cover no-repeat;
+}
+
+.action h2{
+  color:var(--red2);
+  text-transform:uppercase;
+  font-size:26px;
+  margin-bottom:8px;
+}
+
+.action p{
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.4;
+  margin-bottom:18px;
+}
+
+.action-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.action-card{
+  padding:16px;
+  border:1px solid #4a2b2d;
+  border-radius:10px;
+  background:rgba(0,0,0,.45);
+}
+
+.action-card strong{
+  display:block;
+  color:#fff;
+  text-transform:uppercase;
+  font-size:15px;
+  margin-bottom:8px;
+}
+
+.action-card span{
+  display:block;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.3;
+}
+
+/* WARNING */
+.warning-box{
+  margin:18px;
+  border:1px solid var(--red);
+  border-radius:12px;
+  padding:20px;
+  background:linear-gradient(90deg,#1b0000,#050505);
+}
+
+.warning-box h2{
+  color:var(--red);
+  text-transform:uppercase;
+  font-size:25px;
+  margin-bottom:8px;
+}
+
+.warning-box p{
+  color:#f2f2f2;
+  font-size:17px;
+  line-height:1.45;
+}
+
+/* RESOURCES */
+.resources{
+  margin:18px;
+  border:1px solid #3a2224;
+  border-radius:12px;
+  padding:20px;
+  background:linear-gradient(90deg,#170809,#050505);
+}
+
+.resources h2{
+  text-transform:uppercase;
+  font-size:25px;
+  margin-bottom:16px;
+}
+
+.resource-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.resource{
+  border-left:1px solid #3a2224;
+  padding-left:12px;
+  font-size:14px;
+  line-height:1.35;
+  color:#e6e6e6;
+}
+
+.resource strong{
+  display:block;
+  text-transform:uppercase;
+  color:#fff;
+  margin-bottom:5px;
+}
+
+.bottom{
+  margin:18px;
+  border:1px solid var(--red);
+  border-radius:10px;
+  padding:15px;
+  text-align:center;
+  font-size:18px;
+  color:#fff;
+}
+
+.bottom strong{
+  color:var(--red2);
+  text-transform:uppercase;
+}
+
+/* MOBILE */
+@media(max-width:760px){
+  .page{
+    max-width:100%;
   }
-  .warnings-grid {
-    grid-template-columns: 1fr;
-  }
-  .site-header {
-    flex-direction: column;
-    gap: 0.8rem;
-    padding: 1rem;
-  }
-  .nav-links {
-    gap: 1.2rem;
-  }
-  .emergency-section {
-    padding: 1.5rem;
-  }
-  .resource-item strong {
-    display: block;
-    margin-bottom: 0.2rem;
-  }
-}
 
-/* Landscape view fix */
-@media (max-width: 950px) and (orientation: landscape) {
-  html, body {
-    overflow-x: auto;
+  .hero{
+    grid-template-columns:1fr;
+    min-height:270px;
+    background:
+      linear-gradient(180deg,#050505 0%,rgba(0,0,0,.72) 58%,#050505 100%),
+      url("warning-hero-bg.jpeg") center/cover no-repeat;
   }
-  body {
-    align-items: flex-start;
-  }
-  .page {
-    max-width: 100%;
-    width: 100%;
-  }
-  .hero-row {
-    grid-template-columns: 50% 50%;
-  }
-  .warnings-grid {
-    grid-template-columns: 50% 50%;
-  }
-}
 
-@media (max-height: 450px) and (orientation: landscape) {
-  .hero-row img, .warnings-grid img {
-    max-height: 70vh;
-    object-fit: contain;
+  .hero-copy{
+    padding:24px 18px;
+  }
+
+  h1{
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .photo-strip{
+    grid-template-columns:1fr;
+  }
+
+  .photo-copy{
+    padding:22px 18px;
+  }
+
+  .photo-copy h2{
+    font-size:25px;
+  }
+
+  .photo-copy p{
+    font-size:16px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    grid-template-columns:68px 1fr;
+    padding:20px 16px;
+  }
+
+  .step{
+    width:54px;
+    height:54px;
+    font-size:25px;
+  }
+
+  .card h2{
+    font-size:21px;
+  }
+
+  .card li,
+  .note{
+    font-size:15.5px;
+  }
+
+  .action-grid,
+  .resource-grid{
+    grid-template-columns:1fr;
   }
 }
 </style>
 </head>
+
 <body>
-
 <main class="page">
-  <!-- HEADER (gasstationheroin.org main page) -->
-  <header class="site-header">
-    <a href="/" class="logo">GasStationHeroin.org</a>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Resources</a></li>
-      <li><a href="#">Get Involved</a></li>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="kicker">Parent Resource</div>
+    <h1><span>Warning Signs</span>of Teen Substance Use</h1>
+    <p>Changes in mood, behavior, school performance, sleep, or social habits may be signs that something is wrong. No single sign proves substance use, but multiple changes deserve attention.</p>
+  </div>
+</section>
+
+<section class="photo-strip">
+  <img src="warning-family-conversation.jpeg" alt="Parent and teen having a serious supportive conversation">
+  <div class="photo-copy">
+    <h2>Trust your instincts. Start the conversation.</h2>
+    <p>Parents often notice small changes before a crisis happens. Look for patterns, stay calm, ask questions, and get help when symptoms, secrecy, or safety concerns appear.</p>
+  </div>
+</section>
+
+<section class="grid">
+
+<div class="card">
+  <div class="step">1</div>
+  <div>
+    <h2>Mood Changes</h2>
+    <ul>
+      <li>Irritable, angry, or quick to argue</li>
+      <li>Sudden mood swings</li>
+      <li>Feeling sad, anxious, or withdrawn</li>
+      <li>Loss of interest in activities they used to enjoy</li>
     </ul>
-  </header>
+    <div class="note">Look for changes that feel sudden, intense, or out of character.</div>
+  </div>
+</div>
 
-  <!-- Hero section (unchanged) -->
-  <section class="hero-row">
-    <img src="/warning/warningheroleft.jpeg" alt="Warning signs of teen substance use">
-    <img src="/warning/warningheroright.jpeg" alt="Teen sitting alone">
-  </section>
+<div class="card">
+  <div class="step">2</div>
+  <div>
+    <h2>Sleep Changes</h2>
+    <ul>
+      <li>Trouble falling or staying asleep</li>
+      <li>Sleeping much more than usual</li>
+      <li>Tired, sluggish, or low energy</li>
+      <li>Odd sleep schedule or staying up all night</li>
+    </ul>
+    <div class="note">Major sleep changes can be one of the first things parents notice.</div>
+  </div>
+</div>
 
-  <!-- Warning cards grid (unchanged) -->
-  <section class="warnings-grid">
-    <img src="/warning/warning1.jpeg" alt="Mood changes">
-    <img src="/warning/warning2.jpeg" alt="Sleep changes">
+<div class="card">
+  <div class="step">3</div>
+  <div>
+    <h2>School & Activity Changes</h2>
+    <ul>
+      <li>Drop in grades or missing school</li>
+      <li>Loss of motivation or not trying</li>
+      <li>Not completing assignments</li>
+      <li>Losing interest in sports, clubs, or hobbies</li>
+    </ul>
+    <div class="note">A sudden decline in school or activities deserves a calm check-in.</div>
+  </div>
+</div>
 
-    <img src="/warning/warning3.jpeg" alt="School and activity changes">
-    <img src="/warning/warning4.jpeg" alt="Social changes">
+<div class="card">
+  <div class="step">4</div>
+  <div>
+    <h2>Social Changes</h2>
+    <ul>
+      <li>Withdrawing from family and longtime friends</li>
+      <li>Spending time with a new group</li>
+      <li>Secretive about where they go or who they are with</li>
+      <li>Changes in online activity or phone use</li>
+    </ul>
+    <div class="note">New privacy is normal. Total secrecy or sudden isolation is different.</div>
+  </div>
+</div>
 
-    <img src="/warning/warning5.jpeg" alt="Secretive behavior">
-    <img src="/warning/warning6.jpeg" alt="Risky or unusual behavior">
+<div class="card">
+  <div class="step">5</div>
+  <div>
+    <h2>Secretive Behavior</h2>
+    <ul>
+      <li>More private or defensive than usual</li>
+      <li>Lying about plans or whereabouts</li>
+      <li>Hiding products, packages, or receipts</li>
+      <li>Excessive phone, text, or social media use</li>
+    </ul>
+    <div class="note">Pay attention to hidden packages, unfamiliar labels, or sudden defensiveness.</div>
+  </div>
+</div>
 
-    <img src="/warning/warning7.jpeg" alt="Physical changes">
-    <img src="/warning/warning8.jpeg" alt="Signs to look for">
-  </section>
+<div class="card">
+  <div class="step">6</div>
+  <div>
+    <h2>Risky or Unusual Behavior</h2>
+    <ul>
+      <li>Taking unnecessary risks</li>
+      <li>Decline in judgment</li>
+      <li>Getting into trouble at school or with the law</li>
+      <li>Unexplained need for money</li>
+    </ul>
+    <div class="note">Risk-taking plus secrecy can be a serious warning pattern.</div>
+  </div>
+</div>
 
-  <!-- EMERGENCY RESOURCES SECTION (exactly as in IMG_8122.jpeg, no emojis) -->
-  <div class="emergency-section">
-    <h2>EMERGENCY RESOURCES</h2>
-    <div class="resource-list">
-      <div class="resource-item">
-        <strong>POISON CONTROL</strong><br>
-        <span class="phone">1-800-222-1222</span>
-        <div class="resource-desc">24/7 help for poison emergencies.</div>
-      </div>
-      <div class="resource-item">
-        <strong>SAMHSA NATIONAL HELPLINE</strong><br>
-        <span class="phone">1-800-662-HELP (4357)</span>
-        <div class="resource-desc">Free, confidential treatment referral and information.</div>
-      </div>
-      <div class="resource-item">
-        <strong>CRISIS TEXT LINE</strong><br>
-        <span class="phone">Text HOME to 741741</span>
-        <div class="resource-desc">Free, 24/7 support for any crisis.</div>
-      </div>
-      <div class="resource-item">
-        <strong>988 SUICIDE & CRISIS LIFELINE</strong><br>
-        <span class="phone">Call or text 988</span>
-        <div class="resource-desc">Free, 24/7 support for emotional distress.</div>
-      </div>
+<div class="card">
+  <div class="step">7</div>
+  <div>
+    <h2>Physical Changes</h2>
+    <ul>
+      <li>Bloodshot eyes or unusual pupils</li>
+      <li>Sudden weight loss or gain</li>
+      <li>Changes in appetite</li>
+      <li>Poor hygiene or disheveled appearance</li>
+      <li>Sudden changes in energy or appearance</li>
+    </ul>
+    <div class="note">Physical signs matter most when paired with behavior changes.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="step">8</div>
+  <div>
+    <h2>Signs To Look For</h2>
+    <ul>
+      <li>Alcohol, vape, or drug smell</li>
+      <li>Possession of alcohol, drugs, or paraphernalia</li>
+      <li>Missing items or money</li>
+      <li>Vapes, edibles, pills, powders, capsules, rolling papers, or unfamiliar packaging</li>
+    </ul>
+    <div class="note">Photograph unfamiliar products and save packaging if you need help identifying them.</div>
+  </div>
+</div>
+
+</section>
+
+<section class="action">
+  <h2>What To Do If You Find Something</h2>
+  <p>Stay calm and focus on safety. The goal is not to shame your child. The goal is to understand what happened and get help if needed.</p>
+
+  <div class="action-grid">
+    <div class="action-card">
+      <strong>Stay Calm</strong>
+      <span>Take a breath before confronting your teen. Anger can shut down the conversation.</span>
     </div>
-    <div class="you-are-not-alone">
-      <p>YOU ARE NOT ALONE.</p>
-      <p>There is help. There is hope. You can make a difference.</p>
+
+    <div class="action-card">
+      <strong>Save Evidence</strong>
+      <span>Photograph the product, save the packaging, and write down where it was found.</span>
+    </div>
+
+    <div class="action-card">
+      <strong>Ask Questions</strong>
+      <span>Ask what it is, where it came from, how often it was used, and whether they feel sick without it.</span>
     </div>
   </div>
-</main>
+</section>
 
+<section class="warning-box">
+  <h2>When To Get Immediate Help</h2>
+  <p>Call 911 or seek emergency care if your teen is unconscious, cannot be awakened, has slowed breathing, has a seizure, is severely confused, is hallucinating, has chest pain, severe vomiting, or talks about harming themselves or others.</p>
+</section>
+
+<section class="resources">
+  <h2>Emergency Resources</h2>
+  <div class="resource-grid">
+    <div class="resource">
+      <strong>Poison Control</strong>
+      1-800-222-1222<br>
+      24/7 help for poison emergencies.
+    </div>
+
+    <div class="resource">
+      <strong>SAMHSA National Helpline</strong>
+      1-800-662-HELP (4357)<br>
+      Free, confidential treatment referral and information.
+    </div>
+
+    <div class="resource">
+      <strong>Crisis Text Line</strong>
+      Text HOME to 741741<br>
+      Free, 24/7 support for any crisis.
+    </div>
+
+    <div class="resource">
+      <strong>988 Suicide & Crisis Lifeline</strong>
+      Call or text 988<br>
+      Free, 24/7 emotional distress support.
+    </div>
+  </div>
+</section>
+
+<div class="bottom">
+  <strong>You are not alone.</strong> There is help. There is hope. You can make a difference.
+</div>
+
+</main>
 </body>
 </html>
