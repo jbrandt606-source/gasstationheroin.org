@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Parent Resources | Gas Station Heroin</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --red:#e31b23;
+  --blue:#159cff;
+  --purple:#9b2cff;
+  --cyan:#19d3c5;
+  --orange:#ff8a00;
+  --green:#18df3f;
+  --yellow:#ffd21f;
+  --dark:#050505;
+  --line:#333842;
+  --text:#fff;
+  --muted:#d7d7d7;
+}
+
+html,body{
+  background:#000;
+  color:var(--text);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
+}
+
+body{
+  background:
+    linear-gradient(rgba(0,0,0,.76),rgba(0,0,0,.94)),
+    url("dark-panel-bg.jpeg") center/cover fixed no-repeat;
+}
+
+.page{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+  background:#050505;
+}
+
+.site-header{
+  height:70px;
+  padding:0 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid #2a2a2a;
+  background:#030303;
+}
+
+.logo{
+  font-size:29px;
+  font-weight:950;
+  text-decoration:none;
+  color:#fff;
+  letter-spacing:-1px;
+}
+
+.logo span{color:var(--red)}
+
+.menu{
+  font-size:34px;
+  color:#fff;
+}
+
+/* HERO */
+.hero{
+  min-height:310px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:
+    linear-gradient(90deg,#050505 0%,rgba(0,0,0,.88) 42%,rgba(0,0,0,.18) 100%),
+    url("IMG_8155.png") right center/cover no-repeat;
+}
+
+.hero-copy{
+  padding:38px 30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero h1{
+  font-size:55px;
+  line-height:.92;
+  text-transform:uppercase;
+  font-weight:950;
+  letter-spacing:-1px;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--red);
+}
+
+.underline{
+  width:82px;
+  height:5px;
+  background:var(--red);
+  margin:18px 0 18px;
+}
+
+.hero p{
+  max-width:420px;
+  color:#f1f1f1;
+  font-size:20px;
+  line-height:1.35;
+}
+
+.top-actions{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  padding:20px 28px 8px;
+}
+
+.top-actions a{
+  min-height:58px;
+  border:1px solid #555;
+  border-radius:8px;
+  color:#fff;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  background:rgba(0,0,0,.55);
+}
+
+.top-actions a:first-child{
+  background:linear-gradient(#ee2a32,#bd1018);
+  border-color:#ff3840;
+}
+
+.top-actions img{
+  width:30px;
+  height:30px;
+}
+
+/* FEATURE CARDS */
+.feature-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  padding:18px 28px 10px;
+}
+
+.feature-card{
+  min-height:310px;
+  border-radius:12px;
+  padding:24px;
+  color:#fff;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(135deg,rgba(0,0,0,.92),rgba(0,0,0,.55)),
+    url("dark-panel-bg.jpeg") center/cover no-repeat;
+}
+
+.feature-card.warning{
+  border:1px solid var(--red);
+  background:
+    linear-gradient(135deg,rgba(0,0,0,.94),rgba(70,0,0,.55)),
+    url("warning-hero-bg.jpeg") right center/cover no-repeat;
+}
+
+.feature-card.talk{
+  border:1px solid var(--blue);
+  background:
+    linear-gradient(135deg,rgba(0,0,0,.94),rgba(0,35,70,.58)),
+    url("parent-teen-conversation.jpeg") right center/cover no-repeat;
+}
+
+.feature-title{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.feature-title img{
+  width:64px;
+  height:64px;
+}
+
+.feature-title h2{
+  font-size:25px;
+  line-height:1.05;
+  text-transform:uppercase;
+}
+
+.feature-card ul{
+  list-style:none;
+  margin-top:18px;
+}
+
+.feature-card li{
+  margin:8px 0;
+  font-size:16px;
+  color:#f2f2f2;
+}
+
+.feature-card li::before{
+  content:"✓";
+  color:var(--red);
+  margin-right:8px;
+  font-weight:900;
+}
+
+.talk .quote{
+  color:#eaf6ff;
+  font-size:15.5px;
+  line-height:1.3;
+  margin:12px 0;
+  max-width:250px;
+}
+
+.talk .quote::before{
+  content:"“";
+  color:var(--blue);
+  font-size:28px;
+  font-weight:900;
+  margin-right:4px;
+}
+
+.learn-more{
+  position:absolute;
+  left:24px;
+  bottom:20px;
+  text-transform:uppercase;
+  font-weight:950;
+  color:inherit;
+}
+
+.warning .learn-more{color:var(--red)}
+.talk .learn-more{color:var(--blue)}
+
+/* PANELS */
+.panel{
+  margin:14px 28px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px;
+  background:
+    linear-gradient(145deg,rgba(10,12,16,.95),rgba(3,3,3,.98)),
+    url("dark-panel-bg.jpeg") center/cover no-repeat;
+}
+
+.panel-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:16px;
+}
+
+.panel-head h2{
+  text-transform:uppercase;
+  font-size:25px;
+}
+
+.panel-head a{
+  text-decoration:none;
+  color:var(--purple);
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  gap:10px;
+  text-align:center;
+}
+
+.product{
+  text-decoration:none;
+  color:#fff;
+}
+
+.product img{
+  width:74px;
+  height:74px;
+  display:block;
+  margin:0 auto 8px;
+}
+
+.product strong{
+  display:block;
+  font-size:13px;
+  text-transform:uppercase;
+}
+
+.dot-row{
+  text-align:center;
+  margin-top:12px;
+  letter-spacing:8px;
+  color:#555;
+}
+
+.dot-row span:first-child{color:var(--purple)}
+
+.step-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:8px;
+  align-items:start;
+  text-align:center;
+}
+
+.step-item img{
+  width:56px;
+  height:56px;
+  margin-bottom:8px;
+}
+
+.step-item strong{
+  display:block;
+  font-size:12px;
+  color:#fff;
+}
+
+.step-item span{
+  font-size:12px;
+  color:#e2e2e2;
+  line-height:1.2;
+}
+
+.resource-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+.resource{
+  display:grid;
+  grid-template-columns:42px 1fr;
+  gap:10px;
+  align-items:center;
+}
+
+.resource img{
+  width:38px;
+  height:38px;
+}
+
+.resource strong{
+  display:block;
+  font-size:13px;
+  text-transform:uppercase;
+}
+
+.resource span{
+  display:block;
+  font-size:13px;
+  color:#e2e2e2;
+  line-height:1.25;
+}
+
+.action-grid,
+.download-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:8px;
+  text-align:center;
+}
+
+.action-grid a,
+.download-grid a{
+  text-decoration:none;
+  color:#fff;
+}
+
+.action-grid img,
+.download-grid img{
+  width:54px;
+  height:54px;
+  margin-bottom:8px;
+}
+
+.action-grid span,
+.download-grid span{
+  display:block;
+  font-size:12px;
+  line-height:1.2;
+  color:#f1f1f1;
+}
+
+.orange{border-color:#6f3c08}
+.teal{border-color:#086d66}
+.redpanel{border-color:var(--red)}
+
+.orange .panel-head h2{color:#fff}
+.teal .panel-head a{color:var(--cyan)}
+
+.alone{
+  margin:14px 28px 28px;
+  border:1px solid #3d4654;
+  border-radius:12px;
+  padding:18px;
+  display:grid;
+  grid-template-columns:70px 1fr auto;
+  align-items:center;
+  gap:14px;
+  background:
+    linear-gradient(90deg,rgba(10,10,12,.96),rgba(0,0,0,.95)),
+    url("dark-panel-bg.jpeg") center/cover no-repeat;
+}
+
+.alone img{
+  width:58px;
+  height:58px;
+}
+
+.alone h2{
+  font-size:25px;
+  text-transform:uppercase;
+}
+
+.alone p{
+  color:#eee;
+  font-size:17px;
+}
+
+.alone a{
+  color:#fff;
+  text-decoration:none;
+  font-size:30px;
+}
+
+/* MOBILE */
+@media(max-width:760px){
+  .site-header{
+    height:64px;
+    padding:0 18px;
+  }
+
+  .logo{font-size:25px}
+
+  .hero{
+    min-height:320px;
+    grid-template-columns:1fr;
+    background:
+      linear-gradient(180deg,#050505 0%,rgba(0,0,0,.65) 54%,#050505 100%),
+      url("IMG_8155.png") center/cover no-repeat;
+  }
+
+  .hero-copy{
+    padding:30px 20px;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .top-actions{
+    grid-template-columns:1fr;
+    padding:16px;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr;
+    padding:16px;
+  }
+
+  .feature-card{
+    min-height:280px;
+  }
+
+  .panel{
+    margin:14px 16px;
+    padding:18px 14px;
+  }
+
+  .panel-head h2{
+    font-size:21px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .step-grid,
+  .action-grid,
+  .download-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+  }
+
+  .resource-grid{
+    grid-template-columns:1fr;
+  }
+
+  .alone{
+    margin:14px 16px 24px;
+    grid-template-columns:58px 1fr auto;
+  }
+
+  .alone h2{
+    font-size:21px;
+  }
+
+  .alone p{
+    font-size:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+<header class="site-header">
+  <a class="logo" href="/">Gas Station <span>Heroin</span></a>
+  <div class="menu">☰</div>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <h1>Parent <span>Resources</span></h1>
+    <div class="underline"></div>
+    <p>What to do if you discover these products in your child’s room, backpack, car, or social media feed.</p>
+  </div>
+</section>
+
+<nav class="top-actions">
+  <a href="#start"><img src="IMG_8170.jpeg" alt=""> Start Here</a>
+  <a href="/warning/index.html"><img src="IMG_8186.jpeg" alt=""> Warning Signs</a>
+  <a href="/help/index.html"><img src="IMG_8188.jpeg" alt=""> Get Help Now</a>
+</nav>
+
+<section class="feature-grid" id="start">
+  <a class="feature-card warning" href="/warning/index.html">
+    <div class="feature-title">
+      <img src="IMG_8186.jpeg" alt="">
+      <h2>Warning Signs</h2>
+    </div>
+    <ul>
+      <li>Mood changes</li>
+      <li>Sleep changes</li>
+      <li>Money disappearing</li>
+      <li>New vape shop visits</li>
+      <li>Packages arriving</li>
+      <li>Withdrawal symptoms</li>
+    </ul>
+    <div class="learn-more">Learn More →</div>
+  </a>
+
+  <a class="feature-card talk" href="/talk/index.html">
+    <div class="feature-title">
+      <img src="IMG_8187.jpeg" alt="">
+      <h2>How To Talk<br>To Your Teen</h2>
+    </div>
+    <p>Simple scripts to help start the conversation.</p>
+    <div class="quote">I found this product and I’d like to understand why you’re using it.</div>
+    <div class="quote">I’m worried about your safety, not trying to punish you.</div>
+    <div class="quote">Let’s look at this together.</div>
+    <div class="learn-more">Learn More →</div>
+  </a>
+</section>
+
+<section class="panel">
+  <div class="panel-head">
+    <h2>What Products Should Parents Know?</h2>
+    <a href="/">View All</a>
+  </div>
+
+  <div class="product-grid">
+    <a class="product" href="/opioid/kratom.html"><img src="IMG_8083.jpeg" alt=""><strong>Kratom</strong></a>
+    <a class="product" href="/opioid/7oh.html"><img src="IMG_8084.jpeg" alt=""><strong>7-OH</strong></a>
+    <a class="product" href="/opioid/tianeptine.html"><img src="IMG_8085.jpeg" alt=""><strong>Tianeptine</strong></a>
+    <a class="product" href="/inhalation/nitrous.html"><img src="IMG_8086.jpeg" alt=""><strong>Nitrous</strong></a>
+    <a class="product" href="/sedatives/phenibut.html"><img src="IMG_8091.jpeg" alt=""><strong>Phenibut</strong></a>
+    <a class="product" href="/inhalation/poppers.html"><img src="IMG_8087.jpeg" alt=""><strong>Poppers</strong></a>
+    <a class="product" href="/hallucinogens/salvia.html"><img src="IMG_8089.jpeg" alt=""><strong>Salvia</strong></a>
+    <a class="product" href="/hallucinogens/amanita.html"><img src="IMG_8090.jpeg" alt=""><strong>Amanita</strong></a>
+  </div>
+
+  <div class="dot-row"><span>●</span> ● ● ● ●</div>
+</section>
+
+<section class="panel">
+  <div class="panel-head">
+    <h2>What To Do If You Find A Product</h2>
+  </div>
+
+  <div class="step-grid">
+    <div class="step-item"><img src="IMG_8179.jpeg" alt=""><strong>1.</strong><span>Stay calm</span></div>
+    <div class="step-item"><img src="IMG_8180.jpeg" alt=""><strong>2.</strong><span>Photograph the package</span></div>
+    <div class="step-item"><img src="IMG_8181.jpeg" alt=""><strong>3.</strong><span>Save the product</span></div>
+    <div class="step-item"><img src="IMG_8182.jpeg" alt=""><strong>4.</strong><span>Do not dispose</span></div>
+    <div class="step-item"><img src="IMG_8183.jpeg" alt=""><strong>5.</strong><span>Ask questions</span></div>
+    <div class="step-item"><img src="IMG_8184.jpeg" alt=""><strong>6.</strong><span>Seek medical advice</span></div>
+  </div>
+</section>
+
+<section class="panel redpanel">
+  <div class="panel-head">
+    <h2>Emergency Resources</h2>
+  </div>
+
+  <div class="resource-grid">
+    <div class="resource"><img src="IMG_8185.jpeg" alt=""><div><strong>Poison Control</strong><span>1-800-222-1222</span></div></div>
+    <div class="resource"><img src="IMG_8186.jpeg" alt=""><div><strong>SAMHSA Helpline</strong><span>1-800-662-HELP (4357)</span></div></div>
+    <div class="resource"><img src="IMG_8187.jpeg" alt=""><div><strong>Crisis Text Line</strong><span>Text HOME to 741741</span></div></div>
+    <div class="resource"><img src="IMG_8188.jpeg" alt=""><div><strong>Call 911</strong><span>If someone is unresponsive</span></div></div>
+  </div>
+</section>
+
+<section class="panel orange">
+  <div class="panel-head">
+    <h2>Take Action In Your Community</h2>
+  </div>
+
+  <div class="action-grid">
+    <a href="#"><img src="IMG_8094.jpeg" alt=""><span>Contact your school board</span></a>
+    <a href="#"><img src="IMG_8095.jpeg" alt=""><span>Contact your city council</span></a>
+    <a href="#"><img src="IMG_8096.jpeg" alt=""><span>Report concerning retailers</span></a>
+    <a href="#"><img src="IMG_8097.jpeg" alt=""><span>Support local ordinances</span></a>
+    <a href="#"><img src="IMG_8099.jpeg" alt=""><span>Protect other families</span></a>
+    <a href="#"><img src="IMG_8104.jpeg" alt=""><span>Community action toolkit</span></a>
+  </div>
+</section>
+
+<section class="panel teal">
+  <div class="panel-head">
+    <h2>Downloadable Resources</h2>
+    <a href="#">View All</a>
+  </div>
+
+  <div class="download-grid">
+    <a href="#"><img src="IMG_8100.jpeg" alt=""><span>Parent Guide (PDF)</span></a>
+    <a href="#"><img src="IMG_8101.jpeg" alt=""><span>Conversation Starter Guide</span></a>
+    <a href="#"><img src="IMG_8102.jpeg" alt=""><span>Signs & Symptoms Checklist</span></a>
+    <a href="#"><img src="IMG_8103.jpeg" alt=""><span>School Pres. Slides</span></a>
+    <a href="#"><img src="IMG_8104.jpeg" alt=""><span>Community Action Toolkit</span></a>
+  </div>
+</section>
+
+<section class="alone">
+  <img src="IMG_8174.jpeg" alt="">
+  <div>
+    <h2>You Are Not Alone.</h2>
+    <p>There is help. There is hope. You can make a difference.</p>
+  </div>
+  <a href="/help/index.html">→</a>
+</section>
+
+</main>
+</body>
+</html>
