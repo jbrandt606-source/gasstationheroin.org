@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Get Help Now | Gas Station Heroin</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --red:#e31b23;
+  --red2:#ff3b42;
+  --orange:#f59e0b;
+  --purple:#a855f7;
+  --blue:#1e9bff;
+  --green:#65c94a;
+  --line:#333842;
+  --text:#fff;
+  --muted:#d6d6d6;
+}
+
+html,body{
+  background:#000;
+  color:var(--text);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
+}
+
+body{
+  background:
+    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.94)),
+    url("IMG_8145.png") center/cover fixed no-repeat;
+}
+
+.page{
+  width:100%;
+  max-width:1050px;
+  margin:0 auto;
+  background:#050505;
+}
+
+/* Header */
+.site-header{
+  height:64px;
+  padding:0 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid #2a2a2a;
+  background:#030303;
+}
+
+.logo{
+  font-size:26px;
+  font-weight:900;
+  text-decoration:none;
+  color:#fff;
+}
+
+.logo span{color:var(--red)}
+
+.menu{
+  font-size:34px;
+  color:#fff;
+}
+
+/* Hero */
+.hero{
+  min-height:340px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  background:
+    linear-gradient(90deg,#050505 0%,#050505 44%,rgba(0,0,0,.25) 100%),
+    url("IMG_8155.png") right center/cover no-repeat;
+  border-bottom:1px solid #272727;
+}
+
+.hero-copy{
+  padding:42px 32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+h1{
+  text-transform:uppercase;
+  font-size:58px;
+  line-height:.95;
+  font-weight:950;
+  letter-spacing:-1.5px;
+}
+
+h1 span{color:var(--red)}
+
+.underline{
+  width:86px;
+  height:5px;
+  background:var(--red);
+  margin:18px 0 20px;
+}
+
+.hero p{
+  max-width:520px;
+  font-size:20px;
+  line-height:1.45;
+  color:#f1f1f1;
+}
+
+.callout{
+  margin-top:30px;
+  max-width:470px;
+  display:grid;
+  grid-template-columns:82px 1fr;
+  gap:16px;
+  align-items:center;
+  padding:20px;
+  border:1px solid var(--red);
+  border-radius:8px;
+  background:linear-gradient(90deg,rgba(170,0,0,.8),rgba(55,0,0,.7));
+}
+
+.callout img{
+  width:62px;
+  height:62px;
+}
+
+.callout h2{
+  font-size:22px;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+
+.callout p{
+  font-size:15px;
+  line-height:1.35;
+}
+
+/* Panels */
+.panel{
+  margin:18px 28px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:24px 22px;
+  background:
+    linear-gradient(145deg,rgba(10,12,16,.96),rgba(3,3,3,.98)),
+    url("IMG_8145.png") center/cover no-repeat;
+}
+
+.panel-title{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:20px;
+}
+
+.panel-title img{
+  width:48px;
+  height:48px;
+}
+
+.panel-title h2{
+  font-size:24px;
+  text-transform:uppercase;
+}
+
+.emergency-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+}
+
+.emergency-item{
+  padding:14px 12px;
+  text-align:center;
+  border-left:1px solid #383838;
+}
+
+.emergency-item:first-child{border-left:0}
+
+.emergency-item img{
+  width:58px;
+  height:58px;
+  margin-bottom:12px;
+}
+
+.emergency-item strong{
+  display:block;
+  text-transform:uppercase;
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.emergency-item span{
+  display:block;
+  color:#e8e8e8;
+  font-size:14px;
+  line-height:1.35;
+}
+
+.safe-note{
+  margin-top:20px;
+  padding:12px;
+  text-align:center;
+  border:1px solid var(--red);
+  border-radius:6px;
+  font-size:18px;
+}
+
+/* Resources */
+.resource-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+}
+
+.resource-card{
+  min-height:180px;
+  padding:16px;
+  border:1px solid #383838;
+  border-radius:8px;
+  background:#080808;
+}
+
+.resource-card img{
+  width:48px;
+  height:48px;
+  margin-bottom:12px;
+}
+
+.resource-card h3{
+  font-size:15px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.resource-card p{
+  color:#e4e4e4;
+  font-size:14px;
+  line-height:1.35;
+}
+
+.red{border-color:var(--red)}
+.orange{border-color:var(--orange)}
+.purple{border-color:var(--purple)}
+.blue{border-color:var(--blue)}
+.green{border-color:var(--green)}
+
+.red h3{color:var(--red2)}
+.orange h3{color:var(--orange)}
+.purple h3{color:var(--purple)}
+.blue h3{color:var(--blue)}
+.green h3{color:var(--green)}
+
+/* Steps */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+}
+
+.step{
+  display:grid;
+  grid-template-columns:44px 1fr;
+  gap:10px;
+  padding:10px 12px;
+  border-left:1px solid #383838;
+}
+
+.step:first-child{border-left:0}
+
+.num{
+  width:34px;
+  height:34px;
+  border:2px solid var(--red);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:900;
+}
+
+.step strong{
+  display:block;
+  font-size:14px;
+  margin-bottom:4px;
+}
+
+.step span{
+  color:#ddd;
+  font-size:13.5px;
+  line-height:1.3;
+}
+
+/* Finding Help */
+.more-help{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.more-card{
+  padding:16px;
+  border:1px solid #383838;
+  border-radius:8px;
+  background:#080808;
+}
+
+.more-card img{
+  width:48px;
+  height:48px;
+  margin-bottom:12px;
+}
+
+.more-card h3{
+  text-transform:uppercase;
+  font-size:15px;
+  margin-bottom:8px;
+}
+
+.more-card p{
+  color:#e4e4e4;
+  font-size:14px;
+  line-height:1.35;
+}
+
+/* Support Strip */
+.support{
+  margin:18px 28px 28px;
+  display:grid;
+  grid-template-columns:86px 1fr auto;
+  gap:18px;
+  align-items:center;
+  border:1px solid var(--red);
+  border-radius:8px;
+  padding:22px;
+  background:
+    linear-gradient(90deg,rgba(55,0,0,.7),rgba(5,5,5,.95)),
+    url("IMG_8145.png") center/cover no-repeat;
+}
+
+.support img{
+  width:62px;
+  height:62px;
+}
+
+.support h2{
+  color:var(--red2);
+  text-transform:uppercase;
+  font-size:25px;
+}
+
+.support p{
+  color:#f2f2f2;
+  font-size:16px;
+}
+
+.support a{
+  color:#fff;
+  text-decoration:none;
+  border:1px solid #fff;
+  border-radius:6px;
+  padding:13px 18px;
+  text-transform:uppercase;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+/* Mobile */
+@media(max-width:800px){
+  .site-header{
+    height:58px;
+    padding:0 18px;
+  }
+
+  .logo{
+    font-size:22px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    min-height:330px;
+    background:
+      linear-gradient(180deg,#050505 0%,rgba(0,0,0,.7) 58%,#050505 100%),
+      url("IMG_8155.png") center/cover no-repeat;
+  }
+
+  .hero-copy{
+    padding:30px 18px;
+  }
+
+  h1{
+    font-size:44px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .callout{
+    grid-template-columns:62px 1fr;
+  }
+
+  .callout img{
+    width:52px;
+    height:52px;
+  }
+
+  .panel{
+    margin:14px;
+    padding:20px 16px;
+  }
+
+  .emergency-grid,
+  .resource-grid,
+  .steps,
+  .more-help{
+    grid-template-columns:1fr;
+  }
+
+  .emergency-item,
+  .step{
+    border-left:0;
+    border-top:1px solid #333;
+  }
+
+  .emergency-item:first-child,
+  .step:first-child{
+    border-top:0;
+  }
+
+  .resource-card,
+  .more-card{
+    min-height:auto;
+  }
+
+  .support{
+    margin:14px;
+    grid-template-columns:64px 1fr;
+  }
+
+  .support a{
+    grid-column:1 / -1;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+<header class="site-header">
+  <a class="logo" href="/">Gas Station <span>Heroin</span></a>
+  <div class="menu">☰</div>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <h1>Get <span>Help Now</span></h1>
+    <div class="underline"></div>
+    <p>If your child is in danger or experiencing a medical emergency, do not wait. Get help right away.</p>
+
+    <div class="callout">
+      <img src="IMG_8168.jpeg" alt="">
+      <div>
+        <h2>Call 911 Immediately</h2>
+        <p>If your child is unconscious, not breathing normally, has a seizure, or you think they may have overdosed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-title">
+    <img src="IMG_8157.jpeg" alt="">
+    <div>
+      <h2>Emergency Signs</h2>
+      <p>Get emergency help right away if your child has:</p>
+    </div>
+  </div>
+
+  <div class="emergency-grid">
+    <div class="emergency-item">
+      <img src="IMG_8158.jpeg" alt="">
+      <strong>Unconsciousness</strong>
+      <span>Cannot be woken up or is difficult to wake up</span>
+    </div>
+
+    <div class="emergency-item">
+      <img src="IMG_8159.jpeg" alt="">
+      <strong>Breathing Issues</strong>
+      <span>Slow, shallow, or stopped breathing</span>
+    </div>
+
+    <div class="emergency-item">
+      <img src="IMG_8160.jpeg" alt="">
+      <strong>Seizures</strong>
+      <span>Shaking, jerking, or seizure activity</span>
+    </div>
+
+    <div class="emergency-item">
+      <img src="IMG_8161.jpeg" alt="">
+      <strong>Confusion</strong>
+      <span>Severe confusion, hallucinations, or agitation</span>
+    </div>
+
+    <div class="emergency-item">
+      <img src="IMG_8162.jpeg" alt="">
+      <strong>Poisoning</strong>
+      <span>Vomiting, blue lips or nails, or severe weakness</span>
+    </div>
+
+    <div class="emergency-item">
+      <img src="IMG_8163.jpeg" alt="">
+      <strong>Suicidal Thoughts</strong>
+      <span>Talking about harming themselves or giving up</span>
+    </div>
+  </div>
+
+  <div class="safe-note">When in doubt, call 911. It is always better to be safe.</div>
+</section>
+
+<section class="panel">
+  <div class="panel-title">
+    <img src="IMG_8164.jpeg" alt="">
+    <h2>Immediate Help Resources</h2>
+  </div>
+
+  <div class="resource-grid">
+    <div class="resource-card red">
+      <img src="IMG_8168.jpeg" alt="">
+      <h3>Call 911</h3>
+      <p>For life-threatening emergencies or immediate danger.</p>
+    </div>
+
+    <div class="resource-card orange">
+      <img src="IMG_8167.jpeg" alt="">
+      <h3>Poison Control</h3>
+      <p><strong>1-800-222-1222</strong><br>24/7 help for poison emergencies and medication questions.</p>
+    </div>
+
+    <div class="resource-card purple">
+      <img src="IMG_8166.jpeg" alt="">
+      <h3>SAMHSA Helpline</h3>
+      <p><strong>1-800-662-HELP (4357)</strong><br>24/7 free treatment referral and information.</p>
+    </div>
+
+    <div class="resource-card blue">
+      <img src="IMG_8165.jpeg" alt="">
+      <h3>Crisis Text Line</h3>
+      <p><strong>Text HOME to 741741</strong><br>Free, 24/7 crisis support by text.</p>
+    </div>
+
+    <div class="resource-card green">
+      <img src="IMG_8164.jpeg" alt="">
+      <h3>988 Lifeline</h3>
+      <p><strong>Call or text 988</strong><br>24/7 emotional distress, suicide, or crisis support.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-title">
+    <img src="IMG_8169.jpeg" alt="">
+    <h2>What You Can Do Right Now</h2>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <div><strong>Stay with your child.</strong><span>Do not leave them alone.</span></div>
+    </div>
+
+    <div class="step">
+      <div class="num">2</div>
+      <div><strong>Check their breathing.</strong><span>If not breathing normally, call 911 immediately.</span></div>
+    </div>
+
+    <div class="step">
+      <div class="num">3</div>
+      <div><strong>Keep them awake.</strong><span>Try to keep them awake and alert if possible.</span></div>
+    </div>
+
+    <div class="step">
+      <div class="num">4</div>
+      <div><strong>Do not give food or drinks.</strong><span>Wait for medical professionals.</span></div>
+    </div>
+
+    <div class="step">
+      <div class="num">5</div>
+      <div><strong>Save the product and packaging.</strong><span>Do not throw it away. It can help medical professionals.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-title">
+    <img src="IMG_8174.jpeg" alt="">
+    <h2>Finding More Help</h2>
+  </div>
+
+  <div class="more-help">
+    <div class="more-card red">
+      <img src="IMG_8173.jpeg" alt="">
+      <h3>Find Treatment</h3>
+      <p>Use the SAMHSA helpline or website to find local treatment options.</p>
+    </div>
+
+    <div class="more-card orange">
+      <img src="IMG_8172.jpeg" alt="">
+      <h3>Talk To Your Doctor</h3>
+      <p>Your child’s doctor can assess their health and connect you to resources.</p>
+    </div>
+
+    <div class="more-card purple">
+      <img src="IMG_8171.jpeg" alt="">
+      <h3>Support Groups</h3>
+      <p>Find parent and family support groups in your community or online.</p>
+    </div>
+
+    <div class="more-card blue">
+      <img src="IMG_8170.jpeg" alt="">
+      <h3>Learn More</h3>
+      <p>Visit our site for more information on specific substances and warning signs.</p>
+    </div>
+  </div>
+</section>
+
+<section class="support">
+  <img src="IMG_8174.jpeg" alt="">
+  <div>
+    <h2>You Are Not Alone.</h2>
+    <p>There is help. There is hope. You can make a difference.</p>
+  </div>
+  <a href="/parent/">Return to Parent Resources →</a>
+</section>
+
+</main>
+</body>
+</html>
