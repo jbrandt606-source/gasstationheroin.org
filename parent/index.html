@@ -113,7 +113,7 @@ body{
 
 .top-actions{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:14px;
   padding:20px 28px 8px;
 }
@@ -356,41 +356,7 @@ body{
   line-height:1.25;
 }
 
-.action-grid,
-.download-grid{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:8px;
-  text-align:center;
-}
-
-.action-grid a,
-.download-grid a{
-  text-decoration:none;
-  color:#fff;
-}
-
-.action-grid img,
-.download-grid img{
-  width:54px;
-  height:54px;
-  margin-bottom:8px;
-}
-
-.action-grid span,
-.download-grid span{
-  display:block;
-  font-size:12px;
-  line-height:1.2;
-  color:#f1f1f1;
-}
-
-.orange{border-color:#6f3c08}
-.teal{border-color:#086d66}
 .redpanel{border-color:var(--red)}
-
-.orange .panel-head h2{color:#fff}
-.teal .panel-head a{color:var(--cyan)}
 
 .alone{
   margin:14px 28px 28px;
@@ -483,9 +449,7 @@ body{
     grid-template-columns:repeat(4,1fr);
   }
 
-  .step-grid,
-  .action-grid,
-  .download-grid{
+  .step-grid{
     grid-template-columns:repeat(3,1fr);
     gap:14px;
   }
@@ -526,8 +490,8 @@ body{
   </div>
 </section>
 
+<!-- "Start Here" button removed as requested, only Warning Signs and Get Help Now remain -->
 <nav class="top-actions">
-  <a href="#start"><img src="IMG_8170.jpeg" alt=""> Start Here</a>
   <a href="/warning/index.html"><img src="IMG_8186.jpeg" alt=""> Warning Signs</a>
   <a href="/help/index.html"><img src="IMG_8188.jpeg" alt=""> Get Help Now</a>
 </nav>
@@ -562,7 +526,7 @@ body{
   </a>
 </section>
 
-<!-- PRODUCT SECTION - NO DOUBLE NAMES, NO DUPLICATE LISTINGS, PURPLE SCROLL BUTTONS (PAGINATION DOTS) REMOVED TO SATISFY REQUIREMENT -->
+<!-- PRODUCT SECTION - unique product names, no duplicates, purple scroll buttons removed -->
 <section class="panel">
   <div class="panel-head">
     <h2>What Products Should Parents Know?</h2>
@@ -570,7 +534,6 @@ body{
   </div>
 
   <div class="product-grid">
-    <!-- each substance appears only once – no double names, full unique list (Kratom, 7-OH, Tianeptine, Nitrous, Phenibut, Poppers, Salvia, Amanita) -->
     <a class="product" href="/opioid/kratom.html"><img src="IMG_8083.jpeg" alt="Kratom"><strong>Kratom</strong></a>
     <a class="product" href="/opioid/7oh.html"><img src="IMG_8084.jpeg" alt="7-OH"><strong>7-OH</strong></a>
     <a class="product" href="/opioid/tianeptine.html"><img src="IMG_8085.jpeg" alt="Tianeptine"><strong>Tianeptine</strong></a>
@@ -580,8 +543,6 @@ body{
     <a class="product" href="/hallucinogens/salvia.html"><img src="IMG_8089.jpeg" alt="Salvia"><strong>Salvia</strong></a>
     <a class="product" href="/hallucinogens/amanita.html"><img src="IMG_8090.jpeg" alt="Amanita"><strong>Amanita</strong></a>
   </div>
-
-  <!-- DELETED: all duplicate indicator "purple scroll buttons" / pagination dots that could cause confusion or duplicate naming. No extra UI -->
 </section>
 
 <section class="panel">
@@ -612,35 +573,7 @@ body{
   </div>
 </section>
 
-<section class="panel orange">
-  <div class="panel-head">
-    <h2>Take Action In Your Community</h2>
-  </div>
-
-  <div class="action-grid">
-    <a href="#"><img src="IMG_8094.jpeg" alt=""><span>Contact your school board</span></a>
-    <a href="#"><img src="IMG_8095.jpeg" alt=""><span>Contact your city council</span></a>
-    <a href="#"><img src="IMG_8096.jpeg" alt=""><span>Report concerning retailers</span></a>
-    <a href="#"><img src="IMG_8097.jpeg" alt=""><span>Support local ordinances</span></a>
-    <a href="#"><img src="IMG_8099.jpeg" alt=""><span>Protect other families</span></a>
-    <a href="#"><img src="IMG_8104.jpeg" alt=""><span>Community action toolkit</span></a>
-  </div>
-</section>
-
-<section class="panel teal">
-  <div class="panel-head">
-    <h2>Downloadable Resources</h2>
-    <a href="#">View All</a>
-  </div>
-
-  <div class="download-grid">
-    <a href="#"><img src="IMG_8100.jpeg" alt=""><span>Parent Guide (PDF)</span></a>
-    <a href="#"><img src="IMG_8101.jpeg" alt=""><span>Conversation Starter Guide</span></a>
-    <a href="#"><img src="IMG_8102.jpeg" alt=""><span>Signs & Symptoms Checklist</span></a>
-    <a href="#"><img src="IMG_8103.jpeg" alt=""><span>School Pres. Slides</span></a>
-    <a href="#"><img src="IMG_8104.jpeg" alt=""><span>Community Action Toolkit</span></a>
-  </div>
-</section>
+<!-- "Take Action In Your Community" (orange panel) and "Downloadable Resources" (teal panel) have been removed as requested -->
 
 <section class="alone">
   <img src="IMG_8174.jpeg" alt="">
