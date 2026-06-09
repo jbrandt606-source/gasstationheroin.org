@@ -372,6 +372,10 @@ h1 span {
   border-left: 5px solid var(--red);
   padding: 28px;
   border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
 }
 
 .card h3 {
@@ -557,8 +561,8 @@ footer {
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="#products">See the Products</a>
-        <!-- Parent Resources button now links to /parents/index.html -->
-        <a class="btn-secondary" href="/parents/index.html">Parent Resources</a>
+        <!-- Parent Resources button links to /parent/index.html (singular) -->
+        <a class="btn-secondary" href="/parent/index.html">Parent Resources</a>
       </div>
     </div>
   </section>
@@ -656,18 +660,21 @@ footer {
       Simple tools to help families understand what these products look like, where they are sold, and how to talk about them before exposure becomes a crisis.
     </p>
     <div class="cards">
+      <!-- Product Recognition Guide (no link required, but keep as info) -->
       <div class="card">
         <h3>Product Recognition Guide</h3>
         <p>Learn the names, packaging styles, and product forms commonly found in vape shops and gas stations.</p>
       </div>
-      <div class="card">
+      <!-- Conversation Guide card now links to /talk/index.html -->
+      <a href="/talk/index.html" class="card" style="text-decoration: none; display: block;">
         <h3>Conversation Guide</h3>
         <p>Plain-language talking points for discussing kratom, tianeptine, vapes, hemp products, and retail drugs with teens.</p>
-      </div>
-      <div class="card">
+      </a>
+      <!-- Warning Signs card now links to /warning/index.html -->
+      <a href="/warning/index.html" class="card" style="text-decoration: none; display: block;">
         <h3>Warning Signs</h3>
         <p>What to look for at home in backpacks, receipts, product bottles, vape devices, and browser history.</p>
-      </div>
+      </a>
     </div>
   </section>
   <section class="section get-involved" id="involved" aria-labelledby="involved-heading">
@@ -691,8 +698,8 @@ footer {
     </div>
     <div class="action-row">
       <a class="btn-primary" href="#products">See the Products</a>
-      <!-- Parent Resources button now links to /parents/index.html -->
-      <a class="btn-secondary" href="/parents/index.html">Parent Resources</a>
+      <!-- Parent Resources button links to /parent/index.html -->
+      <a class="btn-secondary" href="/parent/index.html">Parent Resources</a>
     </div>
   </section>
 </main>
@@ -703,8 +710,8 @@ footer {
   </div>
   <div class="footer-links">
     <a href="#products">Product Categories</a>
-    <!-- Parent Resources footer link now points to /parents/index.html -->
-    <a href="/parents/index.html">Parent Resources</a>
+    <!-- Parent Resources footer link now points to /parent/index.html -->
+    <a href="/parent/index.html">Parent Resources</a>
     <a href="#involved">Get Involved</a>
   </div>
 </footer>
