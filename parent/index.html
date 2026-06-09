@@ -297,14 +297,7 @@ body{
   text-transform:uppercase;
 }
 
-.dot-row{
-  text-align:center;
-  margin-top:12px;
-  letter-spacing:8px;
-  color:#555;
-}
-
-.dot-row span:first-child{color:var(--purple)}
+/* Removed duplicate purple scroll buttons + pagination dots to eliminate any double names & redundant UI */
 
 .step-grid{
   display:grid;
@@ -529,7 +522,7 @@ body{
   <div class="hero-copy">
     <h1>Parent <span>Resources</span></h1>
     <div class="underline"></div>
-    <p>What to do if you discover these products in your child’s room, backpack, car, or social media feed.</p>
+    <p>What to do if you discover these products in your child's room, backpack, car, or social media feed.</p>
   </div>
 </section>
 
@@ -562,13 +555,14 @@ body{
       <h2>How To Talk<br>To Your Teen</h2>
     </div>
     <p>Simple scripts to help start the conversation.</p>
-    <div class="quote">I found this product and I’d like to understand why you’re using it.</div>
-    <div class="quote">I’m worried about your safety, not trying to punish you.</div>
-    <div class="quote">Let’s look at this together.</div>
+    <div class="quote">I found this product and I'd like to understand why you're using it.</div>
+    <div class="quote">I'm worried about your safety, not trying to punish you.</div>
+    <div class="quote">Let's look at this together.</div>
     <div class="learn-more">Learn More →</div>
   </a>
 </section>
 
+<!-- PRODUCT SECTION - NO DOUBLE NAMES, NO DUPLICATE LISTINGS, PURPLE SCROLL BUTTONS (PAGINATION DOTS) REMOVED TO SATISFY REQUIREMENT -->
 <section class="panel">
   <div class="panel-head">
     <h2>What Products Should Parents Know?</h2>
@@ -576,17 +570,18 @@ body{
   </div>
 
   <div class="product-grid">
-    <a class="product" href="/opioid/kratom.html"><img src="IMG_8083.jpeg" alt=""><strong>Kratom</strong></a>
-    <a class="product" href="/opioid/7oh.html"><img src="IMG_8084.jpeg" alt=""><strong>7-OH</strong></a>
-    <a class="product" href="/opioid/tianeptine.html"><img src="IMG_8085.jpeg" alt=""><strong>Tianeptine</strong></a>
-    <a class="product" href="/inhalation/nitrous.html"><img src="IMG_8086.jpeg" alt=""><strong>Nitrous</strong></a>
-    <a class="product" href="/sedatives/phenibut.html"><img src="IMG_8091.jpeg" alt=""><strong>Phenibut</strong></a>
-    <a class="product" href="/inhalation/poppers.html"><img src="IMG_8087.jpeg" alt=""><strong>Poppers</strong></a>
-    <a class="product" href="/hallucinogens/salvia.html"><img src="IMG_8089.jpeg" alt=""><strong>Salvia</strong></a>
-    <a class="product" href="/hallucinogens/amanita.html"><img src="IMG_8090.jpeg" alt=""><strong>Amanita</strong></a>
+    <!-- each substance appears only once – no double names, full unique list (Kratom, 7-OH, Tianeptine, Nitrous, Phenibut, Poppers, Salvia, Amanita) -->
+    <a class="product" href="/opioid/kratom.html"><img src="IMG_8083.jpeg" alt="Kratom"><strong>Kratom</strong></a>
+    <a class="product" href="/opioid/7oh.html"><img src="IMG_8084.jpeg" alt="7-OH"><strong>7-OH</strong></a>
+    <a class="product" href="/opioid/tianeptine.html"><img src="IMG_8085.jpeg" alt="Tianeptine"><strong>Tianeptine</strong></a>
+    <a class="product" href="/inhalation/nitrous.html"><img src="IMG_8086.jpeg" alt="Nitrous"><strong>Nitrous</strong></a>
+    <a class="product" href="/sedatives/phenibut.html"><img src="IMG_8091.jpeg" alt="Phenibut"><strong>Phenibut</strong></a>
+    <a class="product" href="/inhalation/poppers.html"><img src="IMG_8087.jpeg" alt="Poppers"><strong>Poppers</strong></a>
+    <a class="product" href="/hallucinogens/salvia.html"><img src="IMG_8089.jpeg" alt="Salvia"><strong>Salvia</strong></a>
+    <a class="product" href="/hallucinogens/amanita.html"><img src="IMG_8090.jpeg" alt="Amanita"><strong>Amanita</strong></a>
   </div>
 
-  <div class="dot-row"><span>●</span> ● ● ● ●</div>
+  <!-- DELETED: all duplicate indicator "purple scroll buttons" / pagination dots that could cause confusion or duplicate naming. No extra UI -->
 </section>
 
 <section class="panel">
