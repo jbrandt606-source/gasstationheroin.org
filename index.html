@@ -262,7 +262,7 @@ h1 span {
   line-height: 1.6;
 }
 
-/* HORIZONTAL SCROLLABLE ICON GALLERY (replaces product categories grid) */
+/* HORIZONTAL SCROLLABLE ICON GALLERY */
 .horizontal-icon-wrapper {
   margin-top: 36px;
   overflow-x: auto;
@@ -358,7 +358,7 @@ h1 span {
   margin-top: 32px;
 }
 
-/* CARDS (resource cards remain) */
+/* CARDS */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -557,7 +557,8 @@ footer {
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="#products">See the Products</a>
-        <a class="btn-secondary" href="#resources">Parent Resources</a>
+        <!-- Parent Resources button now links to /parents/index.html -->
+        <a class="btn-secondary" href="/parents/index.html">Parent Resources</a>
       </div>
     </div>
   </section>
@@ -613,42 +614,34 @@ footer {
     </p>
   </section>
   
-  <!-- Product Categories section with horizontally scrollable icon gallery (replaces original grid) -->
   <section class="section" id="products" aria-labelledby="products-heading">
     <h2 id="products-heading">Product Categories</h2>
     <p class="section-intro">
       These are the categories parents should recognize when walking into vape shops, smoke shops, gas stations, and convenience stores.
     </p>
 
-    <!-- horizontal scrollable icons (opioids.jpeg, sedatives.jpeg, stimulants.jpeg, hallucinogens.jpeg, sexual.jpeg, inhale.png) -->
     <div class="horizontal-icon-wrapper" role="region" aria-label="Product category icons, scroll horizontally">
       <div class="icon-scroll-list">
-        <!-- OPIOIDS: link matches original /opioid/index.html -->
         <a href="/opioid/index.html" class="icon-card">
           <img src="./opioids.jpeg" alt="Opioids product warning icon: products that act on opioid receptors" loading="lazy">
           <span>Opioids</span>
         </a>
-        <!-- SEDATIVES -->
         <a href="/sedatives/index.html" class="icon-card">
           <img src="./sedatives.jpeg" alt="Sedatives category: products that cause drowsiness and respiratory depression" loading="lazy">
           <span>Sedatives</span>
         </a>
-        <!-- STIMULANTS -->
         <a href="/stimulants/index.html" class="icon-card">
           <img src="./stimulants.jpeg" alt="Stimulants category: products that increase heart rate and blood pressure" loading="lazy">
           <span>Stimulants</span>
         </a>
-        <!-- HALLUCINOGENS -->
         <a href="/hallucinogens/index.html" class="icon-card">
           <img src="./hallucinogens.jpeg" alt="Hallucinogens category: psychedelic substances and mind-altering compounds" loading="lazy">
           <span>Hallucinogens</span>
         </a>
-        <!-- SEXUAL ENHANCEMENT -->
         <a href="/sexual/index.html" class="icon-card">
           <img src="./sexual.jpeg" alt="Sexual Enhancement products marketed for sexual performance" loading="lazy">
           <span>Sexual Enhancement</span>
         </a>
-        <!-- INHALANTS: using inhale.png -->
         <a href="/inhalation/index.html" class="icon-card">
           <img src="./inhale.png" alt="Inhalants category: nitrous, poppers, euphoric but dangerous compounds affecting brain and heart" loading="lazy">
           <span>Inhalants</span>
@@ -698,7 +691,8 @@ footer {
     </div>
     <div class="action-row">
       <a class="btn-primary" href="#products">See the Products</a>
-      <a class="btn-secondary" href="#resources">Parent Resources</a>
+      <!-- Parent Resources button now links to /parents/index.html -->
+      <a class="btn-secondary" href="/parents/index.html">Parent Resources</a>
     </div>
   </section>
 </main>
@@ -709,7 +703,8 @@ footer {
   </div>
   <div class="footer-links">
     <a href="#products">Product Categories</a>
-    <a href="#resources">Parent Resources</a>
+    <!-- Parent Resources footer link now points to /parents/index.html -->
+    <a href="/parents/index.html">Parent Resources</a>
     <a href="#involved">Get Involved</a>
   </div>
 </footer>
