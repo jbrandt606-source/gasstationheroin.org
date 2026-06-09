@@ -143,7 +143,7 @@ body{
   height:30px;
 }
 
-/* FEATURE CARDS */
+/* FEATURE CARDS - FIXED SPACING FOR LEARN MORE BUTTONS */
 .feature-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -155,6 +155,7 @@ body{
   min-height:310px;
   border-radius:12px;
   padding:24px;
+  padding-bottom: 70px;  /* extra bottom padding ensures "Learn More" has breathing room */
   color:#fff;
   text-decoration:none;
   position:relative;
@@ -199,6 +200,7 @@ body{
 .feature-card ul{
   list-style:none;
   margin-top:18px;
+  margin-bottom: 0;  /* remove default bottom margin to avoid clash */
 }
 
 .feature-card li{
@@ -230,17 +232,34 @@ body{
   margin-right:4px;
 }
 
+/* Last quote inside talk card gets extra margin-bottom to keep distance from button */
+.talk .quote:last-of-type {
+  margin-bottom: 18px;
+}
+
+/* Adjust learn more button position with improved spacing */
 .learn-more{
   position:absolute;
   left:24px;
-  bottom:20px;
+  bottom:28px;   /* increased from 20px for better separation */
   text-transform:uppercase;
   font-weight:950;
   color:inherit;
+  letter-spacing:0.5px;
 }
 
 .warning .learn-more{color:var(--red)}
 .talk .learn-more{color:var(--blue)}
+
+/* Ensure bullet list has enough space before button on warning card */
+.warning ul {
+  margin-bottom: 0;
+}
+
+/* Additional spacing for list items on warning card */
+.warning li:last-child {
+  margin-bottom: 0;
+}
 
 /* PANELS */
 .panel{
@@ -297,7 +316,7 @@ body{
   text-transform:uppercase;
 }
 
-/* Removed duplicate purple scroll buttons + pagination dots to eliminate any double names & redundant UI */
+/* No duplicate purple scroll buttons / pagination dots */
 
 .step-grid{
   display:grid;
@@ -434,6 +453,16 @@ body{
 
   .feature-card{
     min-height:280px;
+    padding-bottom: 70px;
+  }
+
+  .learn-more{
+    bottom: 24px;
+    left: 20px;
+  }
+
+  .talk .quote:last-of-type {
+    margin-bottom: 16px;
   }
 
   .panel{
@@ -490,13 +519,14 @@ body{
   </div>
 </section>
 
-<!-- "Start Here" button removed as requested, only Warning Signs and Get Help Now remain -->
+<!-- Only Warning Signs & Get Help Now (Start Here removed) -->
 <nav class="top-actions">
   <a href="/warning/index.html"><img src="IMG_8186.jpeg" alt=""> Warning Signs</a>
   <a href="/help/index.html"><img src="IMG_8188.jpeg" alt=""> Get Help Now</a>
 </nav>
 
 <section class="feature-grid" id="start">
+  <!-- Warning Signs card with fixed Learn More spacing -->
   <a class="feature-card warning" href="/warning/index.html">
     <div class="feature-title">
       <img src="IMG_8186.jpeg" alt="">
@@ -513,6 +543,7 @@ body{
     <div class="learn-more">Learn More →</div>
   </a>
 
+  <!-- How To Talk To Your Teen card with fixed Learn More spacing -->
   <a class="feature-card talk" href="/talk/index.html">
     <div class="feature-title">
       <img src="IMG_8187.jpeg" alt="">
@@ -526,7 +557,7 @@ body{
   </a>
 </section>
 
-<!-- PRODUCT SECTION - unique product names, no duplicates, purple scroll buttons removed -->
+<!-- PRODUCT SECTION - unique list, no duplicates, no purple dots -->
 <section class="panel">
   <div class="panel-head">
     <h2>What Products Should Parents Know?</h2>
@@ -573,7 +604,7 @@ body{
   </div>
 </section>
 
-<!-- "Take Action In Your Community" (orange panel) and "Downloadable Resources" (teal panel) have been removed as requested -->
+<!-- Take Action & Downloadable Resources sections have been removed as requested -->
 
 <section class="alone">
   <img src="IMG_8174.jpeg" alt="">
