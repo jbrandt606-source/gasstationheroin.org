@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Kratom Product ID Guide | Gas Station Heroin</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --green:#7cc143;
+  --green2:#9be65c;
+  --red:#e31b23;
+  --dark:#050505;
+  --panel:#0b1118;
+  --line:#263241;
+  --text:#fff;
+  --muted:#c9d2dc;
+}
+
+html,body{
+  background:#000;
+  color:var(--text);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
+}
+
+body{
+  background:
+    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.94)),
+    url("dark-panel-bg.jpeg") center/cover fixed no-repeat;
+}
+
+.page{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+  background:#050505;
+}
+
+/* TOP BAR */
+.topbar{
+  height:58px;
+  padding:0 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  background:#030303;
+}
+
+.back{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:-.5px;
+}
+
+.logo span{color:var(--red)}
+
+.help-btn{
+  color:#fff;
+  text-decoration:none;
+  border:1px solid #3b4656;
+  border-radius:24px;
+  padding:9px 14px;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* HERO */
+.hero{
+  min-height:330px;
+  display:grid;
+  grid-template-columns:1fr 1.35fr;
+  background:
+    linear-gradient(90deg,#050505 0%,rgba(0,0,0,.88) 40%,rgba(0,0,0,.2) 100%),
+    url("IMG_8391.png") right center/cover no-repeat;
+  border-bottom:2px solid var(--green);
+}
+
+.hero-copy{
+  padding:34px 24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero h1{
+  font-size:56px;
+  line-height:.9;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:-1px;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--green);
+  font-size:26px;
+  margin-top:8px;
+  letter-spacing:0;
+}
+
+.hero p{
+  margin-top:18px;
+  max-width:390px;
+  color:#f3f7f1;
+  font-size:18px;
+  line-height:1.35;
+}
+
+/* PANELS */
+.panel{
+  margin:18px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+  background:
+    linear-gradient(145deg,rgba(8,14,22,.96),rgba(3,5,8,.98)),
+    url("dark-panel-bg.jpeg") center/cover no-repeat;
+}
+
+.panel-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:14px;
+}
+
+.panel h2{
+  font-size:23px;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.panel-head a{
+  color:var(--green2);
+  font-weight:900;
+  font-size:14px;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+/* PRODUCT SCROLLS */
+.product-scroll{
+  overflow-x:auto;
+  overflow-y:hidden;
+  scrollbar-width:thin;
+  -webkit-overflow-scrolling:touch;
+  padding-bottom:10px;
+}
+
+.product-scroll::-webkit-scrollbar{height:6px}
+.product-scroll::-webkit-scrollbar-track{
+  background:#1e1e24;
+  border-radius:10px;
+}
+.product-scroll::-webkit-scrollbar-thumb{
+  background:var(--green);
+  border-radius:10px;
+}
+
+.product-row{
+  display:flex;
+  gap:16px;
+  width:max-content;
+  padding:4px 2px;
+}
+
+.product-card{
+  width:132px;
+  min-width:132px;
+  color:#fff;
+  text-decoration:none;
+  text-align:center;
+}
+
+.product-card img{
+  width:132px;
+  height:132px;
+  object-fit:contain;
+  display:block;
+  margin-bottom:8px;
+  filter:drop-shadow(0 10px 13px rgba(0,0,0,.75));
+}
+
+.product-card strong{
+  display:block;
+  font-size:12.5px;
+  text-transform:uppercase;
+  line-height:1.15;
+}
+
+.product-card span{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:11.5px;
+  line-height:1.2;
+}
+
+/* INFO GRID */
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:18px;
+}
+
+.info-card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+  background:
+    linear-gradient(145deg,rgba(8,14,22,.96),rgba(3,5,8,.98)),
+    url("dark-panel-bg.jpeg") center/cover no-repeat;
+}
+
+.info-card h2{
+  color:var(--green);
+  font-size:20px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.info-card ul{
+  margin-left:18px;
+  columns:2;
+}
+
+.info-card li{
+  color:#eef5ea;
+  margin:7px 0;
+  font-size:14px;
+  line-height:1.25;
+}
+
+.info-card li::marker{color:var(--green)}
+
+/* WIDE CLUES */
+.clues{
+  margin:18px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+  background:
+    linear-gradient(145deg,rgba(8,14,22,.96),rgba(3,5,8,.98)),
+    url("dark-panel-bg.jpeg") center/cover no-repeat;
+}
+
+.clues h2{
+  color:var(--green);
+  text-transform:uppercase;
+  font-size:22px;
+  margin-bottom:12px;
+}
+
+.clue-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px 24px;
+}
+
+.clue{
+  color:#eef5ea;
+  font-size:15px;
+  line-height:1.35;
+  padding-left:18px;
+  position:relative;
+}
+
+.clue::before{
+  content:"•";
+  color:var(--green);
+  position:absolute;
+  left:0;
+  font-weight:900;
+}
+
+/* WARNING */
+.warning-box{
+  margin:18px;
+  border:1px solid var(--red);
+  border-radius:14px;
+  padding:18px;
+  display:grid;
+  grid-template-columns:62px 1fr auto;
+  gap:16px;
+  align-items:center;
+  background:linear-gradient(90deg,rgba(70,0,0,.82),rgba(0,0,0,.94));
+}
+
+.warning-icon{
+  font-size:42px;
+}
+
+.warning-box h2{
+  text-transform:uppercase;
+  font-size:22px;
+  margin-bottom:5px;
+}
+
+.warning-box p{
+  color:#f2f2f2;
+  font-size:14px;
+  line-height:1.35;
+}
+
+.phone-list{
+  font-size:13px;
+  color:#fff;
+  line-height:1.6;
+  white-space:nowrap;
+}
+
+.warning-box a{
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  background:var(--red);
+  border-radius:8px;
+  padding:14px 22px;
+  text-transform:uppercase;
+  font-weight:950;
+  text-align:center;
+  white-space:nowrap;
+}
+
+/* MOBILE */
+@media(max-width:760px){
+  .topbar{
+    height:62px;
+  }
+
+  .back{
+    font-size:12px;
+  }
+
+  .logo{
+    font-size:20px;
+  }
+
+  .help-btn{
+    font-size:12px;
+    padding:8px 10px;
+  }
+
+  .hero{
+    min-height:320px;
+    grid-template-columns:1fr;
+    background:
+      linear-gradient(180deg,#050505 0%,rgba(0,0,0,.55) 48%,#050505 100%),
+      url("IMG_8391.png") center/cover no-repeat;
+  }
+
+  .hero-copy{
+    padding:28px 18px;
+  }
+
+  .hero h1{
+    font-size:46px;
+  }
+
+  .hero h1 span{
+    font-size:23px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .panel{
+    margin:14px;
+    padding:16px 14px;
+  }
+
+  .panel h2{
+    font-size:20px;
+  }
+
+  .product-card{
+    width:112px;
+    min-width:112px;
+  }
+
+  .product-card img{
+    width:112px;
+    height:112px;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+    margin:14px;
+  }
+
+  .info-card ul{
+    columns:1;
+  }
+
+  .clues{
+    margin:14px;
+  }
+
+  .clue-grid{
+    grid-template-columns:1fr;
+  }
+
+  .warning-box{
+    margin:14px;
+    grid-template-columns:1fr;
+    text-align:left;
+  }
+
+  .phone-list{
+    white-space:normal;
+  }
+
+  .warning-box a{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+<header class="topbar">
+  <a class="back" href="/products/index.html">‹ Back to Products</a>
+  <div class="logo">Gas Station <span>Heroin</span></div>
+  <a class="help-btn" href="/help/index.html">Get Help Now</a>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <h1>Kratom <span>Product ID Guide</span></h1>
+    <p>Kratom products are sold in many forms, including powders, extracts, capsules, gummies, foods, and beverages. Packaging and names change often.</p>
+  </div>
+</section>
+
+<section class="panel" id="powders">
+  <div class="panel-head">
+    <h2>Powders</h2>
+    <a href="#">See all</a>
+  </div>
+
+  <div class="product-scroll">
+    <div class="product-row">
+      <a class="product-card" href="#"><img src="IMG_8343.jpeg" alt=""><strong>50x Extract</strong><span>Powder pouch</span></a>
+      <a class="product-card" href="#"><img src="IMG_8342.jpeg" alt=""><strong>Krave</strong><span>Trainwreck powder</span></a>
+      <a class="product-card" href="#"><img src="IMG_8341.jpeg" alt=""><strong>Just Kratom</strong><span>Trainwreck</span></a>
+      <a class="product-card" href="#"><img src="IMG_8340.jpeg" alt=""><strong>Happy Hippo</strong><span>Kratom powder</span></a>
+      <a class="product-card" href="#"><img src="IMG_8339.jpeg" alt=""><strong>Euphoria</strong><span>Powder pouch</span></a>
+      <a class="product-card" href="#"><img src="IMG_8338.jpeg" alt=""><strong>Kingdom Kratom</strong><span>Yellow Vietnam</span></a>
+      <a class="product-card" href="#"><img src="IMG_8337.jpeg" alt=""><strong>White Kratom</strong><span>Bulk powder</span></a>
+      <a class="product-card" href="#"><img src="IMG_8336.jpeg" alt=""><strong>The Kratom Co.</strong><span>Red Bali</span></a>
+      <a class="product-card" href="#"><img src="IMG_8335.jpeg" alt=""><strong>Jubi</strong><span>Green Maeng Da</span></a>
+      <a class="product-card" href="#"><img src="IMG_8334.jpeg" alt=""><strong>Enhanced</strong><span>Kratom powder</span></a>
+      <a class="product-card" href="#"><img src="IMG_8333.jpeg" alt=""><strong>Remarkable</strong><span>Maeng Da</span></a>
+      <a class="product-card" href="#"><img src="IMG_8332.jpeg" alt=""><strong>Just Kratom</strong><span>Maeng Da</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="extracts">
+  <div class="panel-head">
+    <h2>Extracts & Shots</h2>
+    <a href="#">See all</a>
+  </div>
+
+  <div class="product-scroll">
+    <div class="product-row">
+      <a class="product-card" href="#"><img src="IMG_8355.jpeg" alt=""><strong>EDP Shot</strong><span>Liquid extract</span></a>
+      <a class="product-card" href="#"><img src="IMG_8354.jpeg" alt=""><strong>Feel Free</strong><span>Classic tonic</span></a>
+      <a class="product-card" href="#"><img src="IMG_8353.jpeg" alt=""><strong>Super K</strong><span>Dropper bottle</span></a>
+      <a class="product-card" href="#"><img src="IMG_8352.jpeg" alt=""><strong>Kratom</strong><span>Energy shot</span></a>
+      <a class="product-card" href="#"><img src="IMG_8351.jpeg" alt=""><strong>Mitragynine</strong><span>Liquid product</span></a>
+      <a class="product-card" href="#"><img src="IMG_8350.jpeg" alt=""><strong>Strong Relief</strong><span>Kratom drink</span></a>
+      <a class="product-card" href="#"><img src="IMG_8349.jpeg" alt=""><strong>K Shot</strong><span>Liquid shot</span></a>
+      <a class="product-card" href="#"><img src="IMG_8348.jpeg" alt=""><strong>OPMS Gold</strong><span>Extract box</span></a>
+      <a class="product-card" href="#"><img src="IMG_8347.jpeg" alt=""><strong>OPMS Black</strong><span>Liquid extract</span></a>
+      <a class="product-card" href="#"><img src="IMG_8346.jpeg" alt=""><strong>MIT45 Boost</strong><span>Extract shot</span></a>
+      <a class="product-card" href="#"><img src="IMG_8345.jpeg" alt=""><strong>Club13</strong><span>Extract powder</span></a>
+      <a class="product-card" href="#"><img src="IMG_8344.jpeg" alt=""><strong>Kratom</strong><span>Extract gummies</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="capsules">
+  <div class="panel-head">
+    <h2>Capsules & Tablets</h2>
+    <a href="#">See all</a>
+  </div>
+
+  <div class="product-scroll">
+    <div class="product-row">
+      <a class="product-card" href="#"><img src="IMG_8361.jpeg" alt=""><strong>KBomb</strong><span>Capsules</span></a>
+      <a class="product-card" href="#"><img src="IMG_8360.jpeg" alt=""><strong>Buttons</strong><span>Extract tablets</span></a>
+      <a class="product-card" href="#"><img src="IMG_8359.jpeg" alt=""><strong>Happy Hippo</strong><span>Kratom capsules</span></a>
+      <a class="product-card" href="#"><img src="IMG_8358.jpeg" alt=""><strong>MIT45</strong><span>Kratom blend</span></a>
+      <a class="product-card" href="#"><img src="IMG_8357.jpeg" alt=""><strong>OPMS Silver</strong><span>Capsules</span></a>
+      <a class="product-card" href="#"><img src="IMG_8356.jpeg" alt=""><strong>OPMS Black</strong><span>Extract capsules</span></a>
+      <a class="product-card" href="#"><img src="IMG_8363.jpeg" alt=""><strong>Rave Kratom</strong><span>Tablets</span></a>
+      <a class="product-card" href="#"><img src="IMG_8362.jpeg" alt=""><strong>Zenith</strong><span>MIT tablets</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="gummies">
+  <div class="panel-head">
+    <h2>Gummies & Food</h2>
+    <a href="#">See all</a>
+  </div>
+
+  <div class="product-scroll">
+    <div class="product-row">
+      <a class="product-card" href="#"><img src="IMG_8379.jpeg" alt=""><strong>Electric Fresh</strong><span>Mint extract</span></a>
+      <a class="product-card" href="#"><img src="IMG_8378.jpeg" alt=""><strong>Hush</strong><span>Kratom caramels</span></a>
+      <a class="product-card" href="#"><img src="IMG_8377.jpeg" alt=""><strong>MIT-X84</strong><span>Chocolate bar</span></a>
+      <a class="product-card" href="#"><img src="IMG_8376.jpeg" alt=""><strong>Kratom Taffy</strong><span>Salt water taffy</span></a>
+      <a class="product-card" href="#"><img src="IMG_8375.jpeg" alt=""><strong>Happy Hippo</strong><span>Kratom taffy</span></a>
+      <a class="product-card" href="#"><img src="IMG_8374.jpeg" alt=""><strong>Gush</strong><span>Sour apple</span></a>
+      <a class="product-card" href="#"><img src="IMG_8373.jpeg" alt=""><strong>Kratom Gummy</strong><span>Berry flavor</span></a>
+      <a class="product-card" href="#"><img src="IMG_8372.jpeg" alt=""><strong>Kingdom Kratom</strong><span>Extract gummies</span></a>
+      <a class="product-card" href="#"><img src="IMG_8370.jpeg" alt=""><strong>Kray Kray</strong><span>Kratom gummies</span></a>
+      <a class="product-card" href="#"><img src="IMG_8369.jpeg" alt=""><strong>Kratom Gummies</strong><span>Round container</span></a>
+      <a class="product-card" href="#"><img src="IMG_8368.jpeg" alt=""><strong>Rave</strong><span>Targeted gummies</span></a>
+      <a class="product-card" href="#"><img src="IMG_8367.jpeg" alt=""><strong>MIT45 Boost</strong><span>Gummies</span></a>
+      <a class="product-card" href="#"><img src="IMG_8366.jpeg" alt=""><strong>Happy Hippo</strong><span>Gummies</span></a>
+      <a class="product-card" href="#"><img src="IMG_8365.jpeg" alt=""><strong>Cannabis Bakehouse</strong><span>Kratom gummies</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="beverages">
+  <div class="panel-head">
+    <h2>Beverages</h2>
+    <a href="#">See all</a>
+  </div>
+
+  <div class="product-scroll">
+    <div class="product-row">
+      <a class="product-card" href="#"><img src="IMG_8390.jpeg" alt=""><strong>Kratom Drink</strong><span>Bottle</span></a>
+      <a class="product-card" href="#"><img src="IMG_8389.jpeg" alt=""><strong>Mitra9</strong><span>Seltzer</span></a>
+      <a class="product-card" href="#"><img src="IMG_8388.jpeg" alt=""><strong>Magic Dose</strong><span>Black cherry</span></a>
+      <a class="product-card" href="#"><img src="IMG_8387.jpeg" alt=""><strong>New Brew</strong><span>Kratom seltzer</span></a>
+      <a class="product-card" href="#"><img src="IMG_8386.jpeg" alt=""><strong>KRTM Drink</strong><span>Canned drink</span></a>
+      <a class="product-card" href="#"><img src="IMG_8385.jpeg" alt=""><strong>Club13</strong><span>Kratom seltzer</span></a>
+      <a class="product-card" href="#"><img src="IMG_8384.jpeg" alt=""><strong>Kanva</strong><span>Lemon lime</span></a>
+      <a class="product-card" href="#"><img src="IMG_8383.jpeg" alt=""><strong>White Rabbit</strong><span>Kratom drink</span></a>
+      <a class="product-card" href="#"><img src="IMG_8381.jpeg" alt=""><strong>Tea Time</strong><span>Lemon drop</span></a>
+      <a class="product-card" href="#"><img src="IMG_8380.jpeg" alt=""><strong>Kratom Brewsk</strong><span>Drink can</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="info-grid">
+  <div class="info-card">
+    <h2>Common Names</h2>
+    <ul>
+      <li>Kratom</li>
+      <li>Maeng Da</li>
+      <li>Bali</li>
+      <li>Borneo</li>
+      <li>Indo</li>
+      <li>Thai</li>
+      <li>Green Vein</li>
+      <li>Red Vein</li>
+      <li>White Vein</li>
+      <li>Trainwreck</li>
+    </ul>
+  </div>
+
+  <div class="info-card">
+    <h2>Advertising Claims</h2>
+    <ul>
+      <li>All natural</li>
+      <li>Plant powered</li>
+      <li>Good vibes</li>
+      <li>Relaxation</li>
+      <li>Mood support</li>
+      <li>Energy</li>
+      <li>Focus</li>
+      <li>Extra strength</li>
+      <li>Enhanced</li>
+      <li>Botanical</li>
+    </ul>
+  </div>
+
+  <div class="info-card">
+    <h2>Where It’s Sold</h2>
+    <ul>
+      <li>Gas stations</li>
+      <li>Smoke shops</li>
+      <li>Vape shops</li>
+      <li>Convenience stores</li>
+      <li>Online stores</li>
+      <li>Supplement displays</li>
+      <li>Checkout counters</li>
+      <li>Behind glass cases</li>
+    </ul>
+  </div>
+</section>
+
+<section class="clues">
+  <h2>Look For These Clues</h2>
+  <div class="clue-grid">
+    <div class="clue">Leaf imagery, green powder, or botanical branding</div>
+    <div class="clue">Words like extract, enhanced, premium, gold, black, ultra, or max strength</div>
+    <div class="clue">Claims about mood, focus, relaxation, energy, pain relief, or sleep</div>
+    <div class="clue">Small liquid shots, tinctures, capsule packs, gummies, candies, or drinks</div>
+    <div class="clue">Products displayed near vape items, smoking products, or checkout counters</div>
+    <div class="clue">Packaging that looks like candy, energy products, wellness drinks, or supplements</div>
+  </div>
+</section>
+
+<section class="clues">
+  <h2>Parent Tip</h2>
+  <div class="clue-grid">
+    <div class="clue">Photograph the front and back of the package before throwing anything away.</div>
+    <div class="clue">Look for serving size, alkaloid content, extract strength, and warning language.</div>
+    <div class="clue">Ask where it was purchased and whether it was bought online or in a local store.</div>
+    <div class="clue">If your child feels sick when stopping, seek medical advice.</div>
+  </div>
+</section>
+
+<section class="warning-box">
+  <div class="warning-icon">⚠️</div>
+
+  <div>
+    <h2>If Someone Is In Danger</h2>
+    <p>Call 911 immediately for any life-threatening emergency or if someone is unresponsive.</p>
+  </div>
+
+  <div class="phone-list">
+    Poison Control: <strong>1-800-222-1222</strong><br>
+    SAMHSA Helpline: <strong>1-800-662-HELP (4357)</strong><br>
+    Crisis Text Line: Text <strong>HOME</strong> to <strong>741741</strong>
+  </div>
+
+  <a href="/help/index.html">Get Help Now</a>
+</section>
+
+</main>
+</body>
+</html>
