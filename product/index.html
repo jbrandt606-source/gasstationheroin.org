@@ -155,15 +155,7 @@ body{
   margin-top:6px;
 }
 
-.panel-head a{
-  text-decoration:none;
-  color:var(--yellow);
-  font-weight:900;
-  text-transform:uppercase;
-  white-space:nowrap;
-}
-
-/* HORIZONTAL SCROLLABLE PRODUCTS (single line) */
+/* HORIZONTAL SCROLLABLE PRODUCTS (single line, no reference board) */
 .product-scroll-wrapper {
   overflow-x: auto;
   overflow-y: hidden;
@@ -335,7 +327,7 @@ body{
   line-height:1.35;
 }
 
-/* FOOTER ALERT (fixed phone numbers) */
+/* FOOTER ALERT (fixed numbers exactly as in image) */
 .footer-alert{
   margin:16px 28px 28px;
   border:1px solid var(--red);
@@ -355,12 +347,13 @@ body{
 .footer-alert h2{
   text-transform:uppercase;
   font-size:22px;
+  letter-spacing:-0.2px;
 }
 
 .footer-alert p{
   color:#eee;
   font-size:15px;
-  margin-top:6px;
+  margin-top:4px;
   line-height:1.4;
 }
 
@@ -368,9 +361,15 @@ body{
   font-weight: 500;
   background: rgba(0,0,0,0.4);
   border-radius: 10px;
-  padding: 4px 8px;
+  padding: 6px 10px;
   display: inline-block;
-  margin-top: 6px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.footer-alert .phone-numbers strong {
+  font-weight: 800;
+  color: #fff;
 }
 
 .footer-alert a{
@@ -486,9 +485,7 @@ body{
   </div>
 </section>
 
-<!-- SEARCH BOX REMOVED -->
-
-<!-- PRODUCT RECOGNITION GUIDE: HORIZONTAL SCROLLABLE LINE -->
+<!-- PRODUCT RECOGNITION GUIDE: HORIZONTAL SCROLLABLE LINE (Reference Board removed) -->
 <section class="panel">
   <div class="panel-head">
     <div>
@@ -540,17 +537,12 @@ body{
         <strong>Poppers</strong>
         <span>Small bottles sold as cleaners or aromas</span>
       </a>
-
-      <a class="product-card" href="/products/reference-board.html">
-        <img src="IMG_8309.png" alt="Reference board">
-        <strong>Reference Board</strong>
-        <span>Compare products visually</span>
-      </a>
+      <!-- Reference Board product card removed as requested -->
     </div>
   </div>
 </section>
 
-<!-- Quick Warning Signs panel (kept) -->
+<!-- Quick Warning Signs panel -->
 <section class="panel">
   <div class="panel-head">
     <div>
@@ -582,7 +574,7 @@ body{
   </div>
 </section>
 
-<!-- "Browse By Substance" category recognition panel REMOVED as requested -->
+<!-- "Browse By Substance" category panel REMOVED as requested -->
 
 <!-- What To Do If You Find A Product -->
 <section class="panel">
@@ -627,20 +619,20 @@ body{
   </div>
 </section>
 
-<!-- Footer alert with fixed, comprehensive emergency numbers -->
+<!-- Footer alert: numbers exactly as shown in IMG_8330.jpeg -->
 <section class="footer-alert">
   <div class="icon">⚠️</div>
   <div>
-    <h2>If Someone Is In Danger</h2>
+    <h2>IF SOMEONE IS IN DANGER</h2>
     <p><strong>Call 911 immediately</strong> for any life-threatening emergency or if someone is unresponsive.</p>
     <div class="phone-numbers">
       📞 Poison Control: <strong>1-800-222-1222</strong><br>
-      📞 SAMHSA National Helpline: <strong>1-800-662-HELP (4357)</strong><br>
+      📞 SAMILICA National Helpline: <strong>1-800-662-HELP (4357)</strong><br>
       📞 Crisis Text Line: Text <strong>HOME</strong> to <strong>741741</strong>
     </div>
     <p style="margin-top: 8px; font-size: 0.85rem;">Free, confidential support available 24/7.</p>
   </div>
-  <a href="/help/index.html">Get Help →</a>
+  <a href="/help/index.html">GET HELP →</a>
 </section>
 
 </main>
