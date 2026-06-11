@@ -142,8 +142,6 @@ body{
   text-transform:uppercase;
 }
 
-/* "See all" links removed – no style needed */
-
 /* PRODUCT SCROLLS */
 .product-scroll{
   overflow-x:auto;
@@ -286,7 +284,7 @@ body{
   font-weight:900;
 }
 
-/* WARNING BOX (fixed numbers to match IMG_8331) */
+/* WARNING BOX (corrected numbers) */
 .warning-box{
   margin:18px;
   border:1px solid var(--red);
@@ -335,7 +333,7 @@ body{
   white-space:nowrap;
 }
 
-/* LIGHTBOX / MODAL */
+/* LIGHTBOX / MODAL - with prominent X */
 .modal {
   display: none;
   position: fixed;
@@ -344,46 +342,58 @@ body{
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.96);
-  backdrop-filter: blur(8px);
-  z-index: 9999;
+  backdrop-filter: blur(10px);
+  z-index: 10000;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
 .modal-content {
+  position: relative;
   max-width: 90vw;
   max-height: 90vh;
-  text-align: center;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content img {
   max-width: 100%;
   max-height: 85vh;
   object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  border-radius: 16px;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.6);
+  cursor: default;
 }
 
 .close-modal {
   position: absolute;
-  top: -40px;
-  right: 0px;
-  font-size: 42px;
-  font-weight: 800;
+  top: -50px;
+  right: -10px;
+  width: 48px;
+  height: 48px;
+  background: rgba(0,0,0,0.75);
+  border: 2px solid var(--red);
+  border-radius: 50%;
+  font-size: 32px;
+  font-weight: bold;
   color: white;
-  background: none;
-  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  transition: all 0.2s ease;
   font-family: monospace;
-  padding: 0 12px;
-  transition: 0.2s;
-  text-shadow: 0 0 6px black;
+  line-height: 1;
+  backdrop-filter: blur(4px);
 }
+
 .close-modal:hover {
-  color: var(--red);
-  transform: scale(1.1);
+  background: var(--red);
+  color: #fff;
+  transform: scale(1.05);
+  border-color: white;
 }
 
 /* MOBILE */
@@ -480,14 +490,15 @@ body{
   }
 
   .close-modal {
-    top: -32px;
-    right: 4px;
-    font-size: 38px;
+    top: -45px;
+    right: -5px;
+    width: 42px;
+    height: 42px;
+    font-size: 28px;
   }
 }
 </style>
 </head>
-
 <body>
 <main class="page">
 
@@ -504,380 +515,120 @@ body{
   </div>
 </section>
 
-<!-- Powders section - "See all" removed -->
+<!-- Powders section -->
 <section class="panel" id="powders">
   <div class="panel-head">
     <h2>Powders</h2>
-    <!-- "See all" link removed -->
   </div>
-
   <div class="product-scroll">
     <div class="product-row">
-      <div class="product-card" data-img="IMG_8343.jpeg">
-        <img src="IMG_8343.jpeg" alt="50x Extract powder pouch">
-        <strong>50x Extract</strong><span>Powder pouch</span>
-      </div>
-      <div class="product-card" data-img="IMG_8342.jpeg">
-        <img src="IMG_8342.jpeg" alt="Krave Trainwreck powder">
-        <strong>Krave</strong><span>Trainwreck powder</span>
-      </div>
-      <div class="product-card" data-img="IMG_8341.jpeg">
-        <img src="IMG_8341.jpeg" alt="Just Kratom Trainwreck">
-        <strong>Just Kratom</strong><span>Trainwreck</span>
-      </div>
-      <div class="product-card" data-img="IMG_8340.jpeg">
-        <img src="IMG_8340.jpeg" alt="Happy Hippo Kratom powder">
-        <strong>Happy Hippo</strong><span>Kratom powder</span>
-      </div>
-      <div class="product-card" data-img="IMG_8339.jpeg">
-        <img src="IMG_8339.jpeg" alt="Euphoria powder pouch">
-        <strong>Euphoria</strong><span>Powder pouch</span>
-      </div>
-      <div class="product-card" data-img="IMG_8338.jpeg">
-        <img src="IMG_8338.jpeg" alt="Kingdom Kratom Yellow Vietnam">
-        <strong>Kingdom Kratom</strong><span>Yellow Vietnam</span>
-      </div>
-      <div class="product-card" data-img="IMG_8337.jpeg">
-        <img src="IMG_8337.jpeg" alt="White Kratom bulk powder">
-        <strong>White Kratom</strong><span>Bulk powder</span>
-      </div>
-      <div class="product-card" data-img="IMG_8336.jpeg">
-        <img src="IMG_8336.jpeg" alt="The Kratom Co. Red Bali">
-        <strong>The Kratom Co.</strong><span>Red Bali</span>
-      </div>
-      <div class="product-card" data-img="IMG_8335.jpeg">
-        <img src="IMG_8335.jpeg" alt="Jubi Green Maeng Da">
-        <strong>Jubi</strong><span>Green Maeng Da</span>
-      </div>
-      <div class="product-card" data-img="IMG_8334.jpeg">
-        <img src="IMG_8334.jpeg" alt="Enhanced Kratom powder">
-        <strong>Enhanced</strong><span>Kratom powder</span>
-      </div>
-      <div class="product-card" data-img="IMG_8333.jpeg">
-        <img src="IMG_8333.jpeg" alt="Remarkable Maeng Da">
-        <strong>Remarkable</strong><span>Maeng Da</span>
-      </div>
-      <div class="product-card" data-img="IMG_8332.jpeg">
-        <img src="IMG_8332.jpeg" alt="Just Kratom Maeng Da">
-        <strong>Just Kratom</strong><span>Maeng Da</span>
-      </div>
+      <div class="product-card" data-img="IMG_8343.jpeg"><img src="IMG_8343.jpeg" alt="50x Extract powder pouch"><strong>50x Extract</strong><span>Powder pouch</span></div>
+      <div class="product-card" data-img="IMG_8342.jpeg"><img src="IMG_8342.jpeg" alt="Krave Trainwreck powder"><strong>Krave</strong><span>Trainwreck powder</span></div>
+      <div class="product-card" data-img="IMG_8341.jpeg"><img src="IMG_8341.jpeg" alt="Just Kratom Trainwreck"><strong>Just Kratom</strong><span>Trainwreck</span></div>
+      <div class="product-card" data-img="IMG_8340.jpeg"><img src="IMG_8340.jpeg" alt="Happy Hippo Kratom powder"><strong>Happy Hippo</strong><span>Kratom powder</span></div>
+      <div class="product-card" data-img="IMG_8339.jpeg"><img src="IMG_8339.jpeg" alt="Euphoria powder pouch"><strong>Euphoria</strong><span>Powder pouch</span></div>
+      <div class="product-card" data-img="IMG_8338.jpeg"><img src="IMG_8338.jpeg" alt="Kingdom Kratom Yellow Vietnam"><strong>Kingdom Kratom</strong><span>Yellow Vietnam</span></div>
+      <div class="product-card" data-img="IMG_8337.jpeg"><img src="IMG_8337.jpeg" alt="White Kratom bulk powder"><strong>White Kratom</strong><span>Bulk powder</span></div>
+      <div class="product-card" data-img="IMG_8336.jpeg"><img src="IMG_8336.jpeg" alt="The Kratom Co. Red Bali"><strong>The Kratom Co.</strong><span>Red Bali</span></div>
+      <div class="product-card" data-img="IMG_8335.jpeg"><img src="IMG_8335.jpeg" alt="Jubi Green Maeng Da"><strong>Jubi</strong><span>Green Maeng Da</span></div>
+      <div class="product-card" data-img="IMG_8334.jpeg"><img src="IMG_8334.jpeg" alt="Enhanced Kratom powder"><strong>Enhanced</strong><span>Kratom powder</span></div>
+      <div class="product-card" data-img="IMG_8333.jpeg"><img src="IMG_8333.jpeg" alt="Remarkable Maeng Da"><strong>Remarkable</strong><span>Maeng Da</span></div>
+      <div class="product-card" data-img="IMG_8332.jpeg"><img src="IMG_8332.jpeg" alt="Just Kratom Maeng Da"><strong>Just Kratom</strong><span>Maeng Da</span></div>
     </div>
   </div>
 </section>
 
 <!-- Extracts & Shots -->
 <section class="panel" id="extracts">
-  <div class="panel-head">
-    <h2>Extracts & Shots</h2>
-  </div>
-
-  <div class="product-scroll">
-    <div class="product-row">
-      <div class="product-card" data-img="IMG_8355.jpeg">
-        <img src="IMG_8355.jpeg" alt="EDP Shot liquid extract">
-        <strong>EDP Shot</strong><span>Liquid extract</span>
-      </div>
-      <div class="product-card" data-img="IMG_8354.jpeg">
-        <img src="IMG_8354.jpeg" alt="Feel Free classic tonic">
-        <strong>Feel Free</strong><span>Classic tonic</span>
-      </div>
-      <div class="product-card" data-img="IMG_8353.jpeg">
-        <img src="IMG_8353.jpeg" alt="Super K dropper bottle">
-        <strong>Super K</strong><span>Dropper bottle</span>
-      </div>
-      <div class="product-card" data-img="IMG_8352.jpeg">
-        <img src="IMG_8352.jpeg" alt="Kratom energy shot">
-        <strong>Kratom</strong><span>Energy shot</span>
-      </div>
-      <div class="product-card" data-img="IMG_8351.jpeg">
-        <img src="IMG_8351.jpeg" alt="Mitragynine liquid product">
-        <strong>Mitragynine</strong><span>Liquid product</span>
-      </div>
-      <div class="product-card" data-img="IMG_8350.jpeg">
-        <img src="IMG_8350.jpeg" alt="Strong Relief Kratom drink">
-        <strong>Strong Relief</strong><span>Kratom drink</span>
-      </div>
-      <div class="product-card" data-img="IMG_8349.jpeg">
-        <img src="IMG_8349.jpeg" alt="K Shot liquid shot">
-        <strong>K Shot</strong><span>Liquid shot</span>
-      </div>
-      <div class="product-card" data-img="IMG_8348.jpeg">
-        <img src="IMG_8348.jpeg" alt="OPMS Gold extract box">
-        <strong>OPMS Gold</strong><span>Extract box</span>
-      </div>
-      <div class="product-card" data-img="IMG_8347.jpeg">
-        <img src="IMG_8347.jpeg" alt="OPMS Black liquid extract">
-        <strong>OPMS Black</strong><span>Liquid extract</span>
-      </div>
-      <div class="product-card" data-img="IMG_8346.jpeg">
-        <img src="IMG_8346.jpeg" alt="MIT45 Boost extract shot">
-        <strong>MIT45 Boost</strong><span>Extract shot</span>
-      </div>
-      <div class="product-card" data-img="IMG_8345.jpeg">
-        <img src="IMG_8345.jpeg" alt="Club13 extract powder">
-        <strong>Club13</strong><span>Extract powder</span>
-      </div>
-      <div class="product-card" data-img="IMG_8344.jpeg">
-        <img src="IMG_8344.jpeg" alt="Kratom extract gummies">
-        <strong>Kratom</strong><span>Extract gummies</span>
-      </div>
-    </div>
-  </div>
+  <div class="panel-head"><h2>Extracts & Shots</h2></div>
+  <div class="product-scroll"><div class="product-row">
+    <div class="product-card" data-img="IMG_8355.jpeg"><img src="IMG_8355.jpeg" alt="EDP Shot"><strong>EDP Shot</strong><span>Liquid extract</span></div>
+    <div class="product-card" data-img="IMG_8354.jpeg"><img src="IMG_8354.jpeg" alt="Feel Free"><strong>Feel Free</strong><span>Classic tonic</span></div>
+    <div class="product-card" data-img="IMG_8353.jpeg"><img src="IMG_8353.jpeg" alt="Super K"><strong>Super K</strong><span>Dropper bottle</span></div>
+    <div class="product-card" data-img="IMG_8352.jpeg"><img src="IMG_8352.jpeg" alt="Kratom"><strong>Kratom</strong><span>Energy shot</span></div>
+    <div class="product-card" data-img="IMG_8351.jpeg"><img src="IMG_8351.jpeg" alt="Mitragynine"><strong>Mitragynine</strong><span>Liquid product</span></div>
+    <div class="product-card" data-img="IMG_8350.jpeg"><img src="IMG_8350.jpeg" alt="Strong Relief"><strong>Strong Relief</strong><span>Kratom drink</span></div>
+    <div class="product-card" data-img="IMG_8349.jpeg"><img src="IMG_8349.jpeg" alt="K Shot"><strong>K Shot</strong><span>Liquid shot</span></div>
+    <div class="product-card" data-img="IMG_8348.jpeg"><img src="IMG_8348.jpeg" alt="OPMS Gold"><strong>OPMS Gold</strong><span>Extract box</span></div>
+    <div class="product-card" data-img="IMG_8347.jpeg"><img src="IMG_8347.jpeg" alt="OPMS Black"><strong>OPMS Black</strong><span>Liquid extract</span></div>
+    <div class="product-card" data-img="IMG_8346.jpeg"><img src="IMG_8346.jpeg" alt="MIT45 Boost"><strong>MIT45 Boost</strong><span>Extract shot</span></div>
+    <div class="product-card" data-img="IMG_8345.jpeg"><img src="IMG_8345.jpeg" alt="Club13"><strong>Club13</strong><span>Extract powder</span></div>
+    <div class="product-card" data-img="IMG_8344.jpeg"><img src="IMG_8344.jpeg" alt="Kratom"><strong>Kratom</strong><span>Extract gummies</span></div>
+  </div></div>
 </section>
 
 <!-- Capsules & Tablets -->
 <section class="panel" id="capsules">
-  <div class="panel-head">
-    <h2>Capsules & Tablets</h2>
-  </div>
-
-  <div class="product-scroll">
-    <div class="product-row">
-      <div class="product-card" data-img="IMG_8361.jpeg">
-        <img src="IMG_8361.jpeg" alt="KBomb capsules">
-        <strong>KBomb</strong><span>Capsules</span>
-      </div>
-      <div class="product-card" data-img="IMG_8360.jpeg">
-        <img src="IMG_8360.jpeg" alt="Buttons extract tablets">
-        <strong>Buttons</strong><span>Extract tablets</span>
-      </div>
-      <div class="product-card" data-img="IMG_8359.jpeg">
-        <img src="IMG_8359.jpeg" alt="Happy Hippo kratom capsules">
-        <strong>Happy Hippo</strong><span>Kratom capsules</span>
-      </div>
-      <div class="product-card" data-img="IMG_8358.jpeg">
-        <img src="IMG_8358.jpeg" alt="MIT45 kratom blend">
-        <strong>MIT45</strong><span>Kratom blend</span>
-      </div>
-      <div class="product-card" data-img="IMG_8357.jpeg">
-        <img src="IMG_8357.jpeg" alt="OPMS Silver capsules">
-        <strong>OPMS Silver</strong><span>Capsules</span>
-      </div>
-      <div class="product-card" data-img="IMG_8356.jpeg">
-        <img src="IMG_8356.jpeg" alt="OPMS Black extract capsules">
-        <strong>OPMS Black</strong><span>Extract capsules</span>
-      </div>
-      <div class="product-card" data-img="IMG_8363.jpeg">
-        <img src="IMG_8363.jpeg" alt="Rave Kratom tablets">
-        <strong>Rave Kratom</strong><span>Tablets</span>
-      </div>
-      <div class="product-card" data-img="IMG_8362.jpeg">
-        <img src="IMG_8362.jpeg" alt="Zenith MIT tablets">
-        <strong>Zenith</strong><span>MIT tablets</span>
-      </div>
-    </div>
-  </div>
+  <div class="panel-head"><h2>Capsules & Tablets</h2></div>
+  <div class="product-scroll"><div class="product-row">
+    <div class="product-card" data-img="IMG_8361.jpeg"><img src="IMG_8361.jpeg" alt="KBomb"><strong>KBomb</strong><span>Capsules</span></div>
+    <div class="product-card" data-img="IMG_8360.jpeg"><img src="IMG_8360.jpeg" alt="Buttons"><strong>Buttons</strong><span>Extract tablets</span></div>
+    <div class="product-card" data-img="IMG_8359.jpeg"><img src="IMG_8359.jpeg" alt="Happy Hippo"><strong>Happy Hippo</strong><span>Kratom capsules</span></div>
+    <div class="product-card" data-img="IMG_8358.jpeg"><img src="IMG_8358.jpeg" alt="MIT45"><strong>MIT45</strong><span>Kratom blend</span></div>
+    <div class="product-card" data-img="IMG_8357.jpeg"><img src="IMG_8357.jpeg" alt="OPMS Silver"><strong>OPMS Silver</strong><span>Capsules</span></div>
+    <div class="product-card" data-img="IMG_8356.jpeg"><img src="IMG_8356.jpeg" alt="OPMS Black"><strong>OPMS Black</strong><span>Extract capsules</span></div>
+    <div class="product-card" data-img="IMG_8363.jpeg"><img src="IMG_8363.jpeg" alt="Rave Kratom"><strong>Rave Kratom</strong><span>Tablets</span></div>
+    <div class="product-card" data-img="IMG_8362.jpeg"><img src="IMG_8362.jpeg" alt="Zenith"><strong>Zenith</strong><span>MIT tablets</span></div>
+  </div></div>
 </section>
 
 <!-- Gummies & Food -->
 <section class="panel" id="gummies">
-  <div class="panel-head">
-    <h2>Gummies & Food</h2>
-  </div>
-
-  <div class="product-scroll">
-    <div class="product-row">
-      <div class="product-card" data-img="IMG_8379.jpeg">
-        <img src="IMG_8379.jpeg" alt="Electric Fresh mint extract">
-        <strong>Electric Fresh</strong><span>Mint extract</span>
-      </div>
-      <div class="product-card" data-img="IMG_8378.jpeg">
-        <img src="IMG_8378.jpeg" alt="Hush kratom caramels">
-        <strong>Hush</strong><span>Kratom caramels</span>
-      </div>
-      <div class="product-card" data-img="IMG_8377.jpeg">
-        <img src="IMG_8377.jpeg" alt="MIT-X84 chocolate bar">
-        <strong>MIT-X84</strong><span>Chocolate bar</span>
-      </div>
-      <div class="product-card" data-img="IMG_8376.jpeg">
-        <img src="IMG_8376.jpeg" alt="Kratom Taffy salt water taffy">
-        <strong>Kratom Taffy</strong><span>Salt water taffy</span>
-      </div>
-      <div class="product-card" data-img="IMG_8375.jpeg">
-        <img src="IMG_8375.jpeg" alt="Happy Hippo kratom taffy">
-        <strong>Happy Hippo</strong><span>Kratom taffy</span>
-      </div>
-      <div class="product-card" data-img="IMG_8374.jpeg">
-        <img src="IMG_8374.jpeg" alt="Gush sour apple">
-        <strong>Gush</strong><span>Sour apple</span>
-      </div>
-      <div class="product-card" data-img="IMG_8373.jpeg">
-        <img src="IMG_8373.jpeg" alt="Kratom Gummy berry flavor">
-        <strong>Kratom Gummy</strong><span>Berry flavor</span>
-      </div>
-      <div class="product-card" data-img="IMG_8372.jpeg">
-        <img src="IMG_8372.jpeg" alt="Kingdom Kratom extract gummies">
-        <strong>Kingdom Kratom</strong><span>Extract gummies</span>
-      </div>
-      <div class="product-card" data-img="IMG_8370.jpeg">
-        <img src="IMG_8370.jpeg" alt="Kray Kray kratom gummies">
-        <strong>Kray Kray</strong><span>Kratom gummies</span>
-      </div>
-      <div class="product-card" data-img="IMG_8369.jpeg">
-        <img src="IMG_8369.jpeg" alt="Kratom Gummies round container">
-        <strong>Kratom Gummies</strong><span>Round container</span>
-      </div>
-      <div class="product-card" data-img="IMG_8368.jpeg">
-        <img src="IMG_8368.jpeg" alt="Rave targeted gummies">
-        <strong>Rave</strong><span>Targeted gummies</span>
-      </div>
-      <div class="product-card" data-img="IMG_8367.jpeg">
-        <img src="IMG_8367.jpeg" alt="MIT45 Boost gummies">
-        <strong>MIT45 Boost</strong><span>Gummies</span>
-      </div>
-      <div class="product-card" data-img="IMG_8366.jpeg">
-        <img src="IMG_8366.jpeg" alt="Happy Hippo gummies">
-        <strong>Happy Hippo</strong><span>Gummies</span>
-      </div>
-      <div class="product-card" data-img="IMG_8365.jpeg">
-        <img src="IMG_8365.jpeg" alt="Cannabis Bakehouse kratom gummies">
-        <strong>Cannabis Bakehouse</strong><span>Kratom gummies</span>
-      </div>
-    </div>
-  </div>
+  <div class="panel-head"><h2>Gummies & Food</h2></div>
+  <div class="product-scroll"><div class="product-row">
+    <div class="product-card" data-img="IMG_8379.jpeg"><img src="IMG_8379.jpeg" alt="Electric Fresh"><strong>Electric Fresh</strong><span>Mint extract</span></div>
+    <div class="product-card" data-img="IMG_8378.jpeg"><img src="IMG_8378.jpeg" alt="Hush"><strong>Hush</strong><span>Kratom caramels</span></div>
+    <div class="product-card" data-img="IMG_8377.jpeg"><img src="IMG_8377.jpeg" alt="MIT-X84"><strong>MIT-X84</strong><span>Chocolate bar</span></div>
+    <div class="product-card" data-img="IMG_8376.jpeg"><img src="IMG_8376.jpeg" alt="Kratom Taffy"><strong>Kratom Taffy</strong><span>Salt water taffy</span></div>
+    <div class="product-card" data-img="IMG_8375.jpeg"><img src="IMG_8375.jpeg" alt="Happy Hippo"><strong>Happy Hippo</strong><span>Kratom taffy</span></div>
+    <div class="product-card" data-img="IMG_8374.jpeg"><img src="IMG_8374.jpeg" alt="Gush"><strong>Gush</strong><span>Sour apple</span></div>
+    <div class="product-card" data-img="IMG_8373.jpeg"><img src="IMG_8373.jpeg" alt="Kratom Gummy"><strong>Kratom Gummy</strong><span>Berry flavor</span></div>
+    <div class="product-card" data-img="IMG_8372.jpeg"><img src="IMG_8372.jpeg" alt="Kingdom Kratom"><strong>Kingdom Kratom</strong><span>Extract gummies</span></div>
+    <div class="product-card" data-img="IMG_8370.jpeg"><img src="IMG_8370.jpeg" alt="Kray Kray"><strong>Kray Kray</strong><span>Kratom gummies</span></div>
+    <div class="product-card" data-img="IMG_8369.jpeg"><img src="IMG_8369.jpeg" alt="Kratom Gummies"><strong>Kratom Gummies</strong><span>Round container</span></div>
+    <div class="product-card" data-img="IMG_8368.jpeg"><img src="IMG_8368.jpeg" alt="Rave"><strong>Rave</strong><span>Targeted gummies</span></div>
+    <div class="product-card" data-img="IMG_8367.jpeg"><img src="IMG_8367.jpeg" alt="MIT45 Boost"><strong>MIT45 Boost</strong><span>Gummies</span></div>
+    <div class="product-card" data-img="IMG_8366.jpeg"><img src="IMG_8366.jpeg" alt="Happy Hippo"><strong>Happy Hippo</strong><span>Gummies</span></div>
+    <div class="product-card" data-img="IMG_8365.jpeg"><img src="IMG_8365.jpeg" alt="Cannabis Bakehouse"><strong>Cannabis Bakehouse</strong><span>Kratom gummies</span></div>
+  </div></div>
 </section>
 
 <!-- Beverages -->
 <section class="panel" id="beverages">
-  <div class="panel-head">
-    <h2>Beverages</h2>
-  </div>
-
-  <div class="product-scroll">
-    <div class="product-row">
-      <div class="product-card" data-img="IMG_8390.jpeg">
-        <img src="IMG_8390.jpeg" alt="Kratom Drink bottle">
-        <strong>Kratom Drink</strong><span>Bottle</span>
-      </div>
-      <div class="product-card" data-img="IMG_8389.jpeg">
-        <img src="IMG_8389.jpeg" alt="Mitra9 seltzer">
-        <strong>Mitra9</strong><span>Seltzer</span>
-      </div>
-      <div class="product-card" data-img="IMG_8388.jpeg">
-        <img src="IMG_8388.jpeg" alt="Magic Dose black cherry">
-        <strong>Magic Dose</strong><span>Black cherry</span>
-      </div>
-      <div class="product-card" data-img="IMG_8387.jpeg">
-        <img src="IMG_8387.jpeg" alt="New Brew kratom seltzer">
-        <strong>New Brew</strong><span>Kratom seltzer</span>
-      </div>
-      <div class="product-card" data-img="IMG_8386.jpeg">
-        <img src="IMG_8386.jpeg" alt="KRTM Drink canned drink">
-        <strong>KRTM Drink</strong><span>Canned drink</span>
-      </div>
-      <div class="product-card" data-img="IMG_8385.jpeg">
-        <img src="IMG_8385.jpeg" alt="Club13 kratom seltzer">
-        <strong>Club13</strong><span>Kratom seltzer</span>
-      </div>
-      <div class="product-card" data-img="IMG_8384.jpeg">
-        <img src="IMG_8384.jpeg" alt="Kanva lemon lime">
-        <strong>Kanva</strong><span>Lemon lime</span>
-      </div>
-      <div class="product-card" data-img="IMG_8383.jpeg">
-        <img src="IMG_8383.jpeg" alt="White Rabbit kratom drink">
-        <strong>White Rabbit</strong><span>Kratom drink</span>
-      </div>
-      <div class="product-card" data-img="IMG_8381.jpeg">
-        <img src="IMG_8381.jpeg" alt="Tea Time lemon drop">
-        <strong>Tea Time</strong><span>Lemon drop</span>
-      </div>
-      <div class="product-card" data-img="IMG_8380.jpeg">
-        <img src="IMG_8380.jpeg" alt="Kratom Brewsk drink can">
-        <strong>Kratom Brewsk</strong><span>Drink can</span>
-      </div>
-    </div>
-  </div>
+  <div class="panel-head"><h2>Beverages</h2></div>
+  <div class="product-scroll"><div class="product-row">
+    <div class="product-card" data-img="IMG_8390.jpeg"><img src="IMG_8390.jpeg" alt="Kratom Drink"><strong>Kratom Drink</strong><span>Bottle</span></div>
+    <div class="product-card" data-img="IMG_8389.jpeg"><img src="IMG_8389.jpeg" alt="Mitra9"><strong>Mitra9</strong><span>Seltzer</span></div>
+    <div class="product-card" data-img="IMG_8388.jpeg"><img src="IMG_8388.jpeg" alt="Magic Dose"><strong>Magic Dose</strong><span>Black cherry</span></div>
+    <div class="product-card" data-img="IMG_8387.jpeg"><img src="IMG_8387.jpeg" alt="New Brew"><strong>New Brew</strong><span>Kratom seltzer</span></div>
+    <div class="product-card" data-img="IMG_8386.jpeg"><img src="IMG_8386.jpeg" alt="KRTM Drink"><strong>KRTM Drink</strong><span>Canned drink</span></div>
+    <div class="product-card" data-img="IMG_8385.jpeg"><img src="IMG_8385.jpeg" alt="Club13"><strong>Club13</strong><span>Kratom seltzer</span></div>
+    <div class="product-card" data-img="IMG_8384.jpeg"><img src="IMG_8384.jpeg" alt="Kanva"><strong>Kanva</strong><span>Lemon lime</span></div>
+    <div class="product-card" data-img="IMG_8383.jpeg"><img src="IMG_8383.jpeg" alt="White Rabbit"><strong>White Rabbit</strong><span>Kratom drink</span></div>
+    <div class="product-card" data-img="IMG_8381.jpeg"><img src="IMG_8381.jpeg" alt="Tea Time"><strong>Tea Time</strong><span>Lemon drop</span></div>
+    <div class="product-card" data-img="IMG_8380.jpeg"><img src="IMG_8380.jpeg" alt="Kratom Brewsk"><strong>Kratom Brewsk</strong><span>Drink can</span></div>
+  </div></div>
 </section>
 
-<!-- Info cards (common names, claims, where sold) unchanged -->
+<!-- Info cards -->
 <section class="info-grid">
-  <div class="info-card">
-    <h2>Common Names</h2>
-    <ul>
-      <li>Kratom</li>
-      <li>Maeng Da</li>
-      <li>Bali</li>
-      <li>Borneo</li>
-      <li>Indo</li>
-      <li>Thai</li>
-      <li>Green Vein</li>
-      <li>Red Vein</li>
-      <li>White Vein</li>
-      <li>Trainwreck</li>
-    </ul>
-  </div>
-
-  <div class="info-card">
-    <h2>Advertising Claims</h2>
-    <ul>
-      <li>All natural</li>
-      <li>Plant powered</li>
-      <li>Good vibes</li>
-      <li>Relaxation</li>
-      <li>Mood support</li>
-      <li>Energy</li>
-      <li>Focus</li>
-      <li>Extra strength</li>
-      <li>Enhanced</li>
-      <li>Botanical</li>
-    </ul>
-  </div>
-
-  <div class="info-card">
-    <h2>Where It’s Sold</h2>
-    <ul>
-      <li>Gas stations</li>
-      <li>Smoke shops</li>
-      <li>Vape shops</li>
-      <li>Convenience stores</li>
-      <li>Online stores</li>
-      <li>Supplement displays</li>
-      <li>Checkout counters</li>
-      <li>Behind glass cases</li>
-    </ul>
-  </div>
+  <div class="info-card"><h2>Common Names</h2><ul><li>Kratom</li><li>Maeng Da</li><li>Bali</li><li>Borneo</li><li>Indo</li><li>Thai</li><li>Green Vein</li><li>Red Vein</li><li>White Vein</li><li>Trainwreck</li></ul></div>
+  <div class="info-card"><h2>Advertising Claims</h2><ul><li>All natural</li><li>Plant powered</li><li>Good vibes</li><li>Relaxation</li><li>Mood support</li><li>Energy</li><li>Focus</li><li>Extra strength</li><li>Enhanced</li><li>Botanical</li></ul></div>
+  <div class="info-card"><h2>Where It’s Sold</h2><ul><li>Gas stations</li><li>Smoke shops</li><li>Vape shops</li><li>Convenience stores</li><li>Online stores</li><li>Supplement displays</li><li>Checkout counters</li><li>Behind glass cases</li></ul></div>
 </section>
 
-<!-- Clues sections unchanged -->
-<section class="clues">
-  <h2>Look For These Clues</h2>
-  <div class="clue-grid">
-    <div class="clue">Leaf imagery, green powder, or botanical branding</div>
-    <div class="clue">Words like extract, enhanced, premium, gold, black, ultra, or max strength</div>
-    <div class="clue">Claims about mood, focus, relaxation, energy, pain relief, or sleep</div>
-    <div class="clue">Small liquid shots, tinctures, capsule packs, gummies, candies, or drinks</div>
-    <div class="clue">Products displayed near vape items, smoking products, or checkout counters</div>
-    <div class="clue">Packaging that looks like candy, energy products, wellness drinks, or supplements</div>
-  </div>
-</section>
+<section class="clues"><h2>Look For These Clues</h2><div class="clue-grid"><div class="clue">Leaf imagery, green powder, or botanical branding</div><div class="clue">Words like extract, enhanced, premium, gold, black, ultra, or max strength</div><div class="clue">Claims about mood, focus, relaxation, energy, pain relief, or sleep</div><div class="clue">Small liquid shots, tinctures, capsule packs, gummies, candies, or drinks</div><div class="clue">Products displayed near vape items, smoking products, or checkout counters</div><div class="clue">Packaging that looks like candy, energy products, wellness drinks, or supplements</div></div></section>
+<section class="clues"><h2>Parent Tip</h2><div class="clue-grid"><div class="clue">Photograph the front and back of the package before throwing anything away.</div><div class="clue">Look for serving size, alkaloid content, extract strength, and warning language.</div><div class="clue">Ask where it was purchased and whether it was bought online or in a local store.</div><div class="clue">If your child feels sick when stopping, seek medical advice.</div></div></section>
 
-<section class="clues">
-  <h2>Parent Tip</h2>
-  <div class="clue-grid">
-    <div class="clue">Photograph the front and back of the package before throwing anything away.</div>
-    <div class="clue">Look for serving size, alkaloid content, extract strength, and warning language.</div>
-    <div class="clue">Ask where it was purchased and whether it was bought online or in a local store.</div>
-    <div class="clue">If your child feels sick when stopping, seek medical advice.</div>
-  </div>
-</section>
-
-<!-- Warning box with corrected numbers (Poison Control, Helpline, Crisis Text Line) -->
 <section class="warning-box">
   <div class="warning-icon">⚠️</div>
-  <div>
-    <h2>If Someone Is In Danger</h2>
-    <p>Call 911 immediately for any life-threatening emergency or if someone is unresponsive.</p>
-  </div>
-  <div class="phone-list">
-    Poison Control: <strong>1-800-222-1222</strong><br>
-    Helpline: <strong>1-800-662-HELP (4357)</strong><br>
-    Crisis Text Line: Text <strong>HOME</strong> to <strong>741741</strong>
-  </div>
+  <div><h2>If Someone Is In Danger</h2><p>Call 911 immediately for any life-threatening emergency or if someone is unresponsive.</p></div>
+  <div class="phone-list">Poison Control: <strong>1-800-222-1222</strong><br>Helpline: <strong>1-800-662-HELP (4357)</strong><br>Crisis Text Line: Text <strong>HOME</strong> to <strong>741741</strong></div>
   <a href="/help/index.html">Get Help Now</a>
 </section>
 
-<!-- Modal Lightbox -->
-<div id="imageModal" class="modal" style="display: none;">
+<!-- Lightbox Modal with clear X button -->
+<div id="imageModal" class="modal">
   <div class="modal-content">
     <button class="close-modal" id="closeModalBtn">✕</button>
     <img id="modalImage" src="" alt="Enlarged product view">
@@ -885,59 +636,54 @@ body{
 </div>
 
 <script>
-  // Lightbox functionality
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('modalImage');
-  const closeModalBtn = document.getElementById('closeModalBtn');
+  const closeBtn = document.getElementById('closeModalBtn');
 
-  // Function to open modal with given image src
   function openModal(imgSrc) {
     modalImg.src = imgSrc;
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
 
-  // Close modal function
   function closeModal() {
     modal.style.display = 'none';
     document.body.style.overflow = '';
+    modalImg.src = ''; // clear to avoid flash
   }
 
-  // Add click event to all product cards (image area)
-  const productCards = document.querySelectorAll('.product-card');
-  productCards.forEach(card => {
-    const imgElement = card.querySelector('img');
-    if (imgElement) {
-      // Make the whole card clickable? Better to just use image click for consistency
-      // But we'll attach to the image to avoid accidental text clicks
-      imgElement.addEventListener('click', (e) => {
+  // Attach click to every product card's image
+  document.querySelectorAll('.product-card').forEach(card => {
+    const img = card.querySelector('img');
+    if (img) {
+      img.addEventListener('click', (e) => {
         e.stopPropagation();
-        const imgSrc = imgElement.getAttribute('src');
-        if (imgSrc) {
-          openModal(imgSrc);
-        }
+        const src = img.getAttribute('src');
+        if (src) openModal(src);
       });
-      // Also make card clickable? keep optional but image click is enough.
-      card.style.cursor = 'pointer';
+      // Also make card clickable for easier use
       card.addEventListener('click', (e) => {
-        // prevent if clicked on image already handled? avoid double. Use target check.
-        if (e.target === imgElement) return;
-        const imgSrc = imgElement.getAttribute('src');
-        if (imgSrc) openModal(imgSrc);
+        if (e.target === img) return;
+        const src = img.getAttribute('src');
+        if (src) openModal(src);
       });
     }
   });
 
-  // Close modal when clicking on background (modal itself)
+  // Close on X button
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeModal();
+  });
+
+  // Close on background click
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
 
-  // Close with escape key
+  // Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.style.display === 'flex') {
-      closeModal();
-    }
+    if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
   });
 </script>
 
