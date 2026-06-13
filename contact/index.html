@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Contact Officials | Gas Station Heroin</title>
+<title>Gas Station Heroin — Contact Officials</title>
 
 <style>
+/* ===== ORIGINAL PAGE STYLES (PRESERVED) ===== */
 *{box-sizing:border-box;margin:0;padding:0}
 
 :root{
@@ -37,6 +38,7 @@ body{
   background:#050505;
 }
 
+/* original header styles will be replaced, but we keep base colors */
 .site-header{
   height:70px;
   padding:0 28px;
@@ -117,7 +119,6 @@ body{
   line-height:1.35;
 }
 
-/* action row (find my state + learn link) */
 .hero-actions{
   display:flex;
   flex-wrap:wrap;
@@ -162,7 +163,6 @@ body{
   color:var(--red);
 }
 
-/* PANELS */
 .panel{
   margin:18px 28px;
   border:1px solid var(--line);
@@ -191,7 +191,6 @@ body{
   padding-bottom:12px;
 }
 
-/* horizontal scroll containers */
 .scroll-x{
   overflow-x:auto;
   overflow-y:hidden;
@@ -211,7 +210,6 @@ body{
   border-radius:10px;
 }
 
-/* card grid (desktop) + flex row for mobile */
 .card-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -267,7 +265,6 @@ body{
   background:#a01018;
 }
 
-/* make your message stronger - bullet list with icons */
 .message-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -294,7 +291,6 @@ body{
   text-transform:uppercase;
 }
 
-/* voice matters box */
 .voice-box{
   background:rgba(0,0,0,.45);
   border-left:4px solid var(--red);
@@ -325,7 +321,6 @@ body{
   line-height:1.4;
 }
 
-/* FOOTER */
 .footer{
   margin:18px 28px 28px;
   border-top:1px solid var(--line);
@@ -378,7 +373,6 @@ body{
   color:#7a7e8c;
 }
 
-/* MOBILE: sections become horizontal scroll */
 @media(max-width:760px){
   .site-header{
     height:64px;
@@ -398,8 +392,6 @@ body{
   .panel{margin:14px 16px;padding:18px 14px;}
   .panel h2{font-size:22px;}
   .hero-actions{flex-direction:column;align-items:flex-start;}
-  
-  /* card sections become horizontal scroll */
   .card-grid{
     display:flex;
     flex-direction:row;
@@ -410,8 +402,6 @@ body{
     min-width:210px;
     width:210px;
   }
-  
-  /* message grid becomes horizontal */
   .message-grid{
     display:flex;
     flex-direction:row;
@@ -422,23 +412,322 @@ body{
     min-width:160px;
     width:160px;
   }
-  
   .voice-box{
     flex-direction:column;
     text-align:center;
   }
   .footer{flex-direction:column;margin:14px 16px 24px;}
 }
+
+/* ===== NEW FIXED HEADER + SLIDE-OUT MENU STYLES (preserving original look) ===== */
+:root {
+  --header-bg: #030303;
+  --header-height: 70px;
+}
+/* fixed header adjustment */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--header-bg);
+  border-bottom: 1px solid #2a2a2a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  backdrop-filter: blur(0px);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+}
+/* give page top padding to prevent content hidden under fixed bar */
+.page {
+  padding-top: var(--header-height);
+}
+
+/* back button style */
+.back-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  transition: all 0.2s ease;
+  color: #fff;
+}
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+}
+.back-btn svg {
+  width: 26px;
+  height: 26px;
+  stroke: white;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* center logo / title */
+.center-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: auto;
+}
+.header-logo-link {
+  text-decoration: none;
+  display: block;
+  font-size: 28px;
+  font-weight: 950;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  white-space: nowrap;
+}
+.header-logo-link span {
+  color: var(--red);
+}
+@media (max-width: 640px) {
+  .header-logo-link {
+    font-size: 20px;
+  }
+  .fixed-header {
+    padding: 0 16px;
+  }
+}
+/* hamburger button */
+.hamburger-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  transition: background 0.2s;
+}
+.hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.hamburger-btn svg {
+  width: 28px;
+  height: 28px;
+  stroke: white;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+/* FULLSCREEN SLIDE-OUT MENU */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 3, 3, 0.98);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden;
+  overflow-y: auto;
+}
+.nav-overlay.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+.nav-menu-container {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1.5rem 3rem;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.menu-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+.close-menu-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #3c424d;
+  border-radius: 60px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.close-menu-btn:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+.close-menu-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+  stroke-width: 2;
+}
+.menu-section {
+  margin-bottom: 2.2rem;
+}
+.menu-section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--red);
+  padding-left: 12px;
+}
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.menu-links a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #eaeef5;
+  padding: 12px 12px;
+  border-radius: 16px;
+  transition: all 0.2s;
+  display: block;
+  letter-spacing: -0.2px;
+}
+.menu-links a:hover {
+  background: rgba(227, 27, 35, 0.2);
+  color: white;
+  transform: translateX(6px);
+}
+.menu-links a.active {
+  color: var(--red);
+  background: rgba(227, 27, 35, 0.12);
+  border-left: 3px solid var(--red);
+  font-weight: 800;
+}
+.substance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+.substance-grid a {
+  font-size: 1rem;
+  font-weight: 500;
+  background: rgba(20, 20, 30, 0.6);
+  border: 1px solid #3c424d;
+  border-radius: 40px;
+  padding: 10px 16px;
+  text-align: center;
+  transition: all 0.2s;
+}
+.substance-grid a:hover {
+  background: var(--red);
+  border-color: var(--red);
+  transform: translateY(-2px);
+}
+@media (max-width: 500px) {
+  .menu-links a {
+    font-size: 1.2rem;
+    padding: 10px 8px;
+  }
+  .substance-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-menu-container {
+    padding: 1.5rem 1rem;
+  }
+}
+/* helper for body scroll lock */
+body.menu-open {
+  overflow: hidden;
+}
 </style>
 </head>
 <body>
+
 <main class="page">
 
-<header class="site-header">
-  <a class="logo" href="/">Gas Station <span>Heroin</span></a>
-  <div class="menu">☰</div>
+<!-- ===== NEW FIXED HEADER (back button + centered brand + hamburger) ===== -->
+<header class="fixed-header">
+  <!-- left: back button with left arrow SVG -->
+  <button class="back-btn" id="backButton" aria-label="Go back to previous page">
+    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+      <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <!-- center: Gas Station Heroin logo/title -->
+  <div class="center-logo">
+    <a href="/" class="header-logo-link">Gas Station <span>Heroin</span></a>
+  </div>
+
+  <!-- right: hamburger menu icon (SVG) -->
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu">
+    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-linecap="round"/>
+    </svg>
+  </button>
 </header>
 
+<!-- ===== FULLSCREEN SLIDE-OUT NAVIGATION MENU ===== -->
+<div id="slideMenu" class="nav-overlay" aria-hidden="true">
+  <div class="nav-menu-container">
+    <div class="menu-header">
+      <button class="close-menu-btn" id="closeMenuBtn" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- main links section -->
+    <div class="menu-section">
+      <div class="menu-section-title">Navigation</div>
+      <div class="menu-links" id="mainLinksContainer">
+        <a href="/" data-url="/">Home</a>
+        <a href="/parent/index.html" data-url="/parent/index.html">Parent Guide</a>
+        <a href="/product/index.html" data-url="/product/index.html">Identify Products</a>
+        <a href="/warning/index.html" data-url="/warning/index.html">Warning Signs</a>
+        <a href="/talk/index.html" data-url="/talk/index.html">Talk to Your Child</a>
+        <a href="/help/index.html" data-url="/help/index.html">Get Help</a>
+        <a href="/report/index.html" data-url="/report/index.html">Report a Product</a>
+        <a href="/contact/index.html" data-url="/contact/index.html">Contact</a>
+      </div>
+    </div>
+
+    <!-- Substance Categories section (group) -->
+    <div class="menu-section">
+      <div class="menu-section-title">Substance Categories</div>
+      <div class="substance-grid" id="substanceLinksContainer">
+        <a href="/opioid/index.html" data-url="/opioid/index.html">Opioids</a>
+        <a href="/sedatives/index.html" data-url="/sedatives/index.html">Sedatives</a>
+        <a href="/hallucinogens/index.html" data-url="/hallucinogens/index.html">Hallucinogens</a>
+        <a href="/inhalation/index.html" data-url="/inhalation/index.html">Inhalants</a>
+        <a href="/stimulants/index.html" data-url="/stimulants/index.html">Stimulants</a>
+        <a href="/sexual/index.html" data-url="/sexual/index.html">Sexual Enhancement Products</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ORIGINAL PAGE CONTENT (unchanged) ===== -->
 <section class="hero">
   <div class="hero-copy">
     <div class="kicker">Contact Officials</div>
@@ -456,41 +745,35 @@ body{
   </div>
 </section>
 
-<!-- SECTION 1: WHO CAN HELP IN YOUR STATE OR COMMUNITY? -->
 <section class="panel">
   <h2>1. Who can help in your state or community?</h2>
   <p class="section-sub">These officials and agencies have the power to create change.</p>
   <div class="scroll-x">
     <div class="card-grid">
-      <!-- Attorney General -->
       <div class="card">
         <img src="IMG_8586.jpeg" alt="Attorney General">
         <h3>Attorney General</h3>
         <p>Protects consumers and investigates deceptive or harmful business practices.</p>
         <a href="https://www.naag.org/find-my-ag/" target="_blank" rel="noopener noreferrer" class="btn">Find my attorney general →</a>
       </div>
-      <!-- State Health Department -->
       <div class="card">
         <img src="IMG_8587.jpeg" alt="State Health Department">
         <h3>State Health Department</h3>
         <p>Investigates public health issues and can take action on unsafe products and retailers.</p>
         <a href="https://www.cdc.gov/public-health-gateway/php/index.html" target="_blank" rel="noopener noreferrer" class="btn">Find my health department →</a>
       </div>
-      <!-- Board of Pharmacy -->
       <div class="card">
         <img src="IMG_8588.jpeg" alt="Board of Pharmacy">
         <h3>Board of Pharmacy</h3>
         <p>Can regulate controlled substances and take action on dangerous products.</p>
         <a href="https://nabp.pharmacy/about/boards-of-pharmacy/" target="_blank" rel="noopener noreferrer" class="btn">Find my board of pharmacy →</a>
       </div>
-      <!-- State Legislators -->
       <div class="card">
         <img src="IMG_8589.jpeg" alt="State Legislators">
         <h3>State Legislators</h3>
         <p>Can pass laws to restrict or ban dangerous substances and protect communities.</p>
         <a href="https://www.usa.gov/elected-officials" target="_blank" rel="noopener noreferrer" class="btn">Find my legislators →</a>
       </div>
-      <!-- Governor -->
       <div class="card">
         <img src="IMG_8590.jpeg" alt="Governor">
         <h3>Governor</h3>
@@ -501,34 +784,29 @@ body{
   </div>
 </section>
 
-<!-- SECTION 2: TAKE ACTION IN YOUR COMMUNITY -->
 <section class="panel">
   <h2>2. Take action in your community</h2>
   <p class="section-sub">Local officials can also make a difference.</p>
   <div class="scroll-x">
     <div class="card-grid">
-      <!-- City Council -->
       <div class="card">
         <img src="IMG_8594.jpeg" alt="City Council">
         <h3>City Council</h3>
         <p>Urge your city to pass local ordinances that restrict or ban the sale of dangerous products.</p>
         <a href="https://www.usa.gov/local-governments" target="_blank" rel="noopener noreferrer" class="btn">Find my city council →</a>
       </div>
-      <!-- County Commissioners -->
       <div class="card">
         <img src="IMG_8593.jpeg" alt="County Commissioners">
         <h3>County Commissioners</h3>
         <p>Ask your county to support enforcement, education, and prevention efforts.</p>
         <a href="https://www.usa.gov/local-governments" target="_blank" rel="noopener noreferrer" class="btn">Find my county commissioners →</a>
       </div>
-      <!-- Local Health Department -->
       <div class="card">
         <img src="IMG_8592.jpeg" alt="Local Health Department">
         <h3>Local Health Department</h3>
         <p>Report concerns and ask for inspections of stores selling dangerous products.</p>
         <a href="https://www.cdc.gov/public-health-gateway/php/index.html" target="_blank" rel="noopener noreferrer" class="btn">Find my local health department →</a>
       </div>
-      <!-- Law Enforcement -->
       <div class="card">
         <img src="IMG_8591.jpeg" alt="Law Enforcement">
         <h3>Law Enforcement</h3>
@@ -539,27 +817,23 @@ body{
   </div>
 </section>
 
-<!-- SECTION 3: WHAT SHOULD I SAY? (UPDATED LINKS) -->
 <section class="panel">
   <h2>3. What should I say?</h2>
   <p class="section-sub">Use these message templates to make your voice heard.</p>
   <div class="scroll-x">
     <div class="card-grid">
-      <!-- Report a Public Health Concern (links to template1.html) -->
       <div class="card">
         <img src="IMG_8595.jpeg" alt="Public Health Concern">
         <h3>Report a Public Health Concern</h3>
         <p>Let health officials know about dangerous products being sold in your area.</p>
         <a href="template1.html" class="btn">View template →</a>
       </div>
-      <!-- Report Misleading Marketing (links to template2.html) -->
       <div class="card">
         <img src="IMG_8596.jpeg" alt="Misleading Marketing">
         <h3>Report Misleading Marketing</h3>
         <p>Report deceptive claims and dangerous marketing to protect consumers.</p>
         <a href="template2.html" class="btn">View template →</a>
       </div>
-      <!-- Support Local Regulation (links to usa.gov local governments) -->
       <div class="card">
         <img src="IMG_8597.jpeg" alt="Local Regulation">
         <h3>Support Local Regulation</h3>
@@ -570,7 +844,6 @@ body{
   </div>
 </section>
 
-<!-- MAKE YOUR MESSAGE STRONGER (bullet points with icons) -->
 <section class="panel">
   <h2>Make your message stronger</h2>
   <div class="scroll-x">
@@ -599,7 +872,6 @@ body{
   </div>
 </section>
 
-<!-- YOUR VOICE MATTERS BOX -->
 <section class="panel">
   <div class="voice-box">
     <img src="IMG_8602.jpeg" alt="Your Voice Matters">
@@ -610,7 +882,6 @@ body{
   </div>
 </section>
 
-<!-- OPTIONAL: SELECT YOUR STATE + LEGISLATION (from mockup) -->
 <section class="panel">
   <h2>Find your state</h2>
   <p class="section-sub">Select your state to find your officials and view pending legislation.</p>
@@ -628,7 +899,6 @@ body{
   </div>
 </section>
 
-<!-- TOGETHER WE CAN PROTECT OUR COMMUNITIES -->
 <section class="panel">
   <div class="voice-box" style="background:rgba(227,27,35,.15); border-left-color:var(--red); justify-content:center;">
     <div style="text-align:center;">
@@ -638,7 +908,6 @@ body{
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-col">
     <h4>Gas Station Heroin</h4>
@@ -674,5 +943,104 @@ body{
 </div>
 
 </main>
+
+<script>
+  (function() {
+    // DOM elements
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const slideMenu = document.getElementById('slideMenu');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const backButton = document.getElementById('backButton');
+
+    // Helper: open menu
+    function openMenu() {
+      slideMenu.classList.add('open');
+      slideMenu.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('menu-open');
+    }
+
+    // Helper: close menu
+    function closeMenu() {
+      slideMenu.classList.remove('open');
+      slideMenu.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
+    }
+
+    // Event listeners
+    if (hamburgerBtn) {
+      hamburgerBtn.addEventListener('click', openMenu);
+    }
+    if (closeMenuBtn) {
+      closeMenuBtn.addEventListener('click', closeMenu);
+    }
+    // Close when clicking on overlay background? optional, but good practice (click on overlay background outside container)
+    slideMenu.addEventListener('click', function(e) {
+      if (e.target === slideMenu) {
+        closeMenu();
+      }
+    });
+
+    // back button functionality: return to previous page using browser history
+    if (backButton) {
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.history.back();
+      });
+    }
+
+    // close menu on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && slideMenu.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+
+    // ---- HIGHLIGHT CURRENT PAGE (based on pathname) ----
+    function getNormalizedPath(url) {
+      try {
+        let path = new URL(url, window.location.origin).pathname;
+        // remove trailing slash for consistency except root
+        if (path !== '/' && path.endsWith('/')) path = path.slice(0, -1);
+        return path;
+      } catch(e) { return url; }
+    }
+
+    const currentPath = window.location.pathname;
+    const normalizeCurrent = currentPath !== '/' && currentPath.endsWith('/') ? currentPath.slice(0, -1) : currentPath;
+
+    // Select all menu links (both main + substance)
+    const allMenuLinks = document.querySelectorAll('#mainLinksContainer a, #substanceLinksContainer a');
+    allMenuLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      let linkPath = href;
+      try {
+        let parsed = new URL(href, window.location.origin);
+        linkPath = parsed.pathname;
+        if (linkPath !== '/' && linkPath.endsWith('/')) linkPath = linkPath.slice(0, -1);
+      } catch(e) { linkPath = href; }
+      
+      // compare normalized paths
+      if (normalizeCurrent === linkPath || (normalizeCurrent === '' && linkPath === '/') || (normalizeCurrent === '/' && linkPath === '/')) {
+        link.classList.add('active');
+      } else if (linkPath !== '/' && normalizeCurrent.startsWith(linkPath) && linkPath.length > 1 && normalizeCurrent.charAt(linkPath.length) === '/') {
+        // optional partial match, but better to keep exact match. We'll only mark exact.
+      }
+    });
+    // special case: if current location is exactly "/" and home link
+    if (normalizeCurrent === '/' || normalizeCurrent === '') {
+      const homeLink = document.querySelector('#mainLinksContainer a[href="/"]');
+      if (homeLink) homeLink.classList.add('active');
+    }
+
+    // Additionally, close menu when any link inside menu is clicked (smooth navigation)
+    allMenuLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // allow navigation, close menu after a tiny delay for better UX
+        setTimeout(() => { closeMenu(); }, 80);
+      });
+    });
+  })();
+</script>
 </body>
 </html>
