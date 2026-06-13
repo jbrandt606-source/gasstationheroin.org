@@ -132,7 +132,7 @@ body{
   font-size:27px;
   line-height:1;
   text-transform:uppercase;
-  margin-bottom:20px;
+  margin-bottom:8px;
   color:var(--red);
   letter-spacing:-0.3px;
 }
@@ -140,12 +140,13 @@ body{
 .section-sub{
   color:var(--muted);
   font-size:16px;
-  margin-top:-12px;
   margin-bottom:24px;
   line-height:1.4;
+  border-bottom:1px solid var(--line);
+  padding-bottom:12px;
 }
 
-/* start here button */
+/* START HERE BUTTON */
 .start-here{
   margin:0 28px 18px 28px;
   display:flex;
@@ -173,79 +174,59 @@ body{
   transform:translateY(-2px);
 }
 
-/* documentation icon rows */
-.icon-row{
+/* DOCUMENTATION SECTION (icons) */
+.doc-grid{
   display:flex;
-  gap:18px;
-  align-items:center;
-  margin-bottom:28px;
-  flex-wrap:wrap;
+  flex-direction:column;
+  gap:28px;
 }
 
-.icon-row img{
-  width:60px;
-  height:60px;
+.doc-item{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+
+.doc-item img{
+  width:64px;
+  height:64px;
   object-fit:contain;
   filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));
 }
 
-.icon-row div{
-  flex:1;
-}
-
-.icon-row h3{
+.doc-text h3{
   font-size:22px;
   font-weight:900;
   text-transform:uppercase;
   margin-bottom:6px;
 }
 
-.icon-row p{
+.doc-text p{
   color:var(--muted);
   font-size:16px;
   line-height:1.4;
 }
 
-/* agency cards (horizontally scrollable on mobile) */
-.agency-scroll{
-  overflow-x:auto;
-  overflow-y:hidden;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:thin;
-  margin-bottom:10px;
-}
-
-.agency-scroll::-webkit-scrollbar{
-  height:6px;
-}
-.agency-scroll::-webkit-scrollbar-track{
-  background:#1e1e24;
-  border-radius:10px;
-}
-.agency-scroll::-webkit-scrollbar-thumb{
-  background:var(--red);
-  border-radius:10px;
-}
-
-.agency-grid{
-  display:flex;
+/* AGENCY GRID: 3 columns on desktop, then 2 columns centered on next row? We'll use CSS Grid with auto-fit */
+.agency-grid-container{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
   gap:18px;
-  width:max-content;
-  padding-bottom:8px;
 }
+
+/* On large screens, the fifth card will naturally wrap? Actually 5 cards with 3 columns gives 2 on second row, centered with auto margin? We'll use a wrapper and flex for second row? Simpler: use grid and let it flow. */
+/* To keep second row centered, we can add an empty div? No, just let grid handle it: 5 items -> row1: 3, row2: 2, they will be left-aligned, which is fine visually. */
 
 .agency-card{
   background:rgba(0,0,0,.55);
   border:1px solid #3c424d;
   border-radius:16px;
   padding:18px 14px;
-  width:240px;
-  min-width:240px;
+  text-align:center;
+  transition:0.2s;
   display:flex;
   flex-direction:column;
   align-items:center;
-  text-align:center;
-  transition:0.2s;
 }
 
 .agency-card:hover{
@@ -272,6 +253,7 @@ body{
   color:var(--muted);
   line-height:1.35;
   margin-bottom:14px;
+  flex:1;
 }
 
 .agency-link{
@@ -300,10 +282,9 @@ body{
   padding:8px 16px;
   border-radius:40px;
   display:inline-block;
-  margin-top:6px;
 }
 
-/* red flags */
+/* RED FLAGS LIST */
 .red-flags{
   list-style:none;
   margin-top:10px;
@@ -311,7 +292,7 @@ body{
 
 .red-flags li{
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   gap:14px;
   margin-bottom:20px;
 }
@@ -320,29 +301,21 @@ body{
   width:44px;
   height:44px;
   object-fit:contain;
-  margin-top:-2px;
 }
 
-.red-flags li strong{
-  display:block;
-  font-size:18px;
-  font-weight:900;
-  margin-bottom:4px;
+.red-flags li span{
+  font-size:16px;
+  font-weight:500;
+  color:#f0f0f0;
 }
 
-.red-flags li p{
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.4;
-}
-
-/* before you submit + thank you */
+/* BEFORE YOU SUBMIT + THANK YOU */
 .before-submit{
   background:rgba(0,0,0,.45);
   border-left:4px solid var(--red);
   padding:20px 22px;
   border-radius:12px;
-  margin-top:20px;
+  margin-bottom:24px;
 }
 
 .before-submit h3{
@@ -364,16 +337,16 @@ body{
 
 .thankyou{
   text-align:center;
-  margin-top:24px;
   padding:16px;
-  background:rgba(227,27,35,.15);
+  background:rgba(227,27,35,.12);
   border-radius:12px;
-  font-weight:700;
-  font-size:18px;
+  font-weight:600;
+  font-size:17px;
   color:var(--muted);
+  border:1px solid rgba(227,27,35,.3);
 }
 
-/* footer */
+/* FOOTER */
 .footer{
   margin:18px 28px 28px;
   border-top:1px solid var(--line);
@@ -433,7 +406,7 @@ body{
   color:#7a7e8c;
 }
 
-/* MOBILE */
+/* MOBILE: horizontal scroll for agency cards */
 @media(max-width:760px){
   .site-header{
     height:64px;
@@ -452,20 +425,28 @@ body{
   .hero p{font-size:17px;}
   .panel{margin:14px 16px;padding:18px 14px;}
   .panel h2{font-size:22px;}
-  .icon-row{flex-direction:column;align-items:flex-start;}
-  .icon-row img{width:50px;height:50px;}
+  .doc-item{flex-direction:column;align-items:flex-start;gap:12px;}
+  .doc-item img{width:52px;height:52px;}
   .start-here{margin:0 16px 14px 16px;}
   .start-btn{font-size:18px;padding:14px 24px;}
-  .footer{flex-direction:column;margin:14px 16px 24px;}
+  
+  /* Agency becomes horizontal scroll */
+  .agency-grid-container{
+    display:flex;
+    flex-direction:row;
+    gap:16px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scrollbar-width:thin;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:10px;
+    width:100%;
+  }
   .agency-card{
-    width:210px;
     min-width:210px;
-    padding:14px 10px;
+    width:210px;
   }
-  .agency-card img{
-    width:60px;
-    height:60px;
-  }
+  .footer{flex-direction:column;margin:14px 16px 24px;}
 }
 </style>
 </head>
@@ -482,7 +463,7 @@ body{
     <div class="kicker">Report Dangerous Products</div>
     <h1>See Something.<br><span>Say Something.</span></h1>
     <div class="underline"></div>
-    <p>See something concerning in a gas station, vape shop, or convenience store? Here’s who has the authority to investigate.</p>
+    <p>See something concerning in a gas station, vape shop, or convenience store? Here's who has the authority to investigate.</p>
   </div>
 </section>
 
@@ -490,108 +471,97 @@ body{
   <a href="#start" class="start-btn">Start Here</a>
 </div>
 
-<!-- SECTION 1: WHAT TO DOCUMENT -->
+<!-- SECTION 1: WHAT TO DOCUMENT (matching icons) -->
 <section class="panel" id="start">
   <h2>1. What to document</h2>
   <p class="section-sub">The more information you have, the more helpful your report will be.</p>
 
-  <div class="icon-row">
-    <img src="IMG_8559.jpeg" alt="camera icon">
-    <div>
-      <h3>Photos of the product</h3>
-      <p>Take clear photos of the front and back of the package. Capture ingredient labels, warnings, and any dosage information.</p>
+  <div class="doc-grid">
+    <div class="doc-item">
+      <img src="IMG_8559.jpeg" alt="camera icon">
+      <div class="doc-text">
+        <h3>Photos of the product</h3>
+        <p>Take clear photos of the front and back of the package. Capture ingredient labels, warnings, and any dosage information.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="icon-row">
-    <img src="IMG_8558.jpeg" alt="store icon">
-    <div>
-      <h3>Store details</h3>
-      <p>Write down the store name, full address, date, and time of your visit. Note the exact shelf or display location.</p>
+    <div class="doc-item">
+      <img src="IMG_8558.jpeg" alt="store icon">
+      <div class="doc-text">
+        <h3>Store details</h3>
+        <p>Write down the store name, full address, date, and time of your visit. Note the exact shelf or display location.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="icon-row">
-    <img src="IMG_8557.jpeg" alt="receipt icon">
-    <div>
-      <h3>Receipt or price tag</h3>
-      <p>Include photos of receipts, shelf tags, or price stickers. This helps investigators verify where and when the product was sold.</p>
+    <div class="doc-item">
+      <img src="IMG_8557.jpeg" alt="receipt icon">
+      <div class="doc-text">
+        <h3>Receipt or price tag</h3>
+        <p>Include photos of receipts, shelf tags, or price stickers. This helps investigators verify where and when the product was sold.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 2: WHO SHOULD I REPORT IT TO? -->
+<!-- SECTION 2: WHO TO REPORT TO (5 cards in grid, correct icons) -->
 <section class="panel">
   <h2>2. Who should I report it to?</h2>
   <p class="section-sub">Different agencies handle different issues. Choose the one that best fits what you saw.</p>
 
-  <div class="agency-scroll">
-    <div class="agency-grid">
-      <!-- FDA -->
-      <div class="agency-card">
-        <img src="IMG_8567.jpeg" alt="FDA icon">
-        <div class="agency-name">FDA</div>
-        <div class="agency-desc">Unapproved drugs, supplements, adverse events, and unsafe products.</div>
-        <a href="https://www.accessdata.fda.gov/scripts/medwatch/index.cfm" target="_blank" rel="noopener noreferrer" class="agency-link">Report to FDA →</a>
-      </div>
-      <!-- Consumer Protection (FTC) -->
-      <div class="agency-card">
-        <img src="IMG_8566.jpeg" alt="FTC icon">
-        <div class="agency-name">Consumer Protection</div>
-        <div class="agency-desc">Misleading advertising, marketing claims, scams, and deceptive business practices.</div>
-        <a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener noreferrer" class="agency-link">Report Fraud →</a>
-      </div>
-      <!-- Local Health Department -->
-      <div class="agency-card">
-        <img src="IMG_8565.jpeg" alt="health dept icon">
-        <div class="agency-name">Local Health Department</div>
-        <div class="agency-desc">Unsafe products, retail food or supplement concerns, and public health issues.</div>
-        <a href="https://www.naccho.org/membership/lhd-directory" target="_blank" rel="noopener noreferrer" class="agency-link">Find my health department →</a>
-      </div>
-      <!-- State Attorney General -->
-      <div class="agency-card">
-        <img src="IMG_8564.jpeg" alt="AG icon">
-        <div class="agency-name">State Attorney General</div>
-        <div class="agency-desc">Consumer protection complaints and unlawful business practices.</div>
-        <a href="https://www.naag.org/find-my-ag/" target="_blank" rel="noopener noreferrer" class="agency-link">Contact AG →</a>
-      </div>
-      <!-- Poison Center -->
-      <div class="agency-card">
-        <img src="IMG_8563.jpeg" alt="poison icon">
-        <div class="agency-name">Poison Center</div>
-        <div class="agency-desc">Adverse reactions or exposures – call or report online.</div>
-        <a href="tel:1-800-222-1222" class="poison-phone">Call 1-800-222-1222</a>
-      </div>
+  <div class="agency-grid-container">
+    <!-- FDA -->
+    <div class="agency-card">
+      <img src="IMG_8567.jpeg" alt="FDA icon">
+      <div class="agency-name">FDA</div>
+      <div class="agency-desc">Unapproved drugs, supplements, adverse events, and unsafe products.</div>
+      <a href="https://www.accessdata.fda.gov/scripts/medwatch/index.cfm" target="_blank" rel="noopener noreferrer" class="agency-link">Report to FDA →</a>
+    </div>
+
+    <!-- Consumer Protection (FTC) -->
+    <div class="agency-card">
+      <img src="IMG_8566.jpeg" alt="FTC icon">
+      <div class="agency-name">Consumer Protection</div>
+      <div class="agency-desc">Misleading advertising, marketing claims, scams, and deceptive business practices.</div>
+      <a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener noreferrer" class="agency-link">Report Fraud →</a>
+    </div>
+
+    <!-- Local Health Department -->
+    <div class="agency-card">
+      <img src="IMG_8565.jpeg" alt="health dept icon">
+      <div class="agency-name">Local Health Department</div>
+      <div class="agency-desc">Unsafe products, retail food or supplement concerns, and public health issues.</div>
+      <a href="https://www.naccho.org/membership/lhd-directory" target="_blank" rel="noopener noreferrer" class="agency-link">Find my health department →</a>
+    </div>
+
+    <!-- State Attorney General -->
+    <div class="agency-card">
+      <img src="IMG_8564.jpeg" alt="AG icon">
+      <div class="agency-name">State Attorney General</div>
+      <div class="agency-desc">Consumer protection complaints and unlawful business practices.</div>
+      <a href="https://www.naag.org/find-my-ag/" target="_blank" rel="noopener noreferrer" class="agency-link">Contact AG →</a>
+    </div>
+
+    <!-- Poison Center -->
+    <div class="agency-card">
+      <img src="IMG_8563.jpeg" alt="poison icon">
+      <div class="agency-name">Poison Center</div>
+      <div class="agency-desc">Adverse reactions or exposures – call or report online.</div>
+      <a href="tel:1-800-222-1222" class="poison-phone">Call 1-800-222-1222</a>
     </div>
   </div>
 </section>
 
-<!-- SECTION 3: RED FLAGS TO WATCH FOR -->
+<!-- SECTION 3: RED FLAGS (matching icons) -->
 <section class="panel">
   <h2>3. Red flags to watch for</h2>
   <p class="section-sub">Be alert to products and marketing that put people at risk.</p>
 
   <ul class="red-flags">
-    <li>
-      <img src="IMG_8562.jpeg" alt="flag icon">
-      <div><strong>Sold as a "research chemical"</strong></div>
-    </li>
-    <li>
-      <img src="IMG_8561.jpeg" alt="warning icon">
-      <div><strong>Claims to cure, treat, or prevent disease</strong></div>
-    </li>
-    <li>
-      <img src="IMG_8560.jpeg" alt="label icon">
-      <div><strong>No ingredient list or hidden ingredients</strong></div>
-    </li>
-    <li>
-      <img src="IMG_8553.jpeg" alt="candy icon">
-      <div><strong>Marketed next to candy, snacks, or energy drinks</strong></div>
-    </li>
-    <li>
-      <img src="IMG_8556.jpeg" alt="FDA seal">
-      <div><strong>Not approved by the FDA</strong></div>
-    </li>
+    <li><img src="IMG_8562.jpeg" alt="flag"><span>Sold as a "research chemical"</span></li>
+    <li><img src="IMG_8561.jpeg" alt="warning"><span>Claims to cure, treat, or prevent disease</span></li>
+    <li><img src="IMG_8560.jpeg" alt="label"><span>No ingredient list or hidden ingredients</span></li>
+    <li><img src="IMG_8553.jpeg" alt="candy"><span>Marketed next to candy, snacks, or energy drinks</span></li>
+    <li><img src="IMG_8556.jpeg" alt="FDA"><span>Not approved by the FDA</span></li>
   </ul>
 </section>
 
