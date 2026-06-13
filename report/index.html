@@ -174,7 +174,7 @@ body{
   transform:translateY(-2px);
 }
 
-/* DOCUMENTATION SECTION (icons) */
+/* DOCUMENTATION CARDS (What to Document) */
 .doc-grid{
   display:flex;
   flex-direction:column;
@@ -207,15 +207,12 @@ body{
   line-height:1.4;
 }
 
-/* AGENCY GRID: 3 columns on desktop, then 2 columns centered on next row? We'll use CSS Grid with auto-fit */
+/* AGENCY CARDS (Who to Report To) – grid on desktop, horizontal scroll on mobile */
 .agency-grid-container{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
   gap:18px;
 }
-
-/* On large screens, the fifth card will naturally wrap? Actually 5 cards with 3 columns gives 2 on second row, centered with auto margin? We'll use a wrapper and flex for second row? Simpler: use grid and let it flow. */
-/* To keep second row centered, we can add an empty div? No, just let grid handle it: 5 items -> row1: 3, row2: 2, they will be left-aligned, which is fine visually. */
 
 .agency-card{
   background:rgba(0,0,0,.55);
@@ -273,18 +270,7 @@ body{
   background:#a01018;
 }
 
-.poison-phone{
-  background:var(--red);
-  color:#fff;
-  text-decoration:none;
-  font-weight:800;
-  font-size:14px;
-  padding:8px 16px;
-  border-radius:40px;
-  display:inline-block;
-}
-
-/* RED FLAGS LIST */
+/* Red Flags List */
 .red-flags{
   list-style:none;
   margin-top:10px;
@@ -309,13 +295,26 @@ body{
   color:#f0f0f0;
 }
 
-/* BEFORE YOU SUBMIT + THANK YOU */
+/* Before You Submit (warning box) */
 .before-submit{
   background:rgba(0,0,0,.45);
   border-left:4px solid var(--red);
   padding:20px 22px;
   border-radius:12px;
   margin-bottom:24px;
+  display:flex;
+  gap:16px;
+  align-items:center;
+}
+
+.before-submit img{
+  width:56px;
+  height:56px;
+  object-fit:contain;
+}
+
+.before-submit div{
+  flex:1;
 }
 
 .before-submit h3{
@@ -335,15 +334,32 @@ body{
   margin:8px 0;
 }
 
+/* Thank You panel */
 .thankyou{
-  text-align:center;
-  padding:16px;
+  display:flex;
+  gap:16px;
+  align-items:center;
+  padding:16px 22px;
   background:rgba(227,27,35,.12);
   border-radius:12px;
-  font-weight:600;
+  border:1px solid rgba(227,27,35,.3);
+}
+
+.thankyou img{
+  width:56px;
+  height:56px;
+  object-fit:contain;
+}
+
+.thankyou p{
   font-size:17px;
   color:var(--muted);
-  border:1px solid rgba(227,27,35,.3);
+  font-weight:500;
+  line-height:1.4;
+}
+
+.thankyou strong{
+  color:var(--text);
 }
 
 /* FOOTER */
@@ -406,7 +422,7 @@ body{
   color:#7a7e8c;
 }
 
-/* MOBILE: horizontal scroll for agency cards */
+/* MOBILE: agency cards horizontal scroll */
 @media(max-width:760px){
   .site-header{
     height:64px;
@@ -430,7 +446,7 @@ body{
   .start-here{margin:0 16px 14px 16px;}
   .start-btn{font-size:18px;padding:14px 24px;}
   
-  /* Agency becomes horizontal scroll */
+  /* Agency cards become horizontal scroll */
   .agency-grid-container{
     display:flex;
     flex-direction:row;
@@ -445,6 +461,14 @@ body{
   .agency-card{
     min-width:210px;
     width:210px;
+  }
+  .before-submit{
+    flex-direction:column;
+    text-align:left;
+  }
+  .thankyou{
+    flex-direction:column;
+    text-align:center;
   }
   .footer{flex-direction:column;margin:14px 16px 24px;}
 }
@@ -471,30 +495,28 @@ body{
   <a href="#start" class="start-btn">Start Here</a>
 </div>
 
-<!-- SECTION 1: WHAT TO DOCUMENT (matching icons) -->
+<!-- SECTION 1: WHAT TO DOCUMENT (icons: IMG_8553, IMG_8554, IMG_8555) -->
 <section class="panel" id="start">
   <h2>1. What to document</h2>
   <p class="section-sub">The more information you have, the more helpful your report will be.</p>
 
   <div class="doc-grid">
     <div class="doc-item">
-      <img src="IMG_8559.jpeg" alt="camera icon">
+      <img src="IMG_8553.jpeg" alt="camera icon">
       <div class="doc-text">
         <h3>Photos of the product</h3>
         <p>Take clear photos of the front and back of the package. Capture ingredient labels, warnings, and any dosage information.</p>
       </div>
     </div>
-
     <div class="doc-item">
-      <img src="IMG_8558.jpeg" alt="store icon">
+      <img src="IMG_8554.jpeg" alt="store icon">
       <div class="doc-text">
         <h3>Store details</h3>
         <p>Write down the store name, full address, date, and time of your visit. Note the exact shelf or display location.</p>
       </div>
     </div>
-
     <div class="doc-item">
-      <img src="IMG_8557.jpeg" alt="receipt icon">
+      <img src="IMG_8555.jpeg" alt="receipt icon">
       <div class="doc-text">
         <h3>Receipt or price tag</h3>
         <p>Include photos of receipts, shelf tags, or price stickers. This helps investigators verify where and when the product was sold.</p>
@@ -503,82 +525,80 @@ body{
   </div>
 </section>
 
-<!-- SECTION 2: WHO TO REPORT TO (5 cards in grid, correct icons) -->
+<!-- SECTION 2: WHO TO REPORT IT TO (icons: FDA=IMG_8560, Consumer=IMG_8559, LocalHealth=IMG_8558, StateAG=IMG_8557, Poison=IMG_8556) -->
 <section class="panel">
   <h2>2. Who should I report it to?</h2>
   <p class="section-sub">Different agencies handle different issues. Choose the one that best fits what you saw.</p>
 
   <div class="agency-grid-container">
-    <!-- FDA -->
     <div class="agency-card">
-      <img src="IMG_8567.jpeg" alt="FDA icon">
+      <img src="IMG_8560.jpeg" alt="FDA icon">
       <div class="agency-name">FDA</div>
       <div class="agency-desc">Unapproved drugs, supplements, adverse events, and unsafe products.</div>
       <a href="https://www.accessdata.fda.gov/scripts/medwatch/index.cfm" target="_blank" rel="noopener noreferrer" class="agency-link">Report to FDA →</a>
     </div>
-
-    <!-- Consumer Protection (FTC) -->
     <div class="agency-card">
-      <img src="IMG_8566.jpeg" alt="FTC icon">
+      <img src="IMG_8559.jpeg" alt="FTC icon">
       <div class="agency-name">Consumer Protection</div>
       <div class="agency-desc">Misleading advertising, marketing claims, scams, and deceptive business practices.</div>
       <a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener noreferrer" class="agency-link">Report Fraud →</a>
     </div>
-
-    <!-- Local Health Department -->
     <div class="agency-card">
-      <img src="IMG_8565.jpeg" alt="health dept icon">
+      <img src="IMG_8558.jpeg" alt="health dept icon">
       <div class="agency-name">Local Health Department</div>
       <div class="agency-desc">Unsafe products, retail food or supplement concerns, and public health issues.</div>
       <a href="https://www.naccho.org/membership/lhd-directory" target="_blank" rel="noopener noreferrer" class="agency-link">Find my health department →</a>
     </div>
-
-    <!-- State Attorney General -->
     <div class="agency-card">
-      <img src="IMG_8564.jpeg" alt="AG icon">
+      <img src="IMG_8557.jpeg" alt="AG icon">
       <div class="agency-name">State Attorney General</div>
       <div class="agency-desc">Consumer protection complaints and unlawful business practices.</div>
       <a href="https://www.naag.org/find-my-ag/" target="_blank" rel="noopener noreferrer" class="agency-link">Contact AG →</a>
     </div>
-
-    <!-- Poison Center -->
     <div class="agency-card">
-      <img src="IMG_8563.jpeg" alt="poison icon">
+      <img src="IMG_8556.jpeg" alt="poison icon">
       <div class="agency-name">Poison Center</div>
       <div class="agency-desc">Adverse reactions or exposures – call or report online.</div>
-      <a href="tel:1-800-222-1222" class="poison-phone">Call 1-800-222-1222</a>
+      <a href="tel:1-800-222-1222" class="agency-link">Call 1-800-222-1222</a>
     </div>
   </div>
 </section>
 
-<!-- SECTION 3: RED FLAGS (matching icons) -->
+<!-- SECTION 3: RED FLAGS (icons: research=IMG_8562, disease=IMG_8563, hidden=IMG_8564, candy=IMG_8565, notFDA=IMG_8566) -->
 <section class="panel">
   <h2>3. Red flags to watch for</h2>
   <p class="section-sub">Be alert to products and marketing that put people at risk.</p>
 
   <ul class="red-flags">
     <li><img src="IMG_8562.jpeg" alt="flag"><span>Sold as a "research chemical"</span></li>
-    <li><img src="IMG_8561.jpeg" alt="warning"><span>Claims to cure, treat, or prevent disease</span></li>
-    <li><img src="IMG_8560.jpeg" alt="label"><span>No ingredient list or hidden ingredients</span></li>
-    <li><img src="IMG_8553.jpeg" alt="candy"><span>Marketed next to candy, snacks, or energy drinks</span></li>
-    <li><img src="IMG_8556.jpeg" alt="FDA"><span>Not approved by the FDA</span></li>
+    <li><img src="IMG_8563.jpeg" alt="warning"><span>Claims to cure, treat, or prevent disease</span></li>
+    <li><img src="IMG_8564.jpeg" alt="label"><span>No ingredient list or hidden ingredients</span></li>
+    <li><img src="IMG_8565.jpeg" alt="candy"><span>Marketed next to candy, snacks, or energy drinks</span></li>
+    <li><img src="IMG_8566.jpeg" alt="FDA"><span>Not approved by the FDA</span></li>
   </ul>
 </section>
 
-<!-- BEFORE YOU SUBMIT + THANK YOU -->
+<!-- BEFORE YOU SUBMIT (IMG_8561.jpeg) -->
 <section class="panel">
   <div class="before-submit">
-    <h3>Before you submit</h3>
-    <ul>
-      <li>Report facts, not accusations.</li>
-      <li>Stick to what you saw and have evidence for.</li>
-      <li>Include photographs when possible.</li>
-      <li>The agencies above determine whether a violation has occurred.</li>
-    </ul>
+    <img src="IMG_8561.jpeg" alt="warning icon">
+    <div>
+      <h3>Before you submit</h3>
+      <ul>
+        <li>Report facts, not accusations.</li>
+        <li>Stick to what you saw and have evidence for.</li>
+        <li>Include photographs when possible.</li>
+        <li>The agencies above determine whether a violation has occurred.</li>
+      </ul>
+    </div>
   </div>
+</section>
+
+<!-- THANK YOU PANEL (IMG_8567.jpeg) -->
+<section class="panel">
   <div class="thankyou">
-    Your report helps protect your community and hold irresponsible sellers accountable.<br>
-    <strong>Thank you for taking action.</strong>
+    <img src="IMG_8567.jpeg" alt="community icon">
+    <p>Your report helps protect your community and hold irresponsible sellers accountable.<br><strong>Thank you for taking action.</strong></p>
   </div>
 </section>
 
