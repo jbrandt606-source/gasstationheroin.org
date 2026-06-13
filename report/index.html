@@ -173,7 +173,7 @@ body{
   transform:translateY(-2px);
 }
 
-/* icon + text rows */
+/* icon + text rows (for documentation) */
 .icon-row{
   display:flex;
   gap:18px;
@@ -206,47 +206,72 @@ body{
   line-height:1.4;
 }
 
-/* agency grid */
+/* AGENCY SECTION: horizontal scroll on mobile, grid on desktop */
+.agency-scroll{
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  margin-bottom:10px;
+}
+
+.agency-scroll::-webkit-scrollbar{
+  height:6px;
+}
+.agency-scroll::-webkit-scrollbar-track{
+  background:#1e1e24;
+  border-radius:10px;
+}
+.agency-scroll::-webkit-scrollbar-thumb{
+  background:var(--red);
+  border-radius:10px;
+}
+
 .agency-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-  margin-bottom:20px;
+  display:flex;
+  gap:18px;
+  width:max-content;
+  padding-bottom:8px;
 }
 
 .agency-card{
   background:rgba(0,0,0,.55);
   border:1px solid #3c424d;
-  border-radius:12px;
-  padding:16px;
+  border-radius:16px;
+  padding:18px 14px;
+  width:220px;
+  min-width:220px;
   display:flex;
+  flex-direction:column;
   align-items:center;
-  gap:14px;
+  text-align:center;
   transition:0.2s;
 }
 
+.agency-card:hover{
+  border-color:var(--red);
+  transform:translateY(-3px);
+}
+
 .agency-card img{
-  width:48px;
-  height:48px;
+  width:64px;
+  height:64px;
   object-fit:contain;
+  margin-bottom:12px;
 }
 
-.agency-card .agency-info{
-  flex:1;
-}
-
-.agency-card .agency-name{
+.agency-name{
   font-weight:900;
   font-size:18px;
   text-transform:uppercase;
-  margin-bottom:4px;
+  margin-bottom:8px;
 }
 
-.agency-card .agency-desc{
+.agency-desc{
   font-size:13px;
   color:var(--muted);
-  line-height:1.3;
-  margin-bottom:8px;
+  line-height:1.35;
+  margin-bottom:14px;
 }
 
 .agency-link{
@@ -256,7 +281,7 @@ body{
   text-decoration:none;
   font-weight:800;
   font-size:13px;
-  padding:6px 14px;
+  padding:8px 16px;
   border-radius:40px;
   text-transform:uppercase;
   transition:0.2s;
@@ -297,6 +322,32 @@ body{
   color:var(--muted);
   font-size:15px;
   line-height:1.4;
+}
+
+/* before you submit */
+.before-submit{
+  background:rgba(0,0,0,.45);
+  border-left:4px solid var(--red);
+  padding:20px 22px;
+  border-radius:12px;
+  margin-top:20px;
+}
+
+.before-submit h3{
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:12px;
+  text-transform:uppercase;
+}
+
+.before-submit ul{
+  margin-left:20px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.before-submit li{
+  margin:8px 0;
 }
 
 /* footer */
@@ -359,7 +410,7 @@ body{
   color:#7a7e8c;
 }
 
-/* mobile */
+/* MOBILE */
 @media(max-width:760px){
   .site-header{
     height:64px;
@@ -378,12 +429,20 @@ body{
   .hero p{font-size:17px;}
   .panel{margin:14px 16px;padding:18px 14px;}
   .panel h2{font-size:22px;}
-  .agency-grid{grid-template-columns:1fr;}
   .icon-row{flex-direction:column;align-items:flex-start;}
   .icon-row img{width:50px;height:50px;}
   .start-here{margin:0 16px 14px 16px;}
   .start-btn{font-size:18px;padding:14px 24px;}
   .footer{flex-direction:column;margin:14px 16px 24px;}
+  .agency-card{
+    width:200px;
+    min-width:200px;
+    padding:14px 10px;
+  }
+  .agency-card img{
+    width:56px;
+    height:56px;
+  }
 }
 </style>
 </head>
@@ -438,52 +497,44 @@ body{
   </div>
 </section>
 
-<!-- Section 2: Who should I report it to? -->
+<!-- Section 2: Who should I report it to? (horizontally scrollable on mobile) -->
 <section class="panel">
   <h2>2. Who should I report it to?</h2>
   <p class="section-sub">Different agencies handle different issues. Choose the one that best fits what you saw.</p>
 
-  <div class="agency-grid">
-    <!-- FDA -->
-    <div class="agency-card">
-      <img src="IMG_8567.jpeg" alt="FDA icon">
-      <div class="agency-info">
+  <div class="agency-scroll">
+    <div class="agency-grid">
+      <!-- FDA -->
+      <div class="agency-card">
+        <img src="IMG_8567.jpeg" alt="FDA icon">
         <div class="agency-name">FDA</div>
         <div class="agency-desc">Unapproved drugs, supplements, adverse events, and unsafe products.</div>
         <a href="https://www.accessdata.fda.gov/scripts/medwatch/index.cfm" target="_blank" rel="noopener noreferrer" class="agency-link">Report to FDA →</a>
       </div>
-    </div>
-    <!-- Consumer Protection (FTC) -->
-    <div class="agency-card">
-      <img src="IMG_8566.jpeg" alt="FTC icon">
-      <div class="agency-info">
+      <!-- Consumer Protection (FTC) -->
+      <div class="agency-card">
+        <img src="IMG_8566.jpeg" alt="FTC icon">
         <div class="agency-name">Consumer Protection</div>
         <div class="agency-desc">Misleading advertising, marketing claims, scams, and deceptive business practices.</div>
         <a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener noreferrer" class="agency-link">Report Fraud →</a>
       </div>
-    </div>
-    <!-- Local Health Department -->
-    <div class="agency-card">
-      <img src="IMG_8565.jpeg" alt="health dept icon">
-      <div class="agency-info">
+      <!-- Local Health Department -->
+      <div class="agency-card">
+        <img src="IMG_8565.jpeg" alt="health dept icon">
         <div class="agency-name">Local Health Department</div>
         <div class="agency-desc">Unsafe products, retail food or supplement concerns, and public health issues.</div>
         <a href="https://www.naccho.org/membership/lhd-directory" target="_blank" rel="noopener noreferrer" class="agency-link">Find my health department →</a>
       </div>
-    </div>
-    <!-- State Attorney General -->
-    <div class="agency-card">
-      <img src="IMG_8564.jpeg" alt="AG icon">
-      <div class="agency-info">
+      <!-- State Attorney General -->
+      <div class="agency-card">
+        <img src="IMG_8564.jpeg" alt="AG icon">
         <div class="agency-name">State Attorney General</div>
         <div class="agency-desc">Consumer protection complaints and unlawful business practices.</div>
         <a href="https://www.naag.org/find-my-ag/" target="_blank" rel="noopener noreferrer" class="agency-link">Contact AG →</a>
       </div>
-    </div>
-    <!-- Poison Center -->
-    <div class="agency-card">
-      <img src="IMG_8563.jpeg" alt="poison icon">
-      <div class="agency-info">
+      <!-- Poison Center -->
+      <div class="agency-card">
+        <img src="IMG_8563.jpeg" alt="poison icon">
         <div class="agency-name">Poison Center</div>
         <div class="agency-desc">Adverse reactions or exposures – call or report online.</div>
         <a href="https://www.poison.org" target="_blank" rel="noopener noreferrer" class="agency-link">Poison Control →</a>
@@ -514,7 +565,24 @@ body{
       <img src="IMG_8553.jpeg" alt="candy icon">
       <div><strong>Marketed next to candy, snacks, or energy drinks</strong><p>Targeting youth with bright packaging and sweet flavors is a common tactic.</p></div>
     </li>
+    <li>
+      <img src="IMG_8556.jpeg" alt="FDA seal">
+      <div><strong>Not approved by the FDA</strong><p>Products that claim to be dietary supplements but make drug-like claims are often not FDA‑approved.</p></div>
+    </li>
   </ul>
+</section>
+
+<!-- Before you submit (new section from attached image) -->
+<section class="panel">
+  <div class="before-submit">
+    <h3>Before you submit</h3>
+    <ul>
+      <li>Report facts, not accusations.</li>
+      <li>Stick to what you saw and have evidence for.</li>
+      <li>Include photographs when possible.</li>
+      <li>The agencies above determine whether a violation has occurred.</li>
+    </ul>
+  </div>
 </section>
 
 <!-- Footer (no help track section) -->
@@ -529,10 +597,10 @@ body{
   </div>
   <div class="footer-col">
     <h4>Quick Links</h4>
-    <a href="#">Learn More</a>
     <a href="/product/index.html">Product Guide</a>
     <a href="/warning/index.html">Warning Signs</a>
     <a href="/talk/index.html">How to Talk</a>
+    <a href="#">Learn More</a>
   </div>
   <div class="footer-col">
     <h4>Connect</h4>
