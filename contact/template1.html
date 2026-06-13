@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Report a Public Health Concern | Gas Station Heroin</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --red:#e31b23;
+  --dark:#050505;
+  --panel:#0b0d12;
+  --line:#333842;
+  --text:#fff;
+  --muted:#d7d7d7;
+}
+
+html,body{
+  background:#000;
+  color:var(--text);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
+}
+
+body{
+  background:
+    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.96)),
+    url("dark-panel-bg.jpeg") center/cover fixed no-repeat;
+}
+
+.page{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+  background:#050505;
+}
+
+.site-header{
+  height:70px;
+  padding:0 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid #2a2a2a;
+  background:#030303;
+}
+
+.logo{
+  font-size:29px;
+  font-weight:950;
+  text-decoration:none;
+  color:#fff;
+  letter-spacing:-1px;
+  text-transform:uppercase;
+  line-height:.9;
+}
+
+.logo span{color:var(--red)}
+
+.menu{
+  font-size:34px;
+  color:#fff;
+}
+
+/* HERO */
+.hero{
+  min-height:320px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:
+    linear-gradient(90deg,#050505 0%,rgba(0,0,0,.88) 42%,rgba(0,0,0,.2) 100%),
+    url("IMG_8607.jpeg") right center/cover no-repeat;
+}
+
+.hero-copy{
+  padding:40px 30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.kicker{
+  color:var(--red);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:14px;
+  margin-bottom:12px;
+}
+
+.hero h1{
+  font-size:54px;
+  line-height:.92;
+  text-transform:uppercase;
+  font-weight:950;
+  letter-spacing:-1px;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--red);
+}
+
+.underline{
+  width:84px;
+  height:5px;
+  background:var(--red);
+  margin:18px 0;
+}
+
+.hero p{
+  max-width:430px;
+  color:#f1f1f1;
+  font-size:20px;
+  line-height:1.35;
+}
+
+/* PANELS */
+.panel{
+  margin:18px 28px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px;
+  background:
+    linear-gradient(145deg,rgba(10,12,16,.96),rgba(3,3,3,.98)),
+    url("dark-panel-bg.jpeg") center/cover no-repeat;
+}
+
+.panel h2{
+  font-size:27px;
+  line-height:1;
+  text-transform:uppercase;
+  margin-bottom:8px;
+  color:var(--red);
+  letter-spacing:-0.3px;
+}
+
+.section-sub{
+  color:var(--muted);
+  font-size:16px;
+  margin-bottom:24px;
+  line-height:1.4;
+  border-bottom:1px solid var(--line);
+  padding-bottom:12px;
+}
+
+/* card grid */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-bottom:20px;
+}
+.card{
+  background:rgba(0,0,0,.55);
+  border:1px solid #3c424d;
+  border-radius:16px;
+  padding:18px;
+  text-align:center;
+  transition:0.2s;
+}
+.card:hover{
+  border-color:var(--red);
+  transform:translateY(-3px);
+}
+.card img{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+  margin-bottom:12px;
+}
+.card h3{
+  font-weight:900;
+  font-size:18px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.card p{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.35;
+  margin-bottom:14px;
+}
+.card .btn{
+  display:inline-block;
+  background:var(--red);
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  font-size:13px;
+  padding:8px 16px;
+  border-radius:40px;
+  text-transform:uppercase;
+  transition:0.2s;
+}
+.card .btn:hover{
+  background:#a01018;
+}
+
+/* action button row */
+.action-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:20px;
+}
+.action-btn{
+  background:var(--red);
+  color:#fff;
+  text-decoration:none;
+  font-weight:900;
+  text-transform:uppercase;
+  padding:12px 24px;
+  border-radius:60px;
+  font-size:16px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:0.2s;
+}
+.action-btn:hover{
+  background:#c5151c;
+  transform:translateY(-2px);
+}
+.action-btn img{
+  width:24px;
+  height:24px;
+}
+
+/* form + letter preview */
+.form-letter-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-bottom:24px;
+}
+.form-group{
+  margin-bottom:16px;
+}
+.form-group label{
+  display:block;
+  font-weight:800;
+  font-size:14px;
+  text-transform:uppercase;
+  margin-bottom:6px;
+  color:var(--muted);
+}
+.form-group input, .form-group textarea{
+  width:100%;
+  background:#1a1a22;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:10px 12px;
+  color:#fff;
+  font-size:14px;
+  font-family:inherit;
+}
+.form-group textarea{
+  resize:vertical;
+  min-height:60px;
+}
+.letter-preview{
+  background:rgba(0,0,0,.45);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px;
+  overflow-y:auto;
+  max-height:600px;
+}
+.letter-preview h3{
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:16px;
+  color:var(--red);
+}
+.preview-content{
+  white-space:pre-wrap;
+  font-size:14px;
+  line-height:1.5;
+  color:#e0e0e0;
+}
+.template-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
+  justify-content:center;
+}
+.template-btn{
+  background:rgba(0,0,0,.6);
+  border:1px solid var(--red);
+  border-radius:40px;
+  padding:10px 20px;
+  color:#fff;
+  font-weight:800;
+  font-size:14px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:0.2s;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.template-btn:hover{
+  background:var(--red);
+  transform:translateY(-2px);
+}
+.template-btn img{
+  width:20px;
+  height:20px;
+}
+
+/* tips section */
+.tips-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:16px;
+}
+.tip-item{
+  background:rgba(0,0,0,.3);
+  border-left:3px solid var(--red);
+  padding:12px 16px;
+  font-size:14px;
+  color:var(--muted);
+}
+.tip-item strong{
+  color:#fff;
+  display:block;
+  margin-bottom:4px;
+}
+
+/* FOOTER */
+.footer{
+  margin:18px 28px 28px;
+  border-top:1px solid var(--line);
+  padding-top:28px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:24px;
+  font-size:14px;
+  color:#b0b4c0;
+}
+.footer-col{
+  flex:1;
+  min-width:140px;
+}
+.footer-col h4{
+  color:#fff;
+  font-weight:900;
+  margin-bottom:12px;
+  text-transform:uppercase;
+  font-size:15px;
+}
+.footer-col a{
+  display:block;
+  color:#b0b4c0;
+  text-decoration:none;
+  margin-bottom:8px;
+  transition:0.2s;
+}
+.footer-col a:hover{
+  color:var(--red);
+}
+.crisis-line{
+  background:#1a1a22;
+  border-radius:12px;
+  padding:14px;
+  margin-top:12px;
+}
+.crisis-line strong{
+  color:#fff;
+  display:block;
+  font-size:18px;
+}
+.copyright{
+  text-align:center;
+  margin-top:24px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:12px;
+  color:#7a7e8c;
+}
+
+@media(max-width:760px){
+  .site-header{height:64px;padding:0 18px;}
+  .logo{font-size:24px}
+  .hero{
+    min-height:330px;
+    grid-template-columns:1fr;
+    background:
+      linear-gradient(180deg,#050505 0%,rgba(0,0,0,.58) 48%,#050505 100%),
+      url("IMG_8607.jpeg") center/cover no-repeat;
+  }
+  .hero-copy{padding:30px 20px;}
+  .hero h1{font-size:43px;}
+  .hero p{font-size:17px;}
+  .panel{margin:14px 16px;padding:18px 14px;}
+  .panel h2{font-size:22px;}
+  .card-grid{grid-template-columns:1fr;}
+  .form-letter-container{grid-template-columns:1fr;}
+  .tips-grid{grid-template-columns:1fr;}
+  .template-buttons{flex-wrap:wrap;}
+  .footer{flex-direction:column;margin:14px 16px 24px;}
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+<header class="site-header">
+  <a class="logo" href="/">Gas Station <span>Heroin</span></a>
+  <div class="menu">☰</div>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="kicker">Report a Public Health Concern</div>
+    <h1>Use this template to contact your state or local health department</h1>
+    <div class="underline"></div>
+    <p>Fill in the details below, then copy, email, print, or download your letter.</p>
+  </div>
+</section>
+
+<!-- TEMPLATE LETTER FORM + PREVIEW -->
+<section class="panel">
+  <h2>Template Letter</h2>
+  <p class="section-sub">Fill in your information. The preview updates automatically.</p>
+  
+  <div class="form-letter-container">
+    <!-- LEFT: FORM -->
+    <div>
+      <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" id="productName" placeholder="e.g., Kratom shot, 7-OH tablet">
+      </div>
+      <div class="form-group">
+        <label>Brand (if known)</label>
+        <input type="text" id="brand" placeholder="e.g., OPMS, Hydroxie">
+      </div>
+      <div class="form-group">
+        <label>Store Name</label>
+        <input type="text" id="storeName" placeholder="e.g., Corner Gas & Vape">
+      </div>
+      <div class="form-group">
+        <label>Store Address</label>
+        <input type="text" id="storeAddress" placeholder="123 Main St, Anytown, ST 12345">
+      </div>
+      <div class="form-group">
+        <label>Date Observed</label>
+        <input type="text" id="dateObserved" placeholder="MM/DD/YYYY">
+      </div>
+      <div class="form-group">
+        <label>Concerns (select all that apply)</label>
+        <textarea id="concerns" rows="2">Potentially dangerous ingredients</textarea>
+      </div>
+      <div class="form-group">
+        <label>Additional Details</label>
+        <textarea id="additionalDetails" rows="3" placeholder="Describe your concerns, any effects, etc."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="yourName" placeholder="Jane Doe">
+      </div>
+      <div class="form-group">
+        <label>Your Address</label>
+        <input type="text" id="yourAddress" placeholder="456 Oak Ave, Yourtown, ST 67890">
+      </div>
+      <div class="form-group">
+        <label>Your Email</label>
+        <input type="email" id="yourEmail" placeholder="jane@example.com">
+      </div>
+      <div class="form-group">
+        <label>Your Phone</label>
+        <input type="tel" id="yourPhone" placeholder="(555) 123-4567">
+      </div>
+    </div>
+    
+    <!-- RIGHT: PREVIEW -->
+    <div class="letter-preview">
+      <h3>Letter Preview</h3>
+      <div class="preview-content" id="previewContent"></div>
+    </div>
+  </div>
+  
+  <!-- ACTION BUTTONS -->
+  <div class="template-buttons">
+    <button class="template-btn" id="copyBtn"><img src="IMG_8608.jpeg" alt=""> Copy Template</button>
+    <button class="template-btn" id="downloadPdfBtn"><img src="IMG_8609.jpeg" alt=""> Download PDF</button>
+    <button class="template-btn" id="emailBtn"><img src="IMG_8610.jpeg" alt=""> Open in Email</button>
+    <button class="template-btn" id="printBtn"><img src="IMG_8611.jpeg" alt=""> Print Template</button>
+  </div>
+</section>
+
+<!-- WHO SHOULD I CONTACT? -->
+<section class="panel">
+  <h2>Who should I contact?</h2>
+  <div class="card-grid">
+    <div class="card">
+      <img src="IMG_8612.jpeg" alt="State Health Department">
+      <h3>State Health Department</h3>
+      <p>For issues affecting the entire state.</p>
+      <a href="https://www.cdc.gov/public-health-gateway/php/index.html" target="_blank" rel="noopener noreferrer" class="btn">State Health Department →</a>
+    </div>
+    <div class="card">
+      <img src="IMG_8613.jpeg" alt="Local Health Department">
+      <h3>Local Health Department</h3>
+      <p>For issues in your city or county.</p>
+      <a href="https://www.usa.gov/local-governments" target="_blank" rel="noopener noreferrer" class="btn">Local Health Department →</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEED HELP FINDING CONTACTS? -->
+<section class="panel">
+  <h2>Need help finding contacts?</h2>
+  <div class="action-row">
+    <a href="https://www.naccho.org/membership/lhd-directory" target="_blank" rel="noopener noreferrer" class="action-btn">
+      <img src="IMG_8613.jpeg" alt=""> Find My Health Department
+    </a>
+    <a href="https://www.naag.org/find-my-ag/" target="_blank" rel="noopener noreferrer" class="action-btn">
+      <img src="IMG_8590.jpeg" alt=""> Find My Attorney General
+    </a>
+  </div>
+</section>
+
+<!-- TIPS FOR MAKING AN IMPACT -->
+<section class="panel">
+  <h2>Tips for making an impact</h2>
+  <div class="tips-grid">
+    <div class="tip-item"><strong>Be specific</strong> Include as many details as possible – product names, store address, dates.</div>
+    <div class="tip-item"><strong>Include photos</strong> Attach images of the product, packaging, and shelf placement.</div>
+    <div class="tip-item"><strong>Provide location</strong> Exact store address helps investigators verify.</div>
+    <div class="tip-item"><strong>Stay respectful & factual</strong> Stick to what you observed. Follow up if you don’t hear back.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-col">
+    <h4>Gas Station Heroin</h4>
+    <p style="color:#b0b4c0; margin-bottom:10px;">Awareness. Prevention. Action.</p>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <a href="#">Contact</a>
+    <a href="/help/index.html">Get Help</a>
+  </div>
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <a href="#">Learn</a>
+    <a href="#">Map</a>
+    <a href="#">News</a>
+    <a href="#">Resources</a>
+    <a href="/help/index.html">Get Help</a>
+  </div>
+  <div class="footer-col">
+    <h4>Connect</h4>
+    <a href="#">Facebook</a>
+    <a href="#">Twitter</a>
+    <a href="#">Instagram</a>
+    <div class="crisis-line">
+      <strong>In crisis?</strong>
+      Call or text <strong>988</strong><br>
+      Suicide & Crisis Lifeline<br>
+      Call <strong>911</strong> if it's an emergency.
+    </div>
+  </div>
+</footer>
+<div class="copyright">
+  © 2024 GasStationHeroin.org
+</div>
+
+<script>
+  // DOM elements
+  const productName = document.getElementById('productName');
+  const brand = document.getElementById('brand');
+  const storeName = document.getElementById('storeName');
+  const storeAddress = document.getElementById('storeAddress');
+  const dateObserved = document.getElementById('dateObserved');
+  const concerns = document.getElementById('concerns');
+  const additionalDetails = document.getElementById('additionalDetails');
+  const yourName = document.getElementById('yourName');
+  const yourAddress = document.getElementById('yourAddress');
+  const yourEmail = document.getElementById('yourEmail');
+  const yourPhone = document.getElementById('yourPhone');
+  const previewDiv = document.getElementById('previewContent');
+
+  function generateLetterText() {
+    return `Suggested Recipient: State Health Department or Local Health Department
+
+Subject Line: Concern Regarding Potentially Dangerous Products Being Sold in Retail Stores
+
+Dear [State or Local Health Department],
+
+I am writing to express concern regarding products being sold in retail stores within my community.
+
+The product(s) I observed include:
+- Product Name: ${productName.value || '[Insert Product Name]'}
+- Brand (if known): ${brand.value || '[Insert Brand]'}
+- Store Name: ${storeName.value || '[Insert Store Name]'}
+- Store Address: ${storeAddress.value || '[Insert Store Address]'}
+- Date Observed: ${dateObserved.value || '[Insert Date]'}
+
+I am concerned because:
+${concerns.value || '[List concerns]'}
+
+Additional Details:
+${additionalDetails.value || '[Describe your concerns and any effects you or others have experienced.]'}
+
+I respectfully request that your agency review these products and determine whether any public health or consumer protection concerns warrant further investigation or action.
+
+Thank you for your time and consideration.
+
+Sincerely,
+${yourName.value || '[Your Name]'}
+${yourAddress.value || '[Your Address]'}
+${yourEmail.value || '[Your Email]'}
+${yourPhone.value || '[Your Phone Number]'}`;
+  }
+
+  function updatePreview() {
+    previewDiv.innerText = generateLetterText();
+  }
+
+  // Attach input events
+  const inputs = [productName, brand, storeName, storeAddress, dateObserved, concerns, additionalDetails, yourName, yourAddress, yourEmail, yourPhone];
+  inputs.forEach(inp => inp.addEventListener('input', updatePreview));
+  updatePreview();
+
+  // Copy button
+  document.getElementById('copyBtn').addEventListener('click', async () => {
+    const text = generateLetterText();
+    try {
+      await navigator.clipboard.writeText(text);
+      alert('Template copied to clipboard!');
+    } catch (err) {
+      alert('Failed to copy. Please select and copy manually.');
+    }
+  });
+
+  // Email button
+  document.getElementById('emailBtn').addEventListener('click', () => {
+    const subject = encodeURIComponent('Concern Regarding Potentially Dangerous Products Being Sold in Retail Stores');
+    const body = encodeURIComponent(generateLetterText());
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+  });
+
+  // Print button
+  document.getElementById('printBtn').addEventListener('click', () => {
+    const printWindow = window.open('', '_blank');
+    const letterHtml = generateLetterText().replace(/\n/g, '<br>');
+    printWindow.document.write(`
+      <html>
+      <head><title>Public Health Concern Letter</title><style>body{font-family:system-ui; padding:40px; max-width:800px; margin:0 auto;}</style></head>
+      <body>${letterHtml}</body>
+      </html>
+    `);
+    printWindow.document.close();
+    printWindow.print();
+  });
+
+  // Download PDF (uses browser print with save as PDF)
+  document.getElementById('downloadPdfBtn').addEventListener('click', () => {
+    const printWindow = window.open('', '_blank');
+    const letterHtml = generateLetterText().replace(/\n/g, '<br>');
+    printWindow.document.write(`
+      <html>
+      <head><title>Public Health Concern Letter</title><style>body{font-family:system-ui; padding:40px; max-width:800px; margin:0 auto;}</style></head>
+      <body>${letterHtml}</body>
+      </html>
+    `);
+    printWindow.document.close();
+    printWindow.print();  // User can choose "Save as PDF"
+  });
+</script>
+
+</main>
+</body>
+</html>
