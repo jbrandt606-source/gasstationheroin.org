@@ -173,7 +173,7 @@ body{
   transform:translateY(-2px);
 }
 
-/* icon + text rows (for documentation) */
+/* documentation icon rows */
 .icon-row{
   display:flex;
   gap:18px;
@@ -206,7 +206,7 @@ body{
   line-height:1.4;
 }
 
-/* AGENCY SECTION: horizontal scroll on mobile, grid on desktop */
+/* agency cards (horizontally scrollable on mobile) */
 .agency-scroll{
   overflow-x:auto;
   overflow-y:hidden;
@@ -239,8 +239,8 @@ body{
   border:1px solid #3c424d;
   border-radius:16px;
   padding:18px 14px;
-  width:220px;
-  min-width:220px;
+  width:240px;
+  min-width:240px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -254,8 +254,8 @@ body{
 }
 
 .agency-card img{
-  width:64px;
-  height:64px;
+  width:70px;
+  height:70px;
   object-fit:contain;
   margin-bottom:12px;
 }
@@ -291,7 +291,19 @@ body{
   background:#a01018;
 }
 
-/* red flags list */
+.poison-phone{
+  background:var(--red);
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  font-size:14px;
+  padding:8px 16px;
+  border-radius:40px;
+  display:inline-block;
+  margin-top:6px;
+}
+
+/* red flags */
 .red-flags{
   list-style:none;
   margin-top:10px;
@@ -324,7 +336,7 @@ body{
   line-height:1.4;
 }
 
-/* before you submit */
+/* before you submit + thank you */
 .before-submit{
   background:rgba(0,0,0,.45);
   border-left:4px solid var(--red);
@@ -348,6 +360,17 @@ body{
 
 .before-submit li{
   margin:8px 0;
+}
+
+.thankyou{
+  text-align:center;
+  margin-top:24px;
+  padding:16px;
+  background:rgba(227,27,35,.15);
+  border-radius:12px;
+  font-weight:700;
+  font-size:18px;
+  color:var(--muted);
 }
 
 /* footer */
@@ -435,13 +458,13 @@ body{
   .start-btn{font-size:18px;padding:14px 24px;}
   .footer{flex-direction:column;margin:14px 16px 24px;}
   .agency-card{
-    width:200px;
-    min-width:200px;
+    width:210px;
+    min-width:210px;
     padding:14px 10px;
   }
   .agency-card img{
-    width:56px;
-    height:56px;
+    width:60px;
+    height:60px;
   }
 }
 </style>
@@ -459,7 +482,7 @@ body{
     <div class="kicker">Report Dangerous Products</div>
     <h1>See Something.<br><span>Say Something.</span></h1>
     <div class="underline"></div>
-    <p>Gas stations, vape shops, and convenience stores sometimes sell unregulated, drug-like products. Your report can protect families and hold sellers accountable.</p>
+    <p>See something concerning in a gas station, vape shop, or convenience store? Here’s who has the authority to investigate.</p>
   </div>
 </section>
 
@@ -467,7 +490,7 @@ body{
   <a href="#start" class="start-btn">Start Here</a>
 </div>
 
-<!-- Section 1: What to document -->
+<!-- SECTION 1: WHAT TO DOCUMENT -->
 <section class="panel" id="start">
   <h2>1. What to document</h2>
   <p class="section-sub">The more information you have, the more helpful your report will be.</p>
@@ -497,7 +520,7 @@ body{
   </div>
 </section>
 
-<!-- Section 2: Who should I report it to? (horizontally scrollable on mobile) -->
+<!-- SECTION 2: WHO SHOULD I REPORT IT TO? -->
 <section class="panel">
   <h2>2. Who should I report it to?</h2>
   <p class="section-sub">Different agencies handle different issues. Choose the one that best fits what you saw.</p>
@@ -537,13 +560,13 @@ body{
         <img src="IMG_8563.jpeg" alt="poison icon">
         <div class="agency-name">Poison Center</div>
         <div class="agency-desc">Adverse reactions or exposures – call or report online.</div>
-        <a href="https://www.poison.org" target="_blank" rel="noopener noreferrer" class="agency-link">Poison Control →</a>
+        <a href="tel:1-800-222-1222" class="poison-phone">Call 1-800-222-1222</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Section 3: Red flags to watch for -->
+<!-- SECTION 3: RED FLAGS TO WATCH FOR -->
 <section class="panel">
   <h2>3. Red flags to watch for</h2>
   <p class="section-sub">Be alert to products and marketing that put people at risk.</p>
@@ -551,28 +574,28 @@ body{
   <ul class="red-flags">
     <li>
       <img src="IMG_8562.jpeg" alt="flag icon">
-      <div><strong>Sold as a "research chemical"</strong><p>Report facts, not accusations. Stick to what you saw and have evidence for.</p></div>
+      <div><strong>Sold as a "research chemical"</strong></div>
     </li>
     <li>
       <img src="IMG_8561.jpeg" alt="warning icon">
-      <div><strong>Claims to cure, treat, or prevent disease</strong><p>Unproven health claims are a major warning sign. Include photographs when possible.</p></div>
+      <div><strong>Claims to cure, treat, or prevent disease</strong></div>
     </li>
     <li>
       <img src="IMG_8560.jpeg" alt="label icon">
-      <div><strong>No ingredient list or hidden ingredients</strong><p>Products that avoid transparency are often unregulated and dangerous.</p></div>
+      <div><strong>No ingredient list or hidden ingredients</strong></div>
     </li>
     <li>
       <img src="IMG_8553.jpeg" alt="candy icon">
-      <div><strong>Marketed next to candy, snacks, or energy drinks</strong><p>Targeting youth with bright packaging and sweet flavors is a common tactic.</p></div>
+      <div><strong>Marketed next to candy, snacks, or energy drinks</strong></div>
     </li>
     <li>
       <img src="IMG_8556.jpeg" alt="FDA seal">
-      <div><strong>Not approved by the FDA</strong><p>Products that claim to be dietary supplements but make drug-like claims are often not FDA‑approved.</p></div>
+      <div><strong>Not approved by the FDA</strong></div>
     </li>
   </ul>
 </section>
 
-<!-- Before you submit (new section from attached image) -->
+<!-- BEFORE YOU SUBMIT + THANK YOU -->
 <section class="panel">
   <div class="before-submit">
     <h3>Before you submit</h3>
@@ -583,9 +606,13 @@ body{
       <li>The agencies above determine whether a violation has occurred.</li>
     </ul>
   </div>
+  <div class="thankyou">
+    Your report helps protect your community and hold irresponsible sellers accountable.<br>
+    <strong>Thank you for taking action.</strong>
+  </div>
 </section>
 
-<!-- Footer (no help track section) -->
+<!-- FOOTER (no help track section) -->
 <footer class="footer">
   <div class="footer-col">
     <h4>Gas Station Heroin</h4>
