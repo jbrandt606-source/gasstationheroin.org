@@ -727,24 +727,18 @@ body.menu-open {
   </div>
 </div>
 
-<!-- ===== ORIGINAL PAGE CONTENT (unchanged) ===== -->
+<!-- ===== MODIFIED HERO (removed buttons) ===== -->
 <section class="hero">
   <div class="hero-copy">
     <div class="kicker">Contact Officials</div>
     <h1>Change happens when communities speak up.</h1>
     <div class="underline"></div>
     <p>Contact the officials who can take action to protect public health and hold retailers accountable.</p>
-    <div class="hero-actions">
-      <a href="#" class="action-btn">
-        <img src="IMG_8594.jpeg" alt="" style="width:24px;height:24px;"> Find My State
-      </a>
-      <a href="#" class="action-link">
-        <img src="IMG_8600.jpeg" alt="" style="width:20px;height:20px;"> Learn How To Write An Effective Letter
-      </a>
-    </div>
+    <!-- removed Find My State and Learn How To Write buttons -->
   </div>
 </section>
 
+<!-- SECTION 1: WHO CAN HELP IN YOUR STATE OR COMMUNITY? -->
 <section class="panel">
   <h2>1. Who can help in your state or community?</h2>
   <p class="section-sub">These officials and agencies have the power to create change.</p>
@@ -784,6 +778,7 @@ body.menu-open {
   </div>
 </section>
 
+<!-- SECTION 2: TAKE ACTION IN YOUR COMMUNITY -->
 <section class="panel">
   <h2>2. Take action in your community</h2>
   <p class="section-sub">Local officials can also make a difference.</p>
@@ -817,6 +812,7 @@ body.menu-open {
   </div>
 </section>
 
+<!-- SECTION 3: WHAT SHOULD I SAY? -->
 <section class="panel">
   <h2>3. What should I say?</h2>
   <p class="section-sub">Use these message templates to make your voice heard.</p>
@@ -844,6 +840,7 @@ body.menu-open {
   </div>
 </section>
 
+<!-- MAKE YOUR MESSAGE STRONGER -->
 <section class="panel">
   <h2>Make your message stronger</h2>
   <div class="scroll-x">
@@ -872,6 +869,7 @@ body.menu-open {
   </div>
 </section>
 
+<!-- YOUR VOICE MATTERS BOX -->
 <section class="panel">
   <div class="voice-box">
     <img src="IMG_8602.jpeg" alt="Your Voice Matters">
@@ -882,23 +880,9 @@ body.menu-open {
   </div>
 </section>
 
-<section class="panel">
-  <h2>Find your state</h2>
-  <p class="section-sub">Select your state to find your officials and view pending legislation.</p>
-  <div style="background:rgba(0,0,0,.45); border-radius:12px; padding:18px; display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between;">
-    <div style="display:flex; gap:12px;">
-      <span style="background:var(--red); padding:4px 12px; border-radius:40px; font-size:13px; font-weight:800;">Active Legislative Efforts</span>
-      <span style="background:#333; padding:4px 12px; border-radius:40px; font-size:13px;">Pending Legislation</span>
-      <span style="background:#333; padding:4px 12px; border-radius:40px; font-size:13px;">No Known Activity</span>
-    </div>
-    <select style="background:#1a1a22; border:1px solid var(--line); color:#fff; padding:10px 16px; border-radius:40px; font-size:14px;">
-      <option>Select Your State</option>
-      <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option>
-    </select>
-    <a href="#" class="btn" style="background:var(--red); padding:10px 20px;">View pending legislation →</a>
-  </div>
-</section>
+<!-- REMOVED: "Find your state" panel entirely -->
 
+<!-- TOGETHER WE CAN PROTECT OUR COMMUNITIES -->
 <section class="panel">
   <div class="voice-box" style="background:rgba(227,27,35,.15); border-left-color:var(--red); justify-content:center;">
     <div style="text-align:center;">
@@ -908,34 +892,38 @@ body.menu-open {
   </div>
 </section>
 
+<!-- ===== UPDATED FOOTER: only active links (real internal pages + crisis hotline) ===== -->
 <footer class="footer">
   <div class="footer-col">
     <h4>Gas Station Heroin</h4>
     <p style="color:#b0b4c0; margin-bottom:10px;">Awareness. Prevention. Action.</p>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms of Use</a>
-    <a href="#">Contact</a>
+    <a href="/">Home</a>
+    <a href="/parent/index.html">Parent Guide</a>
+    <a href="/product/index.html">Identify Products</a>
+    <a href="/warning/index.html">Warning Signs</a>
+    <a href="/talk/index.html">Talk to Your Child</a>
     <a href="/help/index.html">Get Help</a>
+    <a href="/report/index.html">Report a Product</a>
+    <a href="/contact/index.html">Contact</a>
   </div>
   <div class="footer-col">
-    <h4>Quick Links</h4>
-    <a href="#">Learn</a>
-    <a href="#">Map</a>
-    <a href="#">News</a>
-    <a href="#">Resources</a>
-    <a href="/help/index.html">Get Help</a>
+    <h4>Substance Categories</h4>
+    <a href="/opioid/index.html">Opioids</a>
+    <a href="/sedatives/index.html">Sedatives</a>
+    <a href="/hallucinogens/index.html">Hallucinogens</a>
+    <a href="/inhalation/index.html">Inhalants</a>
+    <a href="/stimulants/index.html">Stimulants</a>
+    <a href="/sexual/index.html">Sexual Enhancement Products</a>
   </div>
   <div class="footer-col">
-    <h4>Connect</h4>
-    <a href="#">Facebook</a>
-    <a href="#">Twitter</a>
-    <a href="#">Instagram</a>
+    <h4>Connect & Help</h4>
     <div class="crisis-line">
       <strong>In crisis?</strong>
       Call or text <strong>988</strong><br>
       Suicide & Crisis Lifeline<br>
       Call <strong>911</strong> if it's an emergency.
     </div>
+    <a href="/help/index.html" style="margin-top:12px;">Get Help Now →</a>
   </div>
 </footer>
 <div class="copyright">
@@ -952,93 +940,52 @@ body.menu-open {
     const closeMenuBtn = document.getElementById('closeMenuBtn');
     const backButton = document.getElementById('backButton');
 
-    // Helper: open menu
     function openMenu() {
       slideMenu.classList.add('open');
       slideMenu.setAttribute('aria-hidden', 'false');
       document.body.classList.add('menu-open');
     }
-
-    // Helper: close menu
     function closeMenu() {
       slideMenu.classList.remove('open');
       slideMenu.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('menu-open');
     }
 
-    // Event listeners
-    if (hamburgerBtn) {
-      hamburgerBtn.addEventListener('click', openMenu);
-    }
-    if (closeMenuBtn) {
-      closeMenuBtn.addEventListener('click', closeMenu);
-    }
-    // Close when clicking on overlay background? optional, but good practice (click on overlay background outside container)
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMenu);
+    if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
     slideMenu.addEventListener('click', function(e) {
-      if (e.target === slideMenu) {
-        closeMenu();
-      }
+      if (e.target === slideMenu) closeMenu();
     });
-
-    // back button functionality: return to previous page using browser history
     if (backButton) {
       backButton.addEventListener('click', function(e) {
         e.preventDefault();
         window.history.back();
       });
     }
-
-    // close menu on escape key
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && slideMenu.classList.contains('open')) {
-        closeMenu();
-      }
+      if (e.key === 'Escape' && slideMenu.classList.contains('open')) closeMenu();
     });
 
-    // ---- HIGHLIGHT CURRENT PAGE (based on pathname) ----
-    function getNormalizedPath(url) {
-      try {
-        let path = new URL(url, window.location.origin).pathname;
-        // remove trailing slash for consistency except root
-        if (path !== '/' && path.endsWith('/')) path = path.slice(0, -1);
-        return path;
-      } catch(e) { return url; }
+    // Highlight current page in menu
+    function normalizePath(p) {
+      if (!p || p === '') return '/';
+      let path = p.startsWith('/') ? p : '/' + p;
+      if (path !== '/' && path.endsWith('/')) path = path.slice(0, -1);
+      return path;
     }
-
-    const currentPath = window.location.pathname;
-    const normalizeCurrent = currentPath !== '/' && currentPath.endsWith('/') ? currentPath.slice(0, -1) : currentPath;
-
-    // Select all menu links (both main + substance)
+    const currentPath = normalizePath(window.location.pathname);
     const allMenuLinks = document.querySelectorAll('#mainLinksContainer a, #substanceLinksContainer a');
     allMenuLinks.forEach(link => {
-      const href = link.getAttribute('href');
+      let href = link.getAttribute('href');
       if (!href) return;
-      let linkPath = href;
-      try {
-        let parsed = new URL(href, window.location.origin);
-        linkPath = parsed.pathname;
-        if (linkPath !== '/' && linkPath.endsWith('/')) linkPath = linkPath.slice(0, -1);
-      } catch(e) { linkPath = href; }
-      
-      // compare normalized paths
-      if (normalizeCurrent === linkPath || (normalizeCurrent === '' && linkPath === '/') || (normalizeCurrent === '/' && linkPath === '/')) {
+      let linkPath = normalizePath(href);
+      if (linkPath === currentPath) {
         link.classList.add('active');
-      } else if (linkPath !== '/' && normalizeCurrent.startsWith(linkPath) && linkPath.length > 1 && normalizeCurrent.charAt(linkPath.length) === '/') {
-        // optional partial match, but better to keep exact match. We'll only mark exact.
       }
     });
-    // special case: if current location is exactly "/" and home link
-    if (normalizeCurrent === '/' || normalizeCurrent === '') {
-      const homeLink = document.querySelector('#mainLinksContainer a[href="/"]');
-      if (homeLink) homeLink.classList.add('active');
-    }
-
-    // Additionally, close menu when any link inside menu is clicked (smooth navigation)
+    // Close menu on link click for smoother UX
     allMenuLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        // allow navigation, close menu after a tiny delay for better UX
-        setTimeout(() => { closeMenu(); }, 80);
-      });
+      link.addEventListener('click', () => setTimeout(() => closeMenu(), 80));
     });
   })();
 </script>
