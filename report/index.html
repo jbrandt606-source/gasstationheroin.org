@@ -174,7 +174,7 @@ body{
   transform:translateY(-2px);
 }
 
-/* ========== HORIZONTAL SCROLL CONTAINERS (mobile) ========== */
+/* ========== HORIZONTAL SCROLL CONTAINERS ========== */
 .scroll-x{
   overflow-x:auto;
   overflow-y:hidden;
@@ -194,7 +194,7 @@ body{
   border-radius:10px;
 }
 
-/* SECTION 1: DOCUMENTATION CARDS (horizontal on mobile, vertical on desktop) */
+/* SECTION 1: DOCUMENTATION CARDS (desktop: vertical, mobile: horizontal) */
 .doc-grid{
   display:flex;
   flex-direction:column;
@@ -223,7 +223,7 @@ body{
   line-height:1.4;
 }
 
-/* SECTION 2: AGENCY CARDS (grid on desktop, horizontal scroll on mobile) */
+/* SECTION 2: AGENCY CARDS (desktop: grid, mobile: horizontal) */
 .agency-grid-container{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -279,7 +279,7 @@ body{
   background:#a01018;
 }
 
-/* SECTION 3: RED FLAGS (horizontal on mobile, vertical list on desktop) */
+/* SECTION 3: RED FLAGS (desktop: vertical, mobile: horizontal) */
 .red-flags{
   list-style:none;
   margin-top:10px;
@@ -414,7 +414,7 @@ body{
   color:#7a7e8c;
 }
 
-/* MOBILE: make sections 1,2,3 horizontally scrollable with card widths */
+/* MOBILE: sections 1,2,3 become horizontal scroll rows */
 @media(max-width:760px){
   .site-header{
     height:64px;
@@ -437,16 +437,6 @@ body{
   .start-btn{font-size:18px;padding:14px 24px;}
   
   /* Section 1: horizontal scroll for doc cards */
-  .scroll-x-doc{
-    overflow-x:auto;
-    overflow-y:hidden;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:thin;
-    padding-bottom:12px;
-  }
-  .scroll-x-doc::-webkit-scrollbar{height:5px;}
-  .scroll-x-doc::-webkit-scrollbar-track{background:#1e1e24; border-radius:10px;}
-  .scroll-x-doc::-webkit-scrollbar-thumb{background:var(--red); border-radius:10px;}
   .doc-grid{
     flex-direction:row;
     gap:18px;
@@ -467,7 +457,7 @@ body{
   .doc-text h3{font-size:18px;}
   .doc-text p{font-size:13px;}
   
-  /* Section 2: agency cards already have horizontal scroll class */
+  /* Section 2: agency cards become horizontal scroll (FIXED) */
   .agency-grid-container{
     display:flex;
     flex-direction:row;
@@ -510,8 +500,6 @@ body{
   }
   .footer{flex-direction:column;margin:14px 16px 24px;}
 }
-
-/* desktop retains original styles – no changes needed */
 </style>
 </head>
 <body>
@@ -539,7 +527,7 @@ body{
 <section class="panel" id="start">
   <h2>1. What to document</h2>
   <p class="section-sub">The more information you have, the more helpful your report will be.</p>
-  <div class="scroll-x-doc">
+  <div class="scroll-x">
     <div class="doc-grid">
       <div class="doc-item">
         <img src="IMG_8553.jpeg" alt="camera icon">
@@ -566,7 +554,7 @@ body{
   </div>
 </section>
 
-<!-- SECTION 2: WHO TO REPORT IT TO (horizontal scroll on mobile) -->
+<!-- SECTION 2: WHO TO REPORT IT TO (horizontal scroll on mobile - FIXED) -->
 <section class="panel">
   <h2>2. Who should I report it to?</h2>
   <p class="section-sub">Different agencies handle different issues. Choose the one that best fits what you saw.</p>
