@@ -66,39 +66,6 @@ a {
   font-weight: 800;
 }
 
-/* original nav styles (will be replaced) */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(5, 5, 5, .94);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 6vw;
-}
-
-.nav-logo {
-  font-weight: 900;
-  font-size: 1.1rem;
-  letter-spacing: -.03em;
-  color: var(--red);
-}
-
-.nav-links {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-  font-size: .95rem;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  color: var(--red);
-}
-
 /* HERO */
 .hero {
   min-height: 82vh;
@@ -995,7 +962,7 @@ body.menu-open {
     </div>
   </section>
 
-  <!-- ===== LARGE SCROLLING CLICKABLE BANNER (added after stats) ===== -->
+  <!-- ===== LARGE SCROLLING CLICKABLE BANNER ===== -->
   <div class="scrolling-banner" onclick="window.open('https://AntiKratom.org', '_blank')">
     <a href="https://AntiKratom.org" target="_blank" rel="noopener noreferrer">
       <div class="scrolling-content">
@@ -1055,10 +1022,11 @@ body.menu-open {
       Simple tools to help families understand what these products look like, where they are sold, and how to talk about them before exposure becomes a crisis.
     </p>
     <div class="cards">
-      <div class="card">
+      <!-- Product Recognition Guide now links to /product/index.html -->
+      <a href="/product/index.html" class="card" style="text-decoration: none; display: block;">
         <h3>Product Recognition Guide</h3>
         <p>Learn the names, packaging styles, and product forms commonly found in vape shops and gas stations.</p>
-      </div>
+      </a>
       <a href="/talk/index.html" class="card" style="text-decoration: none; display: block;">
         <h3>Conversation Guide</h3>
         <p>Plain-language talking points for discussing kratom, tianeptine, vapes, hemp products, and retail drugs with teens.</p>
@@ -1083,10 +1051,15 @@ body.menu-open {
         <h3>Contact Officials</h3>
         <p>Send information to local health departments, school boards, city councils, state legislators, and attorneys general.</p>
       </div>
-      <div class="card">
-        <h3>Share the Warning</h3>
-        <p>Use parent groups, school networks, neighborhood pages, and community meetings to show what is being sold.</p>
-      </div>
+      <!-- Replaced "Share the Warning" with two new cards: Report a Product and Contact -->
+      <a href="/report/index.html" class="card" style="text-decoration: none; display: block;">
+        <h3>Report a Product</h3>
+        <p>Report dangerous or deceptive gas station products to the FDA, FTC, or your local health department.</p>
+      </a>
+      <a href="/contact/index.html" class="card" style="text-decoration: none; display: block;">
+        <h3>Contact</h3>
+        <p>Get in touch with us for more information, media inquiries, or partnership opportunities.</p>
+      </a>
     </div>
     <div class="action-row">
       <a class="btn-primary" href="#products">See the Products</a>
