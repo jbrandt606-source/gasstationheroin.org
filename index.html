@@ -810,6 +810,69 @@ body.menu-open {
     flex-direction: column;
   }
 }
+
+/* ===== NEW SCROLLING BANNER (CLICKABLE) ===== */
+.scrolling-banner {
+  width: 100%;
+  background: #1a1a1f;
+  border-top: 1px solid var(--red);
+  border-bottom: 1px solid var(--red);
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.scrolling-banner:hover {
+  background: #2a2a30;
+}
+
+.scrolling-banner a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+  padding: 16px 0;
+}
+
+.scrolling-content {
+  display: inline-block;
+  animation: scrollBanner 20s linear infinite;
+  padding-left: 100%;
+}
+
+.scrolling-banner:hover .scrolling-content {
+  animation-play-state: paused;
+}
+
+.scrolling-content span {
+  display: inline-block;
+  padding: 0 2rem;
+  font-weight: 800;
+  color: var(--red);
+}
+
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 650px) {
+  .scrolling-banner a {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+  .scrolling-content span {
+    padding: 0 1rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -931,6 +994,18 @@ body.menu-open {
       <div class="stat-label">Child-Appealing<br>Products Found</div>
     </div>
   </section>
+
+  <!-- ===== LARGE SCROLLING CLICKABLE BANNER (added after stats) ===== -->
+  <div class="scrolling-banner" onclick="window.open('https://AntiKratom.org', '_blank')">
+    <a href="https://AntiKratom.org" target="_blank" rel="noopener noreferrer">
+      <div class="scrolling-content">
+        <span>⚠️</span> VISIT ANTIKRATOM.ORG — STAND AGAINST DANGEROUS KRATOM PRODUCTS <span>⚠️</span> &nbsp;&nbsp;&nbsp;
+        <span>⚠️</span> VISIT ANTIKRATOM.ORG — STAND AGAINST DANGEROUS KRATOM PRODUCTS <span>⚠️</span> &nbsp;&nbsp;&nbsp;
+        <span>⚠️</span> VISIT ANTIKRATOM.ORG — STAND AGAINST DANGEROUS KRATOM PRODUCTS <span>⚠️</span>
+      </div>
+    </a>
+  </div>
+
   <section class="section thesis" aria-labelledby="thesis-heading">
     <h2 id="thesis-heading">Retail shelves are normalizing addiction.</h2>
     <p>
