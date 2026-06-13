@@ -7,6 +7,7 @@
   <title>MGM-15 | Kratom-Derived Opioid Sold Like Candy</title>
 
   <style>
+    /* ===== ORIGINAL PAGE STYLES (PRESERVED) ===== */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -35,6 +36,7 @@
       width: 100%;
       max-width: 100%;
       position: relative;
+      padding-top: 70px; /* space for fixed header */
     }
 
     a { color: inherit; text-decoration: none; }
@@ -64,6 +66,7 @@
       width: 100%;
     }
 
+    /* original nav styles (replaced) */
     nav {
       position: sticky;
       top: 0;
@@ -335,7 +338,258 @@
 
     .warning-card li { margin: 8px 0; }
 
-    footer {
+    /* ===== NEW FIXED HEADER + SLIDE-OUT MENU STYLES ===== */
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #030303;
+      border-bottom: 1px solid #2a2a2a;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+    }
+
+    .back-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      transition: all 0.2s ease;
+      color: #fff;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: scale(1.02);
+    }
+
+    .back-btn svg {
+      width: 26px;
+      height: 26px;
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .center-logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      pointer-events: auto;
+    }
+
+    .header-logo-link {
+      text-decoration: none;
+      display: block;
+      font-size: 28px;
+      font-weight: 950;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      line-height: 1;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .header-logo-link span {
+      color: var(--red);
+    }
+
+    @media (max-width: 640px) {
+      .header-logo-link {
+        font-size: 20px;
+      }
+      .fixed-header {
+        padding: 0 16px;
+      }
+    }
+
+    .hamburger-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 40px;
+      transition: background 0.2s;
+    }
+
+    .hamburger-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hamburger-btn svg {
+      width: 28px;
+      height: 28px;
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    .nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(3, 3, 3, 0.98);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      visibility: hidden;
+      overflow-y: auto;
+    }
+
+    .nav-overlay.open {
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    .nav-menu-container {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem 1.5rem 3rem;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-header {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2rem;
+    }
+
+    .close-menu-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #3c424d;
+      border-radius: 60px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .close-menu-btn:hover {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .close-menu-btn svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      stroke-width: 2;
+    }
+
+    .menu-section {
+      margin-bottom: 2.2rem;
+    }
+
+    .menu-section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--red);
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--red);
+      padding-left: 12px;
+    }
+
+    .menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .menu-links a {
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: #eaeef5;
+      padding: 12px 12px;
+      border-radius: 16px;
+      transition: all 0.2s;
+      display: block;
+      letter-spacing: -0.2px;
+    }
+
+    .menu-links a:hover {
+      background: rgba(227, 27, 35, 0.2);
+      color: white;
+      transform: translateX(6px);
+    }
+
+    .menu-links a.active {
+      color: var(--red);
+      background: rgba(227, 27, 35, 0.12);
+      border-left: 3px solid var(--red);
+      font-weight: 800;
+    }
+
+    .substance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .substance-grid a {
+      font-size: 1rem;
+      font-weight: 500;
+      background: rgba(20, 20, 30, 0.6);
+      border: 1px solid #3c424d;
+      border-radius: 40px;
+      padding: 10px 16px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .substance-grid a:hover {
+      background: var(--red);
+      border-color: var(--red);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 500px) {
+      .menu-links a {
+        font-size: 1.2rem;
+        padding: 10px 8px;
+      }
+      .substance-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-menu-container {
+        padding: 1.5rem 1rem;
+      }
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    /* ===== UPDATED FOOTER (only active links) ===== */
+    .footer-new {
       padding: 40px 6vw;
       background: #000;
       color: #8f93a0;
@@ -349,21 +603,59 @@
       width: 100%;
     }
 
-    .footer-mission { max-width: 440px; line-height: 1.6; }
-
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    .footer-col {
+      flex: 1;
+      min-width: 140px;
     }
 
-    .footer-links a:hover { color: var(--red); }
+    .footer-col h4 {
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #b0b4c0;
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--red);
+    }
+
+    .crisis-line {
+      background: #1a1a22;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 12px;
+    }
+
+    .crisis-line strong {
+      color: #fff;
+      display: block;
+      font-size: 18px;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      color: #7a7e8c;
+      width: 100%;
+    }
 
     @media (max-width: 1000px) {
       .nav-links { gap: 16px; font-size: 0.88rem; }
       .section { padding: 48px 5vw; }
       .hero { padding: 36px 5vw; }
-      footer { padding: 32px 5vw; }
+      .footer-new { padding: 32px 5vw; }
     }
 
     @media (max-width: 650px) {
@@ -399,7 +691,7 @@
 
       .section { padding: 48px 1.2rem; }
 
-      footer {
+      .footer-new {
         flex-direction: column;
         padding: 32px 1.2rem;
       }
@@ -412,8 +704,6 @@
         font-size: 0.8rem;
         padding: 8px 1rem;
       }
-
-      nav { padding: 12px 1.2rem; }
     }
   </style>
 </head>
@@ -426,15 +716,59 @@
   MGM-15 IS A KRATOM-DERIVED SEMI-SYNTHETIC OPIOID — SOLD AS FLAVORED CHEWABLE TABLETS IN ORDINARY STORES.
 </div>
 
-<nav aria-label="Main navigation">
-  <span class="nav-logo">GasStationHeroin.org</span>
-  <ul class="nav-links">
-    <li><a href="#risks">Why It Matters</a></li>
-    <li><a href="#gallery">Real Products</a></li>
-    <li><a href="#faq">Plain-English Facts</a></li>
-    <li><a href="#action">Take Action</a></li>
-  </ul>
-</nav>
+<!-- ===== NEW FIXED HEADER (replaces original nav) ===== -->
+<header class="fixed-header">
+  <button class="back-btn" id="backButton" aria-label="Go back to previous page">
+    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+      <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div class="center-logo">
+    <a href="/" class="header-logo-link">Gas Station <span>Heroin</span></a>
+  </div>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu">
+    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-linecap="round"/>
+    </svg>
+  </button>
+</header>
+
+<!-- ===== FULLSCREEN SLIDE-OUT MENU ===== -->
+<div id="slideMenu" class="nav-overlay" aria-hidden="true">
+  <div class="nav-menu-container">
+    <div class="menu-header">
+      <button class="close-menu-btn" id="closeMenuBtn" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="menu-section">
+      <div class="menu-section-title">Navigation</div>
+      <div class="menu-links" id="mainLinksContainer">
+        <a href="/" data-url="/">Home</a>
+        <a href="/parent/index.html" data-url="/parent/index.html">Parent Guide</a>
+        <a href="/product/index.html" data-url="/product/index.html">Identify Products</a>
+        <a href="/warning/index.html" data-url="/warning/index.html">Warning Signs</a>
+        <a href="/talk/index.html" data-url="/talk/index.html">Talk to Your Child</a>
+        <a href="/help/index.html" data-url="/help/index.html">Get Help</a>
+        <a href="/report/index.html" data-url="/report/index.html">Report a Product</a>
+        <a href="/contact/index.html" data-url="/contact/index.html">Contact</a>
+      </div>
+    </div>
+    <div class="menu-section">
+      <div class="menu-section-title">Substance Categories</div>
+      <div class="substance-grid" id="substanceLinksContainer">
+        <a href="/opioid/index.html" data-url="/opioid/index.html">Opioids</a>
+        <a href="/sedatives/index.html" data-url="/sedatives/index.html">Sedatives</a>
+        <a href="/hallucinogens/index.html" data-url="/hallucinogens/index.html">Hallucinogens</a>
+        <a href="/inhalation/index.html" data-url="/inhalation/index.html">Inhalants</a>
+        <a href="/stimulants/index.html" data-url="/stimulants/index.html">Stimulants</a>
+        <a href="/sexual/index.html" data-url="/sexual/index.html">Sexual Enhancement Products</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <main id="main">
 
@@ -708,19 +1042,98 @@
 
 </main>
 
-<footer>
-  <div class="footer-mission">
-    <strong style="color:#fff;">GasStationHeroin.org</strong><br />
-    Exposing MGM-15 and kratom-derived gas station opioids sold in plain sight. Helping communities recognize deceptive packaging, hidden risks, and products that should never be treated like candy.
+<!-- ===== UPDATED FOOTER (only active links) ===== -->
+<div class="footer-new">
+  <div class="footer-col">
+    <h4>Gas Station Heroin</h4>
+    <p style="color:#b0b4c0; margin-bottom:10px;">Awareness. Prevention. Action.</p>
+    <a href="/">Home</a>
+    <a href="/parent/index.html">Parent Guide</a>
+    <a href="/product/index.html">Identify Products</a>
+    <a href="/warning/index.html">Warning Signs</a>
+    <a href="/talk/index.html">Talk to Your Child</a>
+    <a href="/help/index.html">Get Help</a>
+    <a href="/report/index.html">Report a Product</a>
+    <a href="/contact/index.html">Contact</a>
   </div>
+  <div class="footer-col">
+    <h4>Substance Categories</h4>
+    <a href="/opioid/index.html">Opioids</a>
+    <a href="/sedatives/index.html">Sedatives</a>
+    <a href="/hallucinogens/index.html">Hallucinogens</a>
+    <a href="/inhalation/index.html">Inhalants</a>
+    <a href="/stimulants/index.html">Stimulants</a>
+    <a href="/sexual/index.html">Sexual Enhancement Products</a>
+  </div>
+  <div class="footer-col">
+    <h4>Connect & Help</h4>
+    <div class="crisis-line">
+      <strong>In crisis?</strong>
+      Call or text <strong>988</strong><br>
+      Suicide & Crisis Lifeline<br>
+      Call <strong>911</strong> if it's an emergency.
+    </div>
+    <a href="/help/index.html" style="margin-top:12px;">Get Help Now →</a>
+  </div>
+  <div class="copyright">
+    © 2024 GasStationHeroin.org
+  </div>
+</div>
 
-  <div class="footer-links">
-    <a href="#risks">Why it matters</a>
-    <a href="#gallery">Product gallery</a>
-    <a href="#faq">Plain-English facts</a>
-    <a href="#action">Take action</a>
-  </div>
-</footer>
+<script>
+  (function() {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const slideMenu = document.getElementById('slideMenu');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const backButton = document.getElementById('backButton');
+
+    function openMenu() {
+      slideMenu.classList.add('open');
+      slideMenu.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('menu-open');
+    }
+    function closeMenu() {
+      slideMenu.classList.remove('open');
+      slideMenu.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMenu);
+    if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+    slideMenu.addEventListener('click', function(e) {
+      if (e.target === slideMenu) closeMenu();
+    });
+    if (backButton) {
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.history.back();
+      });
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && slideMenu.classList.contains('open')) closeMenu();
+    });
+
+    function normalizePath(p) {
+      if (!p || p === '') return '/';
+      let path = p.startsWith('/') ? p : '/' + p;
+      if (path !== '/' && path.endsWith('/')) path = path.slice(0, -1);
+      return path;
+    }
+    const currentPath = normalizePath(window.location.pathname);
+    const allMenuLinks = document.querySelectorAll('#mainLinksContainer a, #substanceLinksContainer a');
+    allMenuLinks.forEach(link => {
+      let href = link.getAttribute('href');
+      if (!href) return;
+      let linkPath = normalizePath(href);
+      if (linkPath === currentPath) {
+        link.classList.add('active');
+      }
+    });
+    allMenuLinks.forEach(link => {
+      link.addEventListener('click', () => setTimeout(() => closeMenu(), 80));
+    });
+  })();
+</script>
 
 </body>
 </html>
